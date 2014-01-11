@@ -1,0 +1,219 @@
+@charset "UTF-8";
+/* _variables.scss */
+/* _type.scss */
+/* line 4, ../sass/includes/_type.scss */
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+/* line 8, ../sass/includes/_type.scss */
+html, body {
+  font-family: "Hoefler Text", "Baskerville old face", Garamond, "Times New Roman", serif;
+}
+
+/* line 15, ../sass/includes/_type.scss */
+code,
+kbd,
+pre,
+samp {
+  font-family: Monaco, Consolas, "Lucida Console", monospace;
+}
+
+/* _general.scss */
+/* line 2, ../sass/includes/_general.scss */
+body {
+  background: whitesmoke;
+}
+
+/* line 6, ../sass/includes/_general.scss */
+ul, ol, dd, p, address, pre, blockquote, table {
+  color: #333344;
+}
+
+/* line 10, ../sass/includes/_general.scss */
+a, button {
+  color: #556270;
+}
+
+/* line 14, ../sass/includes/_general.scss */
+.left-list {
+  margin-left: 0;
+}
+
+/* _pages.scss */
+/* _responsive.scss */
+/** Typecsset */
+/* line 93, ../sass/vendor/_typecsset.scss */
+h1, h2, h3, h4, h5, h6, ul, ol, dd, p, address, pre, blockquote, table {
+  margin: 0;
+  padding: 0;
+}
+
+/* line 98, ../sass/vendor/_typecsset.scss */
+h1, h2, h3, h4, h5, h6, ul, ol, dd, p, address, pre, blockquote, table {
+  margin-bottom: 24px;
+  margin-bottom: 1.33333rem;
+}
+
+/**
+ * 1. Set the base element’s `font-size` to the value of your choosing. Set in
+ *    ems, assuming a browser default of 16px.
+ * 2. Work out the unitless `line-height` for your project based around your
+ *    desired `line-height` (defined previously in pixels), and your project’s
+ *    base font size.
+ */
+/* line 125, ../sass/vendor/_typecsset.scss */
+html, body {
+  font-size: 1.125em;
+  /* [1] */
+  line-height: 1.33333;
+  /* [2] */
+}
+
+/* line 139, ../sass/vendor/_typecsset.scss */
+body {
+  margin: 0;
+}
+
+/* line 150, ../sass/vendor/_typecsset.scss */
+h1 {
+  font-size: 48px;
+  font-size: 2.66667rem;
+  line-height: 1;
+}
+
+/* line 155, ../sass/vendor/_typecsset.scss */
+h2 {
+  font-size: 36px;
+  font-size: 2rem;
+  line-height: 1.33333;
+}
+
+/* line 160, ../sass/vendor/_typecsset.scss */
+h3 {
+  font-size: 30px;
+  font-size: 1.66667rem;
+  line-height: 1.6;
+}
+
+/* line 165, ../sass/vendor/_typecsset.scss */
+h4 {
+  font-size: 24px;
+  font-size: 1.33333rem;
+  line-height: 1;
+}
+
+/* line 170, ../sass/vendor/_typecsset.scss */
+h5 {
+  font-size: 20px;
+  font-size: 1.11111rem;
+  line-height: 1.2;
+}
+
+/* line 175, ../sass/vendor/_typecsset.scss */
+h6 {
+  font-size: 18px;
+  font-size: 1rem;
+  line-height: 1.33333;
+}
+
+/* line 187, ../sass/vendor/_typecsset.scss */
+ul, ol, dd {
+  margin-left: 48px;
+  margin-left: 2.66667rem;
+}
+
+/* line 193, ../sass/vendor/_typecsset.scss */
+li > ul,
+li > ol {
+  margin-bottom: 0;
+}
+
+/* line 237, ../sass/vendor/_typecsset.scss */
+code,
+kbd,
+pre,
+samp {
+  font-family: monospace, monospace;
+}
+
+/**
+ * 1. Hang the opening quote of the blockquote.
+ */
+/* line 251, ../sass/vendor/_typecsset.scss */
+blockquote {
+  text-indent: -0.41em;
+  /* [1] */
+}
+
+/**
+ * Set up quote marks on quoting elements. This is very English-based, so we are
+ * using “, ”, ‘, and ’ quotes.
+ */
+/* line 259, ../sass/vendor/_typecsset.scss */
+blockquote {
+  quotes: "“" "”";
+  margin-left: 48px;
+  margin-left: 2.66667rem;
+}
+/* line 266, ../sass/vendor/_typecsset.scss */
+blockquote p:before {
+  content: "“";
+  content: open-quote;
+}
+/* line 271, ../sass/vendor/_typecsset.scss */
+blockquote p:after {
+  content: "";
+  content: no-close-quote;
+}
+/* line 276, ../sass/vendor/_typecsset.scss */
+blockquote p:last-of-type:after {
+  content: "”";
+  content: close-quote;
+}
+
+/* line 285, ../sass/vendor/_typecsset.scss */
+q {
+  quotes: "‘" "’" "“" "”";
+  /**
+   * If an element opens with an inline quote, let’s hang that.
+   */
+}
+/* line 288, ../sass/vendor/_typecsset.scss */
+q:before {
+  content: "‘";
+  content: open-quote;
+}
+/* line 293, ../sass/vendor/_typecsset.scss */
+q:after {
+  content: "’";
+  content: close-quote;
+}
+/* line 298, ../sass/vendor/_typecsset.scss */
+q q:before {
+  content: "“";
+  content: open-quote;
+}
+/* line 303, ../sass/vendor/_typecsset.scss */
+q q:after {
+  content: "”";
+  content: close-quote;
+}
+/* line 311, ../sass/vendor/_typecsset.scss */
+q:first-child {
+  display: inline-block;
+  text-indent: -0.22em;
+}
+
+/* line 325, ../sass/vendor/_typecsset.scss */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 333, ../sass/vendor/_typecsset.scss */
+th,
+td {
+  padding: 12px;
+}

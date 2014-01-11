@@ -1,0 +1,21 @@
+{
+  "name": "gliese",
+  "version": "0.1",
+  "authors": [
+    "Wiljan Slofstra <wiljanslofstra@gmail.com>"
+  ],
+  "description": "Front-end framework",
+  "license": "MIT",
+  "homepage": "wiljanslofstra.com",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.0.3",
+    "requirejs": "~2.1.10"
+  }
+}

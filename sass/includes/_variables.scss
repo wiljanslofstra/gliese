@@ -1,0 +1,38 @@
+/* _variables.scss */
+
+// === TYPECSSET VARIABLES ===
+$typecsset-base-font-size:      18px;
+$typecsset-base-line-height:    24px;
+
+$typecsset-h1-size:             48px;
+$typecsset-h2-size:             36px;
+$typecsset-h3-size:             30px;
+$typecsset-h4-size:             24px;
+$typecsset-h5-size:             20px;
+$typecsset-h6-size:             18px;
+
+$sans:							"Helvetica Neue", Helvetica, Arial, sans-serif;
+$serif:							"Hoefler Text", "Baskerville old face", Garamond, "Times New Roman", serif;
+$mono:							Monaco, Consolas, "Lucida Console", monospace;
+
+$font-family-primary:			$sans;
+$font-family-secondary:			$serif;
+
+$base-radius:					3px;
+
+// === RESPONSIVE ===
+// Default variables are based on Bootstrap
+$r-sm:							768px;
+$r-md:							992px;
+$r-lg:							1200px;
+
+$golden:						1.617em;
+
+// === COLORS ===
+$primary-color:					#556270;
+$secondary-color:				#4ECDC4;
+$default-color:					#f5f5f5;
+$text-color:					#333344;
+$link-color:					$primary-color;
+
+$bg:							$default-color;
