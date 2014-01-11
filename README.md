@@ -13,7 +13,11 @@ Install [SASS](http://sass-lang.com/) & [Compass](http://compass-style.org/) the
 compass watch
 ```
 
-To install/update components, install [Bower](https://github.com/bower/bower) on your system.
+To install/update components, install [Bower](https://github.com/bower/bower) on your system. Then run
+```
+bower install
+```
+to install all dependencies needed to run Gliese.
 
 ## Before production
 - [Customize Bootstrap JS/CSS](http://getbootstrap.com/customize/)
