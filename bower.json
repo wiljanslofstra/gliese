@@ -4,6 +4,7 @@
   "authors": [
     "Wiljan Slofstra <wiljanslofstra@gmail.com>"
   ],
+  "keywords": ["sass, framework, front-end, framework, bootstrap"],
   "description": "Front-end framework",
   "license": "MIT",
   "homepage": "wiljanslofstra.com",
@@ -22,6 +23,6 @@
     "requirejs-text": "~2.0.10",
     "respond": "~1.4.2",
     "underscore": "~1.5.2",
-    "bootstrap": "~3.0.3"
+    "bootstrap": "git://github.com/twbs/bootstrap-sass.git#3.0.3-0"
   }
 }

@@ -1,5 +1,10 @@
 // Gliese
-@import "includes/variables.scss";
+// 
+
+@import "variables.scss";
+
+@import "../bower_components/bootstrap-sass/vendor/assets/stylesheets/bootstrap.scss";
+
 @import "includes/type.scss";
 @import "includes/general.scss";
 @import "includes/pages.scss";

@@ -1,0 +1,276 @@
+/* _variables.scss */
+
+// === TYPECSSET VARIABLES ===
+$typecsset-base-font-size:      18px;
+$typecsset-base-line-height:    24px;
+
+$typecsset-h1-size:             48px;
+$typecsset-h2-size:             36px;
+$typecsset-h3-size:             30px;
+$typecsset-h4-size:             24px;
+$typecsset-h5-size:             20px;
+$typecsset-h6-size:             18px;
+
+$sans:							"Helvetica Neue", Helvetica, Arial, sans-serif;
+$serif:							"Hoefler Text", "Baskerville old face", Garamond, "Times New Roman", serif;
+$mono:							Monaco, Consolas, "Lucida Console", monospace;
+
+// === RESPONSIVE ===
+// Default variables are based on Bootstrap
+$r-sm:							768px;
+$r-md:							992px;
+$r-lg:							1200px;
+
+$golden:						1.617em;
+
+// === COLORS ===
+$primary-color:					#556270;
+$secondary-color:				#4ECDC4;
+$default-color:					#f5f5f5;
+$text-color:					#333344;
+$link-color:					$primary-color;
+
+// ===============================================
+// 												//
+//		BOOTSTRAP VARIABLES 					//
+//												//
+// ===============================================
+// 		
+// 		A lot of variables are removed from
+// 		this file. For all variables go to
+// 		get.bootstrap.com
+ 
+// Grays
+// -------------------------
+
+$gray-darker:            lighten(#000, 13.5%); // #222
+$gray-dark:              lighten(#000, 20%);   // #333
+$gray:                   lighten(#000, 33.5%); // #555
+$gray-light:             lighten(#000, 60%);   // #999
+$gray-lighter:           lighten(#000, 93.5%); // #eee
+
+// Brand colors
+// -------------------------
+
+$brand-primary:         #428bca;
+$brand-success:         #5cb85c;
+$brand-warning:         #f0ad4e;
+$brand-danger:          #d9534f;
+$brand-info:            #5bc0de;
+
+// Scaffolding
+// -------------------------
+
+$body-bg:               #fff;
+$text-color:            $gray-dark;
+
+// Links
+// -------------------------
+
+$link-color:            $brand-primary;
+$link-hover-color:      darken($link-color, 15%);
+
+// Typography
+// -------------------------
+
+$font-family-sans-serif:  $sans;
+$font-family-serif:       $serif;
+$font-family-monospace:   $mono;
+$font-family-base:        $font-family-sans-serif;
+
+$font-size-base:          $typecsset-base-font-size;
+$font-size-large:         ceil($font-size-base * 1.25);
+$font-size-small:         ceil($font-size-base * 0.85);
+
+$font-size-h1:            $typecsset-h1-size;
+$font-size-h2:            $typecsset-h2-size;
+$font-size-h3:            $typecsset-h3-size;
+$font-size-h4:            $typecsset-h4-size;
+$font-size-h5:            $typecsset-h5-size;
+$font-size-h6:            $typecsset-h6-size;
+
+$line-height-base:        1.333333; // 20/14
+$line-height-computed:    floor($font-size-base * $line-height-base); // ~20px
+
+$headings-font-family:    $font-family-base;
+$headings-font-weight:    500;
+$headings-line-height:    1.1;
+$headings-color:          inherit;
+
+
+// Components
+// -------------------------
+// Based on 14px font-size and 1.428 line-height (~20px to start)
+
+$padding-base-vertical:          6px;
+$padding-base-horizontal:        12px;
+
+$padding-large-vertical:         10px;
+$padding-large-horizontal:       16px;
+
+$padding-small-vertical:         5px;
+$padding-small-horizontal:       10px;
+
+$padding-xs-vertical:            1px;
+$padding-xs-horizontal:          5px;
+
+$line-height-large:              1.33;
+$line-height-small:              1.5;
+
+$border-radius-base:             4px;
+$border-radius-large:            6px;
+$border-radius-small:            3px;
+
+$component-active-color:         #fff;
+$component-active-bg:            $brand-primary;
+
+$caret-width-base:               4px;
+$caret-width-large:              5px;
+
+
+// Buttons
+// -------------------------
+
+$btn-font-weight:                normal;
+
+$btn-default-color:              #333;
+$btn-default-bg:                 #fff;
+$btn-default-border:             #ccc;
+
+$btn-primary-color:              #fff;
+$btn-primary-bg:                 $brand-primary;
+$btn-primary-border:             darken($btn-primary-bg, 5%);
+
+$btn-success-color:              #fff;
+$btn-success-bg:                 $brand-success;
+$btn-success-border:             darken($btn-success-bg, 5%);
+
+$btn-warning-color:              #fff;
+$btn-warning-bg:                 $brand-warning;
+$btn-warning-border:             darken($btn-warning-bg, 5%);
+
+$btn-danger-color:               #fff;
+$btn-danger-bg:                  $brand-danger;
+$btn-danger-border:              darken($btn-danger-bg, 5%);
+
+$btn-info-color:                 #fff;
+$btn-info-bg:                    $brand-info;
+$btn-info-border:                darken($btn-info-bg, 5%);
+
+$btn-link-disabled-color:        $gray-light;
+
+
+// Forms
+// -------------------------
+
+$input-bg:                       #fff;
+$input-bg-disabled:              $gray-lighter;
+
+$input-color:                    $gray;
+$input-border:                   #ccc;
+$input-border-radius:            $border-radius-base;
+$input-border-focus:             #66afe9;
+
+$input-color-placeholder:        $gray-light;
+
+$input-height-base:              ($line-height-computed + ($padding-base-vertical * 2) + 2);
+$input-height-large:             (ceil($font-size-large * $line-height-large) + ($padding-large-vertical * 2) + 2);
+$input-height-small:             (floor($font-size-small * $line-height-small) + ($padding-small-vertical * 2) + 2);
+
+$legend-color:                   $gray-dark;
+$legend-border-color:            #e5e5e5;
+
+$input-group-addon-bg:           $gray-lighter;
+$input-group-addon-border-color: $input-border;
+
+
+// Dropdowns
+// -------------------------
+
+$dropdown-bg:                    #fff;
+$dropdown-border:                rgba(0,0,0,.15);
+$dropdown-fallback-border:       #ccc;
+$dropdown-divider-bg:            #e5e5e5;
+
+$dropdown-link-color:            $gray-dark;
+$dropdown-link-hover-color:      darken($gray-dark, 5%);
+$dropdown-link-hover-bg:         #f5f5f5;
+
+$dropdown-link-active-color:     $component-active-color;
+$dropdown-link-active-bg:        $component-active-bg;
+
+$dropdown-link-disabled-color:   $gray-light;
+
+$dropdown-header-color:          $gray-light;
+
+// Media queries breakpoints
+// --------------------------------------------------
+
+// Extra small screen / phone
+// Note: Deprecated $screen-xs and $screen-phone as of v3.0.1
+$screen-xs:                  480px;
+$screen-xs-min:              $screen-xs;
+$screen-phone:               $screen-xs-min;
+
+// Small screen / tablet
+// Note: Deprecated $screen-sm and $screen-tablet as of v3.0.1
+$screen-sm:                  $r-sm;
+$screen-sm-min:              $screen-sm;
+$screen-tablet:              $screen-sm-min;
+
+// Medium screen / desktop
+// Note: Deprecated $screen-md and $screen-desktop as of v3.0.1
+$screen-md:                  $r-md;
+$screen-md-min:              $screen-md;
+$screen-desktop:             $screen-md-min;
+
+// Large screen / wide desktop
+// Note: Deprecated $screen-lg and $screen-lg-desktop as of v3.0.1
+$screen-lg:                  $r-lg;
+$screen-lg-min:              $screen-lg;
+$screen-lg-desktop:          $screen-lg-min;
+
+// So media queries don't overlap when required, provide a maximum
+$screen-xs-max:              ($screen-sm-min - 1);
+$screen-sm-max:              ($screen-md-min - 1);
+$screen-md-max:              ($screen-lg-min - 1);
+
+
+// Grid system
+// --------------------------------------------------
+
+// Number of columns in the grid system
+$grid-columns:              12;
+// Padding, to be divided by two and applied to the left and right of all columns
+$grid-gutter-width:         30px;
+
+// Navbar collapse
+
+// Point at which the navbar becomes uncollapsed
+$grid-float-breakpoint:     $screen-sm-min;
+// Point at which the navbar begins collapsing
+$grid-float-breakpoint-max: ($grid-float-breakpoint - 1);
+
+// Jumbotron
+// -------------------------
+
+$jumbotron-padding:              30px;
+$jumbotron-color:                inherit;
+$jumbotron-bg:                   $gray-lighter;
+$jumbotron-heading-color:        inherit;
+$jumbotron-font-size:            ceil($font-size-base * 1.5);
+
+// Container sizes
+// --------------------------------------------------
+
+// Small screen / tablet
+$container-tablet:             ((720px + $grid-gutter-width));
+$container-sm:                 $container-tablet;
+
+// Medium screen / desktop
+$container-desktop:            ((940px + $grid-gutter-width));
+$container-md:                 $container-desktop;
+
+// Large screen / wide desktop
+$container-large-desktop:      ((1140px + $grid-gutter-width));
+$container-lg:                 $container-large-desktop;

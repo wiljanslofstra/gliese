@@ -1,7 +1,8 @@
 // Global variables
 var config = {
     version: '0.1',
-    environment: 'development' // or production
+    environment: 'development', // or production
+    bower: '../bower_components/'
 },
 cacheBust = (config.environment === 'development') ? "bust=" + (new Date()).getTime() : "";
 
@@ -9,14 +10,14 @@ cacheBust = (config.environment === 'development') ? "bust=" + (new Date()).getT
 requirejs.config({
     urlArgs: cacheBust,
     //By default load any module IDs from js/lib
-    baseUrl: 'js/app',
+    baseUrl: 'js',
     // paths is relative to the baseUrl
     paths: {
-        jquery: '../../bower_components/jquery/jquery',
-        bootstrap: '../../bower_components/bootstrap/dist/js/bootstrap',
-        underscore: '../../bower_components/underscore/underscore',
-        backbone: '../../bower_components/backbone/backbone',
-        text: '../../bower_components/requirejs-text/text'
+        jquery:         config.bower + 'jquery/jquery',
+        bootstrap:      config.bower + 'bootstrap-sass/vendor/assets/javascripts/bootstrap',
+        underscore:     config.bower + 'underscore/underscore',
+        backbone:       config.bower + 'backbone/backbone',
+        text:           config.bower + 'requirejs-text/text'
     },
     // Dependencies
     shim: {
@@ -36,11 +37,9 @@ requirejs.config({
 
 // Start the main app logic
 define([
-    'module',
     'jquery',
     'bootstrap',
-    'router'
-], function (module, $, Bootstrap, Router) {
-    console.debug('Gliese %s', config.version);
-    new Router();
+    'app'
+], function ($, Bootstrap, App) {
+    new App();
 });
