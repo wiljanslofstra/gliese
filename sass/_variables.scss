@@ -21,14 +21,11 @@ $r-sm:							768px;
 $r-md:							992px;
 $r-lg:							1200px;
 
-$golden:						1.617em;
-
 // === COLORS ===
 $primary-color:					#556270;
 $secondary-color:				#4ECDC4;
 $default-color:					#f5f5f5;
-$text-color:					#333344;
-$link-color:					$primary-color;
+
 
 // ===============================================
 // 												//
@@ -183,25 +180,6 @@ $legend-border-color:            #e5e5e5;
 $input-group-addon-bg:           $gray-lighter;
 $input-group-addon-border-color: $input-border;
 
-
-// Dropdowns
-// -------------------------
-
-$dropdown-bg:                    #fff;
-$dropdown-border:                rgba(0,0,0,.15);
-$dropdown-fallback-border:       #ccc;
-$dropdown-divider-bg:            #e5e5e5;
-
-$dropdown-link-color:            $gray-dark;
-$dropdown-link-hover-color:      darken($gray-dark, 5%);
-$dropdown-link-hover-bg:         #f5f5f5;
-
-$dropdown-link-active-color:     $component-active-color;
-$dropdown-link-active-bg:        $component-active-bg;
-
-$dropdown-link-disabled-color:   $gray-light;
-
-$dropdown-header-color:          $gray-light;
 
 // Media queries breakpoints
 // --------------------------------------------------

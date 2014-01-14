@@ -23,7 +23,7 @@ to install all dependencies needed to run Gliese.
 - [Customize Bootstrap JS/CSS](http://getbootstrap.com/customize/)
 - [Custom Modernizr](http://modernizr.com/download/)
 - Uncomment and setup Google Analytics in index.html
-- Change the variable environment in main.js to 'production'
+- Change the variable 'environment' in main.js to 'production'
 
 
 ## Cross-browser?
@@ -38,6 +38,3 @@ and add this in the `<head>` of your page
     <script src="bower_components/respond/dest/respond.min.js"></script>
 <![endif]-->
 ```
-
-## What's next
-- [ ] Add Grunt for compiling sass/compass and build tasks
