@@ -1,0 +1,4 @@
+.button, input, select, textarea {
+	position: relative;
+	-ms-behavior: url('css/ie/PIE.htc');
+}

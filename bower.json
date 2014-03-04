@@ -16,13 +16,10 @@
     "tests"
   ],
   "dependencies": {
-    "jquery": "~2.0.3",
+    "jquery": "~2.1.0",
     "requirejs": "~2.1.10",
-    "backbone": "~1.1.0",
     "modernizr": "~2.7.1",
-    "requirejs-text": "~2.0.10",
     "respond": "~1.4.2",
-    "underscore": "~1.5.2",
-    "bootstrap": "git://github.com/twbs/bootstrap-sass.git#3.0.3-0"
+    "bootstrap-sass": "git://github.com/twbs/bootstrap-sass.git"
   }
 }

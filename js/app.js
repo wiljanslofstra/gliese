@@ -1,11 +1,13 @@
-define([], function() {
+(function(w){
+	function App() {
+		
+	}
 
-	'use strict';
-
-	var init = function() {
-		console.debug('Gliese %s', config.version);
+	App.prototype.init = function() {
+		console.debug('Your app is running!');
 	};
 
-	return init;
+	var app = new App();
+	app.init();
 
-});
+})(window);
