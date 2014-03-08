@@ -103,7 +103,7 @@ gulp.task('imagemin', function () {
         .pipe(imagemin({
         	progressive: true
         }))
-        .pipe(gulp.dest('./dist/img'));
+        .pipe(gulp.dest('./img/dist'));
 });
 
 

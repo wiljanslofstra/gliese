@@ -2,4 +2,5 @@
 bower_components
 css/min
 js/dist
+img/dist
 node_modules
