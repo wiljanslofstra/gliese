@@ -7,10 +7,10 @@ project_path = File.expand_path("..",File.dirname(__FILE__))
 # -----------------------------------------------------------------------------
 
 http_path = "/"
-css_dir = "assets/css"
-sass_dir = "assets/css"
-images_dir = "assets/img"
-javascripts_dir = "assets/js"
+css_dir = "css"
+sass_dir = "sass"
+images_dir = "img"
+javascripts_dir = "js"
 #svg_dir = "assets/svg"
 #fonts_dir = "assets/fonts"
 
