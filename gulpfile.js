@@ -1,6 +1,6 @@
 var gulp = require('gulp'),
 	concat = require('gulp-concat'),
-	sass = require('gulp-ruby-sass'),
+	compass = require('gulp-compass'),
 	minify = require('gulp-minify-css'),
 	uglify = require('gulp-uglify'),
 	imagemin = require('gulp-imagemin'),
@@ -9,10 +9,10 @@ var gulp = require('gulp'),
 // SASS compiling & reloading
 gulp.task('sass', function () {
     gulp.src('./sass/*.scss')
-        .pipe(sass({
-        	compass: true,
-        	noCache: true,
-        	quiet: true
+        .pipe(compass({
+        	config_file: './config.rb',
+        	sass: './sass',
+        	css: './css'
         }))
         .pipe(gulp.dest('./css'));
 });
@@ -40,30 +40,12 @@ gulp.task('imagemin', function () {
         .pipe(gulp.dest('./img/dist'));
 });
 
-// Watching files for changes before reloading
-gulp.task('watch', function() {
-	gulp.watch('./sass/**/*.scss', function() {
-		gulp.run('sass');
-	});
-});
-
-
 // Default functionality includes server with livereload and watching
 gulp.task('default', function(){
-	gulp.run(
-		'sass',
-		'watch'
-	);
+	gulp.watch('./sass/**/*.scss', ['sass']);
 });
 
 // Build functionality with cleaning, moving, compiling, etc.
-gulp.task('build', function(){
-	gulp.run(
-		'sass',
-		'minify',
-		'uglify',
-		'imagemin'
-	);
-});
+gulp.task('build', ['sass', 'minify', 'uglify', 'imagemin' ]);
 
 
