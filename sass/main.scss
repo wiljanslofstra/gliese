@@ -1,13 +1,15 @@
 @import "vendor/bootstrap.scss";
+@import "vendor/bootstrap-import.scss";
 
-@import "libs/required";
-@import "libs/settings";
-@import "libs/mixins";
-@import "libs/placeholders";
+@import "compass/typography/vertical_rhythm";
+@import "compass/css3";
+@import "compass/utilities";
 
-// Use SASS globbing to import all _.scss files in the module folder.
-// These should be independent modules that follow the BEM/SMACSS way
-@import "modules/*"; 
+@import "vendor/sassaparilla/mixins";
+@import "vendor/sassaparilla/placeholders";
+
+// Import all modules
+@import "modules/*";
 
 /* ::Base styles */
 /* ------------------------------------------------------------ */
@@ -18,29 +20,6 @@ html {
 		-webkit-text-size-adjust: 100%;	// Stops text scaling in iOS.
 	}
 }
-
-body {
-	@extend .font-body;
-	background: $body-color;
-	color: $base-color;
-}
-
-a {
-	color: $action;
-	text-decoration: none;
-	@include link-active-styles { 	// Mixin for interactions (hover,focus,active)
-		color: $action-respond;
-	}
-	&:not(>img) {
-		@include force-wrap;
-	}
-}
-
-/* ::Import styles */
-/* ------------------------------------------------------------ */
-
-@import "libs/typography"; 					// Base level typography
-@import "libs/forms";						// Forms
 
 /* ::Print */
 /* ------------------------------------------------------------ */

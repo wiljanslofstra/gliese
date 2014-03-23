@@ -9,22 +9,22 @@
 
 // Mixins for list style types
 @mixin unordered {
-	 list-style-position: outside; 
+	 list-style-position: outside;
 	 list-style-type: disc;
 }
 
 @mixin unordered-inside {
-	 list-style-position: inside; 
+	 list-style-position: inside;
 	 list-style-type: disc;
 }
 
 @mixin ordered {
-	list-style-position: outside; 
+	list-style-position: outside;
 	list-style-type: decimal;
 }
 
 @mixin ordered-inside {
-	list-style-position: inside; 
+	list-style-position: inside;
 	list-style-type: decimal;
 }
 
@@ -48,11 +48,11 @@
 
 @mixin link-active-styles {
 	&:hover, &:focus, &:active {
-		@content; 
+		@content;
 	}
 }
-	
-	
+
+
 // -------------------------------------------------------
 // Align things vertically (http://zerosixthree.se/vertical-align-anything-with-just-3-lines-of-css/)
 // -------------------------------------------------------
@@ -126,7 +126,7 @@
 // Retina images
 // -------------------------------------------------------
 
-// Usage: Send path, image name, and width and height. 
+// Usage: Send path, image name, and width and height.
 // Name retina images [name]2x.
 
 @mixin image-2x($image, $width, $height) {
@@ -163,24 +163,24 @@
 @mixin grid_columns($columns){
 	@for $i from 1 through $columns{
 		.colspan#{$columns}-#{$i}{
-			width: ((100% / $columns)*$i);		
+			width: ((100% / $columns)*$i);
 		}
 	}
 	@for $i from 1 through $columns{
 		.push#{$columns}-#{$i}{
-			margin-left: ((100% / $columns)*$i);		
+			margin-left: ((100% / $columns)*$i);
 		}
 	}
 	@for $i from 1 through $columns{
 		.pull#{$columns}-#{$i}{
-			margin-right: ((100% / $columns)*$i);		
+			margin-right: ((100% / $columns)*$i);
 		}
 	}
 	.push-disable#{$columns}{
-		margin-left: 0;		
+		margin-left: 0;
 	}
 	.pull-disable#{$columns}{
-		margin-right: 0;		
+		margin-right: 0;
 	}
 	.hide-at#{$columns} {
 		display: none;
@@ -192,13 +192,13 @@
 		display: inline;
 		display: inline-block;
 	}
-	
+
 }
 
-@mixin grid {	
+@mixin grid {
 	// Widths
 	*[class*="colspan"] {
-		width: 100%; 
+		width: 100%;
 		display: block;
 	}
 	// Floats
@@ -210,7 +210,7 @@
 	// Gutters
 	*[class*="with-gutter"] {
 		@include respond-to($start-columns) {
-			padding-left: $internal-spacing-percent; 
+			padding-left: $internal-spacing-percent;
 		}
 	}
 }

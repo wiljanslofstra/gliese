@@ -639,6 +639,3 @@ $container-md:                 $container-desktop;
 // Large screen / wide desktop
 $container-large-desktop:      ((1140px + $grid-gutter-width));
 $container-lg:                 $container-large-desktop;
-
-
-@import '../bower_components/bootstrap-sass/vendor/assets/stylesheets/bootstrap.scss';

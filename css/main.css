@@ -321,7 +321,7 @@ th {
 
 html {
   font-size: 62.5%;
-  -webkit-tap-highlight-color: transparent;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
 body {
@@ -2677,6 +2677,7 @@ input[type="button"].btn-block {
   src: url("../bower_components/bootstrap-sass/vendor/assets/fonts/glyphicons-halflings-regular.eot");
   src: url("../bower_components/bootstrap-sass/vendor/assets/fonts/glyphicons-halflings-regular.eot?#iefix") format("embedded-opentype"), url("../bower_components/bootstrap-sass/vendor/assets/fonts/glyphicons-halflings-regular.woff") format("woff"), url("../bower_components/bootstrap-sass/vendor/assets/fonts/glyphicons-halflings-regular.ttf") format("truetype"), url("../bower_components/bootstrap-sass/vendor/assets/fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular") format("svg");
 }
+
 .glyphicon {
   position: relative;
   top: 1px;
@@ -4976,6 +4977,7 @@ a.thumbnail.active {
     background-position: 0 0;
   }
 }
+
 @keyframes progress-bar-stripes {
   from {
     background-position: 40px 0;
@@ -4985,6 +4987,7 @@ a.thumbnail.active {
     background-position: 0 0;
   }
 }
+
 .progress {
   overflow: hidden;
   height: 22px;
@@ -6087,7 +6090,7 @@ button.close {
   border-radius: 10px;
   cursor: pointer;
   background-color: #000 \9;
-  background-color: transparent;
+  background-color: rgba(0, 0, 0, 0);
 }
 .carousel-indicators .active {
   margin: 0;
@@ -6188,6 +6191,7 @@ button.close {
 @-ms-viewport {
   width: device-width;
 }
+
 .visible-xs, .visible-sm, .visible-md, .visible-lg {
   display: none !important;
 }
@@ -6322,117 +6326,11 @@ html {
   }
 }
 
-body {
-  background: white;
-  color: #777777;
-}
-
-a {
-  color: #c64f24;
-  text-decoration: none;
-}
-a:hover, a:focus, a:active {
-  color: #67b2b1;
-}
-a:not(> img) {
-  white-space: pre;
-  white-space: pre-wrap;
-  white-space: pre-line;
-  white-space: -pre-wrap;
-  white-space: -o-pre-wrap;
-  white-space: -moz-pre-wrap;
-  white-space: -hp-pre-wrap;
-  word-wrap: break-word;
-}
-
-/* ::Import styles */
-/* ------------------------------------------------------------ */
-.font-body, body {
-  font-family: 'Open Sans', sans-serif, sans-serif;
-}
-
-.font-var {
-  font-family: Georgia, serif;
-}
-
-p, span, cite, ol, ul, pre, label, input, textarea {
-  font-size: 0.9375em;
-  line-height: 1.4666666667em;
-}
-
-ul {
-  list-style-type: none;
-}
-
-ol {
-  list-style-type: none;
-}
-
-li {
-  line-height: inherit;
-}
-
-strong, b {
-  font-weight: 700;
-}
-
-em, i, q {
-  font-style: italic;
-}
-
-label, legend, select {
-  display: block;
-}
-
-input[type="search"]::-webkit-search-decoration,
-input[type="search"]::-webkit-search-cancel-button {
-  -webkit-appearance: none;
-}
-
-textarea {
-  overflow: auto;
-  vertical-align: top;
-}
-
-input[type="radio"],
-input[type="checkbox"] {
-  margin: 4px 0 0;
-  margin-top: 1px \9;
-  *margin-top: 0;
-  line-height: normal;
-  cursor: pointer;
-}
-
-input[type="file"],
-input[type="image"],
-input[type="submit"],
-input[type="reset"],
-input[type="button"],
-input[type="radio"],
-input[type="checkbox"] {
-  width: auto;
-}
-
-select,
-input[type="file"] {
-  *margin-top: 4px;
-  /* In IE7, the height of the select element cannot be changed by height, only font-size */
-}
-
-select:focus,
-input[type="file"]:focus,
-input[type="radio"]:focus,
-input[type="checkbox"]:focus {
-  outline: thin dotted #333;
-  outline: 5px auto -webkit-focus-ring-color;
-  outline-offset: -2px;
-}
-
 /* ::Print */
 /* ------------------------------------------------------------ */
 @media print {
   body {
-    line-height: 0.55em;
+    line-height: 3em;
     font-size: 62.5%;
   }
 }
