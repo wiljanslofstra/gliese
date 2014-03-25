@@ -26,6 +26,12 @@ npm install
 gulp
 ```
 
+## Gulp
+Gulp has two main commands:
+- ```gulp``` will build/minify/concatenate/uglify your files
+- ```gulp watch``` will watch images/scripts/styles for changes and compile/minify accordingly.
+All compiled/minified files will be outputted in the ```dist``` folder.
+
 ## Sassaparilla mixins
 ```
 // List styles ===

@@ -1,6 +1,6 @@
 .sass-cache
 bower_components
-css/min
-js/dist
-img/dist
 node_modules
+dist/img
+dist/css
+dist/js

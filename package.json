@@ -4,9 +4,12 @@
   "description": "",
   "author": "Wiljan Slofstra",
   "devDependencies": {
-    "gulp": "~3.5.2",
-    "gulp-compass": "~1.1.6",
-    "gulp-concat": "~2.1.7"
+    "gulp": "~3.5.6",
+    "gulp-compass": "~1.1.7",
+    "gulp-concat": "~2.2.0",
+    "gulp-notify": "~1.2.4",
+    "gulp-rename": "~1.2.0",
+    "gulp-rimraf": "0.0.9"
   },
   "dependencies": {
     "gulp-minify-css": "~0.3.0",

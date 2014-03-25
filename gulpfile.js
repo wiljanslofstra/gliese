@@ -4,48 +4,96 @@ var gulp = require('gulp'),
 	minify = require('gulp-minify-css'),
 	uglify = require('gulp-uglify'),
 	imagemin = require('gulp-imagemin'),
+	notify = require('gulp-notify'),
+	rename = require('gulp-rename'),
+	rimraf = require('gulp-rimraf'),
 	path = require('path');
+
+var dist_folder = './dist/';
+var config = {
+	// JS Source files
+	js_files: './js/*.js',
+	js_vendor: './js/vendor/*.js',
+	js_all: './js/**/*.js',
+
+	// SASS/CSS Source files
+	sass: './sass/**/*.scss',
+	ie_files: './css/ie/*',
+
+	// Image Source files
+	img_files: './img/**/*',
+
+	// Distribution
+	img_dist: dist_folder + 'img',
+	ie_files_dist: dist_folder + 'css/ie',
+	css_dist: dist_folder + 'css',
+	js_dist: dist_folder + 'js'
+}
 
 // SASS compiling & reloading
 gulp.task('sass', function () {
-    gulp.src('./sass/*.scss')
+    return gulp.src(config.sass)
         .pipe(compass({
-        	config_file: './config.rb',
-        	sass: './sass',
-        	css: './css'
+        	sass: 'sass',
+        	css: 'dist/css',
+        	style: 'expanded',
+        	relative: true,
+        	comments: false,
+        	require: ['sass-globbing']
         }))
-        .pipe(gulp.dest('./css'));
-});
-
-// Minify CSS files
-gulp.task('minify', function() {
-	gulp.src('./css/*.css')
-		.pipe(minify({
+        .pipe(gulp.dest(config.css_dist))
+        .pipe(rename({ suffix: '.min' }))
+        .pipe(minify({
 			keepSpecialComments: 0
 		}))
-		.pipe(gulp.dest('./css/min'));
+        .pipe(gulp.dest(config.css_dist))
+        .pipe(notify({ message: 'Gliese: Sassed.' }));
 });
 
-gulp.task('uglify', function() {
-  	gulp.src('./js/*.js')
+gulp.task('move', function() {
+	// Move IE files to the dist folder
+    return gulp.src(config.ie_files)
+    	.pipe(gulp.dest(config.ie_files_dist));
+})
+
+gulp.task('scripts', function() {
+  	gulp.src(config.js_files)
+  		.pipe(gulp.dest(config.js_dist))
+  		.pipe(rename({ suffix: '.min' }))
       	.pipe(uglify())
-      	.pipe(gulp.dest('./js/dist'));
+      	.pipe(gulp.dest(config.js_dist));
+
+    // Concatenate all scripts inside vendor to vendor.js and minify
+    return gulp.src(config.js_vendor)
+    	.pipe(concat('vendor.js'))
+    	.pipe(gulp.dest(config.js_dist))
+  		.pipe(rename({ suffix: '.min' }))
+      	.pipe(uglify())
+      	.pipe(gulp.dest(config.js_dist))
+      	.pipe(notify({ message: 'Gliese: Scripts executed.' }));
 });
 
 gulp.task('imagemin', function () {
-    gulp.src('./img/**/*')
-        .pipe(imagemin({
-        	progressive: true
-        }))
-        .pipe(gulp.dest('./img/dist'));
+    return gulp.src(config.img_files)
+        .pipe(imagemin({ optimizationLevel: 4, progressive: true }))
+        .pipe(gulp.dest(config.img_dist))
+        .pipe(notify({ message: 'Gliese: Imagemin executed.' }));
 });
 
-// Default functionality includes server with livereload and watching
-gulp.task('default', function(){
-	gulp.watch('./sass/**/*.scss', ['sass']);
+gulp.task('clean', function() {
+  	// Cleans all folders before compiling everything again
+  	return gulp.src([config.css_dist, config.js_dist, config.img_dist], {read: false})
+    	.pipe(rimraf())
+    	.pipe(notify({ message: 'Gliese: Cleaned out.' }));
 });
 
-// Build functionality with cleaning, moving, compiling, etc.
-gulp.task('build', ['sass', 'minify', 'uglify', 'imagemin' ]);
+gulp.task('default', ['clean'], function(){
+	// Run initial tasks
+	gulp.start('imagemin', 'sass', 'scripts', 'move');
+});
 
-
+gulp.task('watch', function() {
+	gulp.watch(config.sass, ['sass']);
+	gulp.watch(config.js_all, ['scripts']);
+	gulp.watch(config.img, ['imagemin']);
+});
