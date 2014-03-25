@@ -41,6 +41,9 @@ gulp.task('sass', function () {
         	comments: false,
         	require: ['sass-globbing']
         }))
+        .on('error', function(err) {
+        	console.log(err.message)
+        })
         .pipe(gulp.dest(config.css_dist))
         .pipe(rename({ suffix: '.min' }))
         .pipe(minify({
