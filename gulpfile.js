@@ -7,6 +7,9 @@ var gulp = require('gulp'),
 	notify = require('gulp-notify'),
 	rename = require('gulp-rename'),
 	rimraf = require('gulp-rimraf'),
+	w3cjs = require('gulp-w3cjs'),
+	csslint = require('gulp-csslint'),
+	jshint = require('gulp-jshint')
 	path = require('path');
 
 var dist_folder = './dist/';
@@ -88,6 +91,26 @@ gulp.task('clean', function() {
   	return gulp.src([config.css_dist, config.js_dist, config.img_dist], {read: false})
     	.pipe(rimraf())
     	.pipe(notify({ message: 'Gliese: Cleaned out.' }));
+});
+
+gulp.task('validate:html', function() {
+	return gulp.src(['*.html'])
+		.pipe(w3cjs());
+});
+
+gulp.task('validate:css', function() {
+  	gulp.src('dist/css/main.css')
+    	.pipe(csslint({
+	    	'important': false,
+	    	'adjoining-classes': false
+	    }))
+	    .pipe(csslint.reporter());
+});
+
+gulp.task('validate:js', function() {
+	gulp.src('dist/js/app.js')
+		.pipe(jshint())
+    	.pipe(jshint.reporter('default'));
 });
 
 gulp.task('default', ['clean'], function(){

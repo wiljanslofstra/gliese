@@ -32,6 +32,11 @@ Gulp has two main commands:
 - ```gulp watch``` will watch images/scripts/styles for changes and compile/minify accordingly.
 All compiled/minified files will be outputted in the ```dist``` folder.
 
+**Validators**
+- ```validate:html``` Validates all html in the root directory.
+- ```validate:css``` Validates ```dist/css/main.css```. Works, but gives a lot of validation errors on Bootstrap.
+- ```validate:js``` Validates ```dist/js/app.js```.
+
 ## Sassaparilla mixins
 ```
 // List styles ===
