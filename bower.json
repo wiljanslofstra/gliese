@@ -1,11 +1,11 @@
 {
   "name": "gliese",
-  "version": "0.2",
+  "version": "0.3.0",
   "authors": [
     "Wiljan Slofstra <wiljanslofstra@gmail.com>"
   ],
-  "keywords": ["sass, framework, front-end, framework, bootstrap"],
-  "description": "Front-end framework",
+  "keywords": ["sass, framework, front-end, framework, bootstrap, bower, gulp"],
+  "description": "Front-end development framework using Sass, Gulp, Bootstrap and Bower.",
   "license": "MIT",
   "homepage": "wiljanslofstra.com",
   "ignore": [
@@ -16,7 +16,7 @@
     "tests"
   ],
   "dependencies": {
-    "jquery": "~2.1.0",
+    "jquery": "~1.11.0",
     "requirejs": "~2.1.10",
     "modernizr": "~2.7.1",
     "respond": "~1.4.2",
