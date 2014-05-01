@@ -2,7 +2,7 @@
 
 ## What is Gliese?
 Gliese is a development framework that uses
-- [SASS](http://sass-lang.com/) & [Compass](http://compass-style.org/)
+- [SASS](http://sass-lang.com/)
 - [Bourbon](http://bourbon.io/docs/) / [Neat](http://neat.bourbon.io/docs/) / [Bitters](https://github.com/thoughtbot/bitters)
 - [Bower](https://github.com/bower/bower) package manager
 - [Bootstrap](http://getbootstrap.com/) JS/SASS (Optional)
