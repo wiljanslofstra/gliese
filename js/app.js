@@ -1,13 +1,9 @@
-(function(w){
-	function App() {
-
-	}
-
-	App.prototype.init = function() {
-		console.log('Your app is running!');
+define(['jquery'], function($) {
+	var init = function() {
+		console.log('Up & Running!');
 	};
 
-	var app = new App();
-	app.init();
-
-})(window);
+	return {
+		init: init
+	}
+});

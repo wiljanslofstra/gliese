@@ -10,65 +10,30 @@
 		<meta name="description" content="">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 
-		<link rel="apple-touch-icon-precomposed" href="dist/img/apple-touch-icon.png">
-		<!-- <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" /> -->
+		<link rel="apple-touch-icon-precomposed" href="img/apple-touch-icon.png">
+		<link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
 
-		<link rel="stylesheet" href="dist/css/main.css">
+		<link rel="stylesheet" href="css/main.css">
 
 		<!--[if lte IE 8]>
-		  <script src="bower_components/respond/dest/respond.min.js"></script>
+		 	<script src="js/vendor/respond/dest/respond.min.js"></script>
 			<script src="css/ie/html5shiv.js"></script>
-		  <link rel="stylesheet" href="css/ie/ie8.css" />
+			<link rel="stylesheet" href="css/ie/ie8.css" />
 	  <![endif]-->
 	</head>
 
 	<body>
 
-		<div class="container-fluid">
-			<div class="col-sm-6 col-md-4 col-sm-offset-3 col-md-offset-4">
+		<h1>Welcome to Gliese</h1>
 
-				<h1>Welcome to Gliese</h1>
+		<p>
+			Gliese is built to build websites faster and better. To read more about Gliese see the <a href="https://github.com/wiljanslofstra/Gliese">repo</a>.
+		</p>
 
-				<p>
-					Gliese is built to assist you as developer to build websites faster and better. To read more about Gliese see the <a href="https://github.com/wiljanslofstra/Gliese">repo</a>.
-				</p>
+		<p>
+			For installation instructions head over to the <a href="https://github.com/wiljanslofstra/Gliese/blob/master/README.md">repository Readme</a>.
+		</p>
 
-				<pre><code>gulp</code></pre>
-
-				<h2>Install</h2>
-				<ul>
-					<li>NPM
-						<ul>
-							<li>Gulp</li>
-						</ul>
-					</li>
-					<li>Ruby / RVM
-						<ul>
-							<li>SASS</li>
-							<li>Compass</li>
-							<li>sass-globbing</li>
-						</ul>
-					</li>
-					<li>Bower</li>
-				</ul>
-
-				<h2>Setup</h2>
-				<pre>
-					<code>
-					bower install
-					npm install
-					gulp
-					</code>
-				</pre>
-			</div>
-		</div>
-
-		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-		<script>
-			window.jQuery || document.write('<script src="bower_components/jquery/dist/jquery.min.js">\x3C/script>');
-		</script>
-
-		<script src="dist/js/vendor.js"></script>
-		<script src="dist/js/app.js"></script>
+		<script data-main="js/config" src="js/vendor/requirejs/require.js"></script>
 	</body>
 </html>

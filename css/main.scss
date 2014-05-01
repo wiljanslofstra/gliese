@@ -1,0 +1,26 @@
+// Want to use Bootstrap? Uncomment the following line:
+// @import "bootstrap-sass/stylesheets/bootstrap.scss";
+
+// http://bourbon.io/docs/
+@import "bourbon/bourbon";
+
+// https://github.com/thoughtbot/bitters
+@import "bitters/bitters";
+
+// http://neat.bourbon.io/docs/
+@import "neat/neat";
+
+// Prepackaged components and patterns:
+// http://refills.bourbon.io/
+
+@import "modules/navigation.scss";
+@import "modules/forms.scss";
+@import "modules/buttons.scss";
+@import "modules/footer.scss";
+@import "modules/responsive.scss";
+
+@media print {
+	body {
+		font-size: percentage(10 / 16);
+	}
+}

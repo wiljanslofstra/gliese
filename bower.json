@@ -1,10 +1,12 @@
 {
   "name": "gliese",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "authors": [
     "Wiljan Slofstra <wiljanslofstra@gmail.com>"
   ],
-  "keywords": ["sass, framework, front-end, framework, bootstrap, bower, gulp"],
+  "keywords": [
+    "sass, framework, front-end, framework, bootstrap, bower, gulp"
+  ],
   "description": "Front-end development framework using Sass, Gulp, Bootstrap and Bower.",
   "license": "MIT",
   "homepage": "wiljanslofstra.com",
@@ -12,6 +14,13 @@
     "**/.*",
     "node_modules",
     "bower_components",
+    "css/.sass-cache",
+    "css/main.css",
+    "js/vendor/jquery",
+    "js/vendor/modernizr",
+    "js/vendor/requirejs",
+    "js/vendor/respond",
+    "js/vendor/Velocity.js",
     "test",
     "tests"
   ],
@@ -20,6 +29,6 @@
     "requirejs": "~2.1.10",
     "modernizr": "~2.7.1",
     "respond": "~1.4.2",
-    "bootstrap-sass": "git://github.com/twbs/bootstrap-sass.git"
+    "Velocity.js": "*"
   }
 }
