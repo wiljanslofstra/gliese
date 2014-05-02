@@ -6,5 +6,6 @@ js/vendor/modernizr
 js/vendor/requirejs
 js/vendor/respond
 js/vendor/Velocity.js
+js/vendor/selectivizr
 node_modules
 Gemfile.lock

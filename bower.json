@@ -29,6 +29,7 @@
     "requirejs": "~2.1.10",
     "modernizr": "~2.8.1",
     "respond": "~1.4.2",
-    "Velocity.js": "*"
+    "Velocity.js": "*",
+    "selectivizr": "1.0.2"
   }
 }

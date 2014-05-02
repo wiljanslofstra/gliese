@@ -28,6 +28,21 @@ i.icon {
 	font-weight: normal;
 }
 
+.title {
+	margin: 2em 0;
+}
+
+.container {
+	@include outer-container();
+
+	.half {
+		@include span-columns(6);
+		@include media(max-width 768px) {
+			@include span-columns(12);
+		}
+	}
+}
+
 @media print {
 	body {
 		font-size: percentage(10 / 16);

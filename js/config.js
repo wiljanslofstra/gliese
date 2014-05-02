@@ -16,7 +16,8 @@ requirejs.config({
         app: '../app',
         jquery: 'jquery/dist/jquery.min',
         modernizr: 'modernizr/modernizr',
-        velocity: 'Velocity.js/jquery.velocity'
+        velocity: 'Velocity.js/jquery.velocity',
+        selectivizr: 'selectivizr/selectivizr'
     },
     shim: {
     	// 'bootstrap': {
@@ -29,4 +30,9 @@ requirejs.config({
 // Start the main app logic.
 define(['jquery', 'modernizr', 'app'], function ($, Modernizr, app) {
     app.init();
+
+    // Polyfill for css pseudo-classes and attribute selectors on <IE9
+    if ($('body').hasClass('lt-ie9')) {
+        require(['selectivizr']);
+    }
 });
