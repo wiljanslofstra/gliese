@@ -25,9 +25,9 @@
     "tests"
   ],
   "dependencies": {
-    "jquery": "~1.11.0",
+    "jquery": "~1.11.1",
     "requirejs": "~2.1.10",
-    "modernizr": "~2.7.1",
+    "modernizr": "~2.8.1",
     "respond": "~1.4.2",
     "Velocity.js": "*"
   }

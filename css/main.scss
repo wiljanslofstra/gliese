@@ -19,6 +19,15 @@
 @import "modules/footer.scss";
 @import "modules/responsive.scss";
 
+@include font-face('Entypo', 'fonts/entypo', normal, normal);
+
+i.icon {
+	font-family: 'Entypo';
+	font-style: normal;
+	font-size: 1.5em;
+	font-weight: normal;
+}
+
 @media print {
 	body {
 		font-size: percentage(10 / 16);

@@ -1,9 +1,13 @@
+// Warning! Set inDevelopment to false in production
+var inDevelopment = true,
+    version = 1;
+
 requirejs.config({
     //By default load any module IDs from js/lib
     baseUrl: 'js/vendor',
 
     // Prevent cache (only for development)
-    // urlArgs: "bust=" + (new Date()).getTime(),
+    urlArgs: "v=" + ((inDevelopment) ? (new Date()).getTime() : version),
 
     // Gives error if module doesn't call define()
     // enforceDefine: true,
