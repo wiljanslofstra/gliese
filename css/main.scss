@@ -1,17 +1,27 @@
-// Want to use Bootstrap? Uncomment the following line:
+// ============================================
+//////		BOOTSTRAP
+// ============================================
+// 
 // @import "bootstrap-sass/stylesheets/bootstrap.scss";
 
+// ============================================
+//////		BOURBON / BITTERS / NEAT
+// ============================================
+// 
 // http://bourbon.io/docs/
-@import "bourbon/bourbon";
-
 // https://github.com/thoughtbot/bitters
-@import "bitters/bitters";
-
 // http://neat.bourbon.io/docs/
+// 
+@import "bourbon/bourbon";
+@import "bitters/bitters";
 @import "neat/neat";
 
 // Prepackaged components and patterns:
 // http://refills.bourbon.io/
+
+// ============================================
+//////		MODULES
+// ============================================
 
 @import "modules/navigation.scss";
 @import "modules/forms.scss";
@@ -28,8 +38,14 @@ i.icon {
 	font-weight: normal;
 }
 
+.title, .half {
+	position: relative;
+	opacity: 0;
+}
+
 .title {
 	margin: 2em 0;
+	top: -50px;
 }
 
 .container {
@@ -37,6 +53,8 @@ i.icon {
 
 	.half {
 		@include span-columns(6);
+		left: -50px;
+		
 		@include media(max-width 768px) {
 			@include span-columns(12);
 		}

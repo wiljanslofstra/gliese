@@ -16,19 +16,20 @@ requirejs.config({
         app: '../app',
         jquery: 'jquery/dist/jquery.min',
         modernizr: 'modernizr/modernizr',
-        velocity: 'Velocity.js/jquery.velocity',
+        velocity: 'velocity/jquery.velocity',
         selectivizr: 'selectivizr/selectivizr'
     },
     shim: {
-    	// 'bootstrap': {
-    	// 	deps: ['jquery'],
-    	// 	exports: 'Bootstrap'
-    	// }
+    	'velocity': {
+    		deps: ['jquery']
+    	}
     }
 });
 
 // Start the main app logic.
 define(['jquery', 'modernizr', 'app'], function ($, Modernizr, app) {
+    if (inDevelopment) console.log('==== Warning: Running in development =====');
+
     app.init();
 
     // Polyfill for css pseudo-classes and attribute selectors on <IE9
