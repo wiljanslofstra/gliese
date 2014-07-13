@@ -1,35 +1,33 @@
 {
   "name": "gliese",
-  "version": "0.4.0",
+  "version": "0.5.0",
   "authors": [
     "Wiljan Slofstra <wiljanslofstra@gmail.com>"
   ],
   "keywords": [
-    "sass, framework, front-end, framework, bootstrap, bower, gulp"
+    "sass, framework, front-end, framework, bootstrap, bower"
   ],
-  "description": "Front-end development framework using Sass, Gulp, Bootstrap and Bower.",
+  "description": "Front-end development framework using Sass, Bootstrap and Bower.",
   "license": "MIT",
-  "homepage": "wiljanslofstra.com",
+  "homepage": "https://github.com/wiljanslofstra/Gliese",
   "ignore": [
     "**/.*",
     "node_modules",
     "bower_components",
-    "css/.sass-cache",
     "css/main.css",
     "js/vendor/jquery",
     "js/vendor/modernizr",
     "js/vendor/requirejs",
     "js/vendor/respond",
-    "js/vendor/Velocity.js",
+    "js/vendor/velocity",
     "test",
     "tests"
   ],
   "dependencies": {
     "jquery": "~1.11.1",
-    "requirejs": "~2.1.10",
-    "modernizr": "~2.8.1",
+    "requirejs": "~2.1.14",
+    "modernizr": "~2.8.3",
     "respond": "~1.4.2",
-    "velocity": "~0.0.14",
-    "selectivizr": "1.0.2"
+    "velocity": "~0.6.0"
   }
 }

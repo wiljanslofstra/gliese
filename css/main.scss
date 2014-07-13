@@ -1,63 +1,22 @@
-// ============================================
-//////		BOOTSTRAP
-// ============================================
-// 
-// @import "bootstrap-sass/stylesheets/bootstrap.scss";
 
-// ============================================
-//////		BOURBON / BITTERS / NEAT
-// ============================================
-// 
-// http://bourbon.io/docs/
-// https://github.com/thoughtbot/bitters
-// http://neat.bourbon.io/docs/
-// 
-@import "bourbon/bourbon";
-@import "bitters/bitters";
-@import "neat/neat";
+@import "bootstrap-sass/stylesheets/bootstrap.scss";
 
-// Prepackaged components and patterns:
-// http://refills.bourbon.io/
+@import "modules/variables.scss";
+@import "modules/mixins.scss";
 
-// ============================================
-//////		MODULES
-// ============================================
-
-@import "modules/navigation.scss";
+@import "modules/header.scss";
 @import "modules/forms.scss";
 @import "modules/buttons.scss";
 @import "modules/footer.scss";
-@import "modules/responsive.scss";
+@import "modules/plugins.scss";
 
-@include font-face('Entypo', 'fonts/entypo', normal, normal);
-
-i.icon {
-	font-family: 'Entypo';
-	font-style: normal;
-	font-size: 1.5em;
-	font-weight: normal;
-}
-
-.title, .half {
-	position: relative;
+h1 {
 	opacity: 0;
-}
-
-.title {
-	margin: 2em 0;
-	top: -50px;
-}
-
-.container {
-	@include outer-container();
-
-	.half {
-		@include span-columns(6);
-		left: -50px;
-		
-		@include media(max-width 768px) {
-			@include span-columns(12);
-		}
+	
+	div {
+		opacity: 0;
+		position: relative;
+		@include translate(0, 30px);
 	}
 }
 

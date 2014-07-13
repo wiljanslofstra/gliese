@@ -1,39 +1,42 @@
-// Warning! Set inDevelopment to false in production
+/**
+ * Config
+ * @constructor
+ */
+
 var inDevelopment = true,
-    version = 1;
+    version = ((inDevelopment) ? (new Date()).getTime() : 1);
 
 requirejs.config({
-    //By default load any module IDs from js/lib
+    /** Set the vendor folder as base path */
     baseUrl: 'js/vendor',
 
-    // Prevent cache (only for development)
-    urlArgs: "v=" + ((inDevelopment) ? (new Date()).getTime() : version),
+    /** Prevent caching of scripts by appending the date */
+    urlArgs: "v=" + version,
 
-    // Gives error if module doesn't call define()
-    // enforceDefine: true,
-
+    /** Paths to scripts. Relative to the baseUrl */
     paths: {
         app: '../app',
         jquery: 'jquery/dist/jquery.min',
         modernizr: 'modernizr/modernizr',
         velocity: 'velocity/jquery.velocity',
-        selectivizr: 'selectivizr/selectivizr'
+        velocityUI: 'velocity/velocity.ui'
     },
+
+    /** Configuration for non-AMD scripts */
     shim: {
-    	'velocity': {
-    		deps: ['jquery']
-    	}
+        'velocity': ['jquery'],
+        'velocityUI': ['velocity']
     }
 });
 
-// Start the main app logic.
-define(['jquery', 'modernizr', 'app'], function ($, Modernizr, app) {
-    if (inDevelopment) console.log('==== Warning: Running in development =====');
+/** Beginning of the app, require base scripts and the App */
+require(['app', 'jquery', 'modernizr'], function (App) {
+    'use strict';
 
-    app.init();
-
-    // Polyfill for css pseudo-classes and attribute selectors on <IE9
-    if ($('body').hasClass('lt-ie9')) {
-        require(['selectivizr']);
+    if (inDevelopment) {
+        console.log('Warning: JS cache is disabled');
     }
+
+    /** Call the init method on the App module */
+    App.init();
 });

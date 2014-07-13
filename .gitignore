@@ -5,6 +5,5 @@ js/vendor/jquery
 js/vendor/modernizr
 js/vendor/requirejs
 js/vendor/respond
-js/vendor/Velocity.js
-js/vendor/selectivizr
+js/vendor/velocity
 node_modules
