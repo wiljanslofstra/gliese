@@ -6,4 +6,5 @@ js/vendor/modernizr
 js/vendor/requirejs
 js/vendor/respond
 js/vendor/velocity
+js/vendor/angular
 node_modules

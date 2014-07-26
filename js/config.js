@@ -4,22 +4,23 @@
  */
 
 var inDevelopment = true,
-    version = ((inDevelopment) ? (new Date()).getTime() : 1);
+    version = ((inDevelopment) ? (new Date()).getTime() : 1),
+    vendorDir = '../vendor/';
 
 requirejs.config({
     /** Set the vendor folder as base path */
-    baseUrl: 'js/vendor',
+    baseUrl: 'js/modules',
 
     /** Prevent caching of scripts by appending the date */
     urlArgs: "v=" + version,
 
     /** Paths to scripts. Relative to the baseUrl */
     paths: {
-        app: '../app',
-        jquery: 'jquery/dist/jquery.min',
-        modernizr: 'modernizr/modernizr',
-        velocity: 'velocity/jquery.velocity',
-        velocityUI: 'velocity/velocity.ui'
+        app: 'app',
+        jquery: vendorDir + 'jquery/dist/jquery.min',
+        modernizr: vendorDir + 'modernizr/modernizr',
+        velocity: vendorDir + 'velocity/jquery.velocity',
+        velocityUI: vendorDir + 'velocity/velocity.ui'
     },
 
     /** Configuration for non-AMD scripts */
