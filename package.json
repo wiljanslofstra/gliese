@@ -1,0 +1,14 @@
+{
+  "name": "Gliese",
+  "description": "Base",
+  "author": "Wiljan Slofstra <wiljanslofstra@gmail.com>",
+  "devDependencies": {
+    "gulp": "~3.8.7",
+    "gulp-uglify": "~0.3.1",
+    "gulp-concat": "~2.3.4",
+    "gulp-load-plugins": "~0.5.3",
+    "gulp-ruby-sass": "~0.7.1",
+    "gulp-rename": "~1.2.0",
+    "gulp-filesize": "0.0.6"
+  }
+}

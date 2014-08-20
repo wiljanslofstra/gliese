@@ -13,22 +13,12 @@
 		<link rel="apple-touch-icon-precomposed" href="img/apple-touch-icon.png">
 		<link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
 
-		<link rel="stylesheet" href="css/main.css">
+		<link rel="stylesheet" href="build/css/main.min.css">
 
 		<!--[if lte IE 8]>
-		 	<script src="js/vendor/respond/dest/respond.min.js"></script>
-			<script src="css/ie/html5shiv.js"></script>
+		 	<script src="build/js/vendor/respond/dest/respond.min.js"></script>
+			<script src="build/css/ie/html5shiv.js"></script>
 	  	<![endif]-->
 	</head>
 
 	<body>
-
-		<section class="container">
-			<h1 class="title init-animate">
-				Welcome to Gliese
-			</h1>
-		</section>
-
-		<script data-main="js/config" src="js/vendor/requirejs/require.js"></script>
-	</body>
-</html>

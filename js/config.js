@@ -18,7 +18,7 @@ requirejs.config({
     paths: {
         app: 'app',
         jquery: vendorDir + 'jquery/dist/jquery.min',
-        modernizr: vendorDir + 'modernizr/modernizr',
+        modernizr: vendorDir + 'modernizr',
         velocity: vendorDir + 'velocity/jquery.velocity',
         velocityUI: vendorDir + 'velocity/velocity.ui'
     },

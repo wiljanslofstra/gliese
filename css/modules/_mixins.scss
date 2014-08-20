@@ -11,11 +11,6 @@
     }
 }
 
-@mixin opacity($opacity) {
-    filter: alpha(opacity=($opacity * 100));
-    opacity: $opacity;
-}
-
 @mixin transform($params) {
     -webkit-transform: $params;
     -ms-transform: $params;

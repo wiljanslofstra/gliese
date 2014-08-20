@@ -8,3 +8,4 @@ js/vendor/respond
 js/vendor/velocity
 js/vendor/angular
 node_modules
+build
