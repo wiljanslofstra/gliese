@@ -5,6 +5,7 @@ Gliese is a development framework that uses
 - [SASS](http://sass-lang.com/)
 - [Bower](https://github.com/bower/bower) package manager
 - [Bootstrap](http://getbootstrap.com/) JS/SASS (Optional)
+- [Gulp](http://getbootstrap.com/) Build system (Optional)
 
 ## Prerequisites
 - [NPM](http://nodejs.org/)
@@ -14,11 +15,15 @@ Gliese is a development framework that uses
 
 ## Get Started
 ```
-npm install bower
+npm install
 gem install sass
 ```
 and to setup the project
 ```
 bower install
+gulp watch
+```
+or without gulp just run
+```
 sass --watch css/main.scss
 ```

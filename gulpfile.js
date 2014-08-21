@@ -1,7 +1,9 @@
 var gulp = require('gulp'),
 	gulpLoadPlugins = require('gulp-load-plugins'),
 	sass = require('gulp-ruby-sass'),
-    plugins = gulpLoadPlugins();
+    plugins = gulpLoadPlugins(),
+    gulpif = require('gulp-if');
+    //sprite = require('css-sprite').stream;
 
 gulp.task('js', function() {
 	gulp.src(['js/config.js'])
@@ -28,8 +30,30 @@ gulp.task('css', function() {
         .pipe(gulp.dest('build/css'));
 });
 
-gulp.task('default', ['css', 'js'], function () {
-   // Your default task
+gulp.task('imgmin', function() {
+	gulp.src('build/img/*.{jpg,png,gif}', {read: false})
+        .pipe(plugins.clean());
+
+	return gulp.src('img/**/*.{jpg,png,gif}')
+		.pipe(plugins.imagemin({
+			optimizationLevel: 3
+		}))
+		.pipe(gulp.dest('build/img'));
+});
+
+// gulp.task('sprites', function () {
+// 	return gulp.src('img/sprite-src/*.png')
+// 		.pipe(sprite({
+// 			name: 'sprite.png',
+// 			style: '_sprite.scss',
+// 			cssPath: '../img',
+// 			processor: 'scss'
+// 		}))
+// 	.pipe(gulpif('*.png', gulp.dest('build/img/'), gulp.dest('css/modules/')))
+// });
+
+gulp.task('default', function () {
+   gulp.run(['css', 'js']);
 });
 
 gulp.task('watch', ['css', 'js'], function() {

@@ -1,6 +1,4 @@
 .sass-cache
-css/.sass-cache
-css/main.css
 js/vendor/jquery
 js/vendor/modernizr
 js/vendor/requirejs
@@ -8,4 +6,6 @@ js/vendor/respond
 js/vendor/velocity
 js/vendor/angular
 node_modules
-build
+build/*
+_sprite.scss
+img/sprite-src

@@ -8,7 +8,7 @@ define(['jquery', 'velocityUI'], function ($) {
     'use strict';
 
     var init = function () {
-        var $headingEl = $('h1'),
+        var $headingEl = $('.animated-heading'),
             headingString = $headingEl.text(),
             spannedString = "",
             i;
@@ -23,9 +23,14 @@ define(['jquery', 'velocityUI'], function ($) {
             spannedString += "<div>" + tempString + "</div>";
         }
 
-        $headingEl.html(spannedString);
-        $headingEl.css('opacity', '1');
-        $headingEl.find('div').velocity("transition.slideUpIn", { stagger: 80, drag: true, display: "inline-block" });
+        $headingEl.html(spannedString)
+            .css('opacity', '1')
+            .find('div')
+                .velocity("transition.slideUpIn", { 
+                    stagger: 80, 
+                    drag: true, 
+                    display: "inline-block" 
+                });
     };
 
     /** Define public functions */

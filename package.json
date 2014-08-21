@@ -1,7 +1,11 @@
 {
   "name": "Gliese",
-  "description": "Base",
+  "description": "Front-end development framework using Sass, Bootstrap, Bower and Gulp.",
   "author": "Wiljan Slofstra <wiljanslofstra@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wiljanslofstra/Gliese.git"
+  },
   "devDependencies": {
     "gulp": "~3.8.7",
     "gulp-uglify": "~0.3.1",
@@ -9,6 +13,10 @@
     "gulp-load-plugins": "~0.5.3",
     "gulp-ruby-sass": "~0.7.1",
     "gulp-rename": "~1.2.0",
-    "gulp-filesize": "0.0.6"
+    "gulp-filesize": "0.0.6",
+    "gulp-imagemin": "~1.0.0",
+    "gulp-if": "~1.2.4",
+    "gulp-clean": "~0.3.1",
+    "bower": "~1.3.9"
   }
 }
