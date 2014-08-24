@@ -1,0 +1,39 @@
+$multiplier: 21;
+
+.container, [class^="col-"] {
+	min-height: 50px;
+	padding: 25px 0 0;
+	margin-top: 25px;
+	margin-bottom: 25px;
+	position: relative;
+}
+
+.container:after, [class^="col-"]:after {
+	content: attr(class);
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	background: #333;
+	color: #fff;
+	padding: .5em .75em;
+}
+
+.container {
+	border-top: 5px solid #dd8;
+}
+
+@for $i from 1 through 12 {
+	[class^="col-"]:nth-child(#{$i}) {
+		$color: 230 / $i;
+		background: rgba($color, $color, $color, 0.4);
+		border-left: 15px solid #dda;
+		border-right: 15px solid #dda;
+	}
+}
+
+@for $i from 1 through 5 {
+	h#{$i} {
+		background: rgb(255/$i, 20, 20);
+	}
+}

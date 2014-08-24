@@ -1,43 +1,42 @@
-/**
- * Config
- * @constructor
- */
-
 var inDevelopment = true,
     version = ((inDevelopment) ? (new Date()).getTime() : 1),
-    vendorDir = '../vendor/';
+    controllerEl = document.getElementById('wrapper'),
+    controller = (controllerEl === null) ? false : controllerEl.getAttribute('data-controller');
 
+var paths = {
+    vendor: 'vendor/',
+    modules: 'modules/',
+    bower: 'bower_components/',
+    controllers: 'controllers/'
+};
+
+// Require.js configuration
 requirejs.config({
-    /** Set the vendor folder as base path */
-    baseUrl: 'js/modules',
+    baseUrl: 'js',
+    urlArgs: 'v=' + version,
 
-    /** Prevent caching of scripts by appending the date */
-    urlArgs: "v=" + version,
-
-    /** Paths to scripts. Relative to the baseUrl */
     paths: {
-        app: 'app',
-        jquery: vendorDir + 'jquery/dist/jquery.min',
-        modernizr: vendorDir + 'modernizr',
-        velocity: vendorDir + 'velocity/jquery.velocity',
-        velocityUI: vendorDir + 'velocity/velocity.ui'
+        app: paths.modules + 'app',
+        jquery: paths.bower + 'jquery/dist/jquery.min',
+        modernizr: paths.vendor + 'modernizr',
+        velocity: paths.bower + 'velocity/jquery.velocity',
+        velocityUI: paths.bower + 'velocity/velocity.ui'
     },
 
-    /** Configuration for non-AMD scripts */
     shim: {
         'velocity': ['jquery'],
         'velocityUI': ['velocity']
     }
 });
 
-/** Beginning of the app, require base scripts and the App */
-require(['app', 'jquery', 'modernizr'], function (App) {
+// Load custom controller js
+if (controllerEl !== null) {
+    require([paths.controllers + controller]);
+    if (inDevelopment) { console.log('Controller: %s', controller); } 
+}
+
+// Load general app logic
+require(['app'], function (App) {
     'use strict';
-
-    if (inDevelopment) {
-        console.log('Warning: JS cache is disabled');
-    }
-
-    /** Call the init method on the App module */
     App.init();
 });

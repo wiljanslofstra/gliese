@@ -5,7 +5,7 @@ Gliese is a development framework that uses
 - [SASS](http://sass-lang.com/)
 - [Bower](https://github.com/bower/bower) package manager
 - [Bootstrap](http://getbootstrap.com/) JS/SASS (Optional)
-- [Gulp](http://getbootstrap.com/) Build system (Optional)
+- [Gulp](http://gulpjs.com/) Build system (Optional)
 
 ## Prerequisites
 - [NPM](http://nodejs.org/)
