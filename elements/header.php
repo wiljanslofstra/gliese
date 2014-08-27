@@ -13,11 +13,11 @@
 		<link rel="apple-touch-icon-precomposed" href="icons/apple-touch-icon.png">
 		<link rel="shortcut icon" href="icons/favicon.ico" type="image/x-icon" />
 
-		<link rel="stylesheet" href="build/css/main.min.css">
+		<link rel="stylesheet" href="css/main.min.css">
 
 		<!--[if lte IE 8]>
-		 	<script src="build/js/bower_components/respond/dest/respond.min.js"></script>
-			<script src="build/css/ie/html5shiv.js"></script>
+		 	<script src="js/bower_components/respond/dest/respond.min.js"></script>
+			<script src="css/ie/html5shiv.js"></script>
 	  	<![endif]-->
 	</head>
 

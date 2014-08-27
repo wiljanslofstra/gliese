@@ -1,6 +1,4 @@
 .sass-cache
 js/bower_components
 node_modules
-build/*
-_sprite.scss
-img/sprite-src
+gulpfile.js
