@@ -1,4 +1,3 @@
 .sass-cache
-js/bower_components
 node_modules
-gulpfile.js
+bootstrap.css

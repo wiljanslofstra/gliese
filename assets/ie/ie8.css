@@ -1,0 +1,7 @@
+.css3-element {
+	behavior: url(assets/ie/PIE.htc);
+}
+
+.background-size-element {
+	behavior: url(assets/ie/backgroundsize.min.htc);
+}
