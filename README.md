@@ -16,7 +16,7 @@ Gliese is a development framework that uses
 
 ## Get Started
 ```
-npm install -g bower
+npm install
 gem install sass
 ```
 and to setup the project

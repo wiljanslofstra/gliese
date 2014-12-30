@@ -61,7 +61,7 @@
 		<meta name="msapplication-TileImage" content="assets/icons/mstile-144x144.png">
 		<meta name="msapplication-config" content="assets/icons/browserconfig.xml">
 
-		<link rel="stylesheet" href="assets/css/main.css">
+		<link rel="stylesheet" href="assets/dist/css/main.css">
 
 		<script type="text/javascript">
 			var BASE = '/';
