@@ -1,6 +1,6 @@
 {
-  "name": "gliese",
-  "version": "0.8.0",
+  "name": "Gliese",
+  "version": "0.8.1",
   "authors": [
     "Wiljan Slofstra <wiljanslofstra@gmail.com>"
   ],
@@ -26,6 +26,11 @@
   ],
   "dependencies": {
     "respond": "~1.4.2",
-    "velocity": "~0.11.7"
+    "velocity": "~1.1.0",
+    "jquery-legacy": "jquery#1.11",
+    "jquery-modern": "jquery#2.1"
+  },
+  "devDependencies": {
+    
   }
 }

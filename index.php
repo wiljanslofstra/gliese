@@ -1,6 +1,6 @@
 <?php include('elements/header.php'); ?>
 	
-	<div class="wrapper" id="wrapper" data-controller="home">
+	<div class="wrapper" id="wrapper">
 	
 		<section class="container">
 			<h1 class="title init-animate animated-heading">
@@ -9,15 +9,6 @@
 		</section>
 
 		<div class="container">
-			<h2>Sass</h2>
-			<pre>
-sass --watch assets/css/main.scss
-			</pre>
-
-			<h3>Bourbon</h3>
-			<p>
-				For a list of available mixins in Bourbon visit the <a href="http://bourbon.io/docs/#complete-list" title="Bourbon documentation">documentation</a>.
-			</p>
 
 			<h2>Structure</h2>
 
@@ -33,15 +24,39 @@ sass --watch assets/css/main.scss
 					Assets
 					<ul>
 						<li>
-							CSS
+							src (Source files for css, js and images)
+
 							<ul>
-								<li>Core (General styles e.g. typography and forms)</li>
-								<li>Helpers (Variables, mixins and functions)</li>
-								<li>Layouts (Page layouts e.g. home)</li>
-								<li>Modules (e.g. header, slider and footer)</li>
-								<li>Vendor (Plugins -> Bootstrap &amp; Bourbon)</li>
+								<li>
+									CSS
+									<ul>
+										<li>Core (General styles e.g. typography and forms)</li>
+										<li>Helpers (Variables, mixins and functions)</li>
+										<li>Layouts (Page layouts e.g. home)</li>
+										<li>Modules (e.g. header, slider and footer)</li>
+										<li>Vendor (Plugins -> Bootstrap &amp; Bourbon)</li>
+									</ul>
+								</li>
+
+								<li>
+									JS
+									<ul>
+										<li>Bower_components (all Bower&lsquo;s installed scripts)</li>
+										<li>Modules (e.g. slider)</li>
+										<li>Vendor (plugins)</li>
+										<li>Views (e.g. home, about or contact)</li>
+										<li>App.js</li>
+									</ul>
+								</li>
+								<li>
+									Img
+								</li>
 							</ul>
 						</li>
+						<li>
+							dist (Js, css and images for production)
+						</li>
+						
 						<li>
 							Fonts
 						</li>
@@ -51,19 +66,8 @@ sass --watch assets/css/main.scss
 						<li>
 							IE
 						</li>
-						<li>
-							Img
-						</li>
-						<li>
-							JS
-							<ul>
-								<li>Bower_components (all Bower&lsquo;s installed scripts)</li>
-								<li>Modules (e.g. slider)</li>
-								<li>Vendor (plugins)</li>
-								<li>Views (e.g. home, about or contact)</li>
-								<li>App.js</li>
-							</ul>
-						</li>
+						
+						
 					</ul>
 				</li>
 			</ul>
