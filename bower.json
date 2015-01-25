@@ -1,6 +1,6 @@
 {
   "name": "Gliese",
-  "version": "0.8.1",
+  "version": "0.8.2",
   "authors": [
     "Wiljan Slofstra <wiljanslofstra@gmail.com>"
   ],
@@ -14,23 +14,18 @@
     "**/.*",
     "node_modules",
     "bower_components",
-    "css/main.css",
-    "js/vendor/jquery",
-    "js/vendor/modernizr",
-    "js/vendor/requirejs",
-    "js/vendor/respond",
-    "js/vendor/velocity",
     "build",
     "test",
     "tests"
   ],
   "dependencies": {
     "respond": "~1.4.2",
-    "velocity": "~1.1.0",
+    "velocity": "~1.2.1",
     "jquery-legacy": "jquery#1.11",
-    "jquery-modern": "jquery#2.1"
+    "slick-carousel": "~1.3.15",
+    "bootstrap-sass-official": "~3.3.3",
+    "matchMedia": "~0.2.0",
+    "console-polyfill": "~0.1.2"
   },
-  "devDependencies": {
-    
-  }
+  "devDependencies": {}
 }

@@ -1,0 +1,59 @@
+/**
+ * _Variables.scss
+ */
+
+/* Custom variables */
+$font-path: '../fonts/';
+$img-path: '../img/';
+
+$color-primary:			#bada55;
+$color-secondary:		#ff5820;
+
+$background:     		#fff;
+$color-text:			#555;
+
+$link-color:			$color-primary;
+$link-hover-color:		darken($link-color, 15%);
+
+$zindex-modal:			1000;
+$zindex-nav:			900;
+$zindex-tooltip:		800;
+$zindex-dropdown:		700;
+
+$zindex-600:			600;
+$zindex-500:			500;
+$zindex-400:			400;
+$zindex-300:			300;
+$zindex-200:			200;
+$zindex-100:			100;
+$zindex-min:			-1;
+
+$font-family-base:		'Helvetica Neue', Helvetica, Arial, sans-serif;
+$font-size-base:		16px;
+$font-size-h1:			floor(($font-size-base * 2.6)); // ~36px
+$font-size-h2:			floor(($font-size-base * 2.15)); // ~30px
+$font-size-h3:			ceil(($font-size-base * 1.7)); // ~24px
+$font-size-h4:			ceil(($font-size-base * 1.25)); // ~18px
+$font-size-h5:			$font-size-base;
+$font-size-h6:			ceil(($font-size-base * 0.85)); // ~12px
+$line-height-base:		1.4;
+$line-height:			($font-size-base * $line-height-base);
+
+$headings-font-family:	inherit;
+$headings-font-weight:	500;
+$headings-line-height:	1.1;
+$headings-color:		inherit;
+
+$grid-columns:   		12;
+$grid-gutter-width:		30px;
+
+$pesticide-debug:		false;
+
+// Bourbon overwrites
+$em-base:				$font-size-base;
+$prefix-for-webkit:    	true;
+$prefix-for-mozilla:   	true;
+$prefix-for-microsoft: 	true;
+$prefix-for-opera:     	true;
+$prefix-for-spec:      	true;
+

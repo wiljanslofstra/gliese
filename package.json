@@ -1,6 +1,6 @@
 {
   "name": "Gliese",
-  "version": "0.8.1",
+  "version": "0.8.2",
   "description": "",
   "main": "gulpfile.js",
   "scripts": {
@@ -22,7 +22,6 @@
   },
   "homepage": "https://github.com/wiljanslofstra/Gliese",
   "devDependencies": {
-    "del": "^1.1.1",
     "gulp": "^3.8.10",
     "gulp-autoprefixer": "^2.0.0",
     "gulp-cache": "^0.2.4",

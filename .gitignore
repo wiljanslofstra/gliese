@@ -1,5 +1,8 @@
 .sass-cache
 node_modules
-bootstrap.css
-assets/dist/
+assets/js/bower_components
 config.codekit
+main.css
+main.min.css
+*.sublime-project
+*.sublime-workspace

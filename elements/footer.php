@@ -1,25 +1,12 @@
 
-		<script src="assets/dist/js/vendor/require.min.js" type="text/javascript"></script>
-		<script type="text/javascript">
-			var ENV = 'development',
-				PAGE = 'home';
+		</div>
 
-			requirejs.config({
-				baseUrl: 'assets/dist/js/',
-				urlArgs: "v=1",
+		<script src="assets/js/vendor/plugins.js" type="text/javascript"></script>
+		<script src="assets/js/core.js" type="text/javascript"></script>
 
-				paths: {
-					'plugins': 'plugins'
-				},
-
-				shim: {
-					'app': ['plugins']
-				}
-			});
-
-			require(['app'], function (App) {
-				App.init(); 
-			});
-		</script>
+		<?php foreach($LOAD_JS as $js) : ?>
+			<script src="assets/js/<?= $js; ?>" type="text/javascript"></script>
+		<?php endforeach; ?>
+		
 	</body>
 </html>

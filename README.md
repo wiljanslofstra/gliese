@@ -14,16 +14,5 @@ Gliese is a development framework that uses
 - Ruby (with RVM)
 - [RubyGems](http://rubygems.org/pages/download) if ```gem``` is not already working.
 
-## Get Started
-```
-npm install
-gem install sass
-```
-and to setup the project
-```
-bower install
-sass --watch assets/css/main.scss
-```
-
 ## Bourbon
 For a list of available mixins visit the [documentation](http://bourbon.io/docs/#complete-list).

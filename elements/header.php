@@ -1,9 +1,12 @@
 <?php
+	$base_url = "http://localhost:2000/Gliese/";
+	$env = (strpos($base_url, 'localhost') || strpos($base_url, 'beeldbelovend')) ? 'development' : 'production';
+
 	$meta_title = 'Gliese';
 	$meta_desc = 'Front-end starter kit';
 	$meta_creator = 'Wiljan Slofstra';
 	$meta_sitename = 'Gliese';
-	$meta_img = 'assets/icons/apple-touch-icon.png';
+	$meta_img = $base_url . 'assets/icons/apple-touch-icon.png';
 	$meta_url = '/';
 	$meta_twitter = '@wiljanslofstra';
 ?>
@@ -42,39 +45,40 @@
 		<meta itemprop="description" content="<?= $meta_desc; ?>">
 		<meta itemprop="image" content="<?= $meta_img; ?>">
 
-		<link rel="shortcut icon" href="assets/icons/favicon.ico">
-		<link rel="apple-touch-icon" sizes="57x57" href="assets/icons/apple-touch-icon-57x57.png">
-		<link rel="apple-touch-icon" sizes="114x114" href="assets/icons/apple-touch-icon-114x114.png">
-		<link rel="apple-touch-icon" sizes="72x72" href="assets/icons/apple-touch-icon-72x72.png">
-		<link rel="apple-touch-icon" sizes="144x144" href="assets/icons/apple-touch-icon-144x144.png">
-		<link rel="apple-touch-icon" sizes="60x60" href="assets/icons/apple-touch-icon-60x60.png">
-		<link rel="apple-touch-icon" sizes="120x120" href="assets/icons/apple-touch-icon-120x120.png">
-		<link rel="apple-touch-icon" sizes="76x76" href="assets/icons/apple-touch-icon-76x76.png">
-		<link rel="apple-touch-icon" sizes="152x152" href="assets/icons/apple-touch-icon-152x152.png">
-		<link rel="apple-touch-icon" sizes="180x180" href="assets/icons/apple-touch-icon-180x180.png">
-		<link rel="icon" type="image/png" href="assets/icons/favicon-192x192.png" sizes="192x192">
-		<link rel="icon" type="image/png" href="assets/icons/favicon-160x160.png" sizes="160x160">
-		<link rel="icon" type="image/png" href="assets/icons/favicon-96x96.png" sizes="96x96">
-		<link rel="icon" type="image/png" href="assets/icons/favicon-16x16.png" sizes="16x16">
-		<link rel="icon" type="image/png" href="assets/icons/favicon-32x32.png" sizes="32x32">
+		<link rel="shortcut icon" href="<?= $base_url; ?>assets/icons/favicon.ico">
+		<link rel="apple-touch-icon" sizes="57x57" href="<?= $base_url; ?>assets/icons/apple-touch-icon-57x57.png">
+		<link rel="apple-touch-icon" sizes="114x114" href="<?= $base_url; ?>assets/icons/apple-touch-icon-114x114.png">
+		<link rel="apple-touch-icon" sizes="72x72" href="<?= $base_url; ?>assets/icons/apple-touch-icon-72x72.png">
+		<link rel="apple-touch-icon" sizes="144x144" href="<?= $base_url; ?>assets/icons/apple-touch-icon-144x144.png">
+		<link rel="apple-touch-icon" sizes="60x60" href="<?= $base_url; ?>assets/icons/apple-touch-icon-60x60.png">
+		<link rel="apple-touch-icon" sizes="120x120" href="<?= $base_url; ?>assets/icons/apple-touch-icon-120x120.png">
+		<link rel="apple-touch-icon" sizes="76x76" href="<?= $base_url; ?>assets/icons/apple-touch-icon-76x76.png">
+		<link rel="apple-touch-icon" sizes="152x152" href="<?= $base_url; ?>assets/icons/apple-touch-icon-152x152.png">
+		<link rel="apple-touch-icon" sizes="180x180" href="<?= $base_url; ?>assets/icons/apple-touch-icon-180x180.png">
+		<link rel="icon" type="image/png" href="<?= $base_url; ?>assets/icons/favicon-192x192.png" sizes="192x192">
+		<link rel="icon" type="image/png" href="<?= $base_url; ?>assets/icons/favicon-160x160.png" sizes="160x160">
+		<link rel="icon" type="image/png" href="<?= $base_url; ?>assets/icons/favicon-96x96.png" sizes="96x96">
+		<link rel="icon" type="image/png" href="<?= $base_url; ?>assets/icons/favicon-16x16.png" sizes="16x16">
+		<link rel="icon" type="image/png" href="<?= $base_url; ?>assets/icons/favicon-32x32.png" sizes="32x32">
 		<meta name="msapplication-TileColor" content="#ffffff">
-		<meta name="msapplication-TileImage" content="assets/icons/mstile-144x144.png">
-		<meta name="msapplication-config" content="assets/icons/browserconfig.xml">
+		<meta name="msapplication-TileImage" content="<?= $base_url; ?>assets/icons/mstile-144x144.png">
+		<meta name="msapplication-config" content="<?= $base_url; ?>assets/icons/browserconfig.xml">
 
-		<link rel="stylesheet" href="assets/dist/css/main.css">
+		<link rel="stylesheet" href="<?= $base_url; ?>assets/css/main.css">
 
 		<script type="text/javascript">
-			var BASE = '/';
+			document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + 'js';
+
+			var BASE = "<?= $base_url; ?>";
+			var ENV = "<?= $env; ?>";
 		</script>
 
-		<!--[if IE 9]>
-			<link rel="stylesheet" href="assets/ie/ie9.css">
-		<![endif]-->
 		<!--[if lte IE 8]>
-		 	<link rel="stylesheet" href="assets/ie/ie8.css">
-		 	<script src="assets/js/bower_components/respond/dest/respond.min.js"></script>
-			<script src="assets/ie/html5shiv.js"></script>
+		 	<script src="<?= $base_url; ?>assets/js/bower_components/respond/dest/respond.min.js"></script>
+			<script src="<?= $base_url; ?>assets/ie/html5shiv.js"></script>
 	  	<![endif]-->
 	</head>
 
 	<body>
+
+		<div class="wrapper" id="wrapper">
