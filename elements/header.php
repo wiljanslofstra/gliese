@@ -1,6 +1,6 @@
 <?php
 	$base_url = "http://localhost:2000/Gliese/";
-	$env = (strpos($base_url, 'localhost') || strpos($base_url, 'beeldbelovend')) ? 'development' : 'production';
+	$base_path = "/Gliese/";
 
 	$meta_title = 'Gliese';
 	$meta_desc = 'Front-end starter kit';
@@ -69,8 +69,8 @@
 		<script type="text/javascript">
 			document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + 'js';
 
-			var BASE = "<?= $base_url; ?>";
-			var ENV = "<?= $env; ?>";
+			var BASE = "<?= $base_path; ?>";
+			var BASE_URL = "<?= $base_url; ?>";
 		</script>
 
 		<!--[if lte IE 8]>

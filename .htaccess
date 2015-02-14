@@ -55,25 +55,6 @@
     </FilesMatch>
 </IfModule>
 
-# ----------------------------------------------------------------------
-# | Cross-origin resource timing                                       |
-# ----------------------------------------------------------------------
-
-# Allow cross-origin access to the timing information for all resources.
-#
-# If a resource isn't served with a `Timing-Allow-Origin` header that
-# would allow its timing information to be shared with the document,
-# some of the attributes of the `PerformanceResourceTiming` object will
-# be set to zero.
-#
-# http://www.w3.org/TR/resource-timing/
-# http://www.stevesouders.com/blog/2014/08/21/resource-timing-practical-tips/
-
-# <IfModule mod_headers.c>
-#     Header set Timing-Allow-Origin: "*"
-# </IfModule>
-
-
 # ######################################################################
 # # ERRORS                                                             #
 # ######################################################################
@@ -92,10 +73,6 @@
 # ----------------------------------------------------------------------
 
 # Disable the pattern matching based on filenames.
-#
-# This setting prevents Apache from returning a 404 error as the result
-# of a rewrite when the directory with the same name does not exist.
-#
 # https://httpd.apache.org/docs/current/content-negotiation.html#multiviews
 
 Options -MultiViews
@@ -132,20 +109,6 @@ Options -MultiViews
     </FilesMatch>
 </IfModule>
 
-# ----------------------------------------------------------------------
-# | Iframes cookies                                                    |
-# ----------------------------------------------------------------------
-
-# Allow cookies to be set from iframes in Internet Explorer.
-#
-# http://msdn.microsoft.com/en-us/library/ms537343.aspx
-# http://www.w3.org/TR/2000/CR-P3P-20001215/
-
-# <IfModule mod_headers.c>
-#     Header set P3P "policyref=\"/w3c/p3p.xml\", CP=\"IDC DSP COR ADM DEVi TAIi PSA PSD IVAi IVDi CONi HIS OUR IND CNT\""
-# </IfModule>
-
-
 # ######################################################################
 # # MEDIA TYPES AND CHARACTER ENCODINGS                                #
 # ######################################################################
@@ -179,37 +142,6 @@ Options -MultiViews
 
   # Manifest files
 
-    # If you are providing a web application manifest file (see
-    # the specification: https://w3c.github.io/manifest/), it is
-    # recommended that you serve it with the `application/manifest+json`
-    # media type.
-    #
-    # Because the web application manifest file doesn't have its
-    # own unique file extension, you can set its media type either
-    # by matching:
-    #
-    # 1) the exact location of the file (this can be done using a
-    #    directive such as `<Location>`, but it will NOT work in
-    #    the `.htaccess` file, so you will have to do it in the main
-    #    server configuration file or inside of a `<VirtualHost>`
-    #    container)
-    #
-    #    e.g.:
-    #
-    #       <Location "/.well-known/manifest.json">
-    #           AddType application/manifest+json               json
-    #       </Location>
-    #
-    # 2) the filename (this can be problematic as you will need to
-    #    ensure that you don't have any other file with the same name
-    #    as the one you gave to your web application manifest file)
-    #
-    #    e.g.:
-    #
-    #       <Files "manifest.json">
-    #           AddType application/manifest+json               json
-    #       </Files>
-
     AddType application/x-web-app-manifest+json         webapp
     AddType text/cache-manifest                         appcache manifest
 
@@ -225,11 +157,6 @@ Options -MultiViews
     AddType video/ogg                                   ogv
     AddType video/webm                                  webm
     AddType video/x-flv                                 flv
-
-    # Serving `.ico` image files with a different media type
-    # prevents Internet Explorer from displaying then as images:
-    # https://github.com/h5bp/html5-boilerplate/commit/37b5fec090d00f38de64b591bcddcb205aadf8ee
-
     AddType image/x-icon                                cur ico
 
 
@@ -238,14 +165,6 @@ Options -MultiViews
     AddType application/font-woff                       woff
     AddType application/font-woff2                      woff2
     AddType application/vnd.ms-fontobject               eot
-
-    # Browsers usually ignore the font media types and simply sniff
-    # the bytes to figure out the font type.
-    # https://mimesniff.spec.whatwg.org/#matching-a-font-type-pattern
-    #
-    # However, Blink and WebKit based browsers will show a warning
-    # in the console if the following font types are served with any
-    # other media types.
 
     AddType application/x-font-ttf                      ttc ttf
     AddType font/opentype                               otf

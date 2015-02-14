@@ -24,11 +24,6 @@
     }
 }
 
-@mixin opacity($opacity) {
-    filter: alpha(opacity=($opacity * 100));
-    opacity: $opacity;
-}
-
 @mixin arrow($position: bottom, $colour: #fff, $size: 10px) {
     position: relative;
 

@@ -1,5 +1,6 @@
 /*!
  * <Site name>
+ * @author Wiljan Slofstra <wiljanslofstra@gmail.com>
  */
 
 @import "core/variables";
@@ -8,7 +9,7 @@
 
 // Vendor
 @import "vendor/bootstrap";
-@import "vendor/bourbon/bourbon";
+@import "../bower_components/bourbon/app/assets/stylesheets/bourbon";
 @import "vendor/pesticide";
 
 // Core

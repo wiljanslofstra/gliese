@@ -1,12 +1,7 @@
 
 		</div>
 
-		<script src="assets/js/vendor/plugins.js" type="text/javascript"></script>
-		<script src="assets/js/core.js" type="text/javascript"></script>
-
-		<?php foreach($LOAD_JS as $js) : ?>
-			<script src="assets/js/<?= $js; ?>" type="text/javascript"></script>
-		<?php endforeach; ?>
+		<script async src="assets/bower_components/requirejs/require.js" data-main="assets/js/core" type="text/javascript"></script>
 		
 	</body>
 </html>

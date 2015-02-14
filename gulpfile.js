@@ -1,91 +1,192 @@
+/*jslint node: true */
+/*global require */
 
 'use strict';
 
-/* jshint node: true */
+var HOST = 'localhost:2000/Gliese/';
+var CSS_PATH = './assets/css/';
+var JS = './assets/js/';
+var IMG = './assets/img/';
 
-var gulp = require('gulp'),
-    sass = require('gulp-ruby-sass'),
-    autoprefixer = require('gulp-autoprefixer'),
-    minifycss = require('gulp-minify-css'),
-    jshint = require('gulp-jshint'),
-    uglify = require('gulp-uglify'),
-    imagemin = require('gulp-imagemin'),
-    rename = require('gulp-rename'),
-    concat = require('gulp-concat'),
-    notify = require('gulp-notify'),
-    cache = require('gulp-cache'),
-    rename = require('gulp-rename'),
-    livereload = require('gulp-livereload');
+var gulp = require('gulp');
+var gutil = require('gulp-util');
+//var del = require('del');
+//var uglify = require('gulp-uglify');
+var gulpif = require('gulp-if');
+var exec = require('child_process').exec;
+var notify = require('gulp-notify');
+var argv = require('yargs').argv;
 
-var paths = {
-    css: 'assets/css',
-    js: 'assets/js',
-    jsVendor: 'assets/js/vendor',
-    bower: 'assets/js/bower_components',
-    img: 'assets/img'
+// sass
+var sass = require('gulp-sass');
+var postcss = require('gulp-postcss');
+var autoprefixer = require('autoprefixer-core');
+var sourcemaps = require('gulp-sourcemaps');
+
+// BrowserSync
+var browserSync = require('browser-sync');
+
+// image optimization
+var imagemin = require('gulp-imagemin');
+
+// linting
+var jshint = require('gulp-jshint');
+var stylish = require('jshint-stylish');
+
+// testing/mocha
+var mocha = require('gulp-mocha');
+
+// gulp build --production
+var production = !!argv.production;
+
+// determine if we're doing a build
+// and if so, bypass the livereload
+//var build = argv._.length ? argv._[0] === 'build' : false;
+//var watch = argv._.length ? argv._[0] === 'watch' : true;
+
+// ----------------------------
+// Error notification methods
+// ----------------------------
+var beep = function() {
+  var os = require('os');
+  var file = 'gulp/error.wav';
+  if (os.platform() === 'linux') {
+	// linux
+	exec("aplay " + file);
+  } else {
+	// mac
+	console.log("afplay " + file);
+	exec("afplay " + file);
+  }
 };
 
-gulp.task('styles', function() {
-    return gulp.src(paths.css + '/*.scss')
-        .pipe(sass({ style: 'nested' }))
-            .on('error', function (err) { console.log(err.message ); })
-        .pipe(autoprefixer('last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4'))
-        .pipe(gulp.dest(paths.css))
-        .pipe(rename({suffix: '.min'}))
-        .pipe(minifycss())
-        .pipe(gulp.dest(paths.css))
-        .pipe(notify({ message: 'Styles task complete' }));
+var handleError = function(task) {
+  return function(err) {
+	beep();
+	
+	  notify.onError({
+		message: task + ' failed, check the logs..',
+		sound: false
+	  })(err);
+	
+	gutil.log(gutil.colors.bgRed(task + ' error:'), gutil.colors.red(err));
+  };
+};
+
+// --------------------------
+// CUSTOM TASK METHODS
+// --------------------------
+var tasks = {
+  // --------------------------
+  // SASS (libsass)
+  // --------------------------
+  sass: function() {
+	return gulp.src(CSS_PATH + '*.scss')
+	  // sourcemaps + sass + error handling
+	  .pipe(gulpif(!production, sourcemaps.init()))
+	  .pipe(sass({
+		sourceComments: !production,
+		outputStyle: production ? 'compressed' : 'nested'
+	  }))
+	  .on('error', handleError('SASS'))
+	  // generate .maps
+	  .pipe(gulpif(!production, sourcemaps.write({
+		'includeContent': false,
+		'sourceRoot': '.'
+	  })))
+	  // autoprefixer
+	  .pipe(gulpif(!production, sourcemaps.init({
+		'loadMaps': true
+	  })))
+	  .pipe(postcss([autoprefixer({browsers: ['last 2 versions']})]))
+	  // we don't serve the source files
+	  // so include scss content inside the sourcemaps
+	  .pipe(sourcemaps.write({
+		'includeContent': true
+	  }))
+	  // write sourcemaps to a specific directory
+	  // give it a file and save
+	  .pipe(gulp.dest(CSS_PATH));
+  },
+  // --------------------------
+  // linting
+  // --------------------------
+  lintjs: function() {
+	return gulp.src([
+		'gulpfile.js',
+		JS + 'app.js',
+		JS + 'core.js',
+		JS + 'modules/*.js',
+		JS + 'views/*.js',
+	  ]).pipe(jshint())
+	  .pipe(jshint.reporter(stylish))
+	  .on('error', function() {
+		beep();
+	  });
+  },
+  // --------------------------
+  // Optimize asset images
+  // --------------------------
+  optimize: function() {
+	return gulp.src(IMG + '**/*.{gif,jpg,png,svg}')
+	  .pipe(imagemin({
+		progressive: true,
+		svgoPlugins: [{removeViewBox: false}],
+		// png optimization
+		optimizationLevel: production ? 3 : 1
+	  }))
+	  .pipe(gulp.dest(IMG + 'dist/'));
+  },
+  // --------------------------
+  // Testing with mocha
+  // --------------------------
+  test: function() {
+	return gulp.src('./client/**/*test.js', {read: false})
+	  .pipe(mocha({
+		'ui': 'bdd',
+		'reporter': 'spec'
+	  })
+	);
+  },
+};
+
+gulp.task('browser-sync', function() {
+	browserSync({
+		proxy: HOST
+	});
 });
 
-gulp.task('scripts', function() {
-    // concat plugins
-    return gulp.src([
-            paths.bower + '/jquery-legacy/dist/jquery.js',
-            paths.bower + '/velocity/velocity.js',
-            paths.bower + '/velocity/velocity.ui.js',
-            paths.bower + '/slick-carousel/slick/slick.js',
-            paths.bower + '/matchMedia/matchMedia.js',
-            paths.bower + '/console-polyfill/index.js'
-        ])
-        .pipe(concat('plugins.js'))
-        .pipe(gulp.dest(paths.jsVendor))
-        .pipe(rename({suffix: '.min'}))
-        .pipe(uglify())
-        .pipe(gulp.dest(paths.jsVendor));
+gulp.task('reload-sass', ['sass'], function(){
+  browserSync.reload();
 });
 
-gulp.task('scripts_hint', function() {
-    return gulp.src([
-            paths.js + '/modules/**/*.js',
-            paths.js + '/views/**/*.js',
-            paths.js + '/app.js',
-            './gulpfile.js'
-        ])
-        .pipe(jshint('.jshintrc'))
-        .pipe(jshint.reporter('jshint-stylish'));
+gulp.task('reload-js', function(){
+  browserSync.reload();
 });
 
-gulp.task('images', function() {
-    return gulp.src([paths.img + '/**/*', '!' + paths.img + '/dist'])
-        .pipe(cache(imagemin({ optimizationLevel: 3, progressive: true, interlaced: true })))
-        .pipe(gulp.dest(paths.img + '/dist'))
-        .pipe(notify({ message: 'Images task complete' }));
+// --------------------------
+// CUSTOMS TASKS
+// --------------------------
+gulp.task('sass', tasks.sass);
+gulp.task('lint:js', tasks.lintjs);
+gulp.task('optimize', tasks.optimize);
+gulp.task('test', tasks.test);
+
+// --------------------------
+// DEV/WATCH TASK
+// --------------------------
+gulp.task('watch', ['sass', 'browser-sync'], function() {
+
+  gulp.watch(CSS_PATH + '**/*.scss', ['reload-sass']);
+  gulp.watch(JS + '**/*.js', ['lint:js', 'reload-js']);
+
+  gutil.log(gutil.colors.bgGreen('Watching for changes...'));
+
 });
 
-gulp.task('default', function() {
-    gulp.start('styles', 'scripts', 'images');
-});
+// build task
+gulp.task('build', [
+  'sass'
+]);
 
-gulp.task('watch', function() {
-    gulp.watch(paths.css + '/**/*.scss', ['styles']);
-    gulp.watch(paths.js + '/**/*.js', ['scripts_hint']);
-    gulp.watch(paths.img + '/**/*', ['images']);
-
-    livereload.listen();
-
-    gulp.watch([
-        paths.css + '*.css',
-        paths.js + '**/*.js',
-        '*.php'
-    ]).on('change', livereload.changed);
-});
+gulp.task('default', ['watch']);
