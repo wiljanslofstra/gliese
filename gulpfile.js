@@ -24,7 +24,8 @@ var autoprefixer = require('autoprefixer-core');
 var sourcemaps = require('gulp-sourcemaps');
 
 // BrowserSync
-var browserSync = require('browser-sync');
+//var browserSync = require('browser-sync');
+var livereload = require('gulp-livereload');
 
 // image optimization
 var imagemin = require('gulp-imagemin');
@@ -151,17 +152,15 @@ var tasks = {
 };
 
 gulp.task('browser-sync', function() {
-	browserSync({
-		proxy: HOST
-	});
+	livereload.listen();
 });
 
 gulp.task('reload-sass', ['sass'], function(){
-  browserSync.reload();
+  livereload.changed();
 });
 
 gulp.task('reload-js', function(){
-  browserSync.reload();
+  livereload.changed();
 });
 
 // --------------------------
@@ -177,8 +176,14 @@ gulp.task('test', tasks.test);
 // --------------------------
 gulp.task('watch', ['sass', 'browser-sync'], function() {
 
-  gulp.watch(CSS_PATH + '**/*.scss', ['reload-sass']);
-  gulp.watch(JS + '**/*.js', ['lint:js', 'reload-js']);
+  gulp.watch(CSS_PATH + '**/*.scss', ['sass']);
+  gulp.watch(JS + '**/*.js', ['lint:js']);
+
+  gulp.watch([
+  	CSS_PATH + '**/*.css',
+  	JS + '**/*.js',
+  	'./**/*.php'
+  ]).on('change', livereload.changed);
 
   gutil.log(gutil.colors.bgGreen('Watching for changes...'));
 
