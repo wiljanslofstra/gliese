@@ -3,27 +3,27 @@
 'use strict';
 
 var paths = {
-	css: 'assets/css/',
-	js: 'assets/js/',
-	jsTests: 'assets/js/tests/',
-	img: 'assets/img',
-	testUrl: 'http://www.wiljanslofstra.com/'
+    css: 'assets/css/',
+    js: 'assets/js/',
+    jsTests: 'assets/js/tests/',
+    img: 'assets/img',
+    testUrl: 'http://www.wiljanslofstra.com/'
 };
 
 var gulp = require('gulp'),
-	$ = require('gulp-load-plugins')(),
-	argv = require('yargs').argv,
+    $ = require('gulp-load-plugins')(),
+    argv = require('yargs').argv,
 
-	autoprefixer = require('autoprefixer-core'),
-	stylish = require('jshint-stylish'),
+    autoprefixer = require('autoprefixer-core'),
+    stylish = require('jshint-stylish'),
 
-	production = !!argv.production,
+    production = !!argv.production,
 
-	WebPageTest = require('webpagetest'),
+    WebPageTest = require('webpagetest'),
 
-	a11y = require('a11y'),
-	logSymbols = require('log-symbols'),
-	psi = require('psi');
+    a11y = require('a11y'),
+    logSymbols = require('log-symbols'),
+    psi = require('psi');
 
 // --------------------------
 // CUSTOM TASK METHODS
@@ -117,54 +117,54 @@ var tasks = {
     // WebPageTest
     // --------------------------
     wpt: function () {
-    	var wpt = new WebPageTest('www.webpagetest.org', '<API_KEY>');
+        var wpt = new WebPageTest('www.webpagetest.org', '<API_KEY>');
 
-    	wpt.runTest(paths.testUrl, {
-    		location: 'Amsterdam:Chrome'
-    	}, function(err, data) {
-			console.log(err || data);
-		});
+        wpt.runTest(paths.testUrl, {
+            location: 'Amsterdam:Chrome'
+        }, function(err, data) {
+            console.log(err || data);
+        });
     },
 
     // --------------------------
     // A11Y Accessibility
     // --------------------------
     accessibility: function () {
-    	var passes = '';
-    	var failures = '';
+        var passes = '';
+        var failures = '';
 
-    	return a11y(paths.testUrl, function (err, reports) {
-    		if (err) {
-    			console.log(err);
-    		} else {
-    			reports.audit.forEach(function (el) {
-			        if (el.result === 'PASS') {
-			            passes += logSymbols.success + ' ' + el.heading + '\n';
-			        }
+        return a11y(paths.testUrl, function (err, reports) {
+            if (err) {
+                console.log(err);
+            } else {
+                reports.audit.forEach(function (el) {
+                    if (el.result === 'PASS') {
+                        passes += logSymbols.success + ' ' + el.heading + '\n';
+                    }
 
-			        if (el.result === 'FAIL') {
-			            failures += logSymbols.error + ' ' + el.heading + '\n';
-			            failures += el.elements + '\n\n';
-			        }
-			    });
+                    if (el.result === 'FAIL') {
+                        failures += logSymbols.error + ' ' + el.heading + '\n';
+                        failures += el.elements + '\n\n';
+                    }
+                });
 
-			    console.log(passes);
-			    console.log(failures);
-    		}
-    	});
+                console.log(passes);
+                console.log(failures);
+            }
+        });
     },
 
     // --------------------------
     // PageSpeed Insights
     // --------------------------
     psi: function() {
-    	psi.output(paths.testUrl, {
-    		strategy: 'mobile',
-    		threshold: 80,
-    		//key: ''
-    	}, function (err) {
-			console.log(err || 'done');
-		});
+        psi.output(paths.testUrl, {
+            strategy: 'mobile',
+            threshold: 80,
+            //key: ''
+        }, function (err) {
+            console.log(err || 'done');
+        });
     }
 };
 
