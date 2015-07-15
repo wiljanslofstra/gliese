@@ -1,7 +1,8 @@
+      <footer class="footer">
 
+      </footer>
 		</div>
 
-		<script async src="assets/bower_components/requirejs/require.js" data-main="assets/js/core" type="text/javascript"></script>
-		
+		<script async src="<?= $ASSET_PATH; ?>javascript/build/bundle.js" type="text/javascript"></script>
 	</body>
 </html>

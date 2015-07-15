@@ -1,18 +1,12 @@
 # Gliese
 
-## What is Gliese?
-Gliese is a development framework that uses
-- [SASS](http://sass-lang.com/)
-- [Bower](https://github.com/bower/bower) package manager
-- [Bootstrap](http://getbootstrap.com/)
-- [Bourbon](http://bourbon.io/)
+## Mixins
+```
+font-size($fs-map, $fs-breakpoints: $breakpoints)
+burger($width: 30px, $height: 5px, $gutter: 3px, $color: #000, $border-radius: 0, $transition-duration: .3s)
+burger-to-cross()
+add-icon($icon, $position: "before", $replace: false)
+breakpoint($name)
+center-h()
 
-## Prerequisites
-- [NPM](http://nodejs.org/)
-- [Bower](http://www.bower.io/)
-- [RVM](http://www.rvm.io/)
-- Ruby (with RVM)
-- [RubyGems](http://rubygems.org/pages/download) if ```gem``` is not already working.
-
-## Bourbon
-For a list of available mixins visit the [documentation](http://bourbon.io/docs/#complete-list).
+```

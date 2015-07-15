@@ -1,0 +1,43 @@
+/**
+ * _Variables.scss
+ */
+
+/* Custom variables */
+$img-path: '../img/';
+
+$zindex-modal:          1000;
+$zindex-nav:            900;
+$zindex-tooltip:        800;
+$zindex-dropdown:       700;
+
+$zindex-600:            600;
+$zindex-500:            500;
+$zindex-400:            400;
+$zindex-300:            300;
+$zindex-200:            200;
+$zindex-100:            100;
+$zindex-min:            -1;
+
+$pesticide-debug:       false;
+
+// Bourbon overwrites
+$em-base:               $font-size-base;
+$prefix-for-webkit:     true;
+$prefix-for-mozilla:    true;
+$prefix-for-microsoft:  true;
+$prefix-for-opera:      true;
+$prefix-for-spec:       true;
+
+$default-box-sizing: border-box;
+$default-cursor: default;
+$default-disabled-color: rgba(0,0,0,.6);
+$default-font-family: $font-family-base;
+$default-input-background: transparent;
+$default-line-height: $line-height-base;
+$default-monospace-font-family: $font-family-monospace;
+$default-nav-list-style: none;
+$default-selection-background-color: $color-primary;
+$default-small-font-size: 75%;
+$default-text-rendering: optimizeLegibility;
+$default-textarea-resize: vertical;
+$default-vertical-align: top;
