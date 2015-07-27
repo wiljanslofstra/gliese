@@ -1,11 +1,9 @@
+<?php include(__DIR__ . '/../system/config.php'); ?>
 <?php
-	$BASE_PATH = '/Gliese-new/';
-  $ASSET_PATH = $BASE_PATH . 'assets/';
-
 	$meta_title = 'Gliese';
 	$meta_desc = 'Front-end starter kit';
 	$meta_sitename = 'Gliese';
-	$meta_img = $ASSET_PATH . 'icons/apple-touch-icon.png';
+	$meta_img = ASSET_PATH . '/icons/apple-touch-icon.png';
 	$meta_url = '/';
 	$meta_twitter = '@wiljanslofstra';
 ?>
@@ -42,17 +40,17 @@
     <script type="text/javascript">
     	document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + 'js';
 
-    	var BASE = "<?= $BASE_PATH; ?>";
+    	var BASE = "<?= BASE_PATH; ?>";
     </script>
 
-    <link rel="stylesheet" href="<?= $ASSET_PATH; ?>css/global.css">
+    <link rel="stylesheet" href="<?= ASSET_BUILD_PATH; ?>/css/global.css">
 
     <!--[if IE 9]>
-      <script src="<?= $ASSET_PATH; ?>polyfill/ie9.js"></script>
+      <script src="<?= ASSET_PATH; ?>/polyfill/ie9.js"></script>
     <![endif]-->
     <!--[if lte IE 8]>
-     	<script src="<?= $ASSET_PATH; ?>polyfill/ie8.js"></script>
-      <script src="<?= $ASSET_PATH; ?>polyfill/respond.min.js"></script>
+     	<script src="<?= ASSET_PATH; ?>/polyfill/ie8.js"></script>
+      <script src="<?= ASSET_PATH; ?>/polyfill/respond.min.js"></script>
     <![endif]-->
 	</head>
 

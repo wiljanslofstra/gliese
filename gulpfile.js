@@ -23,7 +23,7 @@ var config = {
   },
   sass: {
     src: assets + "/sass/**/*.{sass,scss}",
-    dest: assets + '/css',
+    dest: assets + '/build/css',
   }
 };
 

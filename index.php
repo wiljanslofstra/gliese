@@ -1,5 +1,5 @@
-<?php include('elements/header.php'); ?>
+<?php include('templates/header.php'); ?>
   
   <h1>Gliese</h1>
 
-<?php include('elements/footer.php'); ?>
+<?php include('templates/footer.php'); ?>
