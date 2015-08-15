@@ -43,7 +43,7 @@
     	var BASE = "<?= BASE_PATH; ?>";
     </script>
 
-    <link rel="stylesheet" href="<?= ASSET_BUILD_PATH; ?>/css/global.css">
+    <link rel="stylesheet" href="<?= ASSET_BUILD_PATH; ?>/css/main.css">
 
     <!--[if IE 9]>
       <script src="<?= ASSET_PATH; ?>/polyfill/ie9.js"></script>

@@ -1,0 +1,43 @@
+$button-height: 36px;
+$button-line-height: $line-height-base;
+$button-font-size: $font-size-base;
+$button-v-padding: ($button-height - ($button-font-size * $button-line-height)) / 2;
+$button-h-padding: 10px;
+
+$button-primary-bg: $color-primary;
+$button-primary-color: #fff;
+$button-primary-border-radius: 3px;
+
+.button {
+  appearance: none;
+  border: 0;
+  cursor: pointer;
+  display: inline-block;
+  font-size: $button-font-size;
+  -webkit-font-smoothing: antialiased;
+  line-height: $button-line-height;
+  padding: $button-v-padding $button-h-padding;
+  text-decoration: none;
+  transition: background-color .3s $ease-out-quad;
+  user-select: none;
+  vertical-align: middle;
+  white-space: nowrap;
+
+  &--primary {
+    color: $button-primary-color;
+    background-color: $button-primary-bg;
+    border-radius: $button-primary-border-radius;
+
+    &:hover,
+    &:focus {
+      background-color: shade($button-primary-bg, 20%);
+      color: $button-primary-color;
+      text-decoration: none;
+    }
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+  }
+}
