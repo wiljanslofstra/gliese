@@ -1,18 +1,11 @@
-/**
- * Config
- * @frontend Wiljan Slofstra <wiljanslofstra@gmail.com>
- */
+/* jshint node: true */
+"use strict";
 
 BASE = BASE.replace(/\/?$/, '/');
 
-var config = {
+module.exports = {
   DEV: true,
   BASE_URL: BASE,
   JS_URL: BASE + "/assets/javascript"
 };
 
-if (config.DEV) {
-  console.log("Development mode. On base: " + config.BASE_URL);
-}
-
-module.exports = config;

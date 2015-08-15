@@ -1,19 +1,10 @@
 /* jshint node: true */
+"use strict";
 
 var $ = require('jquery');
 
 function HomeView() {
-  this.text = "Hello world!";
-  this.render();
+  $('body').append("Hello world!");
 }
-
-HomeView.prototype.shout = function() {
-  var text = this.text.toUpperCase();
-  return text;
-};
-
-HomeView.prototype.render = function() {
-  console.log("HomeView outputs: " + this.shout());
-};
 
 module.exports = HomeView;

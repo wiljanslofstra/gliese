@@ -1,10 +1,8 @@
-/**
- * Main.js
- * @module main
- * @type {object}
- */
-var config = require('./config.js');
-var Home = require('./views/home.js');
+/* jshint node: true */
+"use strict";
+
+require('./config.js');
 require('imports?this=>window!modernizr');
 
-var home = new Home();
+var Home = require('./views/home.js');
+new Home();
