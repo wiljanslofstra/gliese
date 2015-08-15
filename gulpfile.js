@@ -9,7 +9,6 @@ var sourcemaps    = require("gulp-sourcemaps");
 var autoprefixer  = require("gulp-autoprefixer");
 var minifyCSS     = require("gulp-minify-css");
 var uglify        = require("gulp-uglify");
-var jshint        = require("gulp-jshint");
 var gutil         = require("gulp-util");
 var webpack       = require("webpack");
 var rename        = require("gulp-rename");
@@ -43,13 +42,6 @@ gulp.task("webpack", function(callback) {
   callback();
 });
 
-// JSHINT
-gulp.task('js:hint', function() {
-  return gulp.src(config.js.watch)
-    .pipe(jshint())
-    .pipe(jshint.reporter('jshint-stylish'));
-});
-
 // SASS
 gulp.task('sass', function () {
   return gulp.src(config.sass.src)
@@ -74,7 +66,6 @@ gulp.task('browserSync', function() {
 
 gulp.task('watch', ['sass', 'webpack', 'browserSync'], function() {
   gulp.watch(config.sass.src, ['sass']);
-  //gulp.watch(config.js.watch, ['js:hint']);
 });
 
 gulp.task('default', ['watch']);
