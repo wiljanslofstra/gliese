@@ -1,12 +1,20 @@
-# Gliese
-
-## Mixins
 ```
-font-size($fs-map, $fs-breakpoints: $breakpoints)
-burger($width: 30px, $height: 5px, $gutter: 3px, $color: #000, $border-radius: 0, $transition-duration: .3s)
-burger-to-cross()
-add-icon($icon, $position: "before", $replace: false)
-breakpoint($name)
-center-h()
-
+            ,MMM8&&&.
+       _...MMMMM88&&&&..._
+    .::'''MMMMM88&&&&&&'''::.
+   ::     MMMMM88&&&&&&     ::
+   '::....MMMMM88&&&&&&....::'
+      `''''MMMMM88&&&&''''`
+            'MMM8&&&'
 ```
+
+# [Gliese](https://en.wikipedia.org/wiki/Gliese_581)
+Front-end starter kit using [Sass](http://sass-lang.com/) and [Webpack](http://webpack.github.io/).
+
+## Startup
+- Install [Node.JS](https://nodejs.org/download/)
+- ```npm install```
+- Change path in ```gulpfile.js```
+- Change path in ```system/config.php```
+- Change your information in ```package.json```
+- ```gulp```
