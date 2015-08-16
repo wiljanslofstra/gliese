@@ -24,15 +24,14 @@ var banner = ['/*!',
   ' */',
   ''].join('\n');
 
-var assets = "assets";
 var config = {
   browserSync: {
     proxy: 'localhost:2000/Gliese-new',
     open: false
   },
   sass: {
-    src: assets + "/sass/**/*.{sass,scss}",
-    dest: assets + '/build',
+    src: "assets/sass/**/*.{sass,scss}",
+    dest: 'assets/build',
   }
 };
 
