@@ -32,7 +32,7 @@ var config = {
   },
   sass: {
     src: assets + "/sass/**/*.{sass,scss}",
-    dest: assets + '/build/css',
+    dest: assets + '/build',
   }
 };
 

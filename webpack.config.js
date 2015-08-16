@@ -6,7 +6,7 @@ var gutil =             require("gulp-util");
 var table =             require('text-table');
 
 // Paths
-var buildPath =         path.resolve(__dirname, 'assets/build/javascript');
+var buildPath =         path.resolve(__dirname, 'assets/build');
 var entryPath =         path.resolve(__dirname, 'assets/javascript', 'main.js');
 
 var bannerText = ['/*!',
