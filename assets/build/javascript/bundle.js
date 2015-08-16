@@ -1,3 +1,11 @@
+/*!
+ * Gliese
+ * @version v0.9.0
+ * @link http://wiljanslofstra.com
+ * @author Wiljan Slofstra [wiljanslofstra@gmail.com]
+ * @updated 16-August-2015 13:40
+ */
+
 /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
@@ -405,9 +413,9 @@
 
 /***/ },
 /* 5 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ function(module, exports) {
 
-	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
+	/*!
 	 * jQuery JavaScript Library v1.11.3
 	 * http://jquery.com/
 	 *
@@ -10717,10 +10725,10 @@
 	// AMD loader is present. jQuery is a special case. For more information, see
 	// https://github.com/jrburke/requirejs/wiki/Updating-existing-libraries#wiki-anon
 
-	if ( true ) {
-		!(__WEBPACK_AMD_DEFINE_ARRAY__ = [], __WEBPACK_AMD_DEFINE_RESULT__ = function() {
+	if ( typeof define === "function" && define.amd ) {
+		define( "jquery", [], function() {
 			return jQuery;
-		}.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+		});
 	}
 
 

@@ -1,15 +1,31 @@
-var webpack = require('webpack');
-var path = require('path');
-var nodeModulesPath = path.resolve(__dirname, 'node_modules');
-var buildPath = path.resolve(__dirname, 'assets/build/javascript');
-var mainPath = path.resolve(__dirname, 'assets/javascript', 'main.js');
-var uglify = new webpack.optimize.UglifyJsPlugin({ minimize: true });
-var gutil         = require("gulp-util");
-var table = require('text-table');
+var pkg =               require('./package.json');
+
+var webpack =           require('webpack');
+var path =              require('path');
+var gutil =             require("gulp-util");
+var table =             require('text-table');
+var dateFormat =        require('dateformat');
+
+// Paths
+var buildPath =         path.resolve(__dirname, 'assets/build/javascript');
+var entryPath =         path.resolve(__dirname, 'assets/javascript', 'main.js');
+
+var bannerText = ['/*!',
+  ' * ' + pkg.name,
+  ' * @version v' + pkg.version,
+  ' * @link ' + pkg.homepage,
+  ' * @author ' + pkg.author,
+  ' * @updated ' + dateFormat(new Date(), 'dd-mmmm-yyyy HH:MM'),
+  ' */',
+  ''].join('\n');
+
+// Plugins
+var uglify =            new webpack.optimize.UglifyJsPlugin({ minimize: true });
+var banner =            new webpack.BannerPlugin(bannerText, { raw: true, entryOnly: true });
 
 module.exports = {
   debug: true,
-  entry: [ mainPath ],
+  entry: [ entryPath ],
   output: {
     path: buildPath,
     filename: 'bundle.js'
@@ -20,6 +36,7 @@ module.exports = {
     }
   },
   module: {
+    noParse: [/jquery/],
     loaders: [
       {
         test: /\.css$/,
@@ -54,7 +71,10 @@ module.exports = {
       console.log(ret);
     }
   },
-  plugins: [],
+  plugins: [
+    //uglify,
+    banner
+  ],
   // plugins: [uglify],
 };
 

@@ -1,6 +1,7 @@
 /**
  * gulpfile.js
  **/
+var pkg           = require("./package.json");
 var gulp          = require("gulp");
 var browserSync   = require("browser-sync");
 var reload        = require("browser-sync").reload;
@@ -13,6 +14,16 @@ var gutil         = require("gulp-util");
 var webpack       = require("webpack");
 var rename        = require("gulp-rename");
 var webpackConfig = require("./webpack.config");
+var header        = require("gulp-header");
+var dateFormat    = require("dateformat");
+
+var banner = ['/*!',
+  ' * ' + pkg.name,
+  ' * @version v' + pkg.version,
+  ' * @link ' + pkg.homepage,
+  ' * @author ' + pkg.author,
+  ' * @updated ' + dateFormat(new Date(), 'dd-mmmm-yyyy HH:MM'),
+  ' */'].join('\n');
 
 var assets = "assets";
 var config = {
@@ -50,6 +61,7 @@ gulp.task('sass', function () {
       precision: 8
     }).on('error', sass.logError))
     .pipe(autoprefixer({ browsers: ['last 2 version', 'ie >= 8', 'iOS >= 7', 'android >= 4.1'] }))
+    .pipe(header(banner, {}))
     .pipe(gulp.dest(config.sass.dest))
     .pipe(rename({ suffix: ".min" }))
     .pipe(minifyCSS({

@@ -1,15 +1,19 @@
 {
-  "name": "gliese",
-  "version": "0.1.0",
+  "name": "Gliese",
+  "version": "0.9.0",
+  "author": "Wiljan Slofstra [wiljanslofstra@gmail.com]",
   "description": "Gliese",
+  "homepage": "http://wiljanslofstra.com",
   "repository": {
     "type": "git",
     "url": "git://"
   },
   "devDependencies": {
     "browser-sync": "~2.7.13",
+    "dateformat": "^1.0.11",
     "gulp": "^3.8.11",
     "gulp-autoprefixer": "^2.1.0",
+    "gulp-header": "^1.2.2",
     "gulp-minify-css": "~1.2.0",
     "gulp-rename": "^1.2.0",
     "gulp-sass": "~2.0.3",
