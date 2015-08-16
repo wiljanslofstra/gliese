@@ -1,7 +1,4 @@
 .sass-cache
 node_modules
-assets/bower_components
-config.codekit
-main.css
 *.sublime-project
 *.sublime-workspace
