@@ -4,7 +4,6 @@ var webpack =           require('webpack');
 var path =              require('path');
 var gutil =             require("gulp-util");
 var table =             require('text-table');
-var dateFormat =        require('dateformat');
 
 // Paths
 var buildPath =         path.resolve(__dirname, 'assets/build/javascript');
@@ -15,7 +14,6 @@ var bannerText = ['/*!',
   ' * @version v' + pkg.version,
   ' * @link ' + pkg.homepage,
   ' * @author ' + pkg.author,
-  ' * @updated ' + dateFormat(new Date(), 'dd-mmmm-yyyy HH:MM'),
   ' */',
   ''].join('\n');
 

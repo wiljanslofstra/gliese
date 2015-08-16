@@ -3,7 +3,6 @@
  * @version v0.9.0
  * @link http://wiljanslofstra.com
  * @author Wiljan Slofstra [wiljanslofstra@gmail.com]
- * @updated 16-August-2015 13:59
  */
 
 /******/ (function(modules) { // webpackBootstrap

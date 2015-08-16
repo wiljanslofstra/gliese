@@ -15,15 +15,14 @@ var webpack       = require("webpack");
 var rename        = require("gulp-rename");
 var webpackConfig = require("./webpack.config");
 var header        = require("gulp-header");
-var dateFormat    = require("dateformat");
 
 var banner = ['/*!',
   ' * ' + pkg.name,
   ' * @version v' + pkg.version,
   ' * @link ' + pkg.homepage,
   ' * @author ' + pkg.author,
-  ' * @updated ' + dateFormat(new Date(), 'dd-mmmm-yyyy HH:MM'),
-  ' */'].join('\n');
+  ' */',
+  ''].join('\n');
 
 var assets = "assets";
 var config = {
