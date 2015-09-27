@@ -26,7 +26,7 @@ var banner = ['/*!',
 
 var config = {
   browserSync: {
-    proxy: 'localhost:2000/Gliese-new',
+    proxy: 'localhost:2000',
     open: false
   },
   sass: {

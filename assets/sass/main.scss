@@ -1,11 +1,12 @@
+@import "../../node_modules/bourbon/app/assets/stylesheets/bourbon";
+
 @import
   "utils/mixins",
   "utils/variables";
 
 @import 
   "base/normalize",
-  "vendor/bootstrap",
-  "../../node_modules/bourbon/app/assets/stylesheets/bourbon";
+  "vendor/bootstrap";
 
 @import 
   "utils/helpers",

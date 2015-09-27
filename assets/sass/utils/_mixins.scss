@@ -124,3 +124,9 @@
     top: 50%;
     @include transform(translateY(-50%));
 }
+
+@mixin n-items($n) {
+  &:first-child:nth-last-child(#{$n}), &:first-child:nth-last-child(#{$n}) ~ & {
+    @content; 
+  }
+}
