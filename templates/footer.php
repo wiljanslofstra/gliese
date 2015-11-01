@@ -3,6 +3,6 @@
       </footer>
 		</div>
 
-		<script async src="<?= ASSET_BUILD_PATH; ?>/bundle.js" type="text/javascript"></script>
+  	<script src="<?= JS_PATH; ?>/app.js" type="text/javascript"></script>
 	</body>
 </html>

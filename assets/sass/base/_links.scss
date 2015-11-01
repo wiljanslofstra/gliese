@@ -1,7 +1,7 @@
 a {
+  @include transition(color .3s $ease-out-quad);
   color: $link-color;
   text-decoration: none;
-  @include transition(color .3s $ease-out-quad);
 
   &:hover,
   &:focus {
