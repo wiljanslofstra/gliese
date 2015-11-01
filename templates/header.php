@@ -48,6 +48,10 @@
     <!--[if IE 9]>
       <script src="<?= ASSET_PATH; ?>/polyfill/ie9.js"></script>
     <![endif]-->
+    <!--[if lte IE 8]>
+     	<script src="<?= ASSET_PATH; ?>/polyfill/ie8.js"></script>
+      <script src="<?= ASSET_PATH; ?>/polyfill/respond.min.js"></script>
+    <![endif]-->
 	</head>
 
 	<body>

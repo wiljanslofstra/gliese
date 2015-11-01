@@ -1,45 +1,10 @@
+/* jshint node: true */
+"use strict";
 
-import React from 'react';
-import HomeButton from '../modules/home-button';
+var $ = require('jquery');
 
-const HomeView = React.createClass({
-  propTypes: {
-    incrementText: React.PropTypes.string,
-    decrementText: React.PropTypes.string,
-  },
+function HomeView() {
+  $('body').append("Hello world!");
+}
 
-  getDefaultProps() {
-    return {
-      incrementText: 'Increment',
-      decrementText: 'Decrement',
-    };
-  },
-
-  getInitialState() {
-    return {
-      clicks: 0,
-    };
-  },
-
-  changeClicks(modifier) {
-    this.setState({ clicks: this.state.clicks + modifier });
-  },
-
-  render() {
-    return (
-      <div>
-        Number of clicks: {this.state.clicks}<br />
-
-        <HomeButton onChange={this.changeClicks} modifier="1">
-          {this.props.incrementText}
-        </HomeButton>
-
-        <HomeButton onChange={this.changeClicks} modifier="-1">
-          {this.props.decrementText}
-        </HomeButton>
-      </div>
-    );
-  },
-});
-
-export default HomeView;
+module.exports = HomeView;

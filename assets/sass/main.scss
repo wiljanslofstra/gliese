@@ -1,39 +1,39 @@
-@import '../../node_modules/bourbon/app/assets/stylesheets/bourbon';
+@import "../../node_modules/bourbon/app/assets/stylesheets/bourbon";
 
-@import 'prebuild/mixins';
+@import
+  "utils/mixins",
+  "utils/variables";
 
-@import 'utils/mixins';
-@import 'utils/variables';
+@import 
+  "base/normalize",
+  "vendor/bootstrap";
 
-@import 'vendor/normalize';
-@import 'vendor/bootstrap';
+@import 
+  "utils/helpers",
+  "base/accessibility",
+  "base/blockquote",
+  "base/forms",
+  "base/hr",
+  "base/icons",
+  "base/images",
+  "base/links",
+  "base/lists",
+  "base/table",
+  "base/type-fontfaces",
+  "base/type";
 
-@import 'prebuild/custom-select';
+@import 
+  "layout/grid",
+  "layout/general",
+  "layout/header",
+  "layout/navigation",
+  "layout/footer",
+  "layout/layout";
 
-@import 'utils/helpers';
-@import 'base/accessibility';
-@import 'base/blockquote';
-@import 'base/forms';
-@import 'base/hr';
-@import 'base/icons';
-@import 'base/images';
-@import 'base/links';
-@import 'base/lists';
-@import 'base/table';
-@import 'base/type-fontfaces';
-@import 'base/type';
+@import 
+  "components/buttons",
+  "components/logo",
+  "components/custom-select";
 
-@import 'layout/grid';
-@import 'layout/general';
-@import 'layout/header';
-@import 'layout/navigation';
-@import 'layout/footer';
-@import 'layout/layout';
-
-@import 'components/buttons';
-@import 'components/logo';
-@import 'components/header';
-@import 'components/footer';
-@import 'components/navigation';
-
-@import 'pages/home';
+@import 
+  "pages/home";

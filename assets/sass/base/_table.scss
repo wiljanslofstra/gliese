@@ -1,22 +1,20 @@
 table {
-  width: 100%;
-  margin: 15px 0;
-
   border-collapse: collapse;
-
+  font-feature-settings: "kern", "liga", "tnum";
+  margin: 15px 0;
   table-layout: fixed;
-
-  font-feature-settings: 'kern', 'liga', 'tnum';
+  width: 100%;
 }
 
 th {
-  padding: .75em 0;
-
+  border-bottom: 1px solid #ccc;
   font-weight: 600;
+  padding: .75em 0;
   text-align: left;
 }
 
 td {
+  border-bottom: 1px solid #eee;
   padding: 5px 0;
 }
 

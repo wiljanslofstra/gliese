@@ -1,18 +1,12 @@
-$input-bg: #fff;
-$input-border: #eee;
-$input-border-hover: #ccc;
-$input-border-active: #ddd;
-
 #{$all-text-inputs} {
-  background: $input-bg;
-  border: 1px solid $input-border;
+
 }
 
 #{$all-text-inputs-focus},
 #{$all-text-inputs-hover} {
-  border-color: $input-border-hover;
+
 }
 
 #{$all-text-inputs-active} {
-  border-color: $input-border-active;
+
 }
