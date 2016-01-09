@@ -8,13 +8,18 @@
             'MMM8&&&'
 ```
 
-# [Gliese](https://en.wikipedia.org/wiki/Gliese_581)
-Front-end starter kit using [Sass](http://sass-lang.com/) and [Webpack](http://webpack.github.io/).
+# Gliese
+Front-end starter kit using [Sass](http://sass-lang.com/), [Webpack](http://webpack.github.io/) with Babel, and using NPM as task-runner.
 
 ## Startup
-- Install [Node.JS](https://nodejs.org/download/)
 - ```npm install```
-- Change path in ```gulpfile.js```
 - Change path in ```system/config.php```
-- Change your information in ```package.json```
-- ```gulp```
+- Change project data in ```package.json```
+- ```npm start```
+
+## Roadmap
+- [ ] Karma test runner
+- [ ] Webpack hot replacement
+- [ ] React as option (not always)
+- [ ] Move build scripts from the package.json to seperate files (inside ./bin)
+- [ ] Better error handling on build scripts

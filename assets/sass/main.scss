@@ -1,14 +1,18 @@
 @import "../../node_modules/bourbon/app/assets/stylesheets/bourbon";
 
+.css-status:before {
+  content: '👌 CSS available' !important;
+}
+
 @import
   "utils/mixins",
   "utils/variables";
 
-@import 
+@import
   "base/normalize",
   "vendor/bootstrap";
 
-@import 
+@import
   "utils/helpers",
   "base/accessibility",
   "base/blockquote",
@@ -22,7 +26,7 @@
   "base/type-fontfaces",
   "base/type";
 
-@import 
+@import
   "layout/grid",
   "layout/general",
   "layout/header",
@@ -30,10 +34,11 @@
   "layout/footer",
   "layout/layout";
 
-@import 
+@import
   "components/buttons",
   "components/logo",
-  "components/custom-select";
+  "components/custom-select",
+  "components/custom-checkboxes";
 
-@import 
+@import
   "pages/home";

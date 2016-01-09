@@ -38,30 +38,13 @@
     <!-- TODO: Place Icons -->
 
     <script type="text/javascript">
+			// Remove .no-js
     	document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + 'js';
 
     	var BASE = "<?= BASE_PATH; ?>";
     </script>
 
     <link rel="stylesheet" href="<?= ASSET_BUILD_PATH; ?>/main.css">
-
-    <!--[if IE 9]>
-      <script src="<?= ASSET_PATH; ?>/polyfill/ie9.js"></script>
-    <![endif]-->
-    <!--[if lte IE 8]>
-     	<script src="<?= ASSET_PATH; ?>/polyfill/ie8.js"></script>
-      <script src="<?= ASSET_PATH; ?>/polyfill/respond.min.js"></script>
-    <![endif]-->
 	</head>
 
 	<body>
-
-    <header class="header">
-      <nav class="navigation">
-        <ul class="navigation__list">
-          <li class="navigation__list__item is-active">
-            <a href="#">Home</a>
-          </li>
-        </ul>
-      </nav>
-    </header>

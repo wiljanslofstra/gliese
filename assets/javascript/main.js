@@ -1,8 +1,15 @@
-/* jshint node: true */
-"use strict";
+import 'modernizr';
+import 'polyfills/dataset';
+import 'polyfills/classList';
 
-require('./config.js');
-require('imports?this=>window!modernizr');
+import accessibility from './modules/accessibility';
+import helloModule from './modules/helloModule';
 
-var Home = require('./views/home.js');
-new Home();
+const modules = [
+  accessibility,
+  helloModule
+];
+
+modules.forEach((module) => {
+  module.initialize();
+});

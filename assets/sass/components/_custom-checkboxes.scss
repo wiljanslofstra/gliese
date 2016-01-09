@@ -1,0 +1,104 @@
+// Checkbox/radio variables
+$c-checkbox-bg: #f0f0f0;
+$c-checkbox-inner-bg: #555;
+$c-checkbox-border: #dedede;
+$c-checkbox-border-size: 1px;
+$c-checkbox-focus-border: darken($c-checkbox-border, 20%);
+$c-checkbox-border-radius: 3px;
+$c-checkbox-inner-border-radius: 1px;
+$c-checkbox-size: 26px;
+$c-checkbox-space: 10px;
+$c-checkbox-inner-size: 12px;
+
+$c-checkbox-animation: false;
+
+// Radio variables, overwrite checkbox style
+$c-radio-border-radius: $c-checkbox-size / 2;
+$c-radio-inner-border-radius: $c-checkbox-inner-size / 2;
+
+// Hide input element
+input[type=radio],
+input[type=checkbox] {
+  opacity: 0;
+  position: absolute;
+}
+
+// Style the label
+input[type=radio] + label,
+input[type=checkbox] + label {
+  display: inline-block;
+  cursor: pointer;
+  position: relative;
+  padding-left: $c-checkbox-size + $c-checkbox-space;
+
+  &:before,
+  &:after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 50%;
+  }
+
+  // Outer circle
+  &:before {
+    background: $c-checkbox-bg;
+    width: $c-checkbox-size;
+    height: $c-checkbox-size;
+    margin-top: ($c-checkbox-size / 2) * -1;
+    border-radius: $c-checkbox-border-radius;
+    left: 0;
+    border: $c-checkbox-border-size solid $c-checkbox-border;
+  }
+
+  // Inner circle
+  &:after {
+    opacity: 0; // Hide until checked
+    visibility: hidden;
+    width: $c-checkbox-inner-size;
+    height: $c-checkbox-inner-size;
+    left: ($c-checkbox-size - $c-checkbox-inner-size) / 2;
+    margin-top: ($c-checkbox-inner-size / 2) * -1;
+    z-index: 2;
+    background: $c-checkbox-inner-bg;
+    border-radius: $c-checkbox-inner-border-radius;
+
+    @if $c-checkbox-animation {
+      transition: opacity .2s ease-out, visibility .2s ease-out, transform .2s ease-out;
+      transform: scale(0.8);
+    }
+  }
+}
+
+// Change radio outer circle
+input[type=radio] + label:before {
+  border-radius: $c-radio-border-radius;
+}
+
+// Change radio inner circle
+input[type=radio] + label:after {
+  border-radius: $c-radio-inner-border-radius;
+}
+
+// Show inner circle
+input[type=radio]:checked + label:after,
+input[type=checkbox]:checked + label:after {
+  opacity: 1;
+  visibility: visible;
+
+  @if $c-checkbox-animation {
+    transform: scale(1);
+  }
+}
+
+// Focus outline
+input[type=radio]:focus + label:before,
+input[type=checkbox]:focus + label:before {
+  border-color: $c-checkbox-focus-border;
+}
+
+// Disabled
+input[type=radio]:disabled + label,
+input[type=checkbox]:disabled + label {
+  opacity: .5;
+  cursor: default;
+}
