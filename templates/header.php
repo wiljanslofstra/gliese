@@ -1,16 +1,16 @@
 <?php include(__DIR__ . '/../system/config.php'); ?>
 <?php
-	$meta_title = 'Gliese';
-	$meta_desc = 'Front-end starter kit';
-	$meta_sitename = 'Gliese';
-	$meta_img = ASSET_PATH . '/icons/apple-touch-icon.png';
-	$meta_url = '/';
-	$meta_twitter = '@wiljanslofstra';
+    $meta_title = 'Gliese';
+    $meta_desc = 'Front-end starter kit';
+    $meta_sitename = 'Gliese';
+    $meta_img = ASSET_PATH . '/icons/apple-touch-icon.png';
+    $meta_url = '/';
+    $meta_twitter = '@wiljanslofstra';
 ?>
 <!DOCTYPE html>
 <!--[if lte IE 9]><html class="no-js ie9 "> <![endif]-->
 <!--[if gt IE 9]><!--> <html class="no-js"><!--<![endif]-->
-  <head>
+<head>
     <meta charset="utf-8">
 
     <title><?= $meta_title; ?></title>
@@ -38,13 +38,13 @@
     <!-- TODO: Place Icons -->
 
     <script type="text/javascript">
-			// Remove .no-js
-    	document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + 'js';
+        document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + 'js';
 
-    	var BASE = "<?= BASE_PATH; ?>";
+        var BASE = '<?= BASE_PATH; ?>';
+        var WEBPACK_PATH = '<?= ASSET_BUILD_PATH; ?>/';
     </script>
 
     <link rel="stylesheet" href="<?= ASSET_BUILD_PATH; ?>/main.css">
-	</head>
+</head>
 
-	<body>
+<body>

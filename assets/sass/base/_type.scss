@@ -4,7 +4,7 @@ html {
   line-height: $line-height-base;
   text-size-adjust: none;
   text-rendering: optimizeLegibility;
-  font-feature-settings: "liga" 1, "onum" 1, "kern" 1;
+  font-feature-settings: 'liga' 1, 'onum' 1, 'kern' 1;
   font-kerning: normal;
 
   -webkit-font-smoothing: antialiased;
@@ -20,7 +20,15 @@ p {
   margin: 0 0 .75em;
 }
 
-%heading-general, h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
+%heading-general,
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4 {
   font-family: $headings-font-family;
   font-weight: $headings-font-weight;
   line-height: $headings-line-height;
@@ -28,18 +36,22 @@ p {
   margin: 0 0 .75em;
 }
 
-h1, .h1 {
+h1,
+.h1 {
   @include font-size($h1-font-sizes);
 }
 
-h2, .h2 {
+h2,
+.h2 {
   font-size: $font-size-h2;
 }
 
-h3, .h3 {
+h3,
+.h3 {
   font-size: $font-size-h3;
 }
 
-h4, .h4 {
+h4,
+.h4 {
   font-size: $font-size-h4;
 }

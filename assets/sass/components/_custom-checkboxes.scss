@@ -9,7 +9,6 @@ $c-checkbox-inner-border-radius: 1px;
 $c-checkbox-size: 26px;
 $c-checkbox-space: 10px;
 $c-checkbox-inner-size: 12px;
-
 $c-checkbox-animation: false;
 
 // Radio variables, overwrite checkbox style
@@ -64,7 +63,7 @@ input[type=checkbox] + label {
 
     @if $c-checkbox-animation {
       transition: opacity .2s ease-out, visibility .2s ease-out, transform .2s ease-out;
-      transform: scale(0.8);
+      transform: scale(.8);
     }
   }
 }

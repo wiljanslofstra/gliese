@@ -4,9 +4,11 @@ blockquote {
   font-size: $font-size-base * 1.4;
   border: none;
 
-  p, ul, ol {
-      &:last-child {
-          margin-bottom: 0;
-      }
+  p,
+  ul,
+  ol {
+    &:last-child {
+      margin-bottom: 0;
+    }
   }
 }

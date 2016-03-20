@@ -1,44 +1,42 @@
-@import "../../node_modules/bourbon/app/assets/stylesheets/bourbon";
+/* !
+ * <Project name>
+ */
+@import '../../node_modules/bourbon/app/assets/stylesheets/bourbon';
 
 .css-status:before {
   content: '👌 CSS available' !important;
+  transform: translate(-50%, -20%);
 }
 
 @import
-  "utils/mixins",
-  "utils/variables";
-
+  'utils/mixins',
+  'utils/variables';
 @import
-  "base/normalize",
-  "vendor/bootstrap";
-
+  'base/normalize',
+  'vendor/bootstrap';
 @import
-  "utils/helpers",
-  "base/accessibility",
-  "base/blockquote",
-  "base/forms",
-  "base/hr",
-  "base/icons",
-  "base/images",
-  "base/links",
-  "base/lists",
-  "base/table",
-  "base/type-fontfaces",
-  "base/type";
-
+  'utils/helpers',
+  'base/accessibility',
+  'base/blockquote',
+  'base/forms',
+  'base/hr',
+  'base/icons',
+  'base/images',
+  'base/links',
+  'base/lists',
+  'base/table',
+  'base/type-fontfaces',
+  'base/type';
 @import
-  "layout/grid",
-  "layout/general",
-  "layout/header",
-  "layout/navigation",
-  "layout/footer",
-  "layout/layout";
-
+  'layout/grid',
+  'layout/layout';
 @import
-  "components/buttons",
-  "components/logo",
-  "components/custom-select",
-  "components/custom-checkboxes";
-
+  'components/header',
+  'components/navigation',
+  'components/footer',
+  'components/buttons',
+  'components/logo',
+  'components/custom-select',
+  'components/custom-checkboxes';
 @import
-  "pages/home";
+  'pages/home';

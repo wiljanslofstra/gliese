@@ -1,8 +1,7 @@
-      <footer class="footer">
+        <footer class="footer">
 
-      </footer>
-		</div>
+        </footer>
 
-		<script async src="<?= ASSET_BUILD_PATH; ?>/bundle.js" type="text/javascript"></script>
-	</body>
+        <script async src="<?= ASSET_BUILD_PATH; ?>/bundle.js" type="text/javascript"></script>
+    </body>
 </html>

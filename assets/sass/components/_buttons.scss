@@ -3,7 +3,6 @@ $button-line-height: $line-height-base;
 $button-font-size: $font-size-base;
 $button-v-padding: ($button-height - ($button-font-size * $button-line-height)) / 2;
 $button-h-padding: 10px;
-
 $button-primary-bg: $color-primary;
 $button-primary-color: #fff;
 $button-primary-border-radius: 3px;
@@ -38,6 +37,6 @@ $button-primary-border-radius: 3px;
 
   &:disabled {
     cursor: not-allowed;
-    opacity: 0.5;
+    opacity: .5;
   }
 }

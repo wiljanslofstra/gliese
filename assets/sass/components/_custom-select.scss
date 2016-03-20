@@ -8,57 +8,60 @@ $c-select-horizontal-padding: 10px;
 $c-select-arrow-width: 30px;
 
 .custom-select {
-	position: relative;
-	height: $c-select-height;
-	overflow: hidden;
-	background: $c-select-bg;
-	border: $c-select-border-width solid $c-select-border;
-	border-radius: $c-select-border-radius;
-	padding-right: $c-select-arrow-width;
+  position: relative;
+  height: $c-select-height;
+  overflow: hidden;
+  background: $c-select-bg;
+  border: $c-select-border-width solid $c-select-border;
+  border-radius: $c-select-border-radius;
+  padding-right: $c-select-arrow-width;
 }
-	.custom-select select {
-		position: relative;
-		width: 130%;
-		height: $c-select-height - ($c-select-border-width * 2); // Height without border
-		padding: 0 $c-select-horizontal-padding;
-		border: none;
-		box-shadow: none;
-		background: transparent;
-		z-index: 2;
-		text-overflow: ellipsis;
-		appearance: none;
-		cursor: pointer;
-	}
-		// Hide arrow on IE10
-		.custom-select select::-ms-expand {
-		  display: none;
-		}
 
-		// Disable default focus
-		.custom-select select:focus {
-			outline: none;
-		}
+.custom-select select {
+  position: relative;
+  width: 130%;
+  height: $c-select-height - ($c-select-border-width * 2);
+  //heightwithoutborderpadding: 0 $c-select-horizontal-padding;
+  border: none;
+  box-shadow: none;
+  background: transparent;
+  z-index: 2;
+  text-overflow: ellipsis;
+  appearance: none;
+  cursor: pointer;
+}
 
-	// Arrow
-	.custom-select:after {
-		content: '\02193'; // Unicode down arrow
-		position: absolute;
-		top: 0;
-		right: 0;
-		width: $c-select-arrow-width;
-		text-align: center;
-		line-height: $c-select-height - ($c-select-border-width * 2); // Height without border
-	}
+// Hide arrow on IE10
+.custom-select select::-ms-expand {
+  display: none;
+}
 
-	// Custom focus, class is added by accessibility.js
-	.custom-select.is-focussed {
-		border-color: $c-select-border-focus;
-	}
+// Disable default focus
+.custom-select select:focus {
+  outline: none;
+}
 
-	// Custom disabled, class is added by accessibility.js
-	.custom-select.is-disabled {
-		color: darken($c-select-bg, 20%);
-	}
-		.custom-select.is-disabled select {
-			cursor: default;
-		}
+// Arrow
+.custom-select:after {
+  content: '\02193';
+  //unicodedownarrowposition: absolute;
+  top: 0;
+  right: 0;
+  width: $c-select-arrow-width;
+  text-align: center;
+  line-height: $c-select-height - ($c-select-border-width * 2);
+}
+
+// Custom focus,class is added by accessibility.js
+.custom-select.is-focussed {
+  border-color: $c-select-border-focus;
+}
+
+// Custom disabled,class is added by accessibility.js
+.custom-select.is-disabled {
+  color: darken($c-select-bg, 20%);
+}
+
+.custom-select.is-disabled select {
+  cursor: default;
+}

@@ -3,12 +3,14 @@
     @if $fs-breakpoint == null {
       @include make-font-size($fs-font-size);
     }
+
     @else {
       // If $fs-font-size is a key that exists in
       // $fs-breakpoints, use the value
       @if map-has-key($fs-breakpoints, $fs-breakpoint) {
         $fs-breakpoint: map-get($fs-breakpoints, $fs-breakpoint);
       }
+
       @media screen and (min-width: $fs-breakpoint) {
         @include make-font-size($fs-font-size);
       }
@@ -20,12 +22,14 @@
 @mixin make-font-size($fs-font-size) {
   // If $fs-font-size is a list, include
   // both font-size and line-height
-  @if type-of($fs-font-size) == "list" {
+  @if type-of($fs-font-size) == 'list' {
     font-size: nth($fs-font-size, 1);
+
     @if (length($fs-font-size) > 1) {
       line-height: nth($fs-font-size, 2);
     }
   }
+
   @else {
     font-size: $fs-font-size;
   }
@@ -45,13 +49,16 @@
   -ms-user-select: none;
   user-select: none;
 
-  &, &:before, &:after {
+  &,
+  &:before,
+  &:after {
     display: block;
     width: $width;
     height: $height;
     background-color: $color;
+
     @if $border-radius != 0 {
-        border-radius: $border-radius;
+      border-radius: $border-radius;
     }
 
     -webkit-transition-property: background-color, -webkit-transform;
@@ -61,9 +68,10 @@
     transition-duration: $transition-duration;
   }
 
-  &:before, &:after {
+  &:before,
+  &:after {
     position: absolute;
-    content: "";
+    content: '';
   }
 
   &:before {
@@ -80,11 +88,13 @@
   & {
     background-color: transparent;
   }
+
   &:before {
     -webkit-transform: translateY($burger-gutter + $burger-height) rotate(45deg);
     -ms-transform: translateY($burger-gutter + $burger-height) rotate(45deg);
     transform: translateY($burger-gutter + $burger-height) rotate(45deg);
   }
+
   &:after {
     -webkit-transform: translateY(-($burger-gutter + $burger-height)) rotate(-45deg);
     -ms-transform: translateY(-($burger-gutter + $burger-height)) rotate(-45deg);
@@ -92,7 +102,7 @@
   }
 }
 
-@mixin add-icon($icon, $position: "before", $replace: false) {
+@mixin add-icon($icon, $position: 'before', $replace: false) {
   // If we're replacing the text, set font-size to 0
   @if $replace {
     font-size: 0;
@@ -101,32 +111,39 @@
   &:#{$position} {
     @extend %icon;
     @extend .icon-#{$icon};
+
     @if $replace {
       font-size: 1rem;
     }
+
     @content;
   }
 }
 
 @mixin breakpoint($name) {
   @if map-has-key($breakpoints, $name) {
-    @media (min-width: #{inspect(map-get($breakpoints, $name))}) {
+    $bp: inspect(map-get($breakpoints, $name));
+
+    @media (min-width: #{$bp}) {
       @content;
     }
   }
+
   @else {
-    @warn "Couldn't find a breakpoint named `#{$name}`.";
+    @warn 'Couldn\t find a breakpoint named `#{$name}`.';
   }
 }
 
 @mixin center-h {
-    position: relative;
-    top: 50%;
-    @include transform(translateY(-50%));
+  position: relative;
+  top: 50%;
+
+  @include transform(translateY(-50%));
 }
 
 @mixin n-items($n) {
-  &:first-child:nth-last-child(#{$n}), &:first-child:nth-last-child(#{$n}) ~ & {
-    @content; 
+  &:first-child:nth-last-child(#{$n}),
+  &:first-child:nth-last-child(#{$n}) ~ & {
+    @content;
   }
 }

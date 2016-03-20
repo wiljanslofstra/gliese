@@ -4,7 +4,7 @@ var path = require('path');
 
 // Paths
 var buildPath = path.resolve(__dirname, 'assets/build');
-var entryPath = path.resolve(__dirname, 'assets/javascript', 'main.js');
+var entryPath = path.resolve(__dirname, 'assets/javascript', 'main');
 
 const DEBUG = true;
 const VERBOSE = false;
@@ -25,20 +25,17 @@ module.exports = {
   },
   module: {
     noParse: ['jquery'],
-    preLoaders: [
-      {
-        // set up standard-loader as a preloader
-        test: /\.js?$/,
-        loader: 'semistandard',
-        exclude: /(node_modules|vendor|polyfill)/
-      }
-    ],
     loaders: [
       { test: /\.css$/, loader: 'style!css' },
       {
         test: /\.js?$/,
         exclude: /node_modules/,
         loaders: ['babel-loader'],
+      },
+      {
+        test: /\.js?$/,
+        exclude: [/node_modules/, /vendor/],
+        loaders: ['eslint-loader'],
       },
     ],
   },

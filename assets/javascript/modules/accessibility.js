@@ -1,5 +1,5 @@
 const accessibility = {
-  initialize () {
+  initialize() {
     this.accessibleSelect();
   },
 
@@ -7,7 +7,7 @@ const accessibility = {
    * Adds focus states to custom select wrapper
    * @return {Void}
    */
-  accessibleSelect () {
+  accessibleSelect() {
     // Get all select elements
     const selectNodes = document.getElementsByTagName('select');
 
@@ -27,7 +27,7 @@ const accessibility = {
         select.parentNode.classList.add('is-disabled');
       }
     });
-  }
+  },
 };
 
 export default accessibility;
