@@ -1,10 +1,11 @@
+/* eslint-disable */
 var pkg = require('./package.json');
 var webpack = require('webpack');
 var path = require('path');
 
 // Paths
 var buildPath = path.resolve(__dirname, 'assets/build');
-var entryPath = path.resolve(__dirname, 'assets/javascript', 'main');
+var entryPath = path.resolve(__dirname, 'assets/javascript', 'main.react');
 
 const DEBUG = true;
 const VERBOSE = false;
@@ -62,3 +63,4 @@ module.exports = {
     cachedAssets: VERBOSE,
   },
 };
+/* eslint-enable */
