@@ -4,16 +4,11 @@ html {
   line-height: $line-height-base;
   text-size-adjust: none;
   text-rendering: optimizeLegibility;
-  font-feature-settings: 'liga' 1, 'onum' 1, 'kern' 1;
+  font-feature-settings: 'liga' 1, 'kern' 1;
   font-kerning: normal;
 
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-
-@media (min-device-pixel-ratio: 3) {
-  -webkit-font-smoothing: subpixel-antialiased;
-  -moz-osx-font-smoothing: auto;
 }
 
 p {
