@@ -21,7 +21,8 @@ module.exports = {
   },
   resolve: {
     alias: {
-      modernizr: path.join(__dirname, 'assets/javascript/vendor/modernizr.js'),
+      modernizr: path.join(__dirname, 'assets/javascript/vendor/modernizr.custom.js'),
+      lodash: path.join(__dirname, 'assets/javascript/vendor/lodash.custom.js'),
       jquery: path.join(__dirname, 'node_modules/jquery/dist/jquery.js'),
     }
   },

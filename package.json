@@ -20,7 +20,9 @@
     "js": "node ./bin/run bundle",
     "start": "parallelshell \"npm run js\" \"npm run sass\"",
     "install": "napa",
-    "server": "babel-node server.js"
+    "server": "babel-node server.js",
+    "modernizr:build": "node ./bin/run modernizr",
+    "lodash:build": "lodash include=\"each,filter,map,indexOf,forEach,debounce,template\" -o assets/javascript/vendor/lodash.custom.js"
   },
   "napa": {
     "polyfills": "remy/polyfills"
@@ -40,6 +42,7 @@
     "eslint-plugin-react": "^4.2.3",
     "express": "^4.13.4",
     "imports-loader": "^0.6.5",
+    "modernizr": "^3.3.1",
     "napa": "^2.3.0",
     "node-sass": "^3.4.2",
     "nodemon": "^1.9.1",
