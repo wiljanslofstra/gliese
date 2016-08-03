@@ -5,7 +5,7 @@ var path = require('path');
 
 // Paths
 var buildPath = path.resolve(__dirname, 'assets/build');
-var entryPath = path.resolve(__dirname, 'assets/javascript', 'main.react');
+var entryPath = path.resolve(__dirname, 'assets/javascript', 'main');
 
 const DEBUG = true;
 const VERBOSE = false;

@@ -33,14 +33,11 @@
     "babel-core": "^6.4.0",
     "babel-loader": "^6.2.1",
     "babel-preset-es2015": "^6.0.14",
-    "babel-preset-react": "^6.0.14",
     "browser-sync": "^2.11.1",
     "cssnano": "^3.5.2",
     "eslint": "^2.4.0",
     "eslint-config-airbnb": "^6.1.0",
     "eslint-loader": "^1.3.0",
-    "eslint-plugin-react": "^4.2.3",
-    "express": "^4.13.4",
     "imports-loader": "^0.6.5",
     "modernizr": "^3.3.1",
     "napa": "^2.3.0",
@@ -49,29 +46,16 @@
     "parallelshell": "^2.0.0",
     "postcss": "^5.0.19",
     "postcss-reporter": "^1.3.3",
-    "stylelint": "^5.1.0",
-    "stylelint-config-standard": "^4.0.1",
-    "webpack": "^1.12.14",
-    "webpack-dev-server": "^1.14.1",
-    "webpack-hot-middleware": "^2.10.0"
+    "webpack": "^1.12.14"
   },
   "dependencies": {
     "babel-polyfill": "^6.3.14",
     "bootstrap-sass": "^3.3.5",
     "bourbon": "^4.2.3",
-    "fastclick": "~1.0.6",
     "imagesloaded": "~4.1.0",
     "jquery": "^2.2.2",
     "lodash": "~4.6.1",
     "parsleyjs": "~2.3.5",
-    "picturefill": "~3.0.1",
-    "slick-carousel": "^1.5.8",
-    "waypoints": "^4.0.0",
-    "react": "^0.14.0",
-    "react-dom": "^0.14.0",
-    "react-redux": "^4.0.0",
-    "react-router": "^2.0.0",
-    "react-router-redux": "^4.0.0",
-    "redux": "^3.0.0"
+    "slick-carousel": "^1.5.8"
   }
 }
