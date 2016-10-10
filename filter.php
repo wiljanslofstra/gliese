@@ -63,6 +63,7 @@
                 popularity: <?= rand(0, 100); ?>,
                 options: ['option-<?= rand(0, 10); ?>', 'option-<?= rand(0, 10); ?>', 'option-<?= rand(0, 10); ?>'],
                 color: '<?= $colors[rand(0, 4)]; ?>',
+                radios: ['radio-<?= rand(0, 3); ?>'],
             },
             <?php endfor; ?>
         ];

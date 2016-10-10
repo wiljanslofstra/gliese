@@ -1,8 +1,6 @@
-import { each, filter, sortBy } from 'lodash';
+import { each, filter, sortBy, template } from 'lodash';
 
 function filterProductsArr(productsArr, opts) {
-  console.log(opts);
-
   return filter(productsArr, (product) => {
     let productValid = true;
 
@@ -14,16 +12,19 @@ function filterProductsArr(productsArr, opts) {
 
       if (Array.isArray(opt)) {
         const prodOptions = product[optKey];
+        let checkboxesValid = false;
 
         opt.forEach((filterOption) => {
-          if (prodOptions.indexOf(filterOption) < 0) {
-            productValid = false;
+          if (prodOptions.indexOf(filterOption) >= 0) {
+            checkboxesValid = true;
           }
         });
-      } else {
-        if (product[optKey].indexOf(opt) < 0) {
+
+        if (!checkboxesValid) {
           productValid = false;
         }
+      } else if (product[optKey].indexOf(opt) < 0) {
+        productValid = false;
       }
     });
 
@@ -34,16 +35,13 @@ function filterProductsArr(productsArr, opts) {
 function sortProducts(productsArr, opts) {
   // Remove sorting from the options
   if (typeof opts.sorting === 'undefined') {
-    return;
+    return productsArr;
   }
 
   const sortingProperty = opts.sorting.split('-')[1];
   const sortingDirection = opts.sorting.split('-')[0];
-  delete opts.sorting;
 
-  const sorted = sortBy(productsArr, (product) => {
-    return product[sortingProperty];
-  });
+  const sorted = sortBy(productsArr, product => product[sortingProperty]);
 
   if (sortingDirection === 'desc') {
     sorted.reverse();
@@ -53,8 +51,6 @@ function sortProducts(productsArr, opts) {
 }
 
 function filterProducts(productsArr, opts) {
-
-
   // Loop through products
   const filtered = filterProductsArr(productsArr, opts);
 
@@ -64,22 +60,24 @@ function filterProducts(productsArr, opts) {
 }
 
 function render(productsArr, outputEl) {
-  const mapped = productsArr.map((product) => {
-    return `
-      <li style="margin-bottom: 15px; width: 33%; float: left;">
-        Name:<br>
-        ${product.name}<br>
-        Price:<br>
-        ${product.price}<br>
-        Populariy:<br>
-        ${product.popularity}<br>
-        Color:<br>
-        ${product.color}<br>
-      </li>
-    `;
-  });
+  const output = outputEl;
 
-  outputEl.innerHTML = `<ul>${mapped.join('')}</ul>`;
+  const productTemplate = template(`
+    <li style="margin-bottom: 15px; width: 33%; float: left;">
+      Name:<br>
+      <%- name %><br>
+      Price:<br>
+      <%- price %><br>
+      Populariy:<br>
+      <%- popularity %><br>
+      Color:<br>
+      <%- color %><br>
+    </li>
+  `);
+
+  const mapped = productsArr.map(productTemplate);
+
+  output.innerHTML = `<ul>${mapped.join('')}</ul>`;
 }
 
 export default {

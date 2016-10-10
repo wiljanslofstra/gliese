@@ -1,12 +1,14 @@
-import qs from 'qs';
 import handleInput from './handleInput';
 import getFilterOptions from './getFilterOptions';
 import setFilters from './setFilters';
 import config from './config';
 
+import outputUrlParameters from './helpers/outputUrlParameters';
+import retrieveUrlParameters from './helpers/retrieveUrlParameters';
+
 // Different strategies available to render products
-import strategyLocal from './strategyLocal';
-import strategyRemote from './strategyRemote';
+import strategyLocal from './strategies/strategyLocal';
+import strategyRemote from './strategies/strategyRemote';
 
 // Select the strategry with the config parameter
 const strategy = config.FILTER_STRATEGY === 'local' ? strategyLocal : strategyRemote;
@@ -16,15 +18,6 @@ const filter = document.querySelector(config.FILTER_CLASS);
 
 // Reference to the output element
 const output = document.querySelector(config.OUTPUT_CLASS);
-
-function outputUrlParameters(obj) {
-  const stringified = qs.stringify(obj, { encode: false });
-  location.hash = stringified;
-}
-
-function retrieveUrlParameters() {
-  return qs.parse(location.hash.substring(1));
-}
 
 function runFilter() {
   getFilterOptions(filter, (options) => {
