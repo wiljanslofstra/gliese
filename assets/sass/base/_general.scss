@@ -3,3 +3,8 @@
 *:after {
   box-sizing: border-box;
 }
+
+@include selection {
+  background: $color-primary;
+  color: #fff;
+}

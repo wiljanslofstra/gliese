@@ -4,7 +4,6 @@ var fs = require('fs');
 var postcss = require('postcss');
 var autoprefixer = require('autoprefixer');
 var cssnano = require('cssnano');
-var stylelint = require('stylelint');
 var reporter = require('postcss-reporter')
 
 // Paths
@@ -13,7 +12,7 @@ var outputPath = path.resolve(__dirname, '../assets/build', 'main.css');
 var mapPath = path.resolve(__dirname, '../assets/build', 'main.css.map');
 
 // Options
-var autoprefixerOptions = { browsers: ['last 2 version', 'ie >= 8', 'iOS >= 7', 'android >= 4.1'] };
+var autoprefixerOptions = { browsers: ['last 2 version', 'ie >= 9', 'iOS >= 7', 'android >= 4.1'] };
 var cssnanoOptions = { autoprefixer: false, discardComments: { removeAllButFirst: true } };
 
 function postCSS(css) {
@@ -49,15 +48,6 @@ module.exports = function() {
       outFile: outputPath,
     }, function(error, result) {
       if (!error) {
-        stylelint.lint({
-          files: path.resolve(__dirname, '../assets/sass/**/*.scss'),
-          syntax: 'scss',
-          formatter: 'string',
-        })
-          .then(function(resultObject) {
-            console.log(resultObject.output);
-          });
-
         // Run PostCSS
         postCSS(result.css)
           .then(function() {

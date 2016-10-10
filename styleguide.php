@@ -1,6 +1,9 @@
 <?php include('templates/header.php'); ?>
 
 <!-- Beginning of Styleguide -->
+<a class="js-jump" href="#" data-jump-target="#jump-target" data-jump-offset="#text-block">
+    Jump
+</a>
 
 <!--
 Poor Man's Styleguide
@@ -32,6 +35,9 @@ A quick-and-dirty frontend styleguide, designed to be copied and pasted into you
 <h6>Heading 6</h6>
 <p>Lorem ipsum dolor sit amet, adipiscing elit. Nullam dignissim convallis est. Quisque aliquam. Donec faucibus. Nunc iaculis suscipit dui. Nam sit amet sem. Aliquam libero nisi, imperdiet at, tincidunt nec, gravida vehicula, nisl.</p>
 
+<a href="tel:0612345678">
+    Bel ons
+</a>
 <hr />
 
 <h1 id="text-block">Block Elements</h1>
@@ -62,7 +68,7 @@ A quick-and-dirty frontend styleguide, designed to be copied and pasted into you
 
 <h2>Details-Summary</h2>
 
-<details>
+<details id="jump-target">
   <summary>The summary element example</summary>
   <p>The details example text. It may be styled differently based on what browser or operating system you are using.</p>
 </details>
@@ -193,6 +199,23 @@ for (i = 0; i < divs.length; ++i) {
   </tfoot>
 </table>
 
+<div class="js-map" data-geo="56,42" data-zoom="7" data-marker-geo="56,42" style="height: 500px">
+</div>
+
+<div class="js-video" data-video-src="https://www.youtube.com/watch?v=RBTiTcHm_ac?rel=0&amp;autoplay=1">
+    <a class="js-video-trigger" href="#">
+        Play video
+    </a>
+
+    <div class="js-video-poster">
+    </div>
+</div>
+
+<div class="js-password">
+    <input class="js-password-input" type="password">
+    <div class="js-password-meter" data-warning-text="This password is one of the ten most frequently used"></div>
+</div>
+
 <hr />
 
 <h1 id="form_elements">Media and Form Elements</h1>
@@ -232,6 +255,11 @@ for (i = 0; i < divs.length; ++i) {
   <form>
     <p><label for="text_field">Text Field:</label><br />
       <input class="form-control" type="text" id="text_field" />
+    </p>
+
+    <p><label for="text_field">Password Field:</label><br />
+      <input class="form-control js-password-input" type="password" id="password_field" />
+      <a href="#password_field" class="js-password-toggle">Show password</a>
     </p>
 
     <p><label for="text_field_disabled">Disabled Text Field:</label><br />
@@ -325,6 +353,10 @@ for (i = 0; i < divs.length; ++i) {
       <input class="form-control" type="date" id="date" />
     </p>
 
+    <p><label for="date">Date:</label><br />
+      <input class="form-control js-datepicker" type="text" id="text-date" />
+    </p>
+
     <p><label for="time">Time:</label><br />
       <input class="form-control" type="time" id="time" />
     </p>
@@ -356,6 +388,16 @@ for (i = 0; i < divs.length; ++i) {
   </form>
 
 </fieldset>
+
+<div class="">
+    <input class="js-autofill-postal" type="text" data-autofill-group="invoice" placeholder="Postal">
+    <select class="js-autofill-country" type="text" data-autofill-group="invoice" placeholder="Country">
+        <option value=""></option>
+        <option value="nl">Nederland</option>
+    </select>
+    <input class="js-autofill-street" type="text" data-autofill-group="invoice" placeholder="Street">
+    <input class="js-autofill-city" type="text" data-autofill-group="invoice" placeholder="City">
+</div>
 
 <!-- End of Styleguide -->
 

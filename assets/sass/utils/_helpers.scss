@@ -1,7 +1,18 @@
-.c--primary {
-  color: $color-primary;
-}
+.u-color-primary { color: $color-primary; }
+.u-color-secondary { color: $color-secondary; }
+.u-color-text { color: $color-text; }
 
-.c--secondary {
-  color: $color-secondary;
-}
+// Alignment
+.u-text-left           { text-align: left; }
+.u-text-right          { text-align: right; }
+.u-text-center         { text-align: center; }
+.u-text-justify        { text-align: justify; }
+.u-text-nowrap         { white-space: nowrap; }
+
+// Transformation
+.u-text-lowercase      { text-transform: lowercase; }
+.u-text-uppercase      { text-transform: uppercase; }
+.u-text-capitalize     { text-transform: capitalize; }
+
+// [converter] extracted as `@mixin list-unstyled` for libsass compatibility
+.u-list-unstyled { @include list-unstyled; }

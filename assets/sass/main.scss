@@ -3,19 +3,15 @@
  */
 @import '../../node_modules/bourbon/app/assets/stylesheets/bourbon';
 
-.css-status:before {
-  content: '👌 CSS available' !important;
-  transform: translate(-50%, -20%);
-}
-
 @import
   'utils/mixins',
   'utils/variables';
 @import
   'base/normalize',
-  'vendor/bootstrap';
+  'vendor/bootstrap',
+  '../../node_modules/slick-carousel/slick/slick.scss',
+  '../../node_modules/bootstrap-datepicker/dist/css/bootstrap-datepicker.standalone';
 @import
-  'utils/helpers',
   'base/general',
   'base/accessibility',
   'base/blockquote',
@@ -27,7 +23,7 @@
   'base/lists',
   'base/table',
   'base/type-fontfaces',
-  'base/type';
+  'base/text';
 @import
   'layout/grid',
   'layout/layout';
@@ -38,6 +34,12 @@
   'components/buttons',
   'components/logo',
   'components/custom-select',
-  'components/custom-checkboxes';
+  'components/custom-checkboxes',
+  'components/embed-wrap';
 @import
   'pages/home';
+
+@import
+  'utils/helpers',
+  'utils/utilities',
+  'utils/spacing-utilities';

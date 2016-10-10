@@ -68,12 +68,6 @@ npm install
 
 // Start
 npm start</code></pre>
-
-    <p>
-        Status:
-        <div class="js-status">&#x274c; Javascript not available</div>
-        <div class="css-status"></div>
-    </p>
 </div>
 
 <?php include('templates/footer.php'); ?>

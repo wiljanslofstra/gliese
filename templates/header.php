@@ -1,5 +1,6 @@
 <?php include(__DIR__ . '/../system/config.php'); ?>
 <?php
+    // TODO: Set the metadata correctly
     $meta_title = 'Gliese';
     $meta_desc = 'Front-end starter kit';
     $meta_sitename = 'Gliese';

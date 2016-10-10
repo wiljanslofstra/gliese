@@ -1,0 +1,4 @@
+node_modules
+assets/javascript/vendor
+assets/javascript/polyfills
+assets/build
