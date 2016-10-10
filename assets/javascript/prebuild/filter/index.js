@@ -51,6 +51,8 @@ export default () => {
     runFilter();
   }
 
+  filter.classList.remove('is-cloaked');
+
   handleInput(filter, () => {
     runFilter();
   });

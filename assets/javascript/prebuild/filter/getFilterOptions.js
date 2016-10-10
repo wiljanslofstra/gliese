@@ -7,5 +7,7 @@ import serializeAndRepopulate from './helpers/serializeAndRepopulate';
  * @return {Void}
  */
 export default (el, cb) => {
-  cb(serializeAndRepopulate(el));
+  const serialized = serializeAndRepopulate(el);
+
+  cb(serialized);
 };

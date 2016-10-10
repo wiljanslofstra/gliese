@@ -1,6 +1,8 @@
 import { each, filter, sortBy } from 'lodash';
 
 function filterProductsArr(productsArr, opts) {
+  console.log(opts);
+
   return filter(productsArr, (product) => {
     let productValid = true;
 
@@ -29,26 +31,34 @@ function filterProductsArr(productsArr, opts) {
   });
 }
 
-function filterProducts(productsArr, opts) {
+function sortProducts(productsArr, opts) {
   // Remove sorting from the options
+  if (typeof opts.sorting === 'undefined') {
+    return;
+  }
+
   const sortingProperty = opts.sorting.split('-')[1];
   const sortingDirection = opts.sorting.split('-')[0];
   delete opts.sorting;
 
-  // Remove price from the options
-  const price = opts.price;
-  delete opts.price;
-
-  // Loop through products
-  const filtered = filterProductsArr(productsArr, opts);
-
-  const sorted = sortBy(filtered, (product) => {
+  const sorted = sortBy(productsArr, (product) => {
     return product[sortingProperty];
   });
 
   if (sortingDirection === 'desc') {
     sorted.reverse();
   }
+
+  return sorted;
+}
+
+function filterProducts(productsArr, opts) {
+
+
+  // Loop through products
+  const filtered = filterProductsArr(productsArr, opts);
+
+  const sorted = sortProducts(filtered, opts);
 
   return sorted;
 }
