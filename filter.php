@@ -3,7 +3,7 @@
     <form class="js-filter">
         <div class="filter-group" data-filter-group="options" data-filter-type="checkboxes">
             <?php for ($i = 0; $i < 10; $i++) : ?>
-                <input type="checkbox" name="option-<?= $i ;?>" id="option-<?= $i ;?>">
+                <input type="checkbox" name="option-<?= $i ;?>" id="option-<?= $i ;?>" data-val="option-<?= $i ;?>">
                 <label for="option-<?= $i ;?>">Optie <?= $i ;?></label>
             <?php endfor; ?>
         </div>
@@ -33,6 +33,9 @@
         </div>
 
         <div class="filter-group" data-filter-group="more-options" data-filter-type="checkboxes">
+            <input type="radio" name="radios" id="radio-empty" value="">
+            <label for="radio-<?= $i ;?>">Radio <?= $i ;?></label>
+
             <?php for ($i = 0; $i < 3; $i++) : ?>
                 <input type="radio" name="radios" id="radio-<?= $i ;?>" value="radio-<?= $i ;?>">
                 <label for="radio-<?= $i ;?>">Radio <?= $i ;?></label>

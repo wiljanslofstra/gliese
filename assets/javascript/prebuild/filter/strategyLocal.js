@@ -1,7 +1,7 @@
 import { each, filter, sortBy } from 'lodash';
 
-function filterProductsArr() {
-  filter(productsArr, (product) => {
+function filterProductsArr(productsArr, opts) {
+  return filter(productsArr, (product) => {
     let productValid = true;
 
     // Loop through filters
@@ -40,7 +40,7 @@ function filterProducts(productsArr, opts) {
   delete opts.price;
 
   // Loop through products
-  const filtered = filterProductsArr();
+  const filtered = filterProductsArr(productsArr, opts);
 
   const sorted = sortBy(filtered, (product) => {
     return product[sortingProperty];
