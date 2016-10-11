@@ -7,8 +7,8 @@ import outputUrlParameters from './helpers/outputUrlParameters';
 import retrieveUrlParameters from './helpers/retrieveUrlParameters';
 
 // Different strategies available to render products
-import strategyLocal from './strategies/strategyLocal';
-import strategyRemote from './strategies/strategyRemote';
+import strategyLocal from './strategies/local';
+import strategyRemote from './strategies/remote';
 
 // Select the strategry with the config parameter
 const strategy = config.FILTER_STRATEGY === 'local' ? strategyLocal : strategyRemote;
