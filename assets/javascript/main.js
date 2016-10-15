@@ -24,7 +24,6 @@ import map from './prebuild/map';
 import addressAutofill from './prebuild/addressAutofill';
 import jumpToElement from './prebuild/jumpToElement';
 import togglePasswordVisibility from './prebuild/togglePasswordVisibility';
-import filter from './prebuild/filter';
 /* eslint-enable */
 
 const app = () => {
@@ -38,7 +37,6 @@ const app = () => {
   addressAutofill();
   jumpToElement.initialize();
   togglePasswordVisibility();
-  filter();
 };
 
 if (loadPolyfills) {
