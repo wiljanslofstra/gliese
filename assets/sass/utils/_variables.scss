@@ -43,20 +43,11 @@ $headings-font-weight: 500;
 $headings-line-height: 1.1;
 $headings-color: inherit;
 
-$font-size-h1: em(36);
-$font-size-h2: em(30);
-$font-size-h3: em(24);
-$font-size-h4: em(18);
+$font-size-h1: 3.157rem;
+$font-size-h2: 2.369rem;
+$font-size-h3: 1.77rem;
+$font-size-h4: 1.33rem;
 
-$h1-font-sizes: (
-  null: (rem(28), 1.5),
-  768px: (rem(36), 1.4),
-  1200px: (rem(42), 1.3)
-);
-
-//
-// BREAKPOINTS
-//
 $breakpoints: (
   xs: 480px,
   sm: 768px,
@@ -64,9 +55,6 @@ $breakpoints: (
   lg: 1200px
 );
 
-//
-// VENDOR VARIABLES
-//
 $em-base: $font-size-base;
 $prefix-for-webkit: true;
 $prefix-for-mozilla: true;

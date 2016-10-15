@@ -1,0 +1,124 @@
+$spacing-none: 0;
+$spacing-sm: .5rem;
+$spacing-md: 1rem;
+$spacing-lg: 2rem;
+$spacing-xl: 4rem;
+$spacing-xxl: 8rem;
+
+.u-pt0 { padding-top: $spacing-none; }
+.u-pt1 { padding-top: $spacing-sm; }
+.u-pt2 { padding-top: $spacing-md; }
+.u-pt3 { padding-top: $spacing-lg; }
+.u-pt4 { padding-top: $spacing-xl; }
+.u-pt5 { padding-top: $spacing-xxl; }
+
+.u-pb0 { padding-bottom: $spacing-none; }
+.u-pb1 { padding-bottom: $spacing-sm; }
+.u-pb2 { padding-bottom: $spacing-md; }
+.u-pb3 { padding-bottom: $spacing-lg; }
+.u-pb4 { padding-bottom: $spacing-xl; }
+.u-pb5 { padding-bottom: $spacing-xxl; }
+
+.u-mt0 { margin-top: $spacing-none; }
+.u-mt1 { margin-top: $spacing-sm; }
+.u-mt2 { margin-top: $spacing-md; }
+.u-mt3 { margin-top: $spacing-lg; }
+.u-mt4 { margin-top: $spacing-xl; }
+.u-mt5 { margin-top: $spacing-xxl; }
+
+.u-mb0 { margin-bottom: $spacing-none; }
+.u-mb1 { margin-bottom: $spacing-sm; }
+.u-mb2 { margin-bottom: $spacing-md; }
+.u-mb3 { margin-bottom: $spacing-lg; }
+.u-mb4 { margin-bottom: $spacing-xl; }
+.u-mb5 { margin-bottom: $spacing-xxl; }
+
+@media (min-width: 768px) {
+  .u-pt0-sm { padding-top: $spacing-none; }
+  .u-pt1-sm { padding-top: $spacing-sm; }
+  .u-pt2-sm { padding-top: $spacing-md; }
+  .u-pt3-sm { padding-top: $spacing-lg; }
+  .u-pt4-sm { padding-top: $spacing-xl; }
+  .u-pt5-sm { padding-top: $spacing-xxl; }
+
+  .u-pb0-sm { padding-bottom: $spacing-none; }
+  .u-pb1-sm { padding-bottom: $spacing-sm; }
+  .u-pb2-sm { padding-bottom: $spacing-md; }
+  .u-pb3-sm { padding-bottom: $spacing-lg; }
+  .u-pb4-sm { padding-bottom: $spacing-xl; }
+  .u-pb5-sm { padding-bottom: $spacing-xxl; }
+
+  .u-mt0-sm { margin-top: $spacing-none; }
+  .u-mt1-sm { margin-top: $spacing-sm; }
+  .u-mt2-sm { margin-top: $spacing-md; }
+  .u-mt3-sm { margin-top: $spacing-lg; }
+  .u-mt4-sm { margin-top: $spacing-xl; }
+  .u-mt5-sm { margin-top: $spacing-xxl; }
+
+  .u-mb0-sm { margin-bottom: $spacing-none; }
+  .u-mb1-sm { margin-bottom: $spacing-sm; }
+  .u-mb2-sm { margin-bottom: $spacing-md; }
+  .u-mb3-sm { margin-bottom: $spacing-lg; }
+  .u-mb4-sm { margin-bottom: $spacing-xl; }
+  .u-mb5-sm { margin-bottom: $spacing-xxl; }
+}
+
+@media (min-width: 992px) {
+  .u-pt0-md { padding-top: $spacing-none; }
+  .u-pt1-md { padding-top: $spacing-sm; }
+  .u-pt2-md { padding-top: $spacing-md; }
+  .u-pt3-md { padding-top: $spacing-lg; }
+  .u-pt4-md { padding-top: $spacing-xl; }
+  .u-pt5-md { padding-top: $spacing-xxl; }
+
+  .u-pb0-md { padding-bottom: $spacing-none; }
+  .u-pb1-md { padding-bottom: $spacing-sm; }
+  .u-pb2-md { padding-bottom: $spacing-md; }
+  .u-pb3-md { padding-bottom: $spacing-lg; }
+  .u-pb4-md { padding-bottom: $spacing-xl; }
+  .u-pb5-md { padding-bottom: $spacing-xxl; }
+
+  .u-mt0-md { margin-top: $spacing-none; }
+  .u-mt1-md { margin-top: $spacing-sm; }
+  .u-mt2-md { margin-top: $spacing-md; }
+  .u-mt3-md { margin-top: $spacing-lg; }
+  .u-mt4-md { margin-top: $spacing-xl; }
+  .u-mt5-md { margin-top: $spacing-xxl; }
+
+  .u-mb0-md { margin-bottom: $spacing-none; }
+  .u-mb1-md { margin-bottom: $spacing-sm; }
+  .u-mb2-md { margin-bottom: $spacing-md; }
+  .u-mb3-md { margin-bottom: $spacing-lg; }
+  .u-mb4-md { margin-bottom: $spacing-xl; }
+  .u-mb5-md { margin-bottom: $spacing-xxl; }
+}
+
+@media (min-width: 1200px) {
+  .u-pt0-lg { padding-top: $spacing-none; }
+  .u-pt1-lg { padding-top: $spacing-sm; }
+  .u-pt2-lg { padding-top: $spacing-md; }
+  .u-pt3-lg { padding-top: $spacing-lg; }
+  .u-pt4-lg { padding-top: $spacing-xl; }
+  .u-pt5-lg { padding-top: $spacing-xxl; }
+
+  .u-pb0-lg { padding-bottom: $spacing-none; }
+  .u-pb1-lg { padding-bottom: $spacing-sm; }
+  .u-pb2-lg { padding-bottom: $spacing-md; }
+  .u-pb3-lg { padding-bottom: $spacing-lg; }
+  .u-pb4-lg { padding-bottom: $spacing-xl; }
+  .u-pb5-lg { padding-bottom: $spacing-xxl; }
+
+  .u-mt0-lg { margin-top: $spacing-none; }
+  .u-mt1-lg { margin-top: $spacing-sm; }
+  .u-mt2-lg { margin-top: $spacing-md; }
+  .u-mt3-lg { margin-top: $spacing-lg; }
+  .u-mt4-lg { margin-top: $spacing-xl; }
+  .u-mt5-lg { margin-top: $spacing-xxl; }
+
+  .u-mb0-lg { margin-bottom: $spacing-none; }
+  .u-mb1-lg { margin-bottom: $spacing-sm; }
+  .u-mb2-lg { margin-bottom: $spacing-md; }
+  .u-mb3-lg { margin-bottom: $spacing-lg; }
+  .u-mb4-lg { margin-bottom: $spacing-xl; }
+  .u-mb5-lg { margin-bottom: $spacing-xxl; }
+}

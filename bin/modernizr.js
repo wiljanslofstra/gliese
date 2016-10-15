@@ -10,15 +10,13 @@ module.exports = function() {
     ],
     "feature-detects": [
       "css/flexbox",
-      "css/transforms",
       "css/transforms3d",
       "css/vhunit",
-      "css/gradients",
-      "geolocation",
-      "serviceworker",
-      "storage/localstorage",
       "touchevents",
-      "inputtypes"
+      "inputtypes",
+      "test/dom/dataset",
+      "test/dom/classList",
+      "test/requestanimationframe",
     ]
   }, function (result) {
     fs.writeFile('assets/javascript/vendor/modernizr.custom.js', result);

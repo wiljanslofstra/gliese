@@ -1,8 +1,0 @@
-{
-  "extends": "stylelint-config-standard",
-  "rules": {
-    "selector-pseudo-element-colon-notation": "single",
-    "number-leading-zero": "never",
-    "string-quotes": "single"
-  }
-}

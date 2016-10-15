@@ -65,45 +65,6 @@
   }
 }
 
-@mixin add-icon($icon, $position: 'before', $replace: false) {
-  // If we're replacing the text, set font-size to 0
-  @if $replace {
-    font-size: 0;
-  }
-  // Pseudo-element properties
-  &:#{$position} {
-    @extend %icon;
-    @extend .icon-#{$icon};
-
-    @if $replace {
-      font-size: 1rem;
-    }
-
-    @content;
-  }
-}
-
-@mixin breakpoint($name) {
-  @if map-has-key($breakpoints, $name) {
-    $bp: inspect(map-get($breakpoints, $name));
-
-    @media (min-width: #{$bp}) {
-      @content;
-    }
-  }
-
-  @else {
-    @warn 'Couldn\t find a breakpoint named `#{$name}`.';
-  }
-}
-
-@mixin center-h {
-  position: relative;
-  top: 50%;
-
-  @include transform(translateY(-50%));
-}
-
 @mixin n-items($n) {
   &:first-child:nth-last-child(#{$n}),
   &:first-child:nth-last-child(#{$n}) ~ & {
@@ -121,4 +82,9 @@
   @media (min-width: #{$max_width}px){
     font-size: #{$max_font}px;
   }
+}
+
+@mixin list-unstyled {
+  padding-left: 0;
+  list-style: none;
 }

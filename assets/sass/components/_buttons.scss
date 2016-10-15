@@ -1,42 +1,52 @@
-$button-height: 36px;
-$button-line-height: $line-height-base;
-$button-font-size: $font-size-base;
-$button-v-padding: ($button-height - ($button-font-size * $button-line-height)) / 2;
-$button-h-padding: 10px;
-$button-primary-bg: $color-primary;
-$button-primary-color: #fff;
-$button-primary-border-radius: 3px;
-
-.button {
-  appearance: none;
-  border: 0;
-  cursor: pointer;
+.btn {
   display: inline-block;
-  font-size: $button-font-size;
-  -webkit-font-smoothing: antialiased;
-  line-height: $button-line-height;
-  padding: $button-v-padding $button-h-padding;
-  text-decoration: none;
-  transition: background-color .3s $ease-out-quad;
-  user-select: none;
+  margin-bottom: 0; // For input.btn
+  font-weight: $btn-font-weight;
+  text-align: center;
   vertical-align: middle;
+  touch-action: manipulation;
+  cursor: pointer;
+  background-image: none;
+  border: 1px solid transparent;
   white-space: nowrap;
+  padding: .25rem .5rem;
+  user-select: none;
 
-  &--primary {
-    color: $button-primary-color;
-    background-color: $button-primary-bg;
-    border-radius: $button-primary-border-radius;
-
-    &:hover,
-    &:focus {
-      background-color: shade($button-primary-bg, 20%);
-      color: $button-primary-color;
-      text-decoration: none;
-    }
+  &:hover,
+  &:focus {
+    color: $btn-default-color;
+    text-decoration: none;
   }
 
-  &:disabled {
-    cursor: not-allowed;
-    opacity: .5;
+  &:active {
+    outline: 0;
+    background-image: none;
+    @include box-shadow(inset 0 3px 5px rgba(0,0,0,.125));
   }
+
+  &.disabled,
+  &[disabled] {
+    cursor: $cursor-disabled;
+    @include opacity(.65);
+    @include box-shadow(none);
+  }
+}
+
+  .btn-default {
+    @include button-variant($btn-default-color, $btn-default-bg, $btn-default-border);
+  }
+
+  .btn-primary {
+    @include button-variant($btn-primary-color, $btn-primary-bg, $btn-primary-border);
+  }
+
+// Button Sizes
+// --------------------------------------------------
+
+.btn-lg {
+  padding: .45rem .6rem;
+}
+
+.btn-sm {
+  padding: .25rem .5rem;
 }

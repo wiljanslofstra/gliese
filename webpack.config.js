@@ -1,20 +1,40 @@
 /* eslint-disable */
-var pkg = require('./package.json');
-var webpack = require('webpack');
-var path = require('path');
+const pkg = require('./package.json');
+const webpack = require('webpack');
+const path = require('path');
+const getArgOptions = require('./bin/getArgOptions');
 
-// Paths
-var buildPath = path.resolve(__dirname, 'assets/build');
-var entryPath = path.resolve(__dirname, 'assets/javascript', 'main.react');
+const options = getArgOptions(process.argv.slice(2));
 
-const DEBUG = true;
+const ENV = (typeof options.env !== 'undefined') ? options.env : 'development';
+const DEBUG = (ENV === 'development');
 const VERBOSE = false;
 
+// Paths
+const buildPath = path.resolve(__dirname, 'assets/build');
+const entryPath = path.resolve(__dirname, 'assets/javascript', 'main');
+
 // Plugins
-var uglify = new webpack.optimize.UglifyJsPlugin({ minimize: true });
+const uglify = new webpack.optimize.UglifyJsPlugin({ minimize: true });
+const providePlugin = new webpack.ProvidePlugin({
+  jQuery: 'jquery',
+  $: 'jquery',
+  'window.jQuery': 'jquery',
+});
+var dedupe = new webpack.optimize.DedupePlugin();
+var occurrenceOrder = new webpack.optimize.OccurrenceOrderPlugin(true);
+
+const plugins = [
+  providePlugin,
+];
+
+if (ENV === 'production') {
+  plugins.push(dedupe, occurrenceOrder, uglify);
+}
 
 module.exports = {
   entry: [ entryPath ],
+  devtool: (ENV === 'development') ? 'eval-source-map' : 'source-map',
   output: {
     path: buildPath,
     filename: 'bundle.js'
@@ -27,9 +47,8 @@ module.exports = {
     }
   },
   module: {
-    noParse: ['jquery'],
+    noParse: ['jquery', 'modernizr', 'bootstrap-datepicker', 'parsleyjs'],
     loaders: [
-      { test: /\.css$/, loader: 'style!css' },
       {
         test: /\.js?$/,
         exclude: /node_modules/,
@@ -45,14 +64,7 @@ module.exports = {
   externals: {
     // 'jquery': 'jQuery',
   },
-  plugins: [
-    // uglify,
-    new webpack.ProvidePlugin({
-      jQuery: 'jquery',
-      $: 'jquery',
-      'window.jQuery': 'jquery',
-    }),
-  ],
+  plugins: plugins,
   stats: {
     colors: true,
     reasons: DEBUG,

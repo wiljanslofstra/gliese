@@ -1,0 +1,33 @@
+// Inline block element have extra white-space, by setting the font-size to zero
+// on the parent we remove this space. This allows us to better control widths and alignment
+.u-fix-inline-block {
+  font-size: 0;
+}
+  .u-fix-inline-block > * {
+    font-size: 1rem;
+  }
+
+// Create a row with flex elements
+.u-flex-row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+  // Remove clearfix pseudo elements, because they cause issues on Safari
+  &:before,
+  &:after {
+    display: none !important;
+  }
+}
+  .u-flex-row > * {
+    display: flex;
+    float: none;
+  }
+
+.touchevents .u-visible-touch {
+  display: block !important;
+}
+
+.no-touchevents .u-hidden-touch {
+  display: none !important;
+}
