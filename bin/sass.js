@@ -47,17 +47,16 @@ module.exports = function() {
       file: sassPath,
       outFile: outputPath,
     }, function(error, result) {
-      if (!error) {
-        // Run PostCSS
-        postCSS(result.css)
-          .then(function() {
-            resolve();
-          });
-      } else {
+      if (error) {
         console.log(error);
         reject(error);
       }
-    });
 
+      // Run PostCSS
+      postCSS(result.css)
+        .then(function() {
+          resolve();
+        });
+    });
   });
 };

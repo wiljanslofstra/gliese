@@ -57,7 +57,7 @@ export default (lat, lng, markerIcon, markerSize, markerAnchor, markerTitle, map
     title,
   };
 
-  if (typeof markerIcon !== 'undefined' && !markerIcon) {
+  if (typeof markerIcon !== 'undefined' && markerIcon) {
     options.icon = createCustomIcon(markerIcon, markerSize, markerAnchor);
   }
 
