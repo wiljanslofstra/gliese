@@ -2,6 +2,9 @@ __webpack_public_path__ = window.WEBPACK_PATH; // eslint-disable-line
 
 /* eslint-disable */
 import 'modernizr';
+
+import '../sass/main.scss';
+
 import './polyfills/objectAssign';
 // import 'es6-promise';
 // import 'whatwg-fetch';
@@ -40,13 +43,15 @@ const app = () => {
 };
 
 if (loadPolyfills) {
-  require.ensure([
+  /* eslint-disable */
+  require([
     './polyfills/dataset',
     './polyfills/classList',
     './polyfills/requestAnimationFrame',
   ], () => {
     app();
   });
+  /* eslint-enable */
 } else {
   app();
 }
