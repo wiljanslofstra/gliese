@@ -59,7 +59,7 @@ const map = {
         this.data.markerSize,
         this.data.markerAnchor,
         this.data.markerTitle,
-        mapObj
+        mapObj,
       );
     }
   },

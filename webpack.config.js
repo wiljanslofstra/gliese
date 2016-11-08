@@ -26,6 +26,7 @@ const plugins = [
 ];
 
 module.exports = function(options) {
+  // If running in production we will add some plugins
   if (options === 'production') {
     plugins.push(dedupe, uglify);
   }

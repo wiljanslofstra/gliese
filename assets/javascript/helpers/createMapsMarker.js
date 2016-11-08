@@ -13,7 +13,7 @@ function createCustomIcon(icon, size, anchor) {
 
   const iconSize = new google.maps.Size(
     parseInt(markerSize[0], 10),
-    parseInt(markerSize[1], 10)
+    parseInt(markerSize[1], 10),
   );
 
   return {
@@ -23,7 +23,7 @@ function createCustomIcon(icon, size, anchor) {
     origin: new google.maps.Point(0, 0),
     anchor: new google.maps.Point(
       parseInt(markerAnchor[0], 10),
-      parseInt(markerAnchor[1], 10)
+      parseInt(markerAnchor[1], 10),
     ),
   };
 }
