@@ -9,8 +9,8 @@
     $meta_twitter = '@wiljanslofstra';
 ?>
 <!DOCTYPE html>
-<!--[if lte IE 9]><html class="no-js ie9 "> <![endif]-->
-<!--[if gt IE 9]><!--> <html class="no-js"><!--<![endif]-->
+<!--[if lte IE 9]><html class="no-js ie9 " lang="nl"> <![endif]-->
+<!--[if gt IE 9]><!--> <html class="no-js" lang="nl"><!--<![endif]-->
 <head>
     <meta charset="utf-8">
 
@@ -39,7 +39,7 @@
     <!-- TODO: Place Icons -->
 
     <script type="text/javascript">
-        document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + 'js';
+        document.documentElement.className = document.documentElement.className.replace('no-js', 'js');
 
         var BASE = '<?= BASE_PATH; ?>';
         var WEBPACK_PATH = '<?= ASSET_BUILD_PATH; ?>/';

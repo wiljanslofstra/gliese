@@ -12,6 +12,7 @@ const entryPath = path.resolve(__dirname, 'assets/javascript', 'main');
 const uglify = new webpack.optimize.UglifyJsPlugin({ minimize: true });
 var dedupe = new webpack.optimize.DedupePlugin();
 
+// Default plugins
 const plugins = [
   new webpack.ProvidePlugin({
     jQuery: 'jquery',
@@ -19,7 +20,7 @@ const plugins = [
     'window.jQuery': 'jquery',
   }),
   new ExtractTextPlugin({
-    filename: 'main.css',
+    filename: '[name].css',
     allChunks: true,
   }),
 ];
