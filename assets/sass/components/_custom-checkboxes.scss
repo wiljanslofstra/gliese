@@ -18,52 +18,52 @@ $c-radio-inner-border-radius: $c-checkbox-inner-size / 2;
 // Hide input element
 input[type=radio],
 input[type=checkbox] {
-  opacity: 0;
   position: absolute;
+  opacity: 0;
 }
 
 // Style the label
 input[type=radio] + label,
 input[type=checkbox] + label {
   display: inline-block;
-  cursor: pointer;
   position: relative;
+  cursor: pointer;
   padding-left: $c-checkbox-size + $c-checkbox-space;
 
   &:before,
   &:after {
-    content: '';
     display: block;
     position: absolute;
     top: 50%;
+    content: "";
   }
 
   // Outer circle
   &:before {
+    left: 0;
+    margin-top: ($c-checkbox-size / 2) * -1;
+    border: $c-checkbox-border-size solid $c-checkbox-border;
+    border-radius: $c-checkbox-border-radius;
     background: $c-checkbox-bg;
     width: $c-checkbox-size;
     height: $c-checkbox-size;
-    margin-top: ($c-checkbox-size / 2) * -1;
-    border-radius: $c-checkbox-border-radius;
-    left: 0;
-    border: $c-checkbox-border-size solid $c-checkbox-border;
   }
 
   // Inner circle
   &:after {
-    opacity: 0; // Hide until checked
+    left: ($c-checkbox-size - $c-checkbox-inner-size) / 2;
     visibility: hidden;
+    opacity: 0; // Hide until checked
+    z-index: 2;
+    margin-top: ($c-checkbox-inner-size / 2) * -1;
+    border-radius: $c-checkbox-inner-border-radius;
+    background: $c-checkbox-inner-bg;
     width: $c-checkbox-inner-size;
     height: $c-checkbox-inner-size;
-    left: ($c-checkbox-size - $c-checkbox-inner-size) / 2;
-    margin-top: ($c-checkbox-inner-size / 2) * -1;
-    z-index: 2;
-    background: $c-checkbox-inner-bg;
-    border-radius: $c-checkbox-inner-border-radius;
 
     @if $c-checkbox-animation {
-      transition: opacity .2s ease-out, visibility .2s ease-out, transform .2s ease-out;
       transform: scale(.8);
+      transition: opacity .2s ease-out, visibility .2s ease-out, transform .2s ease-out;
     }
   }
 }
@@ -81,8 +81,8 @@ input[type=radio] + label:after {
 // Show inner circle
 input[type=radio]:checked + label:after,
 input[type=checkbox]:checked + label:after {
-  opacity: 1;
   visibility: visible;
+  opacity: 1;
 
   @if $c-checkbox-animation {
     transform: scale(1);

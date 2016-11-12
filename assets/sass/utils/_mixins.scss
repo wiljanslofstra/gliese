@@ -1,4 +1,4 @@
-// Burger
+
 @mixin burger($width: 30px, $height: 5px, $gutter: 3px, $color: #000, $border-radius: 0, $transition-duration: .3s) {
   $burger-height: $height !global;
   $burger-gutter: $gutter !global;
@@ -7,34 +7,28 @@
   margin-top: $height + $gutter;
   margin-bottom: $height + $gutter;
 
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
   user-select: none;
 
   &,
   &:before,
   &:after {
     display: block;
+    background-color: $color;
     width: $width;
     height: $height;
-    background-color: $color;
 
     @if $border-radius != 0 {
       border-radius: $border-radius;
     }
 
-    -webkit-transition-property: background-color, -webkit-transform;
     transition-property: background-color, transform;
-
-    -webkit-transition-duration: $transition-duration;
     transition-duration: $transition-duration;
   }
 
   &:before,
   &:after {
     position: absolute;
-    content: '';
+    content: "";
   }
 
   &:before {
@@ -46,45 +40,16 @@
   }
 }
 
-// Burger animations
 @mixin burger-to-cross {
   & {
     background-color: transparent;
   }
 
   &:before {
-    -webkit-transform: translateY($burger-gutter + $burger-height) rotate(45deg);
-    -ms-transform: translateY($burger-gutter + $burger-height) rotate(45deg);
     transform: translateY($burger-gutter + $burger-height) rotate(45deg);
   }
 
   &:after {
-    -webkit-transform: translateY(-($burger-gutter + $burger-height)) rotate(-45deg);
-    -ms-transform: translateY(-($burger-gutter + $burger-height)) rotate(-45deg);
     transform: translateY(-($burger-gutter + $burger-height)) rotate(-45deg);
   }
-}
-
-@mixin n-items($n) {
-  &:first-child:nth-last-child(#{$n}),
-  &:first-child:nth-last-child(#{$n}) ~ & {
-    @content;
-  }
-}
-
-@mixin responsive-type($min_width: 320, $max_width: 1200, $min_font: 12, $max_font: 24) {
-  font-size: #{$min_font}px;
-
-  @media (min-width: #{$min_width}px) and (max-width: #{$max_width}px){
-    font-size: calc( #{$min_font}px + (#{$max_font} - #{$min_font}) * ( (100vw - #{$min_width}px) / ( #{$max_width} - #{$min_width}) ));
-  }
-
-  @media (min-width: #{$max_width}px){
-    font-size: #{$max_font}px;
-  }
-}
-
-@mixin list-unstyled {
-  padding-left: 0;
-  list-style: none;
 }

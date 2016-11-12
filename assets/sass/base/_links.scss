@@ -1,13 +1,12 @@
 a {
-  color: $link-color;
   text-decoration: none;
-
-  @include transition(color .3s $ease-out-quad);
+  color: $link-color;
+  transition: color .3s $ease-out-quad;
 
   &:hover,
   &:focus {
-    color: $link-hover-color;
     text-decoration: $link-hover-decoration;
+    color: $link-hover-color;
   }
 
   &:focus {

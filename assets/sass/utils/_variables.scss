@@ -1,12 +1,4 @@
-//
-// PATHS
-//
-$font-path: '../fonts/';
-$img-path: '../images/';
-
-//
-// COLORS
-//
+// Colors
 $color-primary: #bada55;
 $color-secondary: #ff5820;
 
@@ -21,12 +13,10 @@ $color-link: $color-primary;
 $link-color: $color-link;
 $link-hover-color: darken($color-link, 15%);
 
-//
-// TYPOGRAPHY
-//
-$font-family-sans-serif: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-$font-family-serif: Georgia, 'Times New Roman', Times, serif;
-$font-family-monospace: Menlo, Monaco, Consolas, 'Courier New', monospace;
+// Typography
+$font-family-sans-serif: Helvetica Neue, Helvetica, Arial, sans-serif;
+$font-family-serif: Georgia, Times New Roman, Times, serif;
+$font-family-monospace: Menlo, Monaco, Consolas, Courier New, monospace;
 $font-family-base: $font-family-sans-serif;
 
 $font-size-base: 16px;

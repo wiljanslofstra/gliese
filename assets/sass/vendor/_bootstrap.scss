@@ -4,10 +4,14 @@
 @import '../../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/mixins';
 
 // Reset and dependencies
-// @import '../../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/normalize';
+@import '../../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/normalize';
 @import '../../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/print';
 // @import '../../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/glyphicons';
 
+
+@media (min-width: 700px) {
+
+}
 // Core CSS
 // @import '../../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/scaffolding';
 // @import '../../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/type';

@@ -1,44 +1,53 @@
 html {
+  text-rendering: optimizeLegibility;
+  line-height: $line-height-base;
+  color: $color-text;
+  font-feature-settings: "liga" 1, "kern" 1;
+  font-kerning: normal;
   font-family: $font-family-base;
   font-size: $font-size-base;
-  line-height: $line-height-base;
   text-size-adjust: none;
-  text-rendering: optimizeLegibility;
-  font-feature-settings: 'liga' 1, 'kern' 1;
-  font-kerning: normal;
-  color: $color-text;
 
-  -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
 }
 
 // Headings
 // -------------------------
 
-h1, h2, h3, h4,
-.h1, .h2, .h3, .h4 {
-  font-family: $headings-font-family;
-  font-weight: $headings-font-weight;
+h1,
+h2,
+h3,
+h4,
+.h1,
+.h2,
+.h3,
+.h4 {
+  margin: 0 0 .25em;
   line-height: $headings-line-height;
   color: $headings-color;
-  margin: 0 0 .25em;
+  font-family: $headings-font-family;
+  font-weight: $headings-font-weight;
 }
 
-h1, .h1 { font-size: $font-size-h1; }
-h2, .h2 { font-size: $font-size-h2; }
-h3, .h3 { font-size: $font-size-h3; }
-h4, .h4 { font-size: $font-size-h4; }
+h1,
+.h1 { font-size: $font-size-h1; }
 
+h2,
+.h2 { font-size: $font-size-h2; }
+
+h3,
+.h3 { font-size: $font-size-h3; }
+
+h4,
+.h4 { font-size: $font-size-h4; }
 
 // Body text
-// -------------------------
-
 p {
   margin: 0 0 ($line-height-computed / 2);
 }
 
 // Emphasis & misc
-// -------------------------
 
 // Ex: (12px small font / 14px base font) * 100% = about 85%
 small,
@@ -72,6 +81,6 @@ ol {
 
 // Abbreviations and acronyms
 abbr[title] {
-  cursor: help;
   border-bottom: 1px dotted $abbr-border-color;
+  cursor: help;
 }

@@ -3,8 +3,6 @@ __webpack_public_path__ = window.WEBPACK_PATH; // eslint-disable-line
 /* eslint-disable */
 import 'modernizr';
 
-import '../sass/main.scss';
-
 import './polyfills/objectAssign';
 // import 'es6-promise';
 // import 'whatwg-fetch';

@@ -3,51 +3,53 @@ $cms-content-spacing: 1rem;
 .cms-content {
   color: $color-text;
 }
-  .cms-content > * {
-    margin-top: $cms-content-spacing;
-    margin-bottom: 0;
-  }
-    .cms-content > *:first-child {
-      margin-top: 0;
-    }
 
-  .cms-content img {
-    max-width: 100%;
-    display: block;
-  }
+.cms-content > * {
+  margin-top: $cms-content-spacing;
+  margin-bottom: 0;
+}
 
-  .cms-content img,
-  .cms-content .embed-wrap,
-  .cms-content > iframe {
-    margin-top: $cms-content-spacing * 1.5;
-    margin-bottom: $cms-content-spacing * 1.5;
-  }
+.cms-content > *:first-child {
+  margin-top: 0;
+}
 
-  .cms-content h1,
-  .cms-content h2,
-  .cms-content h3,
-  .cms-content h4 {
-    margin-top: $cms-content-spacing * 1.5;
-  }
+.cms-content img {
+  display: block;
+  max-width: 100%;
+}
 
-  .cms-content a {
-    color: $color-text;
-    text-decoration: underline;
+.cms-content img,
+.cms-content .embed-wrap,
+.cms-content > iframe {
+  margin-top: $cms-content-spacing * 1.5;
+  margin-bottom: $cms-content-spacing * 1.5;
+}
 
-    &:hover {
-      color: $color-primary;
-    }
-  }
+.cms-content h1,
+.cms-content h2,
+.cms-content h3,
+.cms-content h4 {
+  margin-top: $cms-content-spacing * 1.5;
+}
 
-  .cms-content ul,
-  .cms-content ol {
-    padding-left: 20px;
-  }
+.cms-content a {
+  text-decoration: underline;
+  color: $color-text;
 
-  .cms-content ul {
-    list-style: disc;
+  &:hover {
+    color: $color-primary;
   }
+}
 
-  .cms-content ol {
-    list-style: decimal;
-  }
+.cms-content ul,
+.cms-content ol {
+  padding-left: 20px;
+}
+
+.cms-content ul {
+  list-style: disc;
+}
+
+.cms-content ol {
+  list-style: decimal;
+}

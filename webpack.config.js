@@ -2,7 +2,6 @@
 const pkg = require('./package.json');
 const webpack = require('webpack');
 const path = require('path');
-var ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 // Paths
 const buildPath = path.resolve(__dirname, 'assets/build');
@@ -18,11 +17,7 @@ const plugins = [
     jQuery: 'jquery',
     $: 'jquery',
     'window.jQuery': 'jquery',
-  }),
-  new ExtractTextPlugin({
-    filename: '[name].css',
-    allChunks: true,
-  }),
+  })
 ];
 
 module.exports = function(options) {
@@ -57,25 +52,6 @@ module.exports = function(options) {
           exclude: [/node_modules/, /vendor/],
           loaders: ['eslint-loader'],
         },
-        {
-          test: /\.scss$/,
-          loader: ExtractTextPlugin.extract({
-            fallbackLoader: "style-loader",
-            loader: [{
-              loader: 'css',
-              query: {
-                sourceMap: true,
-              },
-            }, {
-              loader: 'sass',
-              query: {
-                outputStyle: (options === 'development') ? 'nested' : 'compressed',
-              },
-            }, {
-              loader: 'postcss',
-            }]
-          })
-        }
       ],
     },
     externals: {

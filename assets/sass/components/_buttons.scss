@@ -1,21 +1,21 @@
 .btn {
   display: inline-block;
   margin-bottom: 0; // For input.btn
-  font-weight: $btn-font-weight;
-  text-align: center;
-  vertical-align: middle;
-  touch-action: manipulation;
-  cursor: pointer;
-  background-image: none;
   border: 1px solid transparent;
-  white-space: nowrap;
+  background-image: none;
+  cursor: pointer;
   padding: .25rem .5rem;
+  vertical-align: middle;
+  text-align: center;
+  white-space: nowrap;
+  font-weight: $btn-font-weight;
   user-select: none;
+  touch-action: manipulation;
 
   &:hover,
   &:focus {
-    color: $btn-default-color;
     text-decoration: none;
+    color: $btn-default-color;
   }
 
   &:active {
@@ -32,16 +32,13 @@
   }
 }
 
-  .btn-default {
-    @include button-variant($btn-default-color, $btn-default-bg, $btn-default-border);
-  }
+.btn-default {
+  @include button-variant($btn-default-color, $btn-default-bg, $btn-default-border);
+}
 
-  .btn-primary {
-    @include button-variant($btn-primary-color, $btn-primary-bg, $btn-primary-border);
-  }
-
-// Button Sizes
-// --------------------------------------------------
+.btn-primary {
+  @include button-variant($btn-primary-color, $btn-primary-bg, $btn-primary-border);
+}
 
 .btn-lg {
   padding: .45rem .6rem;
