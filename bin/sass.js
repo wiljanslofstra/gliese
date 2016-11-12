@@ -24,9 +24,7 @@ if (ENV === 'production') {
   // postCSSPlugins.push();
 }
 
-function postCSS(css, plugins, shouldWrite) {
-  shouldWrite = shouldWrite || false;
-
+function postCSS(css, plugins) {
   return postcss(plugins)
     .process(css, {
       from: outputPath,
@@ -34,12 +32,10 @@ function postCSS(css, plugins, shouldWrite) {
       map: { inline: false },
     })
     .then(function (result) {
-      if (shouldWrite) {
-        fs.writeFileSync(outputPath, result.css);
+      fs.writeFileSync(outputPath, result.css);
 
-        if (result.map) {
-          fs.writeFileSync(mapPath, result.map);
-        }
+      if (result.map) {
+        fs.writeFileSync(mapPath, result.map);
       }
     });
 }
