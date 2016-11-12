@@ -6,7 +6,7 @@
     $meta_sitename = 'Gliese';
     $meta_img = ASSET_PATH . '/icons/apple-touch-icon.png';
     $meta_url = '/';
-    $meta_twitter = '@wiljanslofstra';
+    $meta_twitter = '@twitter';
 ?>
 <!DOCTYPE html>
 <!--[if lte IE 9]><html class="no-js ie9 " lang="nl"> <![endif]-->
@@ -49,3 +49,6 @@
 </head>
 
 <body>
+    <a class="sr-only sr-only-focusable" href="#main">
+        Go to content
+    </a>

@@ -48,7 +48,7 @@
     }
 </style>
 
-<div class="demo-block">
+<main id="main" class="demo-block" tabindex="-1">
     <h1 class="demo-block__heading">Gliese</h1>
 
     <a class="demo-block__btn" href="styleguide.php">
@@ -68,6 +68,6 @@ npm install
 
 // Start
 npm start</code></pre>
-</div>
+</main>
 
 <?php include('templates/footer.php'); ?>
