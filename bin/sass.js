@@ -7,6 +7,7 @@ var chalk = require('chalk');
 var stylelint = require('./stylelint');
 var notification = require('./notification');
 var createStats = require('./create-stats');
+var timing = require('./timing');
 
 const ENV = process.env.NODE_ENV;
 
@@ -58,6 +59,8 @@ function postCSS(css, plugins) {
       if (result.map) {
         fs.writeFileSync(mapPath, result.map);
       }
+
+      timing('PostCSS', 'end');
     });
 }
 
@@ -104,16 +107,22 @@ module.exports = function() {
   // Run Stylelint on all our Sass files
   stylelint();
 
+  timing('Sass', 'start');
+
   // Compile the Sass
   sass.render({
     file: sassPath,
     outFile: outputPath,
-    outputStyle: (ENV === 'production') ? 'compressed' : 'nested',
+    outputStyle: (ENV === 'production') ? 'compressed' : 'expanded',
   }, function(error, result) {
+    timing('Sass', 'end');
+
     if (error) {
       outputSassError(error);
       return;
     }
+
+    timing('PostCSS', 'start');
 
     // Run the compiled Sass through PostCSS
     postCSS(result.css, postCSSPlugins);

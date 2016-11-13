@@ -32,18 +32,18 @@
   }
 }
 
-.btn-default {
+.btn--default {
   @include button-variant($btn-default-color, $btn-default-bg, $btn-default-border);
 }
 
-.btn-primary {
+.btn--primary {
   @include button-variant($btn-primary-color, $btn-primary-bg, $btn-primary-border);
 }
 
-.btn-lg {
+.btn--lg {
   padding: .45rem .6rem;
 }
 
-.btn-sm {
+.btn--sm {
   padding: .25rem .5rem;
 }

@@ -8,3 +8,8 @@
   background: $color-primary;
   color: #fff;
 }
+
+[tabindex="-1"]:focus,
+[tabindex="-1"]:active {
+  outline: none;
+}

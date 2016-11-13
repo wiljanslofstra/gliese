@@ -2,64 +2,28 @@
 
 <style>
     /* DEMO STYLES */
-    body {
-        background: #00d0a1;
-        color: #fff;
-        font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
-        line-height: 1.4;
-    }
-
-    .demo-block {
-        margin: 5rem auto;
-        max-width: 500px;
-        text-align: center;
-    }
-        .demo-block__heading {
-            font-size: 42px;
-            font-weight: 100;
-        }
-
-        .demo-block__btn {
-            color: #fff;
-            margin-left: 5px;
-            margin-right: 5px;
-            display: inline-block;
-            padding: 6px 12px;
-            border: 1px solid #fff;
-            border-radius: 4px;
-            text-decoration: none;
-        }
-            .demo-block__btn:hover,
-            .demo-block__btn:focus {
-                background: #fff;
-                color: #00d0a1;
-            }
-
-        .demo-block__code {
-            background: #01b48c;
-            text-align: left;
-            padding: 1rem;
-            margin-top: 2rem;
-            border-radius: 4px;
-        }
-
-    .css-status:before {
-        content: '\274C  CSS not available';
+    .demo-block__code {
+        background: #eee;
     }
 </style>
 
-<main id="main" class="demo-block" tabindex="-1">
-    <h1 class="demo-block__heading">Gliese</h1>
+<div class="container">
+    <main id="main" class="demo-block u-mt2 u-mb2 u-sm-mt3 u-sm-mb3 u-mx-auto u-text-center u-capped-lg" tabindex="-1">
+        <h1 class="demo-block__heading u-mb2 u-sm-mb3">
+            Gliese
+        </h1>
 
-    <a class="demo-block__btn" href="styleguide.php">
-        Styleguide
-    </a>
+        <div class="u-mb2 u-sm-mb3">
+            <a class="btn btn--primary u-ml1 u-mr1" href="styleguide.php" role="button">
+                Styleguide
+            </a>
 
-    <a class="demo-block__btn" href="https://github.com/wiljanslofstra/Gliese" target="_blank">
-        Repository
-    </a>
+            <a class="btn btn--primary u-ml1 u-mr1" href="https://github.com/wiljanslofstra/Gliese" target="_blank" role="button">
+                Repository
+            </a>
+        </div>
 
-    <pre class="demo-block__code"><code>// Install dependencies
+        <pre class="demo-block__code u-p2 u-text-left"><code>// Install dependencies
 npm install
 
 // Change BASE_PATH in ./system/config.php
@@ -68,6 +32,7 @@ npm install
 
 // Start
 npm start</code></pre>
-</main>
+    </main>
+</div>
 
 <?php include('templates/footer.php'); ?>
