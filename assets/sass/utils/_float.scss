@@ -1,0 +1,13 @@
+@each $breakpoint in map-keys($grid-breakpoints) {
+  @include media-breakpoint-up($breakpoint) {
+    .u-#{$breakpoint}-float-left {
+      @include float-left();
+    }
+    .u-#{$breakpoint}-float-right {
+      @include float-right();
+    }
+    .u-#{$breakpoint}-float-none {
+      float: none !important;
+    }
+  }
+}

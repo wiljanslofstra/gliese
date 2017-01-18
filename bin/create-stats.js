@@ -53,11 +53,9 @@ module.exports = function(obj, highlightKey) {
   }
 
   // Log it to the console with some breaks between for clarity
-  var output = '\r\n';
-  output += chalk.bold(head.join(' '));
+  var output = chalk.bold(head.join(' '));
   output += '\r\n';
   output += body.join(' ');
-  output += '\r\n';
 
   console.log(output);
 };

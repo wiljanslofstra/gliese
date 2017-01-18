@@ -25,7 +25,7 @@ input[type="file"] {
   width: 100%;
   // Make inputs at least the height of their button counterpart
   height: $input-height-base;
-  padding: $padding-base-vertical $padding-base-horizontal;
+  padding: $input-vertical-padding $input-horizontal-padding;
   line-height: $line-height-base;
   color: $input-color;
   font-size: $font-size-base;

@@ -15,7 +15,7 @@
   &:hover,
   &:focus {
     text-decoration: none;
-    color: $btn-default-color;
+    color: $btn-primary-color;
   }
 
   &:active {
@@ -26,14 +26,14 @@
 
   &.disabled,
   &[disabled] {
+    opacity: .65;
+    box-shadow: none;
     cursor: $cursor-disabled;
-    @include opacity(.65);
-    @include box-shadow(none);
   }
 }
 
-.btn--default {
-  @include button-variant($btn-default-color, $btn-default-bg, $btn-default-border);
+.btn--secondary {
+  @include button-variant($btn-secondary-color, $btn-secondary-bg, $btn-secondary-border);
 }
 
 .btn--primary {

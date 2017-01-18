@@ -9,7 +9,7 @@
 @import
   "vendor/bootstrap",
   "../../node_modules/slick-carousel/slick/slick.scss";
-  //"../../node_modules/bootstrap-datepicker/dist/css/bootstrap-datepicker.standalone";
+  // "../../node_modules/bootstrap-datepicker/dist/css/bootstrap-datepicker.standalone";
 @import
   "base/general",
   "base/accessibility",
@@ -41,4 +41,11 @@
 @import
   "utils/helpers",
   "utils/utilities",
-  "utils/spacing-utilities";
+  "utils/flex",
+  "utils/float",
+  "utils/width",
+  "utils/colors",
+  "utils/touch",
+  "utils/text",
+  "utils/display",
+  "utils/spacing";
