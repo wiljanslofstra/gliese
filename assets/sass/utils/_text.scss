@@ -4,8 +4,19 @@
 .u-text-center { text-align: center; }
 .u-text-justify { text-align: justify; }
 .u-text-nowrap { white-space: nowrap; }
+.u-text-truncate {
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
 
 // Transformation
 .u-text-lowercase { text-transform: lowercase; }
 .u-text-uppercase { text-transform: uppercase; }
 .u-text-capitalize { text-transform: capitalize; }
+
+.hide-text,
+.text-hide {
+  @include hide-text;
+}

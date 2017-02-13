@@ -1,55 +1,62 @@
+/* global BASE */
+
 __webpack_public_path__ = window.WEBPACK_PATH; // eslint-disable-line
 
 /* eslint-disable */
 import 'modernizr';
-
-import './polyfills/objectAssign';
-// import 'es6-promise';
-// import 'whatwg-fetch';
 import accessibility from './modules/accessibility';
 
-let loadPolyfills = false;
+const loadPolyfills = (
+  !Modernizr.dataset ||
+  !Modernizr.classlist ||
+  !Modernizr.requestanimationframe ||
+  !window.Promise ||
+  typeof Object.assign !== 'function'
+);
 
-if (!Modernizr.dataset || !Modernizr.classlist || !Modernizr.requestanimationframe) {
-  loadPolyfills = true;
-}
-
-import datepicker from './prebuild/datepicker';
+// import datepicker from './prebuild/datepicker';
 import disableWhatsapp from './prebuild/disableWhatsapp';
-import formValidation from './prebuild/formValidation';
+import parsleyFormValidation from './prebuild/parsleyFormValidation';
 import tracking from './prebuild/tracking';
 import videoElement from './prebuild/videoElement';
 import embedWrap from './prebuild/embedWrap';
-import passwordStrength from './prebuild/passwordStrength';
+import navigation from './prebuild/navigation';
+// import passwordStrength from './prebuild/passwordStrength';
 import map from './prebuild/map';
-import addressAutofill from './prebuild/addressAutofill';
-import jumpToElement from './prebuild/jumpToElement';
-import togglePasswordVisibility from './prebuild/togglePasswordVisibility';
+// import addressAutofill from './prebuild/addressAutofill';
+// import jumpToElement from './prebuild/jumpToElement';
+// import togglePasswordVisibility from './prebuild/togglePasswordVisibility';
 /* eslint-enable */
 
 const app = () => {
   embedWrap();
   map();
   accessibility.initialize();
-  datepicker.initialize();
+  // datepicker.initialize();
   tracking.initialize();
   videoElement.initialize();
-  passwordStrength();
-  addressAutofill();
-  jumpToElement.initialize();
-  togglePasswordVisibility();
+  parsleyFormValidation.initialize();
+  navigation.initialize();
+  // passwordStrength();
+  // addressAutofill();
+  // jumpToElement.initialize();
+  // togglePasswordVisibility();
 };
 
+function loadScript(src, done) {
+  const js = document.createElement('script');
+  js.src = src;
+  js.onload = done;
+
+  js.onerror = () => {
+    done(new Error(`Failed to load script ${src}`));
+  };
+
+  document.head.appendChild(js);
+}
+
 if (loadPolyfills) {
-  /* eslint-disable */
-  require([
-    './polyfills/dataset',
-    './polyfills/classList',
-    './polyfills/requestAnimationFrame',
-  ], () => {
-    app();
-  });
-  /* eslint-enable */
+  loadScript(`${BASE}/assets/build/polyfills.js`, app);
 } else {
   app();
 }

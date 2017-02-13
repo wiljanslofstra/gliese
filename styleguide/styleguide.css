@@ -1,0 +1,31 @@
+.st-tabs {
+  background: #eee;
+  overflow: hidden;
+}
+
+.st-tabs__tab {
+  float: left;
+  border-left: 1px solid #ddd;
+  padding: .75rem 1.25rem;
+}
+
+.st-tabs__tab:last-child {
+  border-right: 1px solid #ddd;
+}
+
+.st-tabs-content {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  display: none;
+}
+
+.st-tabs-content:target {
+  display: block;
+}
+
+.st-heading {
+  background: #333;
+  color: #fff;
+  font-size: 18px;
+  padding: .5rem .75rem;
+}

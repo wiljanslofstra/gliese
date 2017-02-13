@@ -22,30 +22,35 @@ $spacing-breakpoints: (
   margin-left: auto;
 }
 
+.u-mt-auto { margin-top: auto; }
+.u-mb-auto { margin-bottom: auto; }
+.u-ml-auto { margin-left: auto; }
+.u-mr-auto { margin-right: auto; }
+
 @mixin getMarginPadding($num, $space, $abbr) {
+  .u#{$abbr}-m#{$num} { margin: $space; }
   .u#{$abbr}-mt#{$num} { margin-top: $space; }
   .u#{$abbr}-mb#{$num} { margin-bottom: $space; }
   .u#{$abbr}-mr#{$num} { margin-right: $space; }
   .u#{$abbr}-ml#{$num} { margin-left: $space; }
-  .u#{$abbr}-m#{$num} { margin: $space; }
 
+  .u#{$abbr}-p#{$num} { padding: $space; }
   .u#{$abbr}-pt#{$num} { padding-top: $space; }
   .u#{$abbr}-pb#{$num} { padding-bottom: $space; }
   .u#{$abbr}-pr#{$num} { padding-right: $space; }
   .u#{$abbr}-pl#{$num} { padding-left: $space; }
-  .u#{$abbr}-p#{$num} { padding: $space; }
 }
 
 @each $bp, $size in $spacing-breakpoints {
   @if $bp == base {
     @each $num, $space in $spacing {
-      @include getMarginPadding($num, $space, "");
+      @include getMarginPadding($num, $space, '');
     }
   }
   @else {
     @media (min-width: #{$size}px) {
       @each $num, $space in $spacing {
-        @include getMarginPadding($num, $space, "-" + $bp);
+        @include getMarginPadding($num, $space, '-' + $bp);
       }
     }
   }

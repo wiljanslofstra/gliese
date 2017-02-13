@@ -1,2 +1,84 @@
-// .header {
-// }
+$header-bg: #fff;
+$header-height: 3rem;
+$header-toggle-offset-x: 15px;
+$header-toggle-offset-y: 1rem;
+$header-toggle-color: $color-text;
+$header-toggle-hover-color: $color-primary;
+
+.header {
+  background-color: $header-bg;
+  min-height: $header-height;
+  position: relative;
+  z-index: 1;
+}
+
+.header__container {
+  position: relative;
+}
+
+.header__logo {
+  position: absolute;
+  top: 0;
+  left: 15px;
+}
+
+.header__toggle {
+  position: absolute;
+  right: $header-toggle-offset-x;
+  top: $header-toggle-offset-y;
+  line-height: 1rem;
+  color: $header-toggle-color;
+
+  &:hover,
+  &:focus {
+    color: $header-toggle-hover-color;
+  }
+}
+
+.header__toggle i {
+  margin-right: .5rem;
+  font-style: normal;
+  @include burger($width: 12px, $height: 2px, $gutter: 3px, $color: $color-text);
+}
+
+.header__toggle.is-expanded i {
+  @include burger-to-cross;
+}
+
+.header__navigation {
+  background-color: #f4f4f4;
+}
+
+@media (max-width: 991px) {
+  .header__container {
+    width: 100%;
+  }
+
+  .header__navigation {
+    position: absolute;
+    top: $header-height;
+    width: 100%;
+  }
+}
+
+@media (min-width: 992px) {
+  .header {
+    background-color: #f4f4f4;
+    position: relative;
+    z-index: 3;
+  }
+
+  .header__container {
+    padding-left: 200px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
+
+  .header__toggle {
+    display: none;
+  }
+
+  .header__navigation {
+    background-color: transparent;
+  }
+}

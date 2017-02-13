@@ -57,11 +57,15 @@ const videoElement = {
     }
 
     // Listen for clicks on the poster element
-    el.querySelector('.js-video-trigger').addEventListener('click', (e) => {
+    el.querySelector('.js-video-poster').addEventListener('click', (e) => {
       e.preventDefault();
 
       el.insertAdjacentHTML('beforeend', embed);
       el.classList.add('is-loaded');
+
+      setTimeout(() => {
+        el.classList.add('is-playing');
+      }, 400);
     });
   },
 

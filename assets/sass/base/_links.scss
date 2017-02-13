@@ -8,8 +8,4 @@ a {
     text-decoration: $link-hover-decoration;
     color: $link-hover-color;
   }
-
-  &:focus {
-    @include tab-focus;
-  }
 }
