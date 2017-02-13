@@ -1,20 +1,3 @@
-// Checkbox/radio variables
-$c-checkbox-bg: #f0f0f0;
-$c-checkbox-inner-bg: #555;
-$c-checkbox-border: #dedede;
-$c-checkbox-border-size: 1px;
-$c-checkbox-focus-border: darken($c-checkbox-border, 20%);
-$c-checkbox-border-radius: 3px;
-$c-checkbox-inner-border-radius: 1px;
-$c-checkbox-size: 26px;
-$c-checkbox-space: 10px;
-$c-checkbox-inner-size: 12px;
-$c-checkbox-animation: false;
-
-// Radio variables, overwrite checkbox style
-$c-radio-border-radius: $c-checkbox-size / 2;
-$c-radio-inner-border-radius: $c-checkbox-inner-size / 2;
-
 // Hide input element
 input[type=radio],
 input[type=checkbox] {

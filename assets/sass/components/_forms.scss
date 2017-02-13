@@ -1,6 +1,6 @@
 .form-control {
   display: block;
-  border: 1px solid $input-border;
+  border: $input-border-width solid $input-border;
   background-color: $input-bg;
   background-image: none; // Reset unusual Firefox-on-Android default style
   width: 100%;
@@ -9,6 +9,15 @@
   line-height: $line-height-base;
   color: $input-color;
   font-size: $font-size-base;
+
+  @if ($input-border-radius and $input-border-radius != 0) {
+    border-radius: $input-border-radius;
+  }
+
+  &:focus {
+    outline: none;
+    border-color: $input-border-focus;
+  }
 
   // Unstyle the caret on `<select>`s in IE10+.
   &::-ms-expand {
@@ -35,4 +44,8 @@ textarea.form-control {
 
 .form-group {
   margin-bottom: $form-group-margin-bottom;
+}
+
+.parsley-errors-list {
+  color: $color-negative;
 }

@@ -52,3 +52,9 @@
     <a class="sr-only sr-only-focusable" href="#main">
         Go to content
     </a>
+
+    <!--[if lte IE 8]>
+        <p class="browserupgrade">
+            U gebruikt een verouderde browser. <a href="http://browsehappy.com/">Update uw browser</a> voor een betere ervaring.
+        </p>
+    <![endif]-->

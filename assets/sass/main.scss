@@ -35,7 +35,8 @@
   'components/custom-select',
   'components/custom-checkboxes',
   'components/embed-wrap',
-  'components/cms-content';
+  'components/cms-content',
+  'components/browserupgrade';
 @import
   'pages/home';
 @import
@@ -45,6 +46,7 @@
   'utils/float',
   'utils/width',
   'utils/colors',
+  'utils/backgrounds',
   'utils/touch',
   'utils/text',
   'utils/display',

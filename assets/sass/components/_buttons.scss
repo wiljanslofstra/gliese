@@ -13,6 +13,7 @@
   font-weight: $btn-font-weight;
   user-select: none;
   touch-action: manipulation;
+  transition: background .3s $ease-out-quad, color .3s $ease-out-quad;
 
   @if ($btn-border-radius != 0) {
     border-radius: $btn-border-radius;

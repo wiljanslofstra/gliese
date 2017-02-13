@@ -384,20 +384,13 @@ for (i = 0; i < divs.length; ++i) {
       <button class="btn">Button Element</button>
       <input class="btn" type="reset" value="Clear" />
       <input class="btn" type="submit" value="Submit" />
+
+      <button class="btn btn--primary">Button primary</button>
+      <button class="btn btn--secondary">Button secondary</button>
     </p>
   </form>
 
 </fieldset>
-
-<div class="">
-    <input class="js-autofill-postal" type="text" data-autofill-group="invoice" placeholder="Postal">
-    <select class="js-autofill-country" type="text" data-autofill-group="invoice" placeholder="Country">
-        <option value=""></option>
-        <option value="nl">Nederland</option>
-    </select>
-    <input class="js-autofill-street" type="text" data-autofill-group="invoice" placeholder="Street">
-    <input class="js-autofill-city" type="text" data-autofill-group="invoice" placeholder="City">
-</div>
 
 <!-- End of Styleguide -->
 

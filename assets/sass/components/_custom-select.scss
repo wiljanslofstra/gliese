@@ -1,12 +1,3 @@
-$c-select-bg: #f0f0f0;
-$c-select-border-width: 1px;
-$c-select-border: #dedede;
-$c-select-border-focus: darken($c-select-border, 20%);
-$c-select-border-radius: 3px;
-$c-select-height: 36px;
-$c-select-horizontal-padding: 10px;
-$c-select-arrow-width: 30px;
-
 .custom-select {
   position: relative;
   border: $c-select-border-width solid $c-select-border;
