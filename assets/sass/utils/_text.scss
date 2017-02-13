@@ -15,3 +15,8 @@
 .u-text-lowercase { text-transform: lowercase; }
 .u-text-uppercase { text-transform: uppercase; }
 .u-text-capitalize { text-transform: capitalize; }
+
+.hide-text,
+.text-hide {
+  @include hide-text;
+}
