@@ -28,7 +28,7 @@
     "clean": "rimraf assets/build/*",
     "dev:js": "webpack --env development --watch",
     "dev:sass": "cross-env NODE_ENV=development nodemon -e scss --watch assets/sass -x \"node ./bin/run sass\"",
-    "production:js": "webpack --env production",
+    "production:js": "webpack --env production --watch",
     "production:sass": "cross-env NODE_ENV=production nodemon -e scss --watch assets/sass -x \"node ./bin/run sass\"",
     "build:modernizr": "node ./bin/run modernizr",
     "build:lodash": "lodash include=\"each,filter,map,debounce,template,sortBy\" -o assets/javascript/vendor/lodash.custom.js",
@@ -43,6 +43,7 @@
     "bootstrap": "4.0.0-alpha.6",
     "bootstrap-datepicker": "^1.6.4",
     "bourbon": "^4.2.7",
+    "core-js": "^2.4.1",
     "es6-promise": "^4.0.5",
     "google-maps": "^3.2.1",
     "imagesloaded": "~4.1.1",
@@ -82,6 +83,6 @@
     "stylelint": "^7.5.0",
     "stylelint-config-suitcss": "^8.0.0",
     "stylelint-scss": "^1.3.4",
-    "webpack": "2.1.0-beta.25"
+    "webpack": "2.2.1"
   }
 }

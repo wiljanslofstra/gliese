@@ -6,6 +6,7 @@ const path = require('path');
 // Paths
 const buildPath = path.resolve(__dirname, 'assets/build');
 const entryPath = path.resolve(__dirname, 'assets/javascript', 'main');
+const polyfillPath = path.resolve(__dirname, 'assets/javascript', 'polyfills');
 
 // Plugins
 const uglify = new webpack.optimize.UglifyJsPlugin({
@@ -32,11 +33,14 @@ module.exports = function(options) {
   }
 
   return {
-    entry: [ entryPath ],
+    entry: {
+      bundle: entryPath,
+      polyfills: polyfillPath,
+    },
     devtool: (options === 'development') ? 'eval-source-map' : 'source-map',
     output: {
       path: buildPath,
-      filename: 'bundle.js'
+      filename: '[name].js'
     },
     resolve: {
       alias: {
