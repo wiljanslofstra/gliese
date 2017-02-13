@@ -16,7 +16,7 @@ const loadPolyfills = (
 
 // import datepicker from './prebuild/datepicker';
 import disableWhatsapp from './prebuild/disableWhatsapp';
-import formValidation from './prebuild/formValidation';
+import parsleyFormValidation from './prebuild/parsleyFormValidation';
 import tracking from './prebuild/tracking';
 import videoElement from './prebuild/videoElement';
 import embedWrap from './prebuild/embedWrap';
@@ -34,6 +34,7 @@ const app = () => {
   // datepicker.initialize();
   tracking.initialize();
   videoElement.initialize();
+  parsleyFormValidation.initialize();
   // passwordStrength();
   // addressAutofill();
   // jumpToElement.initialize();

@@ -14,9 +14,8 @@ const formValidation = {
     if ($form.length) {
       this.loadParsley(() => {
         this.createFormValidation();
+        this.createFormTracking();
       });
-
-      this.createFormTracking();
     }
 
     // Reinitialize form validation for newly added forms
