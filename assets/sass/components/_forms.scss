@@ -46,6 +46,8 @@ textarea.form-control {
   margin-bottom: $form-group-margin-bottom;
 }
 
-.parsley-errors-list {
+.parsley-errors-list,
+.form-error {
   color: $color-negative;
+  padding-top: 5px;
 }

@@ -287,6 +287,22 @@ tincidunt nec, gravida vehicula, nisl.</p></pre>
         </div>
 
         <div class="form-group">
+            <label for="text_field">Text Field (with Parsley.js error):</label><br />
+            <input class="form-control" type="text" id="text_field" />
+            <ul class="parsley-errors-list">
+                <li>This field is required</li>
+            </ul>
+        </div>
+
+        <div class="form-group">
+            <label for="text_field">Text Field (with .form-error):</label><br />
+            <input class="form-control" type="text" id="text_field" />
+            <div class="form-error">
+                This field is required
+            </div>
+        </div>
+
+        <div class="form-group">
             <label for="text_field">Password Field:</label><br />
             <input class="form-control js-password-input" type="password" id="password_field" />
             <a href="#password_field" class="js-password-toggle">Show password</a>
