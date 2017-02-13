@@ -28,7 +28,7 @@
   &:before,
   &:after {
     position: absolute;
-    content: "";
+    content: '';
   }
 
   &:before {
@@ -51,5 +51,86 @@
 
   &:after {
     transform: translateY(-($burger-gutter + $burger-height)) rotate(-45deg);
+  }
+}
+
+@mixin selection($current-selector: false) {
+  @if $current-selector {
+    &::selection {
+      @content;
+    }
+  }
+  @else {
+    ::selection {
+      @content;
+    }
+  }
+}
+
+@mixin button-generator($map) {
+  $border: map-get($map, 'border');
+  $border-hover: map-get($map, 'border-hover');
+  $border-active: map-get($map, 'border-active');
+  $background: map-get($map, 'background');
+  $background-hover: map-get($map, 'background-hover');
+  $background-active: map-get($map, 'background-active');
+  $color: map-get($map, 'color');
+  $color-hover: map-get($map, 'color-hover');
+  $color-active: map-get($map, 'color-active');
+  $shadow: map-get($map, 'shadow');
+  $gradient: map-get($map, 'gradient');
+  $gradient-hover: map-get($map, 'gradient-hover');
+  $gradient-active: map-get($map, 'gradient-active');
+
+  color: $color;
+  background-color: $background;
+
+  @if ($border != 0) {
+    border: $border;
+  }
+
+  @if ($shadow != none) {
+    box-shadow: $shadow;
+  }
+
+  @if ($gradient != none) {
+    background-image: $gradient;
+  }
+
+  // Hover and focus styles are shared
+  &:hover,
+  &:focus {
+    color: $color-hover;
+    background-color: $background-hover;
+
+    @if ($border-hover != 0) {
+      border: $border-hover;
+    }
+
+    @if ($gradient-hover != none) {
+      background-image: $gradient-hover;
+    }
+  }
+
+  // Disabled comes first so active can properly restyle
+  &.disabled,
+  &:disabled {
+    background-color: $background;
+    border-color: $border;
+  }
+
+  &:active,
+  &.active {
+    color: $color-active;
+    background-color: $background-active;
+    box-shadow: 0;
+
+    @if ($border-active != 0) {
+      border: $border-active;
+    }
+
+    @if ($gradient-active != none) {
+      background-image: $gradient-active;
+    }
   }
 }

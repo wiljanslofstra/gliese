@@ -2,50 +2,51 @@
  * <Project name>
  */
 
-@import "../../node_modules/bourbon/app/assets/stylesheets/bourbon";
 @import
-  "utils/mixins",
-  "utils/variables";
+  'utils/mixins',
+  'utils/easings',
+  'utils/variables';
 @import
-  "vendor/bootstrap",
-  "../../node_modules/slick-carousel/slick/slick.scss";
-  // "../../node_modules/bootstrap-datepicker/dist/css/bootstrap-datepicker.standalone";
+  'vendor/bootstrap',
+  '../../node_modules/slick-carousel/slick/slick.scss';
 @import
-  "base/general",
-  "base/accessibility",
-  "base/blockquote",
-  "base/forms",
-  "base/hr",
-  "base/icons",
-  "base/images",
-  "base/links",
-  "base/lists",
-  "base/table",
-  "base/type-fontfaces",
-  "base/text";
+  'base/general',
+  'base/accessibility',
+  'base/blockquote',
+  'base/forms',
+  'base/hr',
+  'base/images',
+  'base/links',
+  'base/lists',
+  'base/table',
+  'base/type-fontfaces',
+  'base/text';
 @import
-  "layout/grid",
-  "layout/layout";
+  'layout/grid',
+  'layout/layout';
 @import
-  "components/header",
-  "components/navigation",
-  "components/footer",
-  "components/buttons",
-  "components/logo",
-  "components/custom-select",
-  "components/custom-checkboxes",
-  "components/embed-wrap",
-  "components/cms-content";
+  'components/icons',
+  'components/forms',
+  'components/buttons',
+  'components/header',
+  'components/navigation',
+  'components/logo',
+  'components/footer',
+  'components/custom-select',
+  'components/custom-checkboxes',
+  'components/embed-wrap',
+  'components/cms-content';
 @import
-  "pages/home";
+  'pages/home';
 @import
-  "utils/helpers",
-  "utils/utilities",
-  "utils/flex",
-  "utils/float",
-  "utils/width",
-  "utils/colors",
-  "utils/touch",
-  "utils/text",
-  "utils/display",
-  "utils/spacing";
+  'utils/helpers',
+  'utils/utilities',
+  'utils/flex',
+  'utils/float',
+  'utils/width',
+  'utils/colors',
+  'utils/touch',
+  'utils/text',
+  'utils/display',
+  'utils/align',
+  'utils/spacing';

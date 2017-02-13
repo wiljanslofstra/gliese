@@ -1,27 +1,70 @@
 // Colors
-$color-primary: #bada55;
-$color-secondary: #ff5820;
+$color-primary: #7950f2;
+$color-secondary: #495057;
 
 $background: #fff;
 $color-text: #555;
 
-$color-positive: #6ec189;
-$color-negative: #c24b39;
+$color-positive: #51cf66;
+$color-negative: #fa5252;
 
 $color-link: $color-primary;
 
 $link-color: $color-link;
 $link-hover-color: darken($color-link, 15%);
 
-$input-border: #ddd;
+$input-border: #ced4da;
 $input-height-base: 40px;
 $input-vertical-padding: 10px;
 $input-horizontal-padding: 10px;
 
-$hr-border: #ddd;
+$button-primary: (
+  color: #fff,
+  color-hover: #fff,
+  color-active: #fff,
+  background: $color-primary,
+  background-hover: lighten($color-primary, 10%),
+  background-active: darken($color-primary, 10%),
+  border: 0,
+  border-hover: 0,
+  border-active: 0,
+  shadow: none,
+  gradient: linear-gradient(to bottom, $color-primary, darken($color-primary, 5%)),
+  gradient-hover: linear-gradient(to bottom, lighten($color-primary, 5%), $color-primary),
+  gradient-active: linear-gradient(to bottom, darken($color-primary, 5%), $color-primary),
+);
+
+$button-secondary: (
+  color: #fff,
+  color-hover: #fff,
+  color-active: #fff,
+  background: $color-secondary,
+  background-hover: lighten($color-secondary, 10%),
+  background-active: darken($color-secondary, 10%),
+  border: 0,
+  border-hover: 0,
+  border-active: 0,
+  shadow: none,
+  gradient: linear-gradient(to bottom, $color-secondary, darken($color-secondary, 10%)),
+  gradient-hover: linear-gradient(to bottom, lighten($color-secondary, 10%), $color-secondary),
+  gradient-active: linear-gradient(to bottom, darken($color-secondary, 10%), $color-secondary),
+);
+
+$btn-height: 2.5rem;
+$btn-padding: 0 1rem;
+$btn-font-weight: normal;
+$btn-border-radius: 3px;
+
+$btn-lg-height: 3rem;
+$btn-lg-padding: 0 1.2rem;
+
+$btn-sm-height: 2rem;
+$btn-sm-padding: 0 .8rem;
+
+$hr-border: #ced4da;
 
 // Typography
-$font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+$font-family-sans-serif: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
 $font-family-serif: Georgia, Times New Roman, Times, serif;
 $font-family-monospace: Menlo, Monaco, Consolas, Courier New, monospace;
 $font-family-base: $font-family-sans-serif;

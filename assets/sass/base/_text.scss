@@ -2,7 +2,7 @@ html {
   text-rendering: optimizeLegibility;
   line-height: $line-height-base;
   color: $color-text;
-  font-feature-settings: "liga" 1, "kern" 1;
+  font-feature-settings: 'liga' 1, 'kern' 1;
   font-kerning: normal;
   font-family: $font-family-base;
   font-size: $font-size-base;
@@ -44,7 +44,7 @@ h4,
 
 // Body text
 p {
-  margin: 0 0 ($line-height-computed / 2);
+  margin: 0 0 1.25rem;
 }
 
 // Emphasis & misc
@@ -52,28 +52,13 @@ p {
 // Ex: (12px small font / 14px base font) * 100% = about 85%
 small,
 .small {
-  font-size: floor((100% * $font-size-small / $font-size-base));
+  font-size: .875rem;
 }
 
 mark,
 .mark {
   background-color: $state-warning-bg;
   padding: .2em;
-}
-
-// Lists
-// -------------------------
-
-// Unordered and Ordered lists
-ul,
-ol {
-  margin-top: 0;
-  margin-bottom: ($line-height-computed / 2);
-
-  ul,
-  ol {
-    margin-bottom: 0;
-  }
 }
 
 // Misc

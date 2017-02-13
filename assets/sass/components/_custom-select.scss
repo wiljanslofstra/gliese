@@ -49,7 +49,7 @@ $c-select-arrow-width: 30px;
   width: $c-select-arrow-width;
   text-align: center;
   line-height: $c-select-height - ($c-select-border-width * 2);
-  content: "\02193";
+  content: '\02193';
 }
 
 // Custom focus,class is added by accessibility.js

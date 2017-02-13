@@ -5,145 +5,7 @@
   ],
   "rules": {
     "at-rule-empty-line-before": null,
-    "declaration-block-properties-order": [
-      "display",
-
-      "flex",
-      "flex-basis",
-      "flex-direction",
-      "flex-flow",
-      "flex-grow",
-      "flex-shrink",
-      "flex-wrap",
-      "align-content",
-      "align-items",
-      "align-self",
-      "justify-content",
-      "order",
-
-      "position",
-      "top",
-      "right",
-      "bottom",
-      "left",
-
-      "columns",
-      "column-gap",
-      "column-fill",
-      "column-rule",
-      "column-span",
-      "column-count",
-      "column-width",
-
-      "float",
-      "clear",
-
-      "transform",
-      "transform-origin",
-
-      "visibility",
-      "opacity",
-      "z-index",
-
-      "margin",
-      "margin-top",
-      "margin-right",
-      "margin-bottom",
-      "margin-left",
-
-      "outline",
-
-      "border",
-      "border-top",
-      "border-right",
-      "border-bottom",
-      "border-left",
-      "border-width",
-      "border-top-width",
-      "border-right-width",
-      "border-bottom-width",
-      "border-left-width",
-      "border-style",
-      "border-top-style",
-      "border-right-style",
-      "border-bottom-style",
-      "border-left-style",
-      "border-color",
-      "border-top-color",
-      "border-right-color",
-      "border-bottom-color",
-      "border-left-color",
-      "border-radius",
-      "border-top-left-radius",
-      "border-top-right-radius",
-      "border-bottom-left-radius",
-      "border-bottom-right-radius",
-
-      "box-shadow",
-      "box-sizing",
-
-      "background",
-      "background-color",
-      "background-image",
-      "background-repeat",
-      "background-position",
-      "background-size",
-      "cursor",
-
-      "width",
-      "min-width",
-      "max-width",
-      "height",
-      "min-height",
-      "max-height",
-
-      "overflow",
-
-      "padding",
-      "padding-top",
-      "padding-right",
-      "padding-bottom",
-      "padding-left",
-
-      "list-style",
-      "caption-side",
-      "table-layout",
-      "border-collapse",
-      "border-spacing",
-      "empty-cells",
-
-      "vertical-align",
-      "text-align",
-      "text-decoration",
-      "text-indent",
-      "text-overflow",
-      "text-rendering",
-      "text-shadow",
-      "text-transform",
-
-      "line-height",
-      "word-spacing",
-      "letter-spacing",
-      "white-space",
-
-      "color",
-
-      "font",
-      "font-family",
-      "font-size",
-      "font-weight",
-      "font-style",
-      "font-smoothing",
-
-      "content",
-      "quotes",
-
-      "transition",
-      "transition-property",
-      "transition-duration",
-      "transition-timing-function",
-      "transition-delay"
-    ],
+    "declaration-block-properties-order": null,
     "number-leading-zero": null,
     "selector-pseudo-element-colon-notation": null,
     "rule-nested-empty-line-before": ["always", {
@@ -153,6 +15,7 @@
     "indentation": [2, {
       ignore: ["value"]
     }],
+    "string-quotes": "single"
   },
   "ignoreFiles": [
     "assets/sass/vendor/**/*"

@@ -1,63 +1,9 @@
-//
-// Forms
-// --------------------------------------------------
-
 label {
   display: inline-block;
   margin-bottom: 5px;
   max-width: 100%; // Force IE8 to wrap long content (see https://github.com/twbs/bootstrap/issues/13141)
 }
 
-input[type="file"] {
+input[type='file'] {
   display: block;
-}
-
-// Common form controls
-//
-// Shared size and type resets for form controls. Apply `.form-control` to any
-// of the following form controls:
-
-.form-control {
-  display: block;
-  border: 1px solid $input-border;
-  background-color: $input-bg;
-  background-image: none; // Reset unusual Firefox-on-Android default style
-  width: 100%;
-  // Make inputs at least the height of their button counterpart
-  height: $input-height-base;
-  padding: $input-vertical-padding $input-horizontal-padding;
-  line-height: $line-height-base;
-  color: $input-color;
-  font-size: $font-size-base;
-
-  // Unstyle the caret on `<select>`s in IE10+.
-  &::-ms-expand {
-    border: 0;
-    background-color: transparent;
-  }
-
-  // Disabled and read-only inputs
-  &[disabled],
-  &[readonly] {
-    opacity: 1; // iOS fix for unreadable disabled content; see https://github.com/twbs/bootstrap/issues/11655
-    background-color: $input-bg-disabled;
-  }
-
-  &[disabled] {
-    cursor: $cursor-disabled;
-  }
-}
-
-// Reset height for `textarea`s
-textarea.form-control {
-  height: auto;
-}
-
-// Form groups
-//
-// Designed to help with the organization and spacing of vertical forms. For
-// horizontal forms, use the predefined grid classes.
-
-.form-group {
-  margin-bottom: $form-group-margin-bottom;
 }
