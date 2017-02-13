@@ -34,8 +34,6 @@
         <h2>Heading 2</h2>
         <h3>Heading 3</h3>
         <h4>Heading 4</h4>
-        <h5>Heading 5</h5>
-        <h6>Heading 6</h6>
     </div>
 
     <h2 class="st-heading u-mb2">Headings with Text</h2>
@@ -48,10 +46,6 @@
         <h3>Heading 3</h3>
         <p>Lorem ipsum dolor sit amet, adipiscing elit. Nullam dignissim convallis est. Quisque aliquam. Donec faucibus. Nunc iaculis suscipit dui. Nam sit amet sem. Aliquam libero nisi, imperdiet at, tincidunt nec, gravida vehicula, nisl.</p>
         <h4>Heading 4</h4>
-        <p>Lorem ipsum dolor sit amet, adipiscing elit. Nullam dignissim convallis est. Quisque aliquam. Donec faucibus. Nunc iaculis suscipit dui. Nam sit amet sem. Aliquam libero nisi, imperdiet at, tincidunt nec, gravida vehicula, nisl.</p>
-        <h5>Heading 5</h5>
-        <p>Lorem ipsum dolor sit amet, adipiscing elit. Nullam dignissim convallis est. Quisque aliquam. Donec faucibus. Nunc iaculis suscipit dui. Nam sit amet sem. Aliquam libero nisi, imperdiet at, tincidunt nec, gravida vehicula, nisl.</p>
-        <h6>Heading 6</h6>
         <p>Lorem ipsum dolor sit amet, adipiscing elit. Nullam dignissim convallis est. Quisque aliquam. Donec faucibus. Nunc iaculis suscipit dui. Nam sit amet sem. Aliquam libero nisi, imperdiet at, tincidunt nec, gravida vehicula, nisl.</p>
 
         <a href="tel:0612345678">
@@ -124,16 +118,16 @@
     <div class="u-mb3">
         <p>Code block wrapped in "pre" and "code" tags</p>
         <pre><code>// Loop through Divs using Javascript.
-        var divs = document.querySelectorAll('div'), i;
+var divs = document.querySelectorAll('div'), i;
 
-        for (i = 0; i < divs.length; ++i) {
-          divs[i].style.color = "green";
-        }</code></pre>
+for (i = 0; i < divs.length; ++i) {
+  divs[i].style.color = "green";
+}</code></pre>
         <p>Monospace Text wrapped in "pre" tags</p>
         <pre><p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-        Nullam dignissim convallis est. Quisque aliquam. Donec faucibus.
-        Nunc iaculis suscipit dui. Nam sit amet sem. Aliquam libero nisi, imperdiet at,
-        tincidunt nec, gravida vehicula, nisl.</p></pre>
+Nullam dignissim convallis est. Quisque aliquam. Donec faucibus.
+Nunc iaculis suscipit dui. Nam sit amet sem. Aliquam libero nisi, imperdiet at,
+tincidunt nec, gravida vehicula, nisl.</p></pre>
     </div>
 
     <h2 class="st-heading u-mb2">List Types</h2>
@@ -157,7 +151,9 @@
           </li>
           <li>List Item 4</li>
         </ol>
+    </div>
 
+    <div class="u-mb3">
         <h3>Unordered List</h3>
         <ul>
           <li>List Item 1</li>
@@ -176,7 +172,51 @@
           </li>
           <li>List Item 4</li>
         </ul>
+    </div>
 
+    <div class="u-mb3">
+        <h3>Ordered List (.list)</h3>
+        <ol class="list">
+          <li>List Item 1</li>
+          <li>List Item 2</li>
+          <li>List Item 3
+            <ol>
+              <li>List Item 3.1</li>
+              <li>List Item 3.2
+                <ol>
+                  <li>List Item 3.2.1</li>
+                  <li>List Item 3.2.2</li>
+                </ol>
+              </li>
+              <li>List Item 3.3</li>
+            </ol>
+          </li>
+          <li>List Item 4</li>
+        </ol>
+    </div>
+
+    <div class="u-mb3">
+        <h3>Unordered List (.list)</h3>
+        <ul class="list">
+          <li>List Item 1</li>
+          <li>List Item 2</li>
+          <li>List Item 3
+            <ul>
+              <li>List Item 3.1</li>
+              <li>List Item 3.2
+                <ul>
+                  <li>List Item 3.2.1</li>
+                  <li>List Item 3.2.2</li>
+                </ul>
+              </li>
+              <li>List Item 3.3</li>
+            </ul>
+          </li>
+          <li>List Item 4</li>
+        </ul>
+    </div>
+
+    <div class="u-mb3">
         <h3>Definition List</h3>
         <dl>
           <dt>Definition Term 1</dt>

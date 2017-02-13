@@ -40,16 +40,3 @@ $cms-content-spacing: 1rem;
     color: $color-primary;
   }
 }
-
-.cms-content ul,
-.cms-content ol {
-  padding-left: 20px;
-}
-
-.cms-content ul {
-  list-style: disc;
-}
-
-.cms-content ol {
-  list-style: decimal;
-}

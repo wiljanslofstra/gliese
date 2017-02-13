@@ -1,0 +1,20 @@
+.list,
+.list ul,
+.list ol,
+.cms-content ul,
+.cms-content ol {
+  padding-left: 32px;
+}
+
+ul.list,
+ul.list ul,
+.cms-content ul {
+  list-style: disc;
+}
+
+ol.list,
+ol.list ol,
+.cms-content ol {
+  list-style: decimal;
+}
+
