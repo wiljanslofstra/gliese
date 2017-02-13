@@ -148,6 +148,29 @@ $breakpoints: (
   lg: 1200px
 );
 
+$navigation-bg: #f4f4f4;
+$navigation-bg-desktop: #f4f4f4;
+$navigation-link-color: #717171;
+$navigation-link-active-color: $color-primary;
+$navigation-link-padding: .5rem 1rem;
+$navigation-link-active-color: $color-text;
+$navigation-item-padding: 1px solid #dfdfdf;
+$navigation-item-desktop-spacing: 1.5rem;
+$navigation-item-desktop-line-height: 22px;
+$navigation-other-padding: .5rem 1rem;
+
+$navigation-dropdown-bg: #ddd;
+$navigation-dropdown-item-border: 1px solid #dfdfdf;
+$navigation-dropdown-color: #717171;
+$navigation-dropdown-item-padding: .5rem 1rem;
+$navigation-dropdown-offset: 100%;
+$navigation-dropdown-min-width: 400px;
+$navigation-dropdown-hit-enabled: false;
+$navigation-dropdown-hit-width: $navigation-dropdown-min-width;
+$navigation-dropdown-hit-height: 20px;
+$navigation-dropdown-hit-top: -20px;
+$navigation-dropdown-hit-left: 0;
+
 $em-base: $font-size-base;
 $prefix-for-webkit: true;
 $prefix-for-mozilla: true;

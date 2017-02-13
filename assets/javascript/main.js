@@ -20,6 +20,7 @@ import parsleyFormValidation from './prebuild/parsleyFormValidation';
 import tracking from './prebuild/tracking';
 import videoElement from './prebuild/videoElement';
 import embedWrap from './prebuild/embedWrap';
+import navigation from './prebuild/navigation';
 // import passwordStrength from './prebuild/passwordStrength';
 import map from './prebuild/map';
 // import addressAutofill from './prebuild/addressAutofill';
@@ -35,6 +36,7 @@ const app = () => {
   tracking.initialize();
   videoElement.initialize();
   parsleyFormValidation.initialize();
+  navigation.initialize();
   // passwordStrength();
   // addressAutofill();
   // jumpToElement.initialize();

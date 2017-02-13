@@ -1,4 +1,5 @@
 <?php include(__DIR__ . '/../system/config.php'); ?>
+<?php include(__DIR__ . '/../system/common_functions.php'); ?>
 <?php
     // TODO: Set the metadata correctly
     $meta_title = 'Gliese';

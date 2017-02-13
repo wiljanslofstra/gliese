@@ -12,7 +12,7 @@
   &,
   &:before,
   &:after {
-    display: block;
+    display: inline-block;
     background-color: $color;
     width: $width;
     height: $height;
