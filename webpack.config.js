@@ -8,22 +8,27 @@ const buildPath = path.resolve(__dirname, 'assets/build');
 const entryPath = path.resolve(__dirname, 'assets/javascript', 'main');
 
 // Plugins
-const uglify = new webpack.optimize.UglifyJsPlugin({ minimize: true });
-var dedupe = new webpack.optimize.DedupePlugin();
-
-// Default plugins
-const plugins = [
-  new webpack.ProvidePlugin({
-    jQuery: 'jquery',
-    $: 'jquery',
-    'window.jQuery': 'jquery',
-  })
-];
+const uglify = new webpack.optimize.UglifyJsPlugin({
+  minimize: true,
+  comments: false,
+});
 
 module.exports = function(options) {
+  // Default plugins
+  const plugins = [
+    new webpack.ProvidePlugin({
+      jQuery: 'jquery',
+      $: 'jquery',
+      'window.jQuery': 'jquery',
+      'process.env': {
+        'NODE_ENV': JSON.stringify(process.env.NODE_ENV),
+      }
+    })
+  ];
+
   // If running in production we will add some plugins
   if (options === 'production') {
-    plugins.push(dedupe, uglify);
+    plugins.push(uglify);
   }
 
   return {
