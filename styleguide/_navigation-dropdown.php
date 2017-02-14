@@ -11,7 +11,7 @@
         ?>
         <li class="navigation-dropdown__item <?= ($has_dropdown) ? 'has-children' : ''; ?>">
             <a class="navigation-dropdown__link" href="<?= $child['url'] ?>">
-                <?= $child['menuTitle'] ?>
+                <?= $child['menuTitle'] ?><?= ($has_dropdown) ? getIcon('arrow-right', 'navigation__dropdown-arrow') : ''; ?>
             </a>
 
             <?php if ($has_dropdown) : ?>

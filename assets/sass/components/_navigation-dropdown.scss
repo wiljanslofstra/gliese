@@ -6,6 +6,7 @@
   display: block;
   color: $navigation-dropdown-color;
   padding: $navigation-dropdown-item-padding;
+  position: relative;
 }
 
 @media (max-width: 991px) {

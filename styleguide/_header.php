@@ -22,3 +22,4 @@
 </head>
 
 <body>
+    <?php include('../assets/images/icons/symbol-defs.svg'); ?>
