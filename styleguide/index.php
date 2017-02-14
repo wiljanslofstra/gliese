@@ -20,6 +20,14 @@
     <a class="st-tabs__tab" href="#tab5">
         Components
     </a>
+
+    <a class="st-tabs__tab" href="#tab6">
+        Icon usage
+    </a>
+
+    <a class="st-tabs__tab" href="#tab7">
+        Breadcrumb
+    </a>
 </div>
 
 <div class="st-tabs-content container" id="tab1">
@@ -416,6 +424,54 @@ tincidunt nec, gravida vehicula, nisl.</p></pre>
             <input class="form-control js-datepicker" type="text" id="text-date" />
         </div>
     </form>
+
+    <h2 class="st-heading u-mb2">Form inline (sm)</h2>
+
+    <form class="u-form-inline-sm">
+        <div class="form-group row">
+            <label class="col-sm-4">
+                Label #1
+            </label>
+
+            <div class="col-sm-8">
+                <input type="text" class="form-control">
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label class="col-sm-4">
+                Label #2
+            </label>
+
+            <div class="col-sm-8">
+                <input type="text" class="form-control">
+            </div>
+        </div>
+    </form>
+
+    <h2 class="st-heading u-mb2">Form inline (md)</h2>
+
+    <form class="u-form-inline-md">
+        <div class="form-group row">
+            <label class="col-md-4">
+                Label #1
+            </label>
+
+            <div class="col-md-8">
+                <input type="text" class="form-control">
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label class="col-md-4">
+                Label #2
+            </label>
+
+            <div class="col-md-8">
+                <input type="text" class="form-control">
+            </div>
+        </div>
+    </form>
 </div>
 
 <div class="st-tabs-content container" id="tab5">
@@ -458,6 +514,89 @@ tincidunt nec, gravida vehicula, nisl.</p></pre>
     <div class="u-mb3">
         <iframe width="560" height="315" src="http://www.youtube.com/embed/l4f9QF0SGuQ" frameborder="0" allowfullscreen></iframe>
     </div>
+</div>
+
+<div class="st-tabs-content container" id="tab6">
+
+    <h2 class="st-heading u-mb2">Icon list</h2>
+
+    <div class="u-mb3">
+        <strong class="u-mb1 u-d-block">List normal</strong>
+        <ul class="u-icon-list u-mb2">
+            <li>
+                <?= getIcon('arrow-right'); ?>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum nulla voluptas, voluptatum eum quos atque, officia saepe sunt voluptatem rerum, aliquid architecto eius laboriosam autem. Impedit voluptatibus doloribus obcaecati at!
+            </li>
+
+            <li>
+                <?= getIcon('arrow-right'); ?>Lorem ipsum dolor sit amet.
+            </li>
+
+            <li>
+                <?= getIcon('arrow-right'); ?>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum nulla voluptas, voluptatum eum quos atque, officia saepe sunt voluptatem rerum, aliquid architecto eius laboriosam autem. Impedit voluptatibus doloribus obcaecati at!
+            </li>
+        </ul>
+
+        <strong class="u-mb1 u-d-block">List large</strong>
+        <ul class="u-icon-list u-text-lg u-mb2">
+            <li>
+                <?= getIcon('arrow-right'); ?>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum nulla voluptas, voluptatum eum quos atque, officia saepe sunt voluptatem rerum, aliquid architecto eius laboriosam autem. Impedit voluptatibus doloribus obcaecati at!
+            </li>
+
+            <li>
+                <?= getIcon('arrow-right'); ?>Lorem ipsum dolor sit amet.
+            </li>
+
+            <li>
+                <?= getIcon('arrow-right'); ?>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum nulla voluptas, voluptatum eum quos atque, officia saepe sunt voluptatem rerum, aliquid architecto eius laboriosam autem. Impedit voluptatibus doloribus obcaecati at!
+            </li>
+        </ul>
+
+        <strong class="u-mb1 u-d-block">List small</strong>
+        <ul class="u-icon-list u-text-sm">
+            <li>
+                <?= getIcon('arrow-right'); ?>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum nulla voluptas, voluptatum eum quos atque, officia saepe sunt voluptatem rerum, aliquid architecto eius laboriosam autem. Impedit voluptatibus doloribus obcaecati at!
+            </li>
+
+            <li>
+                <?= getIcon('arrow-right'); ?>Lorem ipsum dolor sit amet.
+            </li>
+
+            <li>
+                <?= getIcon('arrow-right'); ?>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum nulla voluptas, voluptatum eum quos atque, officia saepe sunt voluptatem rerum, aliquid architecto eius laboriosam autem. Impedit voluptatibus doloribus obcaecati at!
+            </li>
+        </ul>
+    </div>
+
+    <h2 class="st-heading u-mb2">Icon link</h2>
+
+    <div class="u-mb3">
+        <div class="u-mb2">
+            <a class="u-icon-link u-color-text u-d-block" href="#">
+                <?= getIcon('arrow-right'); ?>Lorem ipsum dolor sit amet.
+            </a>
+        </div>
+
+        <div>
+            <a class="u-icon-link u-color-text u-d-block" href="#">
+                <?= getIcon('arrow-right'); ?>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta, nobis. Rem earum a, nam, et debitis, sequi perferendis neque nesciunt adipisci molestiae ullam aut ad fugit atque dolore ratione mollitia!
+            </a>
+        </div>
+    </div>
+
+</div>
+
+<div class="st-tabs-content container" id="tab7">
+
+    <h2 class="st-heading u-mb2">Breadcrumb</h2>
+
+    <?php
+        $breadcrumb = array(
+            'Subpage #1' => '#',
+            'Subpage #2' => '#',
+        );
+        include('_breadcrumb.php');
+    ?>
+
 </div>
 
 <?php include('_footer.php'); ?>

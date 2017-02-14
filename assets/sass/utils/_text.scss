@@ -16,6 +16,9 @@
 .u-text-uppercase { text-transform: uppercase; }
 .u-text-capitalize { text-transform: capitalize; }
 
+.u-text-lg { font-size: $font-size-large; }
+.u-text-sm { font-size: $font-size-small; }
+
 .hide-text,
 .text-hide {
   @include hide-text;

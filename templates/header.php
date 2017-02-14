@@ -50,6 +50,8 @@
 </head>
 
 <body>
+    <?php include('assets/images/icons/symbol-defs.svg'); ?>
+
     <a class="sr-only sr-only-focusable" href="#main">
         Go to content
     </a>

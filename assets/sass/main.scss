@@ -39,14 +39,16 @@
   'components/embed-wrap',
   'components/cms-content',
   'components/browserupgrade',
-  'components/video'; // Optional
+  'components/video', // Optional
+  'components/breadcrumb'; // Optional
 @import
   'pages/home';
 @import
-  'utils/helpers',
   'utils/utilities',
   'utils/flex',
   'utils/float',
+  'utils/images',
+  'utils/forms',
   'utils/width',
   'utils/colors',
   'utils/capped',
@@ -55,4 +57,6 @@
   'utils/text',
   'utils/display',
   'utils/align',
+  'utils/lists',
+  'utils/links',
   'utils/spacing';

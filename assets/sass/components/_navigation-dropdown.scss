@@ -8,6 +8,10 @@
   padding: $navigation-dropdown-item-padding;
 }
 
+.navigation-dropdown__item {
+  position: relative;
+}
+
 @media (max-width: 991px) {
   .navigation-dropdown__item {
     border-top: $navigation-dropdown-item-border;
@@ -37,5 +41,16 @@
         left: $navigation-dropdown-hit-left;
       }
     }
+  }
+
+  .navigation-dropdown .navigation__dropdown-arrow {
+    transform: rotate(0deg);
+  }
+
+  .navigation-dropdown .navigation-dropdown {
+    left: 100%;
+    top: 0;
+    opacity: 0;
+    visibility: hidden;
   }
 }

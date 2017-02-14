@@ -14,8 +14,12 @@
         </h1>
 
         <div class="u-mb2 u-sm-mb3">
-            <a class="btn btn--primary u-ml1 u-mr1" href="styleguide.php" role="button">
+            <a class="btn btn--primary u-ml1 u-mr1" href="styleguide" role="button">
                 Styleguide
+            </a>
+
+            <a class="btn btn--primary u-ml1 u-mr1" href="styleguide/navigation.php" role="button">
+                Navigation
             </a>
 
             <a class="btn btn--primary u-ml1 u-mr1" href="https://github.com/wiljanslofstra/Gliese" target="_blank" role="button">
