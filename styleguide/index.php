@@ -420,6 +420,54 @@ tincidunt nec, gravida vehicula, nisl.</p></pre>
             <input class="form-control js-datepicker" type="text" id="text-date" />
         </div>
     </form>
+
+    <h2 class="st-heading u-mb2">Form inline (sm)</h2>
+
+    <form class="u-form-inline-sm">
+        <div class="form-group row">
+            <label class="col-sm-4">
+                Label #1
+            </label>
+
+            <div class="col-sm-8">
+                <input type="text" class="form-control">
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label class="col-sm-4">
+                Label #2
+            </label>
+
+            <div class="col-sm-8">
+                <input type="text" class="form-control">
+            </div>
+        </div>
+    </form>
+
+    <h2 class="st-heading u-mb2">Form inline (md)</h2>
+
+    <form class="u-form-inline-md">
+        <div class="form-group row">
+            <label class="col-md-4">
+                Label #1
+            </label>
+
+            <div class="col-md-8">
+                <input type="text" class="form-control">
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label class="col-md-4">
+                Label #2
+            </label>
+
+            <div class="col-md-8">
+                <input type="text" class="form-control">
+            </div>
+        </div>
+    </form>
 </div>
 
 <div class="st-tabs-content container" id="tab5">
@@ -469,7 +517,38 @@ tincidunt nec, gravida vehicula, nisl.</p></pre>
     <h2 class="st-heading u-mb2">Icon list</h2>
 
     <div class="u-mb3">
-        <ul class="u-icon-list">
+        <strong class="u-mb1 u-d-block">List normal</strong>
+        <ul class="u-icon-list u-mb2">
+            <li>
+                <?= getIcon('arrow-right'); ?>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum nulla voluptas, voluptatum eum quos atque, officia saepe sunt voluptatem rerum, aliquid architecto eius laboriosam autem. Impedit voluptatibus doloribus obcaecati at!
+            </li>
+
+            <li>
+                <?= getIcon('arrow-right'); ?>Lorem ipsum dolor sit amet.
+            </li>
+
+            <li>
+                <?= getIcon('arrow-right'); ?>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum nulla voluptas, voluptatum eum quos atque, officia saepe sunt voluptatem rerum, aliquid architecto eius laboriosam autem. Impedit voluptatibus doloribus obcaecati at!
+            </li>
+        </ul>
+
+        <strong class="u-mb1 u-d-block">List large</strong>
+        <ul class="u-icon-list u-text-lg u-mb2">
+            <li>
+                <?= getIcon('arrow-right'); ?>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum nulla voluptas, voluptatum eum quos atque, officia saepe sunt voluptatem rerum, aliquid architecto eius laboriosam autem. Impedit voluptatibus doloribus obcaecati at!
+            </li>
+
+            <li>
+                <?= getIcon('arrow-right'); ?>Lorem ipsum dolor sit amet.
+            </li>
+
+            <li>
+                <?= getIcon('arrow-right'); ?>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum nulla voluptas, voluptatum eum quos atque, officia saepe sunt voluptatem rerum, aliquid architecto eius laboriosam autem. Impedit voluptatibus doloribus obcaecati at!
+            </li>
+        </ul>
+
+        <strong class="u-mb1 u-d-block">List small</strong>
+        <ul class="u-icon-list u-text-sm">
             <li>
                 <?= getIcon('arrow-right'); ?>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum nulla voluptas, voluptatum eum quos atque, officia saepe sunt voluptatem rerum, aliquid architecto eius laboriosam autem. Impedit voluptatibus doloribus obcaecati at!
             </li>

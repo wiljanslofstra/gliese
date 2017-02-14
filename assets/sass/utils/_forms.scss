@@ -1,0 +1,27 @@
+.u-form-inline label {
+  padding-top: $inline-label-top-padding;
+}
+
+@media (min-width: 576px) {
+  .u-form-inline-sm label {
+    padding-top: $inline-label-top-padding;
+  }
+}
+
+@media (min-width: 768px) {
+  .u-form-inline-md label {
+    padding-top: $inline-label-top-padding;
+  }
+}
+
+@media (min-width: 992px) {
+  .u-form-inline-lg label {
+    padding-top: $inline-label-top-padding;
+  }
+}
+
+@media (min-width: 1200px) {
+  .u-form-inline-xl label {
+    padding-top: $inline-label-top-padding;
+  }
+}
