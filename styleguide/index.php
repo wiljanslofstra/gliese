@@ -20,6 +20,10 @@
     <a class="st-tabs__tab" href="#tab5">
         Components
     </a>
+
+    <a class="st-tabs__tab" href="#tab6">
+        Icon usage
+    </a>
 </div>
 
 <div class="st-tabs-content container" id="tab1">
@@ -458,6 +462,44 @@ tincidunt nec, gravida vehicula, nisl.</p></pre>
     <div class="u-mb3">
         <iframe width="560" height="315" src="http://www.youtube.com/embed/l4f9QF0SGuQ" frameborder="0" allowfullscreen></iframe>
     </div>
+</div>
+
+<div class="st-tabs-content container" id="tab6">
+
+    <h2 class="st-heading u-mb2">Icon list</h2>
+
+    <div class="u-mb3">
+        <ul class="u-icon-list">
+            <li>
+                <?= getIcon('arrow-right'); ?>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum nulla voluptas, voluptatum eum quos atque, officia saepe sunt voluptatem rerum, aliquid architecto eius laboriosam autem. Impedit voluptatibus doloribus obcaecati at!
+            </li>
+
+            <li>
+                <?= getIcon('arrow-right'); ?>Lorem ipsum dolor sit amet.
+            </li>
+
+            <li>
+                <?= getIcon('arrow-right'); ?>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum nulla voluptas, voluptatum eum quos atque, officia saepe sunt voluptatem rerum, aliquid architecto eius laboriosam autem. Impedit voluptatibus doloribus obcaecati at!
+            </li>
+        </ul>
+    </div>
+
+    <h2 class="st-heading u-mb2">Icon link</h2>
+
+    <div class="u-mb3">
+        <div class="u-mb2">
+            <a class="u-icon-link u-color-text u-d-block" href="#">
+                <?= getIcon('arrow-right'); ?>Lorem ipsum dolor sit amet.
+            </a>
+        </div>
+
+        <div>
+            <a class="u-icon-link u-color-text u-d-block" href="#">
+                <?= getIcon('arrow-right'); ?>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta, nobis. Rem earum a, nam, et debitis, sequi perferendis neque nesciunt adipisci molestiae ullam aut ad fugit atque dolore ratione mollitia!
+            </a>
+        </div>
+    </div>
+
 </div>
 
 <?php include('_footer.php'); ?>
