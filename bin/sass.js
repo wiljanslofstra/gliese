@@ -4,17 +4,11 @@ var fs = require('fs');
 var postcss = require('postcss');
 var autoprefixer = require('autoprefixer');
 var chalk = require('chalk');
-var stylelint = require('./stylelint');
 var notification = require('./notification');
 var createStats = require('./create-stats');
 var timing = require('./timing');
 
 const ENV = process.env.NODE_ENV;
-
-// Paths
-var sassPath = path.resolve(__dirname, '../assets/sass', 'main.scss');
-var outputPath = path.resolve(__dirname, '../assets/build', 'main.css');
-var mapPath = path.resolve(__dirname, '../assets/build', 'main.css.map');
 
 // Options
 var autoprefixerOptions = {
@@ -40,24 +34,24 @@ if (ENV === 'production') {
  * @param  {Array}  plugins PostCSS plugin to run the CSS through
  * @return {Promise}
  */
-function postCSS(css, plugins) {
+function postCSS(css, plugins, file) {
   return postcss(plugins)
     .process(css, {
-      from: outputPath,
-      to: outputPath,
+      from: file.out,
+      to: file.out,
       map: { inline: false },
     })
     .then(function (result) {
-      fs.writeFileSync(outputPath, result.css);
+      fs.writeFileSync(file.out, result.css);
 
-      var filename = outputPath.split('/').pop();
+      var filename = file.out.split('/').pop();
 
-      outputStats(outputPath);
+      outputStats(file.out);
 
       notification('success', `${filename} compiled successfully`);
 
       if (result.map) {
-        fs.writeFileSync(mapPath, result.map);
+        fs.writeFileSync(file.map, result.map);
       }
 
       timing('PostCSS', 'end');
@@ -104,27 +98,40 @@ function outputSassError(err) {
  * @return {Void}
  */
 module.exports = function() {
-  // Run Stylelint on all our Sass files
-  stylelint();
-
   timing('Sass', 'start');
 
-  // Compile the Sass
-  sass.render({
-    file: sassPath,
-    outFile: outputPath,
-    outputStyle: (ENV === 'production') ? 'compressed' : 'expanded',
-  }, function(error, result) {
-    timing('Sass', 'end');
+  var files = [
+    {
+      in: path.resolve(__dirname, '../assets/sass', 'main.scss'),
+      out: path.resolve(__dirname, '../assets/build', 'main.css'),
+      map: path.resolve(__dirname, '../assets/build', 'main.css.map'),
+    }, {
+      in: path.resolve(__dirname, '../assets/sass', 'ie9.scss'),
+      out: path.resolve(__dirname, '../assets/build', 'ie9.css'),
+      map: path.resolve(__dirname, '../assets/build', 'ie9.css.map'),
+    },
+  ];
 
-    if (error) {
-      outputSassError(error);
-      return;
-    }
+  const outputStyle = (ENV === 'production') ? 'compressed' : 'expanded';
 
-    timing('PostCSS', 'start');
+  files.forEach(function(file) {
+    // Compile the Sass
+    sass.render({
+      file: file.in,
+      outFile: file.out,
+      outputStyle: outputStyle,
+    }, function(error, result) {
+      timing('Sass', 'end');
 
-    // Run the compiled Sass through PostCSS
-    postCSS(result.css, postCSSPlugins);
+      if (error) {
+        outputSassError(error);
+        return;
+      }
+
+      timing('PostCSS', 'start');
+
+      // Run the compiled Sass through PostCSS
+      postCSS(result.css, postCSSPlugins, file);
+    });
   });
 };

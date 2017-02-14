@@ -47,6 +47,10 @@
     </script>
 
     <link rel="stylesheet" href="<?= ASSET_BUILD_PATH; ?>/main.css">
+
+    <!--[if gte IE 9]>
+        <link rel="stylesheet" type="text/css" href="<?= ASSET_BUILD_PATH; ?>/ie9.css" />
+    <![endif]-->
 </head>
 
 <body>
