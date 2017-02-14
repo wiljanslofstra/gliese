@@ -24,6 +24,10 @@
     <a class="st-tabs__tab" href="#tab6">
         Icon usage
     </a>
+
+    <a class="st-tabs__tab" href="#tab7">
+        Breadcrumb
+    </a>
 </div>
 
 <div class="st-tabs-content container" id="tab1">
@@ -578,6 +582,20 @@ tincidunt nec, gravida vehicula, nisl.</p></pre>
             </a>
         </div>
     </div>
+
+</div>
+
+<div class="st-tabs-content container" id="tab7">
+
+    <h2 class="st-heading u-mb2">Breadcrumb</h2>
+
+    <?php
+        $breadcrumb = array(
+            'Subpage #1' => '#',
+            'Subpage #2' => '#',
+        );
+        include('_breadcrumb.php');
+    ?>
 
 </div>
 

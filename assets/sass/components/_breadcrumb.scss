@@ -1,0 +1,29 @@
+.breadcrumb {
+  font-size: 0;
+}
+
+.breadcrumb__item {
+  display: inline-block;
+  position: relative;
+  font-size: 1rem;
+  padding-right: 1.75em;
+
+  &:last-child {
+    padding-right: 0;
+  }
+}
+
+.breadcrumb__item .icon {
+  position: absolute;
+  right: .35em;
+  top: .25em;
+}
+
+.breadcrumb__item:last-child .icon {
+  display: none;
+}
+
+.breadcrumb__link {
+  display: block;
+  color: $color-text;
+}
