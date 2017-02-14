@@ -2,6 +2,7 @@
 const pkg = require('./package.json');
 const webpack = require('webpack');
 const path = require('path');
+const HappyPack = require('happypack');
 
 // Paths
 const buildPath = path.resolve(__dirname, 'assets/build');
@@ -17,6 +18,13 @@ const uglify = new webpack.optimize.UglifyJsPlugin({
 module.exports = function(options) {
   // Default plugins
   const plugins = [
+    new HappyPack({
+      loaders: [ 'babel-loader', 'eslint-loader' ],
+      cache: true,
+      cacheContext: {
+        env: process.env.NODE_ENV,
+      },
+    }),
     new webpack.ProvidePlugin({
       jQuery: 'jquery',
       $: 'jquery',
@@ -37,7 +45,7 @@ module.exports = function(options) {
       bundle: entryPath,
       polyfills: polyfillPath,
     },
-    devtool: (options === 'development') ? 'eval-source-map' : 'source-map',
+    devtool: (options === 'development') ? 'eval-cheap-module-source-map' : 'source-map',
     output: {
       path: buildPath,
       filename: '[name].js'
@@ -54,12 +62,7 @@ module.exports = function(options) {
         {
           test: /\.js?$/,
           exclude: /node_modules/,
-          loaders: ['babel-loader'],
-        },
-        {
-          test: /\.js?$/,
-          exclude: [/node_modules/, /vendor/],
-          loaders: ['eslint-loader'],
+          loaders: ['happypack/loader'],
         },
       ],
     },
