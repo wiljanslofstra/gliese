@@ -1,5 +1,4 @@
 /* eslint-disable */
-const pkg = require('./package.json');
 const webpack = require('webpack');
 const path = require('path');
 const HappyPack = require('happypack');
@@ -19,19 +18,12 @@ module.exports = function(options) {
   // Default plugins
   const plugins = [
     new HappyPack({
-      loaders: [ 'babel-loader', 'eslint-loader' ],
-      cache: true,
-      cacheContext: {
-        env: process.env.NODE_ENV,
-      },
+      loaders: ['babel-loader', 'eslint-loader'],
     }),
     new webpack.ProvidePlugin({
       jQuery: 'jquery',
       $: 'jquery',
       'window.jQuery': 'jquery',
-      'process.env': {
-        'NODE_ENV': JSON.stringify(process.env.NODE_ENV),
-      }
     })
   ];
 
@@ -66,11 +58,7 @@ module.exports = function(options) {
         },
       ],
     },
-    externals: {
-      // 'jquery': 'jQuery',
-    },
     plugins: plugins,
-    target: 'web',
   };
 };
 /* eslint-enable */

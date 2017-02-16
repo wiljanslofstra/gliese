@@ -16,11 +16,6 @@
       "url": "https://www.wiljanslofstra.com/"
     }
   ],
-  "babel": {
-    "presets": [
-      "es2015"
-    ]
-  },
   "scripts": {
     "start": "npm-run-all clean copy:static --parallel dev:*",
     "production": "npm-run-all clean copy:static --parallel production:*",
@@ -40,6 +35,8 @@
   },
   "dependencies": {
     "autotrack": "^1.0.3",
+    "babel-preset-es2015": "6.22.0",
+    "babel-preset-react": "^6.23.0",
     "bootstrap": "4.0.0-alpha.6",
     "bootstrap-datepicker": "^1.6.4",
     "bourbon": "^4.2.7",
@@ -52,6 +49,8 @@
     "lodash": "~4.16.4",
     "modernizr": "^3.3.1",
     "parsleyjs": "~2.6.0",
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2",
     "slick-carousel": "^1.6.0",
     "whatwg-fetch": "^1.0.0"
   },

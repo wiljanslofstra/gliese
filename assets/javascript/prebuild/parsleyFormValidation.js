@@ -39,7 +39,7 @@ const formValidation = {
       return;
     }
 
-    require(['parsleyjs', 'parsleyjs/dist/i18n/nl'], () => { // eslint-disable-line
+    require(['parsleyjs', 'parsleyjs/src/i18n/nl'], () => { // eslint-disable-line
       parsleyLoaded = true;
       cb.call(this);
     });
