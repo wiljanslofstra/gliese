@@ -2,7 +2,7 @@
 
 <h2 class="st-heading u-mb2">Forms</h2>
 
-<form>
+<form class="js-form">
     <div class="form-group">
         <label for="text_field">Text Field:</label><br />
         <input class="form-control" type="text" id="text_field" />
@@ -103,8 +103,10 @@
 
     <div class="form-group">
         <label for="date">Date (with datepicker):</label><br />
-        <input class="form-control js-datepicker" type="text" id="text-date" />
+        <input class="form-control js-datepicker" type="text" id="text-date" required />
     </div>
+
+    <button class="btn btn--primary" type="submit">Submit</button>
 </form>
 
 <h2 class="st-heading u-mb2">Form inline (sm)</h2>

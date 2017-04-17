@@ -1,6 +1,7 @@
-/* global ga */
+/* global ga, BASE */
 
 import $ from 'jquery';
+import scriptLoader from '../helpers/scriptLoader';
 
 let $form = $('.js-form');
 let parsleyLoaded = false;
@@ -39,7 +40,7 @@ const formValidation = {
       return;
     }
 
-    require(['parsleyjs', 'parsleyjs/src/i18n/nl'], () => { // eslint-disable-line
+    scriptLoader(`${BASE}/assets/build/formValidation.js`, () => {
       parsleyLoaded = true;
       cb.call(this);
     });
@@ -50,12 +51,14 @@ const formValidation = {
    * @return {void}
    */
   createFormValidation() {
-    // Initialize parsley
-    $form.parsley({
-      classHandler(el) {
-        // Add classes to the form-group
-        return el.$element.closest('.form-group');
-      },
+    $form.each((i, form) => {
+      // Initialize parsley
+      const validator = new window.Parsley.Factory(form, { // eslint-disable-line
+        classHandler(el) {
+          // Add classes to the form-group
+          return el.$element.closest('.form-group');
+        },
+      });
     });
   },
 
