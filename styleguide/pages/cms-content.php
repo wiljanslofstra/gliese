@@ -1,20 +1,38 @@
-<?php include('templates/header.php'); ?>
+<?php include('../templates/_header.php'); ?>
 
-    <div class="container cms-content" style="max-width: 740px">
+    <div class="st-explanation">
+        <h1>CMS content</h1>
+        <p>
+            This page showcases how content will look like when it's wrapped inside a .cms-content class.
+            I've added this class to better accomodate content that has been edited in a CMS system. Where
+            the user can't or isn't able to add classes/HTML, think about spacing or think about the responsive
+            nature of the web.
+        </p>
+    </div>
+
+    <div class="cms-content u-capped-md">
         <h1>
             Heading 1 orem ipsum dolor sit amet, consectetur adipisicing elit.
         </h1>
-
-        <h2>
-            Heading 2 orem ipsum dolor sit amet, consectetur adipisicing elit.
-        </h2>
 
         <p>
             Lorem ipsum dolor sit amet, <em>consectetur adipisicing elit. Deserunt eius tempora, doloribus nihil</em>, dolorum illo aliquid pariatur exercitationem labore quisquam obcaecati alias quos fugiat soluta excepturi cum beatae ab eveniet.
         </p>
 
         <p>
+            Lorem ipsum dolor sit amet, <em>consectetur adipisicing elit. Deserunt eius tempora, doloribus nihil</em>, dolorum illo aliquid pariatur exercitationem labore quisquam obcaecati alias quos fugiat soluta excepturi cum beatae ab eveniet.
+        </p>
+
+        <h2>
+            Heading 2 orem ipsum dolor sit amet, consectetur adipisicing elit.
+        </h2>
+
+        <p>
             Lorem ipsum dolor sit amet, consectetur <strong>adipisicing elit. Deserunt eius tempora, doloribus nihil, dolorum illo aliquid pariatur</strong> exercitationem labore quisquam obcaecati alias quos fugiat soluta excepturi cum beatae ab eveniet.
+        </p>
+
+        <p>
+            Lorem ipsum dolor sit amet, <em>consectetur adipisicing elit. Deserunt eius tempora, doloribus nihil</em>, dolorum illo aliquid pariatur exercitationem labore quisquam obcaecati alias quos fugiat soluta excepturi cum beatae ab eveniet.
         </p>
 
         <img src="http://placehold.it/600x300/" alt="">
@@ -109,4 +127,4 @@
 
     </div>
 
-<?php include('templates/footer.php'); ?>
+<?php include('../templates/_footer.php'); ?>

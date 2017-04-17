@@ -8,9 +8,7 @@
     "declaration-block-properties-order": null,
     "number-leading-zero": null,
     "selector-pseudo-element-colon-notation": null,
-    "rule-nested-empty-line-before": ["always", {
-      except: ["after-single-line-comment"]
-    }],
+    "rule-nested-empty-line-before": ["always"],
     "rule-non-nested-empty-line-before": null,
     "indentation": [2, {
       ignore: ["value"]

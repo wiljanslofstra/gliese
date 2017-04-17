@@ -6,6 +6,9 @@ __webpack_public_path__ = window.WEBPACK_PATH; // eslint-disable-line
 import 'modernizr';
 import accessibility from './modules/accessibility';
 
+// global.Tether = require('tether');
+// require('bootstrap');
+
 const loadPolyfills = (
   !Modernizr.dataset ||
   !Modernizr.classlist ||
@@ -21,6 +24,8 @@ import tracking from './prebuild/tracking';
 import videoElement from './prebuild/videoElement';
 import embedWrap from './prebuild/embedWrap';
 import navigation from './prebuild/navigation';
+import datepicker from './prebuild/datepicker';
+import generalSlider from './prebuild/generalSlider';
 // import passwordStrength from './prebuild/passwordStrength';
 import map from './prebuild/map';
 // import addressAutofill from './prebuild/addressAutofill';
@@ -32,11 +37,12 @@ const app = () => {
   embedWrap();
   map();
   accessibility.initialize();
-  // datepicker.initialize();
+  datepicker.initialize();
   tracking.initialize();
   videoElement.initialize();
   parsleyFormValidation.initialize();
   navigation.initialize();
+  generalSlider.initialize();
   // passwordStrength();
   // addressAutofill();
   // jumpToElement.initialize();

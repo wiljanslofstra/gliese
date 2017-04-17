@@ -1,0 +1,19 @@
+.u-arrow {
+  position: relative;
+
+  &:before {
+    content: '';
+    @include triangle(40px, $color-primary, down);
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -20px;
+  }
+}
+
+@media (min-width: 768px) {
+  .u-arrow:before {
+    border-width: 40px;
+    margin-left: -40px;
+  }
+}

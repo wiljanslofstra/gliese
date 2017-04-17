@@ -8,7 +8,8 @@
   'utils/variables';
 @import
   'vendor/bootstrap',
-  '../../node_modules/slick-carousel/slick/slick.scss';
+  'vendor/bootstrap-datepicker',
+  'vendor/slick-carousel.scss';
 @import
   'base/general',
   'base/accessibility',
@@ -39,18 +40,23 @@
   'components/embed-wrap',
   'components/cms-content',
   'components/browserupgrade',
+  'components/datepicker',
   'components/video', // Optional
-  'components/breadcrumb'; // Optional
+  'components/breadcrumb', // Optional
+  'components/spinner'; // Optional
 @import
   'pages/home';
 @import
   'utils/utilities',
+  'utils/arrow',
   'utils/flex',
   'utils/float',
   'utils/images',
   'utils/forms',
   'utils/width',
+  'utils/height',
   'utils/colors',
+  'utils/slider',
   'utils/capped',
   'utils/backgrounds',
   'utils/touch',

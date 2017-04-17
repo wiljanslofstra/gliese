@@ -7,6 +7,7 @@ const HappyPack = require('happypack');
 const buildPath = path.resolve(__dirname, 'assets/build');
 const entryPath = path.resolve(__dirname, 'assets/javascript', 'main');
 const polyfillPath = path.resolve(__dirname, 'assets/javascript', 'polyfills');
+const formValidationPath = path.resolve(__dirname, 'assets/javascript', 'formValidation');
 
 // Plugins
 const uglify = new webpack.optimize.UglifyJsPlugin({
@@ -36,6 +37,7 @@ module.exports = function(options) {
     entry: {
       bundle: entryPath,
       polyfills: polyfillPath,
+      formValidation: formValidationPath,
     },
     devtool: (options === 'development') ? 'eval-cheap-module-source-map' : 'source-map',
     output: {

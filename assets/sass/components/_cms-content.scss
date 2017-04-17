@@ -1,4 +1,4 @@
-$cms-content-spacing: 1rem;
+$cms-content-spacing: 1.25rem;
 
 .cms-content {
   color: $color-text;
@@ -30,6 +30,16 @@ $cms-content-spacing: 1rem;
 .cms-content h3,
 .cms-content h4 {
   margin-top: $cms-content-spacing * 1.5;
+}
+
+.cms-content h1 + * {
+  margin-top: $cms-content-spacing / 1.5;
+}
+
+.cms-content h2 + *,
+.cms-content h3 + *,
+.cms-content h4 + * {
+  margin-top: $cms-content-spacing / 2;
 }
 
 .cms-content a {

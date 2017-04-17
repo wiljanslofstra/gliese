@@ -1,0 +1,30 @@
+.u-slider {
+
+}
+
+.u-slider > * {
+  display: block;
+}
+
+.u-slider > *:nth-child(1n+2) {
+  display: none;
+}
+
+.u-slider.slick-initialized > *:nth-child(1n+2) {
+  display: block;
+}
+
+.u-slider .slick-arrow {
+  position: absolute;
+  top: 50%;
+  z-index: 2;
+  border: 0;
+  transition: all .3s $ease-out-quad;
+}
+
+.u-slider .slick-arrow .icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

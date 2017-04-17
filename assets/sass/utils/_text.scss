@@ -17,9 +17,20 @@
 .u-text-capitalize { text-transform: capitalize; }
 
 .u-text-lg { font-size: $font-size-large; }
+.u-text-md { font-size: $font-size-base; }
 .u-text-sm { font-size: $font-size-small; }
 
+.u-font-normal { font-weight: normal; }
+.u-font-bold { font-weight: 700; }
+.u-font-style-italic { font-style: italic; }
+.u-font-style-normal { font-style: normal; }
+
+.u-text-no-decoration { text-decoration: none; }
+.u-text-decoration { text-decoration: underline; }
+.u-text-line-through { text-decoration: line-through; }
+
 .hide-text,
-.text-hide {
+.text-hide,
+.u-hide-text {
   @include hide-text;
 }

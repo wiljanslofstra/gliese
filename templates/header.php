@@ -1,7 +1,6 @@
 <?php include(__DIR__ . '/../system/config.php'); ?>
 <?php include(__DIR__ . '/../system/common_functions.php'); ?>
 <?php
-    // TODO: Set the metadata correctly
     $meta_title = 'Gliese';
     $meta_desc = 'Front-end starter kit';
     $meta_sitename = 'Gliese';
@@ -54,7 +53,7 @@
 </head>
 
 <body>
-    <?php include('assets/images/icons/symbol-defs.svg'); ?>
+    <?php include(__DIR__ . '/../assets/images/icons/symbol-defs.svg'); ?>
 
     <a class="sr-only sr-only-focusable" href="#main">
         Go to content

@@ -3,7 +3,7 @@
         echo "No breadcrumbs found";
     } else {
         // Prepend home breadcrumb
-        $breadcrumb = array_merge(array('Home' => $site_url), $breadcrumb);
+        $breadcrumb = array_merge(array('Home' => BASE_PATH), $breadcrumb);
     }
 
     $breadcrumb_count = 1;
