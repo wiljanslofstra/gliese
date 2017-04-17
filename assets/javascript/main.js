@@ -6,6 +6,9 @@ __webpack_public_path__ = window.WEBPACK_PATH; // eslint-disable-line
 import 'modernizr';
 import accessibility from './modules/accessibility';
 
+// global.Tether = require('tether');
+// require('bootstrap');
+
 const loadPolyfills = (
   !Modernizr.dataset ||
   !Modernizr.classlist ||
