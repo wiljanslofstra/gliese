@@ -47,6 +47,9 @@
         <input class="form-control" type="text" name="name" placeholder="name">
         <input class="form-control" type="text" name="id" placeholder="id">
         <label><input type="checkbox" name="required" checked>Required?</label>
+        <a class="btn btn--primary js-generator-row-remove" href="#">
+            &times;
+        </a>
     </div>
 </script>
 

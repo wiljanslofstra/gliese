@@ -33,6 +33,11 @@
     $el.on('keyup', '[name="id"]', function() {
       $(this).addClass('is-changed');
     });
+
+    $el.on('click', '.js-generator-row-remove', function(e) {
+      e.preventDefault();
+      $(this).parents('.st-generator-row').remove();
+    });
   }
 
   function createInputWrap(obj, content) {
