@@ -9,12 +9,15 @@ const autocomplete = {
     const $el = $(el);
     const data = $el.data();
 
+    this.$el = $el;
+
     this.template = $(data.autoTemplate).html();
 
     this.awesomplete = new Awesomplete(el, {
       list: [],
       filter: this.filter.bind(this),
       item: this.item.bind(this),
+      replace: this.replace.bind(this),
     });
 
     $el.on('keyup', () => {
@@ -32,7 +35,9 @@ const autocomplete = {
     });
 
     $el.on('awesomplete-select', (e) => {
-      e.preventDefault();
+      if (!data.autoCloseClick) {
+        e.preventDefault();
+      }
     });
   },
 
@@ -65,6 +70,10 @@ const autocomplete = {
     const compile = template(this.template);
 
     return $(compile(obj.value))[0];
+  },
+
+  replace(obj) {
+    this.$el.val(obj.value.title);
   },
 };
 
