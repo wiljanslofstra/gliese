@@ -16,6 +16,11 @@
         </tr>
 
         <tr>
+            <td>data-auto-submit-on-select</td>
+            <td>Submit the container form after the value has been set/replaced  on the input field</td>
+        </tr>
+
+        <tr>
             <td>data-auto-template</td>
             <td>Selector for the template to use for the dropdown items. The template is rendered with Lodash</td>
         </tr>
@@ -65,11 +70,15 @@
 </code></pre>
 
 <div class="u-mb3">
+    <label>
+        Simple autocomplete with title selection
+    </label>
     <input
         type="text"
         class="form-control js-autocomplete"
         placeholder="Start typing... (e.g. autocomplete)"
         data-auto-close-click="true"
+        data-auto-submit-on-select="false"
         data-auto-template="#autocomplete-template"
         data-auto-api-url="/docs/pages/autocomplete-api.php"
         data-auto-api-key="value"
@@ -81,5 +90,45 @@
         </li>
     </script>
 </div>
+
+<div class="u-mb3">
+    <label>
+        Autocomplete with button in item, clicking the buttons won't close the dropdown
+    </label>
+    <input
+        type="text"
+        class="form-control js-autocomplete"
+        placeholder="Start typing... (e.g. autocomplete)"
+        data-auto-close-click="false"
+        data-auto-submit-on-select="false"
+        data-auto-template="#autocomplete-template-2"
+        data-auto-api-url="/docs/pages/autocomplete-api.php"
+        data-auto-api-key="value"
+    >
+
+    <script type="text/template" id="autocomplete-template-2">
+        <li aria-selected="false">
+            <%= title %>
+            <button type="button">Test button</button>
+        </li>
+    </script>
+</div>
+
+<form method="POST" action="test.php" class="u-mb3">
+    <label>
+        Submit form on select
+    </label>
+    <input
+        type="text"
+        name="search"
+        class="form-control js-autocomplete"
+        placeholder="Start typing... (e.g. autocomplete)"
+        data-auto-close-click="true"
+        data-auto-submit-on-select="true"
+        data-auto-template="#autocomplete-template"
+        data-auto-api-url="/docs/pages/autocomplete-api.php"
+        data-auto-api-key="value"
+    >
+</form>
 
 <?php include('../templates/_footer.php'); ?>

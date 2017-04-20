@@ -117,6 +117,10 @@ const autocomplete = {
     }
 
     this.$el.val(obj.value.title);
+
+    if (this.data.autoSubmitOnSelect) {
+      this.$el.parents('form').submit();
+    }
   },
 };
 
