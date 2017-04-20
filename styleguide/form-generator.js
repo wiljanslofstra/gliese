@@ -19,6 +19,20 @@
       e.preventDefault();
       $('#output').text(createForm());
     });
+
+    $el.on('keyup', '[name="name"]', function() {
+      var $el = $(this);
+      var $row = $el.parents('.st-generator-row');
+      var $id = $row.find('[name="id"]');
+
+      if (!$id.hasClass('is-changed')) {
+        $id.val($el.val());
+      }
+    });
+
+    $el.on('keyup', '[name="id"]', function() {
+      $(this).addClass('is-changed');
+    });
   }
 
   function createInputWrap(obj, content) {
@@ -34,7 +48,7 @@
       `;
     } else {
       return `
-    <div class="form-group">
+    <div class="form-group row">
         <label class="control-label ${labelClass}" for="${obj.id}">
             ${obj.label}
         </label>
