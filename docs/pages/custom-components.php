@@ -1,11 +1,5 @@
 <?php include('../templates/_header.php'); ?>
 
-<h2 class="st-heading u-mb2">Map</h2>
-
-<div class="u-mb3">
-    <div class="js-map" data-geo="56,42" data-zoom="7" data-marker-geo="56,42" style="height: 500px"></div>
-</div>
-
 <h2 class="st-heading u-mb2">Custom video</h2>
 
 <div class="u-mb3">

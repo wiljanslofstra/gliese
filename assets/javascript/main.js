@@ -26,6 +26,7 @@ import embedWrap from './prebuild/embedWrap';
 import navigation from './prebuild/navigation';
 import datepicker from './prebuild/datepicker';
 import generalSlider from './prebuild/generalSlider';
+import autocomplete from './prebuild/autocomplete';
 // import passwordStrength from './prebuild/passwordStrength';
 import map from './prebuild/map';
 // import addressAutofill from './prebuild/addressAutofill';
@@ -43,6 +44,7 @@ const app = () => {
   parsleyFormValidation.initialize();
   navigation.initialize();
   generalSlider.initialize();
+  autocomplete.initialize();
   // passwordStrength();
   // addressAutofill();
   // jumpToElement.initialize();

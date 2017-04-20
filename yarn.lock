@@ -236,6 +236,10 @@ autotrack@^1.0.3:
     dom-utils "^0.4.0"
     object-assign "^4.1.0"
 
+awesomplete:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/awesomplete/-/awesomplete-1.1.1.tgz#460c2045d5c3f584f36295be20645b5ccdc860ab"
+
 aws-sign2@~0.6.0:
   version "0.6.0"
   resolved "https://registry.yarnpkg.com/aws-sign2/-/aws-sign2-0.6.0.tgz#14342dd38dbcc94d0e5b87d763cd63612c0e794f"
@@ -3136,6 +3140,10 @@ nopt@~3.0.6, "nopt@2 || 3":
   resolved "https://registry.yarnpkg.com/nopt/-/nopt-3.0.6.tgz#c6465dbf08abcd4db359317f79ac68a646b28ff9"
   dependencies:
     abbrev "1"
+
+normalize-for-search:
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/normalize-for-search/-/normalize-for-search-2.0.1.tgz#0cb26ee39b57b1c71106e184b693a3bb49f42ad2"
 
 normalize-package-data@^2.3.2, normalize-package-data@^2.3.4:
   version "2.3.5"

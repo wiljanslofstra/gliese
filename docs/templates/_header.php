@@ -17,7 +17,7 @@
         var WEBPACK_PATH = '<?= ASSET_BUILD_PATH; ?>/';
     </script>
 
-    <link rel="stylesheet" href="/styleguide/styleguide.css">
+    <link rel="stylesheet" href="/docs/styleguide.css">
     <link rel="stylesheet" href="<?= ASSET_BUILD_PATH; ?>/main.css">
 </head>
 
@@ -25,32 +25,40 @@
     <?php include(__DIR__ . '/../../assets/images/icons/symbol-defs.svg'); ?>
 
     <div class="st-sidebar">
-        <a class="st-sidebar__link" href="/styleguide/pages/base-styles.php">
+        <a class="st-sidebar__link" href="/docs/pages/base-styles.php">
             Base styles
         </a>
 
-        <a class="st-sidebar__link" href="/styleguide/pages/buttons.php">
+        <a class="st-sidebar__link" href="/docs/pages/buttons.php">
             Buttons
         </a>
 
-        <a class="st-sidebar__link" href="/styleguide/pages/forms.php">
+        <a class="st-sidebar__link" href="/docs/pages/forms.php">
             Forms
         </a>
 
-        <a class="st-sidebar__link" href="/styleguide/pages/form-generator.php">
-            Form generator
-        </a>
-
-        <a class="st-sidebar__link" href="/styleguide/pages/custom-components.php">
+        <a class="st-sidebar__link" href="/docs/pages/custom-components.php">
             Custom components
         </a>
 
-        <a class="st-sidebar__link" href="/styleguide/pages/icons.php">
+        <a class="st-sidebar__link" href="/docs/pages/map.php">
+            Map
+        </a>
+
+        <a class="st-sidebar__link" href="/docs/pages/autocomplete.php">
+            Autocomplete
+        </a>
+
+        <a class="st-sidebar__link" href="/docs/pages/icons.php">
             Icons
         </a>
 
-        <a class="st-sidebar__link" href="/styleguide/pages/cms-content.php">
+        <a class="st-sidebar__link" href="/docs/pages/cms-content.php">
             CMS content
+        </a>
+
+        <a class="st-sidebar__link" href="/docs/tools/form-generator.php">
+            Form generator
         </a>
     </div>
 
