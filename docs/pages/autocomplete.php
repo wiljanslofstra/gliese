@@ -9,7 +9,7 @@
     </p>
 
     <strong>Data attributes</strong>
-    <table class="u-mt0">
+    <table class="u-mt0 u-mb3">
         <tr>
             <td>data-auto-close-click</td>
             <td>Close the dropdown on item click (default behaviour). But sometimes you want to have a clickable button inside the dropdown. By setting this to true, you can click the button without closing the dropdown</td>
@@ -30,6 +30,19 @@
             <td>Key to use for the input value in the POST request</td>
         </tr>
     </table>
+
+    <strong>API response</strong>
+    <pre><code>[
+    {
+        "title": "The title is required",
+        "optional-extra-data": "You can set extra info to render in the item template, like urls"
+    },
+    {
+        "title": "The title",
+        "redirect_url": "The redirect url redirects on item click, for example when you know a product url and want to skip the search page"
+    }
+]
+    </code></pre>
 </div>
 
 <pre><code><?php echo htmlentities('

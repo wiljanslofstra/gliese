@@ -9,6 +9,7 @@
         ], [
             'title' => 'Autocomplete item #3',
             'extra_info' => 'test',
+            'redirect_url' => 'https://www.google.nl/'
         ], [
             'title' => 'Item #1',
             'extra_info' => 'test',

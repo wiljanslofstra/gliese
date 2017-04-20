@@ -73,6 +73,10 @@ const autocomplete = {
   },
 
   replace(obj) {
+    if (typeof obj.value.redirect_url !== 'undefined') {
+      window.location = obj.value.redirect_url;
+    }
+
     this.$el.val(obj.value.title);
   },
 };
