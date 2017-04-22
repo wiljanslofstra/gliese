@@ -49,6 +49,10 @@
             Autocomplete
         </a>
 
+        <a class="st-sidebar__link" href="/docs/pages/filter">
+            Filter
+        </a>
+
         <a class="st-sidebar__link" href="/docs/pages/icons.php">
             Icons
         </a>

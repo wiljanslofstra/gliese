@@ -7,6 +7,8 @@
     $meta_img = ASSET_PATH . '/icons/apple-touch-icon.png';
     $meta_url = '/';
     $meta_twitter = '@twitter';
+
+    define('BROTLI_SUPPORT', (strpos($headers['Accept-Encoding'], ', br') !== false));
 ?>
 <!DOCTYPE html>
 <!--[if lte IE 9]><html class="no-js ie9 " lang="nl"> <![endif]-->
