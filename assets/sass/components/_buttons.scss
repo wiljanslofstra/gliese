@@ -69,3 +69,14 @@
   margin-left: .25em;
   margin-right: -.25em;
 }
+
+.btn--icon-only {
+  width: $btn-height;
+  padding: 0;
+  text-align: center;
+  justify-content: center;
+}
+
+.btn--icon-only.btn--lg {
+  width: $btn-lg-height;
+}

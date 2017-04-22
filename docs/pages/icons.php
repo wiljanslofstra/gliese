@@ -143,4 +143,34 @@
     </div>
 </div>
 
+<div class="u-mb3">
+    <div class="u-mb2">
+        <a class="btn btn--icon btn--icon-only btn--primary" href="#">
+            <?= getIcon('arrow-right'); ?>
+        </a>
+
+        <a class="btn btn--icon btn--icon-only btn--primary" href="#">
+            <?= getIcon('arrow-right', 'icon--sm'); ?>
+        </a>
+
+        <a class="btn btn--icon btn--icon-only btn--primary" href="#">
+            <?= getIcon('arrow-right', 'icon--lg'); ?>
+        </a>
+    </div>
+
+    <div class="u-mb2">
+        <a class="btn btn--lg btn--icon btn--icon-only btn--primary" href="#">
+            <?= getIcon('arrow-right'); ?>
+        </a>
+
+        <a class="btn btn--lg btn--icon btn--icon-only btn--primary" href="#">
+            <?= getIcon('arrow-right', 'icon--sm'); ?>
+        </a>
+
+        <a class="btn btn--lg btn--icon btn--icon-only btn--primary" href="#">
+            <?= getIcon('arrow-right', 'icon--lg'); ?>
+        </a>
+    </div>
+</div>
+
 <?php include('../templates/_footer.php'); ?>

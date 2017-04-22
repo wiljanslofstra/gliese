@@ -56,6 +56,7 @@
     class="form-control js-autocomplete"
     placeholder="Start typing... (e.g. autocomplete)"
     data-auto-close-click="true"
+    data-auto-submit-on-select="false"
     data-auto-template="#autocomplete-template"
     data-auto-api-url="/docs/pages/autocomplete-api.php"
     data-auto-api-key="value"
