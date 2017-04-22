@@ -47,9 +47,25 @@
 .btn--lg {
   padding: $btn-lg-padding;
   height: $btn-lg-height;
+  line-height: $btn-lg-height;
 }
 
 .btn--sm {
   padding: $btn-sm-padding;
   height: $btn-sm-height;
+}
+
+.btn--icon {
+  display: inline-flex;
+  align-items: center;
+}
+
+.btn--icon-before .icon {
+  margin-left: -.25em;
+  margin-right: .25em;
+}
+
+.btn--icon-after .icon {
+  margin-left: .25em;
+  margin-right: -.25em;
 }

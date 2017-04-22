@@ -65,4 +65,82 @@
     </div>
 </div>
 
+<h2 class="st-heading u-mb2">Button icons</h2>
+
+<div class="u-mb3">
+    <div class="u-mb2">
+        <a class="btn btn--icon btn--icon-before btn--primary" href="#">
+            <?= getIcon('arrow-right'); ?>Lorem ipsum dolor sit amet.
+        </a>
+    </div>
+
+    <div class="u-mb2">
+        <a class="btn btn--icon btn--icon-before btn--primary" href="#">
+            <?= getIcon('arrow-right', 'icon--sm'); ?>Lorem ipsum dolor sit amet.
+        </a>
+    </div>
+
+    <div class="u-mb2">
+        <a class="btn btn--icon btn--icon-before btn--primary" href="#">
+            <?= getIcon('arrow-right', 'icon--lg'); ?>Lorem ipsum dolor sit amet.
+        </a>
+    </div>
+
+    <div class="u-mb2">
+        <a class="btn btn--icon btn--icon-before btn--secondary btn--lg" href="#">
+            <?= getIcon('arrow-right'); ?>Lorem ipsum dolor sit amet, consectetur.
+        </a>
+    </div>
+
+    <div class="u-mb2">
+        <a class="btn btn--icon btn--icon-before btn--secondary btn--lg" href="#">
+            <?= getIcon('arrow-right', 'icon--sm'); ?>Lorem ipsum dolor sit amet, consectetur.
+        </a>
+    </div>
+
+    <div class="u-mb2">
+        <a class="btn btn--icon btn--icon-before btn--secondary btn--lg" href="#">
+            <?= getIcon('arrow-right', 'icon--lg'); ?>Lorem ipsum dolor sit amet, consectetur.
+        </a>
+    </div>
+</div>
+
+<div class="u-mb3">
+    <div class="u-mb2">
+        <a class="btn btn--icon btn--icon-after btn--primary" href="#">
+            Lorem ipsum dolor sit amet.<?= getIcon('arrow-right'); ?>
+        </a>
+    </div>
+
+    <div class="u-mb2">
+        <a class="btn btn--icon btn--icon-after btn--primary" href="#">
+            Lorem ipsum dolor sit amet.<?= getIcon('arrow-right', 'icon--sm'); ?>
+        </a>
+    </div>
+
+    <div class="u-mb2">
+        <a class="btn btn--icon btn--icon-after btn--primary" href="#">
+            Lorem ipsum dolor sit amet.<?= getIcon('arrow-right', 'icon--lg'); ?>
+        </a>
+    </div>
+
+    <div class="u-mb2">
+        <a class="btn btn--icon btn--icon-after btn--secondary btn--lg" href="#">
+            Lorem ipsum dolor sit amet, consectetur.<?= getIcon('arrow-right'); ?>
+        </a>
+    </div>
+
+    <div class="u-mb2">
+        <a class="btn btn--icon btn--icon-after btn--secondary btn--lg" href="#">
+            Lorem ipsum dolor sit amet, consectetur.<?= getIcon('arrow-right', 'icon--sm'); ?>
+        </a>
+    </div>
+
+    <div class="u-mb2">
+        <a class="btn btn--icon btn--icon-after btn--secondary btn--lg" href="#">
+            Lorem ipsum dolor sit amet, consectetur.<?= getIcon('arrow-right', 'icon--lg'); ?>
+        </a>
+    </div>
+</div>
+
 <?php include('../templates/_footer.php'); ?>
