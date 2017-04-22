@@ -93,8 +93,6 @@ Options -MultiViews
     AddType text/x-component                            htc
 
   # Brotli
-    AddType text/javascript .br
-    AddType text/css .br
     AddEncoding br .br
 
 </IfModule>
@@ -140,9 +138,9 @@ AddDefaultCharset utf-8
     RewriteEngine On
 
     # Rewrite to Brotli file if accepted
-    RewriteCond %{HTTP:Accept-Encoding} br
-    RewriteCond %{REQUEST_FILENAME}.br -f
-    RewriteRule ^(.*)$ $1.br [L]
+    # RewriteCond %{HTTP:Accept-Encoding} br
+    # RewriteCond %{REQUEST_FILENAME}.br -f
+    # RewriteRule ^(.*)$ $1.br [L]
 
     # (2)
     Options +FollowSymlinks
