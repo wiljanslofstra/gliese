@@ -1,6 +1,8 @@
 <?php
     $set_filters_keys = [];
     $set_filters_values = [];
+    $set_sort = (!empty($_GET) && !empty($_GET['sort'])) ? $_GET['sort'] : false;
+    $set_page = (!empty($_GET) && !empty($_GET['page'])) ? $_GET['page'] : 1;
 
     if (!empty($_GET) && !empty($_GET['filter'])) {
         $set_filters_keys = array_keys($_GET['filter']);
@@ -13,8 +15,6 @@
         return (in_array($id, $set_filters_keys) || in_array($id, $set_filters_values));
     }
 
-    $set_sort = (!empty($_GET) && !empty($_GET['sort'])) ? $_GET['sort'] : false;
-
     $sort_options = [
         'date:desc' => 'Newest first',
         'date:asc' => 'Oldest first',
@@ -22,6 +22,6 @@
         'price:asc' => 'Price ascending'
     ];
 
-    $current_page = 1;
+    $current_page = $set_page;
     $total_pages = 6;
 ?>

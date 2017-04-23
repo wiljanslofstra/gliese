@@ -60,7 +60,11 @@
             ?>
             <li class="<?= ($active) ? 'is-active' : ''; ?>">
                 <a href="#" data-page="<?= $page; ?>">
-                    <?= $page; ?>
+                    <?php if ($active) : ?>
+                        <strong><?= $page; ?></strong>
+                    <?php else : ?>
+                        <?= $page; ?>
+                    <?php endif; ?>
                 </a>
             </li>
         <?php endforeach; ?>

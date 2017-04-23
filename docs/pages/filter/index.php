@@ -54,7 +54,7 @@
             <?php include('./product-list.php'); ?>
         </div>
 
-        <div class="js-filter-pagination">
+        <div class="js-filter-pagination" data-page="<?= $current_page; ?>">
             <?php include('./pagination.php'); ?>
         </div>
     </div>

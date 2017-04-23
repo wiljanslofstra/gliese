@@ -80,10 +80,13 @@ if (
     $start_time = microtime(true);
     header('Content-type: application/json');
 
+    $set_sort = (!empty($_POST) && !empty($_POST['sort'])) ? $_POST['sort'] : false;
+    $set_page = (!empty($_POST) && !empty($_POST['page'])) ? $_POST['page'] : 1;
+
     $filters = getFilters();
     $products = getProducts();
     $products_html = getProductsHtml($products);
-    $pagination_html = getPaginationHtml(1, 6);
+    $pagination_html = getPaginationHtml($set_page, 6);
 
     usleep(100000);
 
