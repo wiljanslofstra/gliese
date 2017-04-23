@@ -96,6 +96,8 @@ const filter = {
       success: (res) => {
         this.outputProducts(res.products_html);
         this.outputPagination(res.pagination_html);
+
+        this.updateFiltersUI(res.filters);
       },
     });
   },
@@ -106,6 +108,30 @@ const filter = {
 
   outputPagination(html) {
     $pagination.html(html);
+  },
+
+  updateFiltersUI(filters) {
+    filters.forEach((item) => {
+      const id = item.id;
+      const count = (typeof item.count !== 'undefined') ? item.count : 1;
+      const el = document.getElementById(`filter[${id}]`);
+      const parent = el.parentNode;
+      const countLabel = parent.querySelector('.js-count');
+
+      if (count <= 0) {
+        el.setAttribute('disabled', 'disabled');
+      } else {
+        el.removeAttribute('disabled');
+      }
+
+      if (countLabel) {
+        countLabel.innerHTML = count;
+      }
+
+      if (typeof item.children !== 'undefined' && item.children.length) {
+        this.updateFiltersUI(item.children);
+      }
+    });
   },
 };
 

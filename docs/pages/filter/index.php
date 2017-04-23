@@ -20,16 +20,24 @@
                 <?php
                     $checked = inSetFilters($filter['id']);
                 ?>
-                <input type="checkbox" name="filter[<?= $filter['id']; ?>]" id="filter[<?= $filter['id']; ?>]" <?= ($checked) ? 'checked' : ''; ?>>
-                <label for="filter[<?= $filter['id']; ?>]"><?= $filter['name']; ?></label>
+                <div>
+                    <input type="checkbox" name="filter[<?= $filter['id']; ?>]" id="filter[<?= $filter['id']; ?>]" <?= ($checked) ? 'checked' : ''; ?>>
+                    <label for="filter[<?= $filter['id']; ?>]">
+                        <?= $filter['name']; ?> (<span class="js-count"><?= $filter['count']; ?></span>)
+                    </label>
+                </div>
 
                 <div class="u-pl2">
                     <?php foreach($filter['children'] as $child) : ?>
                         <?php
                             $checked = inSetFilters($child['id']);
                         ?>
-                        <input type="checkbox" name="filter[<?= $child['id']; ?>]" id="filter[<?= $child['id']; ?>]" <?= ($checked) ? 'checked' : ''; ?>>
-                        <label for="filter[<?= $child['id']; ?>]"><?= $child['name']; ?></label>
+                        <div>
+                            <input type="checkbox" name="filter[<?= $child['id']; ?>]" id="filter[<?= $child['id']; ?>]" <?= ($checked) ? 'checked' : ''; ?>>
+                            <label for="filter[<?= $child['id']; ?>]">
+                                <?= $child['name']; ?> (<span class="js-count"><?= $child['count']; ?></span>)
+                            </label>
+                        </div>
                     <?php endforeach; ?>
                 </div>
             </div>

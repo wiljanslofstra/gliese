@@ -4,6 +4,8 @@ function getFilter($prefix, $i) {
     return [
         'id' => $prefix . $i,
         'name' => $prefix . ' filter ' . $i,
+        'count' => rand(0, 5),
+        'children' => [],
     ];
 }
 
@@ -12,6 +14,7 @@ function getFilters() {
         [
             'id' => 'TV123',
             'name' => 'Televisions',
+            'count' => 123,
             'children' => [
                 getFilter('tv', 1),
                 getFilter('tv', 2),
@@ -21,6 +24,7 @@ function getFilters() {
         ], [
             'id' => 'PH123',
             'name' => 'Smartphones',
+            'count' => 123,
             'children' => [
                 getFilter('phone', 1),
                 getFilter('phone', 2),
