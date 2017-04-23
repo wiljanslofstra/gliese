@@ -59,7 +59,9 @@
                 $active = ($page == $current_page);
             ?>
             <li class="<?= ($active) ? 'is-active' : ''; ?>">
-                <?= $page; ?>
+                <a href="#" data-page="<?= $page; ?>">
+                    <?= $page; ?>
+                </a>
             </li>
         <?php endforeach; ?>
     </ul>

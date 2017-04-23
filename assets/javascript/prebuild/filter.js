@@ -1,10 +1,10 @@
 import qs from 'qs';
-import getUrlParameters from '../helpers/getUrlParameters';
 
 const $filter = $('.js-filters');
 const $form = $('.js-filters-form');
 const $products = $('.js-filter-products');
 const $options = $('.js-filters-options');
+const $pagination = $('.js-filter-pagination');
 
 const filter = {
   initialize() {
@@ -13,11 +13,26 @@ const filter = {
     }
 
     $form.add($options).on('change', 'input[type="checkbox"], input[type="radio"], select', () => {
+      this.setPageNumber(1);
       this.runFilter();
     });
 
     $form.add($options).on('keyup', 'input[type="text"], textarea', () => {
+      this.setPageNumber(1);
       this.runFilter();
+    });
+
+    $pagination.on('click', 'a', (e) => {
+      e.preventDefault();
+
+      const $clickedEl = $(e.currentTarget);
+      const pageNum = parseInt($clickedEl.data('page'), 10);
+
+      if (!isNaN(pageNum)) {
+        this.scrollToTop();
+        this.setPageNumber(pageNum);
+        this.runFilter();
+      }
     });
   },
 
@@ -47,10 +62,25 @@ const filter = {
     return values;
   },
 
+  getPageNumber() {
+    return ($pagination.data('page')) ? parseInt($pagination.data('page'), 10) : 1;
+  },
+
+  setPageNumber(num) {
+    $pagination.data('page', num);
+  },
+
+  scrollToTop() {
+    $('body, html').animate({
+      scrollTop: $filter.offset().top,
+    });
+  },
+
   runFilter() {
     const filters = this.getFormInput($form);
     const options = this.getFormInput($options);
-    const obj = Object.assign({}, filters, options);
+    const pageNumber = this.getPageNumber();
+    const obj = Object.assign({}, filters, options, { page: pageNumber });
 
     if (typeof history.replaceState === 'function') {
       const baseUrl = [location.protocol, '//', location.host, location.pathname].join('');
@@ -65,12 +95,17 @@ const filter = {
       dataType: 'json',
       success: (res) => {
         this.outputProducts(res.products_html);
+        this.outputPagination(res.pagination_html);
       },
     });
   },
 
   outputProducts(html) {
     $products.html(html);
+  },
+
+  outputPagination(html) {
+    $pagination.html(html);
   },
 };
 

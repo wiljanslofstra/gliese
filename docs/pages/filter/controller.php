@@ -22,6 +22,6 @@
         'price:asc' => 'Price ascending'
     ];
 
-    $current_page = 7;
-    $total_pages = 11;
+    $current_page = 1;
+    $total_pages = 6;
 ?>
