@@ -49,6 +49,10 @@
             Autocomplete
         </a>
 
+        <a class="st-sidebar__link" href="/docs/pages/slider.php">
+            Slider
+        </a>
+
         <a class="st-sidebar__link" href="/docs/pages/filter">
             Filter
         </a>
