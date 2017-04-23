@@ -1,8 +1,10 @@
 <?php include('../templates/_header.php'); ?>
 
-<h2 class="st-heading u-mb2">Forms</h2>
+<div class="st-explanation">
+    <h1>Forms</h1>
+</div>
 
-<form class="js-form">
+<form class="js-form u-mb3">
     <div class="form-group">
         <label for="text_field">Text Field:</label><br />
         <input class="form-control" type="text" id="text_field" />
@@ -111,7 +113,7 @@
 
 <h2 class="st-heading u-mb2">Form inline (sm)</h2>
 
-<form class="u-form-inline-sm">
+<form class="u-form-inline-sm u-mb3">
     <div class="form-group row">
         <label class="col-sm-4">
             Label #1

@@ -17,27 +17,21 @@
     </code></pre>
 </div>
 
-<h2 class="u-mb2">
-    Basic slider
-</h2>
+<h2 class="st-heading u-mb2">Basic slider</h2>
 <div class="js-slider u-mb3">
     <div>Slide #1</div>
     <div>Slide #2</div>
     <div>Slide #3</div>
 </div>
 
-<h2 class="u-mb2">
-    Basic slider with .u-slider class
-</h2>
+<h2 class="st-heading u-mb2">Basic slider with .u-slider class</h2>
 <div class="u-slider js-slider u-mb3">
     <div>Slide #1</div>
     <div>Slide #2</div>
     <div>Slide #3</div>
 </div>
 
-<h2 class="u-mb2">
-    Use data-slider-[option] to change Slicks config
-</h2>
+<h2 class="st-heading u-mb2">Use data-slider-[option] to change Slicks config</h2>
 <strong>Code</strong><br>
 <pre><code><?php echo htmlentities('<div
     class="u-slider js-slider u-mb3"

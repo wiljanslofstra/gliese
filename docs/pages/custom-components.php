@@ -46,11 +46,4 @@
 <h2 class="st-heading u-mb2">Spinner</h2>
 <div class="spinner"></div>
 
-<h2 class="st-heading u-mb2">Slider</h2>
-<div class="js-slider">
-    <div>Slide #1</div>
-    <div>Slide #2</div>
-    <div>Slide #3</div>
-</div>
-
 <?php include('../templates/_footer.php'); ?>

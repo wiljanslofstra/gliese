@@ -48,8 +48,8 @@
     </table>
 </div>
 
-<pre><code><?php echo htmlentities('
-<div
+<h2 class="st-heading u-mb2">Code</h2>
+<pre><code><?php echo htmlentities('<div
     class="js-map"
     data-geo="52.3702160,4.8951680"
     data-zoom="9"
@@ -62,6 +62,7 @@
 '); ?>
 </code></pre>
 
+<h2 class="st-heading u-mb2">Example</h2>
 <div class="u-mb3">
     <div
         class="js-map"

@@ -50,8 +50,8 @@
     </code></pre>
 </div>
 
-<pre><code><?php echo htmlentities('
-<input
+<h2 class="st-heading u-mb2">Code</h2>
+<pre><code><?php echo htmlentities('<input
     type="text"
     class="form-control js-autocomplete"
     placeholder="Start typing... (e.g. autocomplete)"
@@ -70,6 +70,7 @@
 '); ?>
 </code></pre>
 
+<h2 class="st-heading u-mb2">Examples</h2>
 <div class="u-mb3">
     <label>
         Simple autocomplete with title selection

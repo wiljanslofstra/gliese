@@ -7,7 +7,7 @@
     </p>
 </div>
 
-<h2 class="u-mb2">Button element</h2>
+<h2 class="st-heading u-mb2">Button element</h2>
 <div class="u-mb2">
     <button class="btn">.btn</button>
     <button class="btn btn--primary">.btn .btn--primary</button>
@@ -20,7 +20,7 @@
     <button class="btn btn--secondary btn--lg">.btn .btn--secondary .btn--lg</button>
 </div>
 
-<h2 class="u-mb2">A element</h2>
+<h2 class="st-heading u-mb2">A element</h2>
 <div class="u-mb2">
     <a href="#" class="btn">.btn</a>
     <a href="#" class="btn btn--primary">.btn .btn--primary</a>
