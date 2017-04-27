@@ -17,7 +17,7 @@ input[type=checkbox] + label {
   &:after {
     display: block;
     position: absolute;
-    top: 50%;
+    top: .7em;
     content: '';
   }
 
