@@ -14,29 +14,6 @@ export const getInputType = (input) => {
 };
 
 /**
- * Serialize the form elements for the given container
- * @param {Object} $el jQuery element to serialize the input for
- * @return {Object} Object with the name as key, and value as values (duh)
- */
-export const serializeFilters = ($el) => {
-  const values = {};
-
-  $el.find('input, select, textarea').toArray().forEach((input) => {
-    const type = getInputType(input);
-
-    if (type === 'checkbox' || type === 'radio') {
-      if (input.checked) {
-        values[input.name] = true;
-      }
-    } else {
-      values[input.name] = input.value;
-    }
-  });
-
-  return values;
-};
-
-/**
  * Get the new page number based on the given action
  * @param {String/Number} action Either a page number or action (prev/next)
  * @param {Number} currentPage

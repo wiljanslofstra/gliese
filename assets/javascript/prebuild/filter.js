@@ -1,5 +1,6 @@
 import jump from 'jump.js';
-import { serializeFilters, getPageNumber, rewriteHistory, getData, setData } from './filter/utils';
+import formSerialize from 'form-serialize';
+import { getPageNumber, rewriteHistory, getData, setData } from './filter/utils';
 import fetchFromAPI from './filter/api';
 
 const $filter = $('.js-filters');
@@ -69,9 +70,13 @@ const filter = {
     });
   },
 
+  serializeElement(el) {
+    return formSerialize(el, { hash: true });
+  },
+
   runFilter() {
-    const filters = serializeFilters($form);
-    const options = serializeFilters($options);
+    const filters = this.serializeElement($form[0]);
+    const options = this.serializeElement($options[0]);
     const pageNumber = this.getPageNumber();
     const data = Object.assign({}, filters, options, { page: pageNumber });
 

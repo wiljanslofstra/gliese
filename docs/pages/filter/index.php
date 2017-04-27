@@ -16,7 +16,7 @@
     data-filter-api="/docs/pages/filter/filter-api.php"
     data-filter-api-method="POST"
 >
-    <div class="col-md-3 js-filters-form">
+    <form method="POST" action="#" class="col-md-3 js-filters-form">
         <strong class="u-d-block">
             Filters
         </strong>
@@ -48,10 +48,10 @@
                 </div>
             </div>
         <?php endforeach; ?>
-    </div>
+    </form>
 
     <div class="col-md-9">
-        <div class="js-filters-options">
+        <form method="POST" action="#" class="js-filters-options">
             <select name="sort" id="sort">
                 <?php foreach($sort_options as $key => $val) : ?>
                     <?php
@@ -62,7 +62,7 @@
                     </option>
                 <?php endforeach; ?>
             </select>
-        </div>
+        </form>
 
         <div class="row js-filter-products">
             <?php include('./product-list.php'); ?>
