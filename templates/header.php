@@ -8,6 +8,7 @@
     $meta_url = '/';
     $meta_twitter = '@twitter';
 
+    $headers = getallheaders();
     define('BROTLI_SUPPORT', (strpos($headers['Accept-Encoding'], ', br') !== false));
 ?>
 <!DOCTYPE html>
