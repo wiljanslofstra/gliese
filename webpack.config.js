@@ -18,9 +18,6 @@ const uglify = new webpack.optimize.UglifyJsPlugin({
 module.exports = function(options) {
   // Default plugins
   const plugins = [
-    new HappyPack({
-      loaders: ['babel-loader', 'eslint-loader'],
-    }),
     new webpack.ProvidePlugin({
       jQuery: 'jquery',
       $: 'jquery',
@@ -55,8 +52,8 @@ module.exports = function(options) {
       rules: [
         {
           test: /\.js?$/,
-          exclude: /node_modules/,
-          loaders: ['happypack/loader'],
+          exclude: /node_modules\/(?!(autotrack|dom-utils))/,
+          loaders: ['babel-loader', 'eslint-loader'],
         },
       ],
     },
