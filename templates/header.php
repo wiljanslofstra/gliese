@@ -44,7 +44,7 @@
     <script type="text/javascript">
         document.documentElement.className = document.documentElement.className.replace('no-js', 'js');
 
-        var BASE = '<?= BASE_PATH; ?>';
+        var BASE = '<?= BASE_URL; ?>';
         var WEBPACK_PATH = '<?= ASSET_BUILD_PATH; ?>/';
     </script>
 

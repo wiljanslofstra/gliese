@@ -36,7 +36,7 @@ module.exports = function(options) {
       polyfills: polyfillPath,
       formValidation: formValidationPath,
     },
-    devtool: (options === 'development') ? 'eval-cheap-module-source-map' : 'source-map',
+    devtool: (options === 'development') ? 'cheap-module-eval-source-map' : 'source-map',
     output: {
       path: buildPath,
       filename: '[name].js'

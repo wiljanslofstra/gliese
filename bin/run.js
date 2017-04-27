@@ -7,9 +7,6 @@ function run(fn, options) {
   const start = new Date();
   console.log(`[${format(start)}] Starting '${options.name}'...`);
   fn(options);
-  const end = new Date();
-  const time = end.getTime() - start.getTime();
-  console.log(`[${format(end)}] Finished '${options.name}' after ${time} ms`);
 }
 
 if (process.argv.length > 2) {

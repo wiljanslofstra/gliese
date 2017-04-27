@@ -70,3 +70,7 @@ if (loadPolyfills) {
 } else {
   app();
 }
+
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register(`${BASE}/service-worker.js`);
+}
