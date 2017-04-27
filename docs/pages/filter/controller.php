@@ -1,8 +1,8 @@
 <?php
     $set_filters_keys = [];
     $set_filters_values = [];
-    $set_sort = (!empty($_GET) && !empty($_GET['sort'])) ? $_GET['sort'] : false;
-    $set_page = (!empty($_GET) && !empty($_GET['page'])) ? $_GET['page'] : 1;
+    $user_defined_sort = (!empty($_GET) && !empty($_GET['sort'])) ? $_GET['sort'] : false;
+    $user_defined_page = (!empty($_GET) && !empty($_GET['page'])) ? (int)$_GET['page'] : 1;
 
     if (!empty($_GET) && !empty($_GET['filter'])) {
         $set_filters_keys = array_keys($_GET['filter']);
@@ -22,6 +22,6 @@
         'price:asc' => 'Price ascending'
     ];
 
-    $current_page = $set_page;
+    $current_page = $user_defined_page;
     $total_pages = 6;
 ?>

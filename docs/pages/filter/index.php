@@ -9,7 +9,13 @@
     <h1>Filter</h1>
 </div>
 
-<div class="row js-filters">
+<div
+    class="row js-filters"
+    data-filter-page="<?= $current_page; ?>"
+    data-filter-total-pages="<?= $total_pages; ?>"
+    data-filter-api="/docs/pages/filter/filter-api.php"
+    data-filter-api-method="POST"
+>
     <div class="col-md-3 js-filters-form">
         <strong class="u-d-block">
             Filters
@@ -49,7 +55,7 @@
             <select name="sort" id="sort">
                 <?php foreach($sort_options as $key => $val) : ?>
                     <?php
-                        $selected = ($set_sort == $key);
+                        $selected = ($user_defined_sort == $key);
                     ?>
                     <option value="<?= $key; ?>" <?= ($selected) ? 'selected' : ''; ?>>
                         <?= $val; ?>
@@ -62,7 +68,7 @@
             <?php include('./product-list.php'); ?>
         </div>
 
-        <div class="js-filter-pagination" data-page="<?= $current_page; ?>">
+        <div class="js-filter-pagination">
             <?php include('./pagination.php'); ?>
         </div>
     </div>

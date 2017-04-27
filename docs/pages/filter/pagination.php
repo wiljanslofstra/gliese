@@ -54,6 +54,12 @@
             }
         ?>
 
+        <li>
+            <a href="#" data-page="prev">
+                Previous
+            </a>
+        </li>
+
         <?php foreach ($pages as $page) : ?>
             <?php
                 $active = ($page == $current_page);
@@ -68,5 +74,11 @@
                 </a>
             </li>
         <?php endforeach; ?>
+
+        <li>
+            <a href="#" data-page="next">
+                Next
+            </a>
+        </li>
     </ul>
 </div>

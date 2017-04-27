@@ -1,5 +1,7 @@
 <?php
 
+require('random-series.php');
+
 function getFilter($prefix, $i) {
     return [
         'id' => $prefix . $i,
@@ -35,12 +37,17 @@ function getFilters() {
 }
 
 function getProduct() {
+    global $random_series;
+
+    $random_series_index = round((count($random_series) - 1) * (rand(0, 100) / 100));
+    $picked_series = $random_series[$random_series_index];
+
     return [
         'id' => '1234',
         'url' => '#',
         'price' => 123.45,
         'price_old' => 0,
-        'name' => 'Television',
+        'name' => $picked_series,
         'media' => 'http://unsplash.it/256x256/',
     ];
 }
@@ -84,13 +91,13 @@ if (
     $start_time = microtime(true);
     header('Content-type: application/json');
 
-    $set_sort = (!empty($_POST) && !empty($_POST['sort'])) ? $_POST['sort'] : false;
-    $set_page = (!empty($_POST) && !empty($_POST['page'])) ? $_POST['page'] : 1;
+    $user_defined_sort = (!empty($_POST) && !empty($_POST['sort'])) ? $_POST['sort'] : false;
+    $user_defined_page = (!empty($_POST) && !empty($_POST['page'])) ? $_POST['page'] : 1;
 
     $filters = getFilters();
     $products = getProducts();
     $products_html = getProductsHtml($products);
-    $pagination_html = getPaginationHtml($set_page, 6);
+    $pagination_html = getPaginationHtml($user_defined_page, 6);
 
     usleep(100000);
 
@@ -103,7 +110,7 @@ if (
         'products_html' => $products_html,
         'pagination_html' => $pagination_html,
         'meta' => [
-            'total_producs' => 123,
+            'total_products' => 123,
             'current_page' => 1,
             'total_pages' => 6,
             'products_per_page' => 24,

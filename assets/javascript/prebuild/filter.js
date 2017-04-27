@@ -1,10 +1,14 @@
-import qs from 'qs';
+import { serializeFilters, getPageNumber, rewriteHistory, getData, setData } from './filter/utils';
+import fetchFromAPI from './filter/api';
 
 const $filter = $('.js-filters');
 const $form = $('.js-filters-form');
 const $products = $('.js-filter-products');
 const $options = $('.js-filters-options');
 const $pagination = $('.js-filter-pagination');
+
+const $scrollContainer = $('body, html');
+const dataType = 'json';
 
 const filter = {
   initialize() {
@@ -26,79 +30,56 @@ const filter = {
       e.preventDefault();
 
       const $clickedEl = $(e.currentTarget);
-      const pageNum = parseInt($clickedEl.data('page'), 10);
+      const pageNum = getPageNumber(
+        $clickedEl.data('page'),
+        this.getPageNumber(),
+        this.getTotalPages(),
+      );
 
-      if (!isNaN(pageNum)) {
-        this.scrollToTop();
-        this.setPageNumber(pageNum);
-        this.runFilter();
-      }
+      this.scrollToTop();
+      this.setPageNumber(pageNum);
+      this.runFilter();
     });
-  },
-
-  getInputType(input) {
-    if (input.getAttribute('type')) {
-      return input.getAttribute('type');
-    }
-
-    return input.tagName.toLowerCase();
-  },
-
-  getFormInput($el) {
-    const values = {};
-
-    $el.find('input, select, textarea').toArray().forEach((input) => {
-      const type = this.getInputType(input);
-
-      if (type === 'checkbox' || type === 'radio') {
-        if (input.checked) {
-          values[input.name] = true;
-        }
-      } else {
-        values[input.name] = input.value;
-      }
-    });
-
-    return values;
   },
 
   getPageNumber() {
-    return ($pagination.data('page')) ? parseInt($pagination.data('page'), 10) : 1;
+    return getData($filter, 'filter-page', 1, 'integer');
+  },
+
+  getTotalPages() {
+    return getData($filter, 'filter-total-pages', 1, 'integer');
+  },
+
+  getApiUrl() {
+    return getData($filter, 'filter-api', '');
+  },
+
+  getApiMethod() {
+    return getData($filter, 'filter-api-method', 'POST');
   },
 
   setPageNumber(num) {
-    $pagination.data('page', num);
+    setData($filter, 'filter-page', num);
   },
 
   scrollToTop() {
-    $('body, html').animate({
+    $scrollContainer.animate({
       scrollTop: $filter.offset().top,
     });
   },
 
   runFilter() {
-    const filters = this.getFormInput($form);
-    const options = this.getFormInput($options);
+    const filters = serializeFilters($form);
+    const options = serializeFilters($options);
     const pageNumber = this.getPageNumber();
-    const obj = Object.assign({}, filters, options, { page: pageNumber });
+    const data = Object.assign({}, filters, options, { page: pageNumber });
 
-    if (typeof history.replaceState === 'function') {
-      const baseUrl = [location.protocol, '//', location.host, location.pathname].join('');
-      const stringified = qs.stringify(obj, { encode: false });
-      window.history.replaceState({}, '', `${baseUrl}?${stringified}`);
-    }
+    rewriteHistory(data);
 
-    $.ajax({
-      url: '/docs/pages/filter/filter-api.php',
-      type: 'POST',
-      data: obj,
-      dataType: 'json',
-      success: (res) => {
-        this.outputProducts(res.products_html);
-        this.outputPagination(res.pagination_html);
-
-        this.updateFiltersUI(res.filters);
-      },
+    fetchFromAPI(this.getApiUrl(), this.getApiMethod(), data, dataType, (res) => {
+      this.outputProducts(res.products_html);
+      this.outputPagination(res.pagination_html);
+      this.updateFiltersUI(res.filters);
     });
   },
 
