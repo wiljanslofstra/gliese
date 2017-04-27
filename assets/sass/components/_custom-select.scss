@@ -16,7 +16,8 @@
   background: transparent;
   cursor: pointer;
   width: 130%;
-  height: $c-select-height - ($c-select-border-width * 2);
+  height: $c-select-height;
+  height: calc(#{$c-select-height} - 2px);
   padding: 0 $c-select-horizontal-padding;
   text-overflow: ellipsis;
   appearance: none;
@@ -39,7 +40,8 @@
   right: 0;
   width: $c-select-arrow-width;
   text-align: center;
-  line-height: $c-select-height - ($c-select-border-width * 2);
+  line-height: $c-select-height;
+  line-height: calc(#{$c-select-height} - 2px);
   content: '\02193';
 }
 
