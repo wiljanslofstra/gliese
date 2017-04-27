@@ -1,3 +1,4 @@
+import jump from 'jump.js';
 import { serializeFilters, getPageNumber, rewriteHistory, getData, setData } from './filter/utils';
 import fetchFromAPI from './filter/api';
 
@@ -7,7 +8,6 @@ const $products = $('.js-filter-products');
 const $options = $('.js-filters-options');
 const $pagination = $('.js-filter-pagination');
 
-const $scrollContainer = $('body, html');
 const dataType = 'json';
 
 const filter = {
@@ -63,8 +63,9 @@ const filter = {
   },
 
   scrollToTop() {
-    $scrollContainer.animate({
-      scrollTop: $filter.offset().top,
+    jump($filter[0], {
+      offset: -15,
+      a11y: false,
     });
   },
 
