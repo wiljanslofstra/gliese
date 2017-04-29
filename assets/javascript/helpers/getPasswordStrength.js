@@ -9,8 +9,12 @@ const lowerCase = new RegExp('[a-z]');
 const numbers = new RegExp('[0-9]');
 const specialchars = new RegExp('([!,%,&,@,#,$,^,*,?,_,~])');
 
+const MIN_CHARACTERS = 6;
+const DEFAULT_RETURN = -1;
+const MISMATCH_PENALTY = -1;
+
 export default (thisval) => {
-  characters = (thisval.length > 6) ? 1 : -1;
+  characters = (thisval.length > MIN_CHARACTERS) ? 1 : MISMATCH_PENALTY;
   capitalletters = (thisval.match(upperCase)) ? 1 : 0;
   loweletters = (thisval.match(lowerCase)) ? 1 : 0;
   number = (thisval.match(numbers)) ? 1 : 0;
@@ -19,7 +23,7 @@ export default (thisval) => {
   const total = characters + capitalletters + loweletters + number + special;
 
   if (!thisval.length) {
-    return -1;
+    return DEFAULT_RETURN;
   }
 
   return total;

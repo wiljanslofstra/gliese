@@ -3,6 +3,8 @@ import $ from 'jquery';
 const groupElements = document.querySelectorAll('[data-autofill-group]');
 const groupElementsArr = Array.prototype.slice.call(groupElements);
 
+const POSTAL_LENGTH = 6;
+
 /**
  * Fetch the address from the API
  * @param  {String} postal  Postal (e.g. 1234AB)
@@ -65,7 +67,7 @@ const addressAutofill = {
     const country = this.autofillCountry.value;
 
     // Only if the postal code seems valid, we run the check
-    if (postal.length !== 6 || country === '') {
+    if (postal.length !== POSTAL_LENGTH || country === '') {
       return;
     }
 

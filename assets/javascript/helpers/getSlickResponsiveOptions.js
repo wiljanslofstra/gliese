@@ -19,8 +19,8 @@ export default function getResponsiveOption($slider) {
   splitStr.forEach((item) => {
     // Split the responsive part in breakpoint and number of slides
     const splitOption = item.split(':');
-    const breakpoint = parseFloat(splitOption[0], 10);
-    const slidesToShow = parseFloat(splitOption[1], 10);
+    const breakpoint = parseFloat(splitOption[0]);
+    const slidesToShow = parseFloat(splitOption[1]);
 
     // Create responsive object for Slick
     outputObj.push({

@@ -5,5 +5,14 @@
     "node": true,
     "amd": true,
     "jquery": true
+  },
+  "rules": {
+    "no-magic-numbers": [
+      "error",
+      {
+        "ignore": [0, 1, -1],
+        "ignoreArrayIndexes": true
+      }
+    ]
   }
 }

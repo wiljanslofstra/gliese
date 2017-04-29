@@ -16,11 +16,14 @@ function createCustomIcon(icon, size, anchor) {
     parseInt(markerSize[1], 10),
   );
 
+  const originX = 0;
+  const originY = 0;
+
   return {
     url: icon,
     size: iconSize,
     scaledSize: iconSize,
-    origin: new google.maps.Point(0, 0),
+    origin: new google.maps.Point(originX, originY),
     anchor: new google.maps.Point(
       parseInt(markerAnchor[0], 10),
       parseInt(markerAnchor[1], 10),

@@ -12,6 +12,10 @@ const OPEN_CLASS = 'is-opened';
 const HAS_CHILDREN_CLASS = 'has-children';
 const EXPANDED_CLASS = 'is-expanded';
 
+const BREAKPOINT_LG = 992;
+const ANIMATION_LENGTH = 300;
+const HUNDRED = 100;
+
 const navigation = {
   /**
    * Initialize the navigation
@@ -21,7 +25,7 @@ const navigation = {
     this.currentLayer = 1;
     this.createEvents();
 
-    if ($window.width() < 992) {
+    if ($window.width() < BREAKPOINT_LG) {
       $nav.attr('aria-expanded', false);
     }
   },
@@ -109,7 +113,7 @@ const navigation = {
 
       setTimeout(() => {
         $backEl.parents(`.${HAS_CHILDREN_CLASS}`).first().removeClass(OPEN_CLASS);
-      }, 300);
+      }, ANIMATION_LENGTH);
     });
   },
 
@@ -136,7 +140,7 @@ const navigation = {
   },
 
   slideToLayer(level, $dropdownItems) {
-    const slideTo = (level - 1) * 100 * -1;
+    const slideTo = (level - 1) * HUNDRED * -1;
     const transform = `translateX(${slideTo}%)`;
 
     $navList.css({

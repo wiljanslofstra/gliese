@@ -1,5 +1,7 @@
 import $ from 'jquery';
 
+const YOUTUBE_ID_LENGTH = 11;
+
 const videoHelpers = {
   /**
    * Extract the video ID from a url
@@ -9,7 +11,7 @@ const videoHelpers = {
   getYoutubeId(url) {
     const regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/; // eslint-disable-line
     const match = url.match(regExp);
-    const idFound = (match && match[2].length === 11);
+    const idFound = (match && match[2].length === YOUTUBE_ID_LENGTH);
 
     return (idFound) ? match[2] : false;
   },

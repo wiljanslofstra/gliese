@@ -3,6 +3,8 @@ import videoHelpers from '../helpers/video';
 const videos = document.querySelectorAll('.js-video');
 const videosArr = Array.prototype.slice.call(videos);
 
+const ANIMATION_LENGTH = 400;
+
 const videoElement = {
   /**
    * Initialize video elements
@@ -65,7 +67,7 @@ const videoElement = {
 
       setTimeout(() => {
         el.classList.add('is-playing');
-      }, 400);
+      }, ANIMATION_LENGTH);
     });
   },
 

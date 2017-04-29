@@ -17,6 +17,8 @@ const WRAP_CLASS = 'embed-wrap';
 // Fallback to this ratio if no width and height are found on the embed element
 const FALLBACK_RATIO = 0.5625; // 16/9
 
+const HUNDRED = 100;
+
 /**
  * Get the ratio from a embed (only if the width and height are set) or fallback to 16/9
  * @param  {Node} el Embed to calculate the ratio for
@@ -44,7 +46,7 @@ function getRatio(el) {
  */
 function makeWrappedEmbed(el) {
   const wrapper = document.createElement('div');
-  const embedRatio = getRatio(el) * 100;
+  const embedRatio = getRatio(el) * HUNDRED;
 
   // Set the classname in the new element
   wrapper.className = WRAP_CLASS;
