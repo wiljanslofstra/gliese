@@ -10,8 +10,8 @@ function run(fn, options) {
 }
 
 if (process.argv.length > 2) {
-  delete require.cache[__filename];
-  run(require('./' + process.argv[2] + '.js'), { name: process.argv[2] });
+  delete require.cache[__filename]; // eslint-disable-line
+  run(require(`./${process.argv[2]}.js`), { name: process.argv[2] });
 }
 
 module.exports = run;

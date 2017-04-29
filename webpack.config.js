@@ -1,7 +1,6 @@
 /* eslint-disable */
 const webpack = require('webpack');
 const path = require('path');
-const HappyPack = require('happypack');
 
 // Paths
 const buildPath = path.resolve(__dirname, 'assets/build');
@@ -53,7 +52,16 @@ module.exports = function(options) {
         {
           test: /\.js?$/,
           exclude: /node_modules\/(?!(autotrack|dom-utils))/,
-          loaders: ['babel-loader', 'eslint-loader'],
+          loaders: [
+            {
+              loader: "cache-loader",
+              options: {
+                cacheDirectory: path.resolve(".cache")
+              }
+            },
+            'babel-loader',
+            'eslint-loader'
+          ],
         },
       ],
     },

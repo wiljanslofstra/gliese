@@ -1,61 +1,33 @@
-var sass = require('node-sass');
-var path = require('path');
-var fs = require('fs');
-var postcss = require('postcss');
-var autoprefixer = require('autoprefixer');
-var chalk = require('chalk');
-var notification = require('./notification');
-var createStats = require('./create-stats');
-var timing = require('./timing');
+/* eslint-disable import/no-extraneous-dependencies */
+
+const sass = require('node-sass');
+const path = require('path');
+const fs = require('fs');
+const postcss = require('postcss');
+const autoprefixer = require('autoprefixer');
+const chalk = require('chalk');
+const notification = require('./notification');
+const createStats = require('./create-stats');
+const timing = require('./timing');
 
 const ENV = process.env.NODE_ENV;
 
 // Options
-var autoprefixerOptions = {
+const autoprefixerOptions = {
   browsers: [
     'last 2 version',
     'ie >= 8',
     'iOS >= 7',
-    'android >= 4.1'
-  ]
+    'android >= 4.1',
+  ],
 };
 
-var postCSSPlugins = [
+const postCSSPlugins = [
   autoprefixer(autoprefixerOptions),
 ];
 
 if (ENV === 'production') {
   // postCSSPlugins.push();
-}
-
-/**
- * Run PostCSS on the given CSS string
- * @param  {String} css     String of CSS
- * @param  {Array}  plugins PostCSS plugin to run the CSS through
- * @return {Promise}
- */
-function postCSS(css, plugins, file) {
-  return postcss(plugins)
-    .process(css, {
-      from: file.out,
-      to: file.out,
-      map: { inline: false },
-    })
-    .then(function (result) {
-      fs.writeFileSync(file.out, result.css);
-
-      var filename = file.out.split('/').pop();
-
-      outputStats(file.out);
-
-      notification('success', `${filename} compiled successfully`);
-
-      if (result.map) {
-        fs.writeFileSync(file.map, result.map);
-      }
-
-      timing('PostCSS', 'end');
-    });
 }
 
 /**
@@ -76,7 +48,7 @@ function outputStats(filePath) {
   // Build a stats table and output to the console
   createStats({
     asset: fileName,
-    size: `${sizeInKb}kb`
+    size: `${sizeInKb}kb`,
   }, 'asset');
 }
 
@@ -94,13 +66,43 @@ function outputSassError(err) {
 }
 
 /**
+ * Run PostCSS on the given CSS string
+ * @param  {String} css     String of CSS
+ * @param  {Array}  plugins PostCSS plugin to run the CSS through
+ * @return {Promise}
+ */
+function postCSS(css, plugins, file) {
+  return postcss(plugins)
+    .process(css, {
+      from: file.out,
+      to: file.out,
+      map: { inline: false },
+    })
+    .then((result) => {
+      fs.writeFileSync(file.out, result.css);
+
+      const filename = file.out.split('/').pop();
+
+      outputStats(file.out);
+
+      notification('success', `${filename} compiled successfully`);
+
+      if (result.map) {
+        fs.writeFileSync(file.map, result.map);
+      }
+
+      timing('PostCSS', 'end');
+    });
+}
+
+/**
  * Run all Sass related tasks like linting, compiling and PostCSS
  * @return {Void}
  */
-module.exports = function() {
+module.exports = () => {
   timing('Sass', 'start');
 
-  var files = [
+  const files = [
     {
       in: path.resolve(__dirname, '../assets/sass', 'main.scss'),
       out: path.resolve(__dirname, '../assets/build', 'main.css'),
@@ -114,13 +116,13 @@ module.exports = function() {
 
   const outputStyle = (ENV === 'production') ? 'compressed' : 'expanded';
 
-  files.forEach(function(file) {
+  files.forEach((file) => {
     // Compile the Sass
     sass.render({
       file: file.in,
       outFile: file.out,
-      outputStyle: outputStyle,
-    }, function(error, result) {
+      outputStyle,
+    }, (error, result) => {
       timing('Sass', 'end');
 
       if (error) {

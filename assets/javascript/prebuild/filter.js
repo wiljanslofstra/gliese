@@ -14,7 +14,8 @@ const dataType = 'json';
 const filter = {
   initialize() {
     if (!$filter.length || !$form.length || !$products.length) {
-      throw new Error('One or more filter elements are missing');
+      // throw new Error('One or more filter elements are missing');
+      return;
     }
 
     $form.add($options).on('change', 'input[type="checkbox"], input[type="radio"], select', () => {
