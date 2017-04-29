@@ -19,9 +19,9 @@ const RUNTIME = 'runtime';
 
 // A list of local resources we always want to be cached.
 const PRECACHE_URLS = [
-  'assets/build/bundle.js',
-  'assets/build/main.css',
-  'assets/build/formValidation.js',
+  '/assets/build/bundle.js',
+  '/assets/build/main.css',
+  '/assets/build/formValidation.js',
 ];
 
 // The install handler takes care of precaching the resources we always need.
@@ -62,47 +62,4 @@ self.addEventListener('fetch', (event) => {
         ));
       }));
   }
-});
-
-self.addEventListener('push', (event) => {
-  console.log('Received a push message', event);
-
-  var title = 'Yay a message.';
-  var body = 'We have received a push message.';
-  var icon = '/assets/icons/icon-192x192.png';
-  var tag = 'simple-push-demo-notification-tag';
-
-  event.waitUntil(
-    self.registration.showNotification(title, {
-      body: body,
-      icon: icon,
-      tag: tag,
-    })
-  );
-});
-
-self.addEventListener('notificationclick', (event) => {
-  console.log('On notification click: ', event.notification.tag);
-
-  // Android doesn’t close the notification when you click on it
-  // See: http://crbug.com/463146
-  event.notification.close();
-
-  // This looks to see if the current is already open and
-  // focuses if it is
-  event.waitUntil(clients.matchAll({
-    type: 'window',
-  }).then((clientList) => {
-    for (let i = 0; i < clientList.length; i += 1) {
-      let client = clientList[i];
-
-      if (client.url === '/' && 'focus' in client) {
-        return client.focus();
-      }
-    }
-
-    if (clients.openWindow) {
-      return clients.openWindow('/');
-    }
-  }));
 });

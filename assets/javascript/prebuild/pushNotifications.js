@@ -1,38 +1,31 @@
-
-const GCM_ENDPOINT = 'https://android.googleapis.com/gcm/send';
+/* global OneSignal, ga */
 
 let isPushEnabled = false;
 
-const SUBSCRIBE_URL = '/docs/pages/push-notifications.php?sub';
-const UNSUBSCRIBE_URL = '/docs/pages/push-notifications.php?unsub';
-
 const PUSH_ERRORS = {
-  NO_SUPPORT: 'Notifications aren\'t supported.',
-  DISABLED: 'Sending notifications has been disabled.',
   PERMISSION_DENIED: 'Permission for Notifications was denied',
-  UNABLE_TO_SUBSCRIBE: 'Unable to subscribe to push.',
-  UNSUBSCRIBE_ERROR: 'Error thrown while unsubscribing from push messaging.',
-  GET_SUBSCRIPTION_ERROR: 'Error during getSubscription()',
 };
 
 export default {
   initialize() {
     this.pushButton = document.querySelector('.js-push-button');
+
+    if (!this.pushButton) {
+      return;
+    }
+
     this.data = $(this.pushButton).data();
     this.pushErrorsElement = document.getElementById(this.data.pushErrors);
     this.pushWrapperElement = document.getElementById(this.data.pushWrapper);
     this.enableText = this.data.pushSubscribe;
     this.disableText = this.data.pushSubscribed;
 
-    this.initialiseState();
+    if (typeof OneSignal === 'undefined') {
+      this.hidePush();
+      return;
+    }
 
-    this.pushButton.addEventListener('click', () => {
-      if (isPushEnabled) {
-        this.unsubscribe();
-      } else {
-        this.subscribe();
-      }
-    });
+    this.initialiseState();
   },
 
   showError(err) {
@@ -53,151 +46,65 @@ export default {
     this.pushButton.textContent = txt;
   },
 
-  // Once the service worker is registered set the initial state
+  sendEvent(category, val) {
+    if (typeof ga !== 'undefined') {
+      ga('send', 'event', 'OneSignal', category, val);
+    }
+  },
+
   initialiseState() {
-    // Are Notifications supported in the service worker?
-    if (!('showNotification' in ServiceWorkerRegistration.prototype)) {
-      this.showError(PUSH_ERRORS.NO_SUPPORT);
-      this.hidePush();
-      return;
-    }
+    OneSignal.push(() => {
+      // If we're on an unsupported browser, hide the widget
+      if (!OneSignal.isPushNotificationsSupported()) {
+        this.hidePush();
+        return;
+      }
 
-    // Check the current Notification permission.
-    if (Notification.permission === 'denied') {
-      this.showError(PUSH_ERRORS.DISABLED);
-      return;
-    }
+      OneSignal.getNotificationPermission((permission) => {
+        const isDenied = (permission === 'denied');
 
-    // Check if push messaging is supported
-    if (!('PushManager' in window)) {
-      this.showError(PUSH_ERRORS.NO_SUPPORT);
-      this.hidePush();
-      return;
-    }
+        this.showError((isDenied) ? PUSH_ERRORS.PERMISSION_DENIED : '');
+        this.setButtonDisabled(isDenied);
+      });
 
-    // We need the service worker registration to check for a subscription
-    navigator.serviceWorker.ready.then((serviceWorkerRegistration) => {
-      // Do we already have a push message subscription?
-      serviceWorkerRegistration.pushManager.getSubscription()
-        .then((subscription) => {
-          this.setButtonDisabled(false);
+      OneSignal.isPushNotificationsEnabled((isEnabled) => {
+        this.setButtonText((isEnabled) ? this.disableText : this.enableText);
+        isPushEnabled = isEnabled;
+      });
 
-          if (!subscription) {
-            return;
-          }
-
-          // Keep your server in sync with the latest subscription
-          this.sendSubscriptionToServer(subscription);
-
-          // Set your UI to show they have subscribed for push messages
-          this.setButtonText(this.disableText);
-
-          isPushEnabled = true;
-        })
-        .catch(() => {
-          this.showError(PUSH_ERRORS.GET_SUBSCRIPTION_ERROR);
-        });
-    });
-  },
-
-  subscribe() {
-    this.setButtonDisabled(true);
-
-    navigator.serviceWorker.ready.then((serviceWorkerRegistration) => {
-      serviceWorkerRegistration.pushManager.subscribe({ userVisibleOnly: true })
-        .then((subscription) => {
-          // The subscription was successful
-          isPushEnabled = true;
-          this.setButtonText(this.disableText);
-          this.setButtonDisabled(false);
-
-          return this.sendSubscriptionToServer(subscription);
-        })
-        .catch(() => {
-          if (Notification.permission === 'denied') {
-            this.showError(PUSH_ERRORS.PERMISSION_DENIED);
-            this.setButtonDisabled(true);
-          } else {
-            // A problem occurred with the subscription, this can
-            // often be down to an issue or lack of the gcm_sender_id
-            // and / or gcm_user_visible_only
-            this.showError(PUSH_ERRORS.UNABLE_TO_SUBSCRIBE);
-            this.setButtonDisabled(false);
-            this.setButtonText(this.enableText);
-          }
-        });
-    });
-  },
-
-  unsubscribe() {
-    this.setButtonDisabled(true);
-
-    navigator.serviceWorker.ready.then((serviceWorkerRegistration) => {
-      // To unsubscribe from push messaging, you need get the
-      // subcription object, which you can call unsubscribe() on.
-      serviceWorkerRegistration.pushManager.getSubscription().then((pushSubscription) => {
-        // Check we have a subscription to unsubscribe
-        if (!pushSubscription) {
-          // No subscription object, so set the state
-          // to allow the user to subscribe to push
-          isPushEnabled = false;
-          this.setButtonDisabled(false);
-          this.setButtonText(this.enableText);
-          return;
-        }
-
-        this.sendToServer(pushSubscription.endpoint, UNSUBSCRIBE_URL);
-
-        // We have a subcription, so call unsubscribe on it
-        pushSubscription.unsubscribe().then(() => {
-          this.setButtonDisabled(false);
-          this.setButtonText(this.enableText);
-          isPushEnabled = false;
-        }).catch(() => {
-          this.showError(PUSH_ERRORS.UNSUBSCRIBE_ERROR);
-          this.setButtonDisabled(false);
-        });
-      }).catch(() => {
-        this.showError(PUSH_ERRORS.UNSUBSCRIBE_ERROR);
+      this.pushButton.addEventListener('click', () => {
+        this[(isPushEnabled) ? 'unsubscribe' : 'subscribe']();
       });
     });
   },
 
-  sendSubscriptionToServer(subscription) {
-    const mergedEndpoint = this.endpointWorkaround(subscription);
+  subscribe() {
+    // First ask for permission, if already granted this will do nothing
+    OneSignal.push(['registerForPushNotifications']);
 
-    this.sendToServer(mergedEndpoint, SUBSCRIBE_URL);
+    // Change the button state to subscribed
+    this.setButtonText(this.disableText);
+
+    // Save the state of notifications
+    isPushEnabled = true;
+
+    // This will force the subscription status when switching notifications
+    // on and off
+    OneSignal.push(['setSubscription', true]);
+
+    this.sendEvent('subscription change', 'enable');
   },
 
-  sendToServer(endpoint, url = SUBSCRIBE_URL) {
-    const endpointSections = endpoint.split('/');
-    const subscriptionId = endpointSections[endpointSections.length - 1];
+  unsubscribe() {
+    // Unsubscribe the user from OneSignal
+    OneSignal.push(['setSubscription', false]);
 
-    $.ajax({
-      url,
-      type: 'POST',
-      data: {
-        subscriptionId,
-      },
-    });
-  },
+    // Set the button back to its initial state
+    this.setButtonText(this.enableText);
 
-  endpointWorkaround(pushSubscription) {
-    // Make sure we only mess with GCM
-    if (pushSubscription.endpoint.indexOf(GCM_ENDPOINT) !== 0) {
-      return pushSubscription.endpoint;
-    }
+    // Save the state of notifications
+    isPushEnabled = false;
 
-    let mergedEndpoint = pushSubscription.endpoint;
-
-    // Chrome 42 + 43 will not have the subscriptionId attached
-    // to the endpoint.
-    if (pushSubscription.subscriptionId &&
-      pushSubscription.endpoint.indexOf(pushSubscription.subscriptionId) === -1) {
-      // Handle version 42 where you have separate subId and Endpoint
-      mergedEndpoint = `${pushSubscription.endpoint}/${pushSubscription.subscriptionId}`;
-    }
-
-    return mergedEndpoint;
+    this.sendEvent('subscription change', 'disable');
   },
 };
