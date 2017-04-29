@@ -1,0 +1,11 @@
+{
+  "name": "Push Demo",
+  "short_name": "Push Demo",
+  "icons": [{
+    "src": "/docs/assets/icon-192x192.png",
+    "sizes": "192x192"
+  }],
+  "start_url": "./index.php",
+  "display": "standalone",
+  "gcm_sender_id": "472956197272"
+}

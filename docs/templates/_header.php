@@ -17,6 +17,8 @@
         var WEBPACK_PATH = '<?= ASSET_BUILD_PATH; ?>/';
     </script>
 
+    <link rel="manifest" href="<?= BASE_URL; ?>/manifest.json">
+
     <link rel="stylesheet" href="/docs/styleguide.css">
     <link rel="stylesheet" href="<?= ASSET_BUILD_PATH; ?>/main.css">
 </head>
@@ -63,6 +65,10 @@
 
         <a class="st-sidebar__link" href="/docs/pages/cms-content.php">
             CMS content
+        </a>
+
+        <a class="st-sidebar__link" href="/docs/pages/push-notifications.php">
+            Push notifications
         </a>
 
         <a class="st-sidebar__link" href="/docs/tools/form-generator.php">
