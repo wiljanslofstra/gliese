@@ -15,7 +15,6 @@
 // Change to v2, etc. when you update any of the local resources, which will
 // in turn trigger the install event again.
 const PRECACHE = 'precache-v5';
-const RUNTIME = 'runtime';
 
 // A list of local resources we always want to be cached.
 const PRECACHE_URLS = [
@@ -34,7 +33,7 @@ self.addEventListener('install', (event) => {
 
 // The activate handler takes care of cleaning up old caches.
 self.addEventListener('activate', (event) => {
-  const currentCaches = [PRECACHE, RUNTIME];
+  const currentCaches = [PRECACHE];
   event.waitUntil(
     caches.keys().then(cacheNames => (
       cacheNames.filter(cacheName => !currentCaches.includes(cacheName))
@@ -52,11 +51,7 @@ self.addEventListener('fetch', (event) => {
           return cachedResponse;
         }
 
-        return caches.open(RUNTIME).then(cache => (
-          fetch(event.request).then((response) => {
-            return response;
-          })
-        ));
+        return fetch(event.request).then(response => response);
       }));
   }
 });
