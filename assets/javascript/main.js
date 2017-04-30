@@ -29,6 +29,7 @@ import generalSlider from './prebuild/generalSlider';
 import autocomplete from './prebuild/autocomplete';
 import filter from './prebuild/filter';
 import pushNotifications from './prebuild/pushNotifications';
+import cart from './prebuild/cart';
 // import passwordStrength from './prebuild/passwordStrength';
 import map from './prebuild/map';
 // import addressAutofill from './prebuild/addressAutofill';
@@ -49,6 +50,7 @@ const app = () => {
   autocomplete.initialize();
   filter.initialize();
   pushNotifications.initialize();
+  cart.initialize();
   // passwordStrength();
   // addressAutofill();
   // jumpToElement.initialize();

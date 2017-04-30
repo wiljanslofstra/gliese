@@ -67,6 +67,10 @@
             CMS content
         </a>
 
+        <a class="st-sidebar__link" href="/docs/pages/cart.php">
+            Cart
+        </a>
+
         <a class="st-sidebar__link" href="/docs/pages/push-notifications.php">
             Push notifications
         </a>
