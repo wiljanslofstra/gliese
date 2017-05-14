@@ -97,15 +97,17 @@ const map = {
 
 };
 
-export default () => {
-  if (!mapsArray.length) { return; }
+export default {
+  initialize() {
+    if (!mapsArray.length) { return; }
 
-  GoogleMapsLoader.KEY = KEY;
+    GoogleMapsLoader.KEY = KEY;
 
-  GoogleMapsLoader.load(() => {
-    mapsArray.forEach((mapEl) => {
-      const mapInst = Object.assign({}, map);
-      mapInst.initialize(mapEl);
+    GoogleMapsLoader.load(() => {
+      mapsArray.forEach((mapEl) => {
+        const mapInst = Object.assign({}, map);
+        mapInst.initialize(mapEl);
+      });
     });
-  });
+  },
 };

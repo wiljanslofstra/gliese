@@ -4,7 +4,6 @@ __webpack_public_path__ = window.WEBPACK_PATH; // eslint-disable-line
 
 /* eslint-disable */
 import 'modernizr';
-import accessibility from './modules/accessibility';
 
 // global.Tether = require('tether');
 // require('bootstrap');
@@ -17,29 +16,29 @@ const loadPolyfills = (
   typeof Object.assign !== 'function'
 );
 
-// import datepicker from './prebuild/datepicker';
-import disableWhatsapp from './prebuild/disableWhatsapp';
-import parsleyFormValidation from './prebuild/parsleyFormValidation';
-import tracking from './prebuild/tracking';
-import videoElement from './prebuild/videoElement';
-import embedWrap from './prebuild/embedWrap';
-import navigation from './prebuild/navigation';
-import datepicker from './prebuild/datepicker';
-import generalSlider from './prebuild/generalSlider';
-import autocomplete from './prebuild/autocomplete';
-import filter from './prebuild/filter';
-import pushNotifications from './prebuild/pushNotifications';
-import cart from './prebuild/cart';
-// import passwordStrength from './prebuild/passwordStrength';
-import map from './prebuild/map';
-// import addressAutofill from './prebuild/addressAutofill';
-// import jumpToElement from './prebuild/jumpToElement';
-// import togglePasswordVisibility from './prebuild/togglePasswordVisibility';
+import accessibility from './modules/accessibility';
+import disableWhatsapp from './modules/disableWhatsapp';
+import parsleyFormValidation from './modules/parsleyFormValidation';
+import tracking from './modules/tracking';
+import videoElement from './modules/videoElement';
+import embedWrap from './modules/embedWrap';
+import navigation from './modules/navigation';
+import datepicker from './modules/datepicker';
+import generalSlider from './modules/generalSlider';
+import autocomplete from './modules/autocomplete';
+import filter from './modules/filter';
+import pushNotifications from './modules/pushNotifications';
+import cart from './modules/cart';
+import passwordStrength from './modules/passwordStrength';
+import map from './modules/map';
+import addressAutofill from './modules/addressAutofill';
+import jumpToElement from './modules/jumpToElement';
+import togglePasswordVisibility from './modules/togglePasswordVisibility';
 /* eslint-enable */
 
 const app = () => {
   embedWrap();
-  map();
+  map.initialize();
   accessibility.initialize();
   datepicker.initialize();
   tracking.initialize();
@@ -51,10 +50,10 @@ const app = () => {
   filter.initialize();
   pushNotifications.initialize();
   cart.initialize();
-  // passwordStrength();
-  // addressAutofill();
-  // jumpToElement.initialize();
-  // togglePasswordVisibility();
+  passwordStrength();
+  addressAutofill();
+  jumpToElement.initialize();
+  togglePasswordVisibility();
 };
 
 function loadScript(src, done) {

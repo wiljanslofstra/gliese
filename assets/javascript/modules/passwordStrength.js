@@ -1,12 +1,3 @@
-/**
- * HTML:
- * <div class="js-password">
- *   <input class="js-password-input" type="password">
- *   <div
- *     class="js-password-meter"
- *     data-warning-text="This password is one of the ten most frequently used"></div>
- * </div>
- */
 import getPasswordStrength from '../helpers/getPasswordStrength';
 
 // Wrapper around the password input field and the 'meter'
