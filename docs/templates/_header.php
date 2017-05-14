@@ -71,6 +71,14 @@
             Cart
         </a>
 
+        <a class="st-sidebar__link" href="/docs/pages/video.php">
+            Video
+        </a>
+
+        <a class="st-sidebar__link" href="/docs/pages/password-strength.php">
+            Password strength
+        </a>
+
         <a class="st-sidebar__link" href="/docs/pages/push-notifications.php">
             Push notifications
         </a>

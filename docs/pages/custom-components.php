@@ -1,22 +1,5 @@
 <?php include('../templates/_header.php'); ?>
 
-<h2 class="st-heading u-mb2">Custom video</h2>
-
-<div class="u-mb3">
-    <div class="video js-video" data-video-src="https://www.youtube.com/watch?v=RBTiTcHm_ac?rel=0&amp;autoplay=1">
-        <a href="#" class="video__poster js-video-poster hide-text">Play</a>
-    </div>
-</div>
-
-<h2 class="st-heading u-mb2">Password strength</h2>
-
-<div class="u-mb3">
-    <div class="js-password">
-        <input class="js-password-input" type="password">
-        <div class="js-password-meter" data-warning-text="This password is one of the ten most frequently used"></div>
-    </div>
-</div>
-
 <h2 class="st-heading u-mb2">Video element</h2>
 
 <div class="u-mb3">
