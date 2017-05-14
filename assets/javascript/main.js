@@ -35,6 +35,7 @@ import addressAutofill from './modules/addressAutofill';
 import jumpToElement from './modules/jumpToElement';
 import togglePasswordVisibility from './modules/togglePasswordVisibility';
 import accordion from './modules/accordion';
+import uploadField from './modules/uploadField';
 /* eslint-enable */
 
 const app = () => {
@@ -56,6 +57,7 @@ const app = () => {
   jumpToElement.initialize();
   togglePasswordVisibility();
   accordion.initialize();
+  uploadField.initialize();
 };
 
 function loadScript(src, done) {

@@ -45,6 +45,7 @@ module.exports = function(options) {
         modernizr: path.join(__dirname, 'assets/javascript/vendor/modernizr.custom.js'),
         lodash: path.join(__dirname, 'assets/javascript/vendor/lodash.custom.js'),
         jquery: path.join(__dirname, 'node_modules/jquery/dist/jquery.js'),
+        'jquery-ui/ui/widget': path.join(__dirname, 'node_modules/blueimp-file-upload/js/vendor/jquery.ui.widget.js'),
       }
     },
     module: {

@@ -79,6 +79,10 @@
             Accordion
         </a>
 
+        <a class="st-sidebar__link" href="/docs/pages/upload-field.php">
+            Upload field
+        </a>
+
         <a class="st-sidebar__link" href="/docs/pages/password-strength.php">
             Password strength
         </a>
