@@ -75,6 +75,10 @@
             Video
         </a>
 
+        <a class="st-sidebar__link" href="/docs/pages/accordion.php">
+            Accordion
+        </a>
+
         <a class="st-sidebar__link" href="/docs/pages/password-strength.php">
             Password strength
         </a>

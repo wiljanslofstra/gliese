@@ -34,6 +34,7 @@ import map from './modules/map';
 import addressAutofill from './modules/addressAutofill';
 import jumpToElement from './modules/jumpToElement';
 import togglePasswordVisibility from './modules/togglePasswordVisibility';
+import accordion from './modules/accordion';
 /* eslint-enable */
 
 const app = () => {
@@ -54,6 +55,7 @@ const app = () => {
   addressAutofill();
   jumpToElement.initialize();
   togglePasswordVisibility();
+  accordion.initialize();
 };
 
 function loadScript(src, done) {
