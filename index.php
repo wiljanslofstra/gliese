@@ -41,12 +41,12 @@
         </h1>
 
         <div class="u-mb2 u-sm-mb3">
-            <a class="btn btn--primary u-ml1 u-mr1" href="docs" role="button">
-                Docs
+            <a class="btn btn--primary btn--icon btn--icon-after u-ml1 u-mr1" href="docs" role="button">
+                Docs<?= getIcon('chevron-right'); ?>
             </a>
 
-            <a class="btn btn--primary u-ml1 u-mr1" href="https://github.com/wiljanslofstra/Gliese" target="_blank" role="button">
-                Repository
+            <a class="btn btn--primary btn--icon btn--icon-after u-ml1 u-mr1" href="https://github.com/wiljanslofstra/Gliese" target="_blank" role="button">
+                Repository<?= getIcon('chevron-right'); ?>
             </a>
         </div>
 

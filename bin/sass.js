@@ -7,49 +7,15 @@ const postcss = require('postcss');
 const autoprefixer = require('autoprefixer');
 const chalk = require('chalk');
 const notification = require('./notification');
-const createStats = require('./create-stats');
-const timing = require('./timing');
 
 const ENV = process.env.NODE_ENV;
 
-// Options
-const autoprefixerOptions = {
-  browsers: [
-    'last 2 version',
-    'ie >= 8',
-    'iOS >= 7',
-    'android >= 4.1',
-  ],
-};
-
 const postCSSPlugins = [
-  autoprefixer(autoprefixerOptions),
+  autoprefixer(),
 ];
 
 if (ENV === 'production') {
   // postCSSPlugins.push();
-}
-
-/**
- * Output the stats about the given file to the console
- * @param  {String} filePath Path where the file can be found
- * @return {Void}
- */
-function outputStats(filePath) {
-  // Get all statistics for the given file
-  const stats = fs.statSync(filePath);
-
-  // Transform the bytes value to a kilobytes value
-  const sizeInKb = (stats.size / 1000).toFixed(1);
-
-  // Get only the filename from the complete path
-  const fileName = filePath.split('/').pop();
-
-  // Build a stats table and output to the console
-  createStats({
-    asset: fileName,
-    size: `${sizeInKb}kb`,
-  }, 'asset');
 }
 
 /**
@@ -83,15 +49,11 @@ function postCSS(css, plugins, file) {
 
       const filename = file.out.split('/').pop();
 
-      outputStats(file.out);
-
       notification('success', `${filename} compiled successfully`);
 
       if (result.map) {
         fs.writeFileSync(file.map, result.map);
       }
-
-      timing('PostCSS', 'end');
     });
 }
 
@@ -100,8 +62,6 @@ function postCSS(css, plugins, file) {
  * @return {Void}
  */
 module.exports = () => {
-  timing('Sass', 'start');
-
   const files = [
     {
       in: path.resolve(__dirname, '../assets/sass', 'main.scss'),
@@ -123,14 +83,10 @@ module.exports = () => {
       outFile: file.out,
       outputStyle,
     }, (error, result) => {
-      timing('Sass', 'end');
-
       if (error) {
         outputSassError(error);
         return;
       }
-
-      timing('PostCSS', 'start');
 
       // Run the compiled Sass through PostCSS
       postCSS(result.css, postCSSPlugins, file);

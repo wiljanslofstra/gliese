@@ -56,7 +56,10 @@
 </head>
 
 <body>
-    <?php include(__DIR__ . '/../assets/images/icons/symbol-defs.svg'); ?>
+    <?php
+        $sprite = file_get_contents(__DIR__ . '/../assets/images/icons/symbol/svg/sprite.symbol.svg');
+        echo $sprite;
+    ?>
 
     <a class="sr-only sr-only-focusable" href="#main">
         Go to content

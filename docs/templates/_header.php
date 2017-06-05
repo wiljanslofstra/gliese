@@ -24,7 +24,10 @@
 </head>
 
 <body>
-    <?php include(__DIR__ . '/../../assets/images/icons/symbol-defs.svg'); ?>
+    <?php
+        $sprite = file_get_contents(__DIR__ . '/../../assets/images/icons/symbol/svg/sprite.symbol.svg');
+        echo $sprite;
+    ?>
 
     <div class="st-sidebar">
         <a class="st-sidebar__link" href="/docs/pages/base-styles.php">

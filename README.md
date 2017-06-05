@@ -3,14 +3,12 @@ Front-end boilerplate using:
 - [Sass](http://sass-lang.com/)
 - [Webpack 2](http://webpack.github.io/) with Babel
 - NPM as task-runner
-- [Parker](https://github.com/katiefenn/parker) to analyse CSS
 - [ESLint](http://eslint.org/) to lint Javascript with [Airbnb's ESLint configuration](https://github.com/airbnb/javascript)
 - Custom Modernizr and Lodash builds
-- SVG spritesheets with [SVGO](https://github.com/svg/svgo) and [Spritesh](https://github.com/edenspiekermann/sprite.sh)
 
 ## Get started
 - ```npm install``` or ```yarn install```
-- Change path in ```system/config.php```
+- Change path and URL in ```system/config.php```
 - Change project data in ```package.json```
 - ```npm start``` or ```yarn start```
 
@@ -29,17 +27,9 @@ yarn run build:modernizr
 # Generate a custom lodash build, the optins can be set in the package.json
 yarn run build:lodash
 
-# Analyse CSS with Parker, will output things like specificity, number of selectors etc.
-yarn run analyse:parker
-
 # Analyse Javascript with ESLint
 yarn run analyse:eslint
 
-# Generate a list of TODOS
-yarn run analyse:todo
-
-# Generate SVG spritesheet from icons (with spritesh) in /assets/images/icons-src to
-# /assets/images/icons, you could change the paths in package.json. Before creating the sprite
-# it will also remove unnecessary information from the SVG files with SVGO
+# Generate SVG spritesheet from SVG icons
 yarn run build:icons
 ```

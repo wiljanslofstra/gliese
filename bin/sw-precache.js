@@ -1,7 +1,7 @@
 const chalk = require('chalk');
 const swPrecache = require('sw-precache');
 
-module.exports = function() {
+module.exports = function swPrecacheFn() {
   swPrecache.write('service-worker.js', {
     staticFileGlobs: [
       'assets/build/**/*.{js,css}',
