@@ -38,7 +38,7 @@ const videoHelpers = {
    * @return {string} url of the YouTube poster
    */
   getYoutubePoster(id) {
-    return `http://img.youtube.com/vi/${id}/0.jpg`;
+    return `https://img.youtube.com/vi/${id}/maxresdefault.jpg`;
   },
 
   /**
@@ -78,7 +78,7 @@ const videoHelpers = {
   getVimeoPoster(id, cb) {
     $.ajax({
       type: 'GET',
-      url: `http://vimeo.com/api/v2/video/${id}.json`,
+      url: `https://vimeo.com/api/v2/video/${id}.json`,
       jsonp: 'callback',
       dataType: 'jsonp',
       success: (data) => {
