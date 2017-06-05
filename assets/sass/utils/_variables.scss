@@ -143,13 +143,6 @@ $line-height-base: 1.4;
 $line-height-computed: floor(($font-size-base * $line-height-base));
 $line-height: em($font-size-base * $line-height-base);
 
-$breakpoints: (
-  xs: 480px,
-  sm: 768px,
-  md: 992px,
-  lg: 1200px
-);
-
 $navigation-bg: #f4f4f4;
 $navigation-bg-desktop: #f4f4f4;
 $navigation-link-color: #717171;
