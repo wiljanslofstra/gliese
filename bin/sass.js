@@ -7,6 +7,7 @@ const postcss = require('postcss');
 const autoprefixer = require('autoprefixer');
 const chalk = require('chalk');
 const notification = require('./notification');
+const mkdirp = require('mkdirp');
 
 const ENV = process.env.NODE_ENV;
 
@@ -77,6 +78,9 @@ module.exports = () => {
   const outputStyle = (ENV === 'production') ? 'compressed' : 'expanded';
 
   files.forEach((file) => {
+    // Create build directory on first run (if it doesn't exist)
+    mkdirp.sync(path.dirname(file.out));
+
     // Compile the Sass
     sass.render({
       file: file.in,
