@@ -45,14 +45,14 @@
         }
       }
 
-      @each $modifier in (pull, push) {
-        @for $i from 0 through $columns {
-          .#{$modifier}#{$infix}-#{$i} {
-            @include make-col-modifier($modifier, $i, $columns);
-          }
+      // @each $modifier in (pull, push) {
+      //   @for $i from 0 through $columns {
+      //     .#{$modifier}#{$infix}-#{$i} {
+      //       @include make-col-modifier($modifier, $i, $columns);
+      //     }
 
-        }
-      }
+      //   }
+      // }
     }
   }
 }
@@ -99,13 +99,13 @@
   }
 
   .row--tight-gutters {
-    margin-right: 15px / 2 * -1;
-    margin-left: 15px / 2 * -1;
+    margin-right: (15px / 2 * -1);
+    margin-left: (15px / 2 * -1);
 
     > .col,
     > [class*='col-'] {
-      padding-right: 15px / 2;
-      padding-left: 15px / 2;
+      padding-right: (15px / 2);
+      padding-left: (15px / 2);
     }
   }
 }

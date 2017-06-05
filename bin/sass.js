@@ -72,6 +72,10 @@ module.exports = () => {
       in: path.resolve(__dirname, '../assets/sass', 'ie9.scss'),
       out: path.resolve(__dirname, '../assets/build', 'ie9.css'),
       map: path.resolve(__dirname, '../assets/build', 'ie9.css.map'),
+    }, {
+      in: path.resolve(__dirname, '../assets/sass', 'bootstrap-datepicker.scss'),
+      out: path.resolve(__dirname, '../assets/build', 'bootstrap-datepicker.css'),
+      map: path.resolve(__dirname, '../assets/build', 'bootstrap-datepicker.css.map'),
     },
   ];
 

@@ -29,3 +29,8 @@
     padding-top: $inline-label-top-padding;
   }
 }
+
+[class*='u-form-inline-'] input[type='checkbox'] + label,
+[class*='u-form-inline-'] input[type='radio'] + label {
+  padding-top: 0;
+}

@@ -1,5 +1,7 @@
 <?php include('../templates/_header.php'); ?>
 
+<link rel="stylesheet" href="<?= ASSET_BUILD_PATH; ?>/bootstrap-datepicker.css">
+
 <div class="st-explanation">
     <h1>Forms</h1>
 </div>
