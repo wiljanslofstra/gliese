@@ -2,8 +2,7 @@
 Front-end boilerplate using:
 - [Sass](http://sass-lang.com/)
 - [Webpack 2](http://webpack.github.io/) with Babel
-- NPM as task-runner
-- [ESLint](http://eslint.org/) to lint Javascript with [Airbnb's ESLint configuration](https://github.com/airbnb/javascript)
+- [ESLint](http://eslint.org/) with [Airbnb's ESLint configuration](https://github.com/airbnb/javascript)
 - Custom Modernizr and Lodash builds
 
 ## Get started

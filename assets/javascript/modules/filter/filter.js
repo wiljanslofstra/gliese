@@ -1,7 +1,7 @@
 import jump from 'jump.js';
 import formSerialize from 'form-serialize';
-import { getPageNumber, rewriteHistory, getData, setData } from './filter/utils';
-import fetchFromAPI from './filter/api';
+import { getPageNumber, rewriteHistory, getData, setData } from './utils';
+import fetchFromAPI from './api';
 
 const $filter = $('.js-filters');
 const $form = $('.js-filters-form');

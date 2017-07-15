@@ -6,6 +6,12 @@
     "amd": true,
     "jquery": true
   },
+  "globals": {
+    "dataLayer": true,
+    "ga": true,
+    "BASE": true,
+    "Modernizr": true
+  },
   "rules": {
     "no-magic-numbers": [
       "error",

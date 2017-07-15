@@ -22,6 +22,27 @@
   'base/type-fontfaces',
   'base/text';
 @import
+  'utils/utilities',
+  'utils/arrow',
+  'utils/flex',
+  'utils/float',
+  'utils/images',
+  'utils/forms',
+  'utils/width',
+  'utils/height',
+  'utils/colors',
+  'utils/slider',
+  'utils/capped',
+  'utils/backgrounds',
+  'utils/touch',
+  'utils/text',
+  'utils/display',
+  'utils/align',
+  'utils/lists',
+  'utils/links',
+  'utils/position',
+  'utils/spacing';
+@import
   'layout/grid',
   'layout/layout';
 @import
@@ -47,23 +68,4 @@
   'components/spinner'; // Optional
 @import
   'pages/home';
-@import
-  'utils/utilities',
-  'utils/arrow',
-  'utils/flex',
-  'utils/float',
-  'utils/images',
-  'utils/forms',
-  'utils/width',
-  'utils/height',
-  'utils/colors',
-  'utils/slider',
-  'utils/capped',
-  'utils/backgrounds',
-  'utils/touch',
-  'utils/text',
-  'utils/display',
-  'utils/align',
-  'utils/lists',
-  'utils/links',
-  'utils/spacing';
+

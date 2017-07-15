@@ -1,5 +1,3 @@
-/* global Modernizr */
-
 import $ from 'jquery';
 
 const $nav = $('.header__navigation');

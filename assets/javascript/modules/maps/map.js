@@ -1,7 +1,7 @@
-/* global google, BASE */
+/* global google */
 
 import GoogleMapsLoader from 'google-maps';
-import createMapsMarkers from '../helpers/createMapsMarker';
+import createMapsMarkers from './createMapsMarker';
 
 const maps = document.querySelectorAll('.js-map');
 const mapsArray = Array.prototype.slice.call(maps);

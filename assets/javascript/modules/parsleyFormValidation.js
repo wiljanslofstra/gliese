@@ -1,5 +1,3 @@
-/* global ga, BASE */
-
 import $ from 'jquery';
 import scriptLoader from '../helpers/scriptLoader';
 
