@@ -1,0 +1,40 @@
+.u-slider {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+.u-slider > * {
+  display: block;
+}
+
+.u-slider > *:nth-child(1n+2) {
+  display: none;
+}
+
+.u-slider.slick-initialized > *:nth-child(1n+2) {
+  display: block;
+}
+
+.u-slider .slick-arrow {
+  position: absolute;
+  top: 50%;
+  z-index: 2;
+  border: 0;
+  background: transparent;
+  transition: background .3s ease-out;
+}
+
+.u-slider .slick-arrow .icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.u-slider .slick-prev {
+  left: 0;
+}
+
+.u-slider .slick-next {
+  right: 0;
+}

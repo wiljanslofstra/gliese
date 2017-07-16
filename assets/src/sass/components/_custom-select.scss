@@ -1,0 +1,58 @@
+.custom-select {
+  position: relative;
+  border: $c-select-border-width solid $c-select-border;
+  border-radius: $c-select-border-radius;
+  background: $c-select-bg;
+  height: $c-select-height;
+  overflow: hidden;
+  padding-right: $c-select-arrow-width;
+}
+
+.custom-select select {
+  position: relative;
+  z-index: 2;
+  border: 0;
+  box-shadow: none;
+  background: transparent;
+  cursor: pointer;
+  width: 130%;
+  height: calc(#{$c-select-height} - 2px);
+  padding: 0 $c-select-horizontal-padding;
+  text-overflow: ellipsis;
+  appearance: none;
+}
+
+// Hide arrow on IE10
+.custom-select select::-ms-expand {
+  display: none;
+}
+
+// Disable default focus
+.custom-select select:focus {
+  outline: none;
+}
+
+// Arrow
+.custom-select:after {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: $c-select-arrow-width;
+  text-align: center;
+  line-height: calc(#{$c-select-height} - 2px);
+  content: '\02193';
+}
+
+// Custom focus,class is added by accessibility.js
+.custom-select.is-focussed {
+  border-color: $c-select-border-focus;
+}
+
+// Custom disabled,class is added by accessibility.js
+.custom-select.is-disabled {
+  color: darken($c-select-bg, 20%);
+}
+
+.custom-select.is-disabled select {
+  cursor: default;
+}

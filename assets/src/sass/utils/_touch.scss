@@ -1,0 +1,7 @@
+.touchevents .u-visible-touch {
+  display: block !important; // sass-lint:disable-line no-important
+}
+
+.no-touchevents .u-hidden-touch {
+  display: none !important; // sass-lint:disable-line no-important
+}
