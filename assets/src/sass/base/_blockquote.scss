@@ -1,0 +1,9 @@
+blockquote {
+  border: 0;
+  padding: 0;
+  font-size: 1.25rem;
+
+  > *:last-child {
+    margin-bottom: 0;
+  }
+}

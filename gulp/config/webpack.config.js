@@ -1,0 +1,65 @@
+/* eslint-disable import/no-extraneous-dependencies */
+
+const webpack = require('webpack');
+const path = require('path');
+
+// Paths
+const buildPath = path.resolve(process.env.PWD, 'assets/dist/javascript');
+
+const uglify = new webpack.optimize.UglifyJsPlugin({
+  minimize: true,
+  comments: false,
+});
+
+module.exports = () => {
+  // Default plugins
+  const allPlugins = [
+    new webpack.ProvidePlugin({
+      jQuery: 'jquery',
+      $: 'jquery',
+      'window.jQuery': 'jquery',
+    }),
+  ];
+
+  // If running in production we will add some plugins
+  if (global.PRODUCTION) {
+    allPlugins.push(uglify);
+  }
+
+  return {
+    context: path.resolve(process.env.PWD, global.PATHS.js.src),
+    cache: true,
+    entry: {
+      bundle: './main.js',
+      polyfills: './polyfills.js',
+      formValidation: './formValidation.js',
+    },
+    devtool: (global.PRODUCTION) ? 'source-map' : 'cheap-module-eval-source-map',
+    output: {
+      path: buildPath,
+      filename: '[name].js',
+    },
+    resolve: {
+      alias: {
+        modernizr: path.resolve(process.env.PWD, global.PATHS.js.src, 'vendor/modernizr.custom.js'),
+        lodash: path.resolve(process.env.PWD, global.PATHS.js.src, 'vendor/lodash.custom.js'),
+        jquery: path.resolve(process.env.PWD, 'node_modules/jquery/dist/jquery.js'),
+        'jquery-ui/ui/widget': path.resolve(process.env.PWD, 'node_modules/blueimp-file-upload/js/vendor/jquery.ui.widget.js'),
+      },
+    },
+    module: {
+      rules: [
+        {
+          test: /\.js?$/,
+          exclude: /node_modules\/(?!(autotrack|dom-utils))/,
+          loader: 'babel-loader',
+        }, {
+          test: /\.js?$/,
+          exclude: /node_modules/,
+          loader: 'eslint-loader',
+        },
+      ],
+    },
+    plugins: allPlugins,
+  };
+};

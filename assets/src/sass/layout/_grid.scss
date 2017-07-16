@@ -1,0 +1,124 @@
+// Framework grid generation
+//
+// Used only by Bootstrap to generate the correct number of grid classes given
+// any value of `$grid-columns`.
+
+@mixin make-grid-columns(
+  $columns: $grid-columns,
+  $gutters: $grid-gutter-widths,
+  $breakpoints: $grid-breakpoints
+) {
+  // Common properties for all breakpoints
+  %grid-column {
+    position: relative;
+    width: 100%;
+    min-height: 1px; // Prevent columns from collapsing when empty
+
+    @include make-gutters($gutters);
+  }
+
+  @each $breakpoint in map-keys($breakpoints) {
+    $infix: breakpoint-infix($breakpoint, $breakpoints);
+
+    // Allow columns to stretch full width below their breakpoints
+    @for $i from 1 through $columns {
+      .col#{$infix}-#{$i} {
+        @extend %grid-column;
+      }
+    }
+
+    .col#{$infix} {
+      @extend %grid-column;
+    }
+
+    @include media-breakpoint-up($breakpoint, $breakpoints) {
+      // Provide basic `.col-{bp}` classes for equal-width flexbox columns
+      .col#{$infix} {
+        flex-basis: 0;
+        flex-grow: 1;
+        max-width: 100%;
+      }
+
+      .col#{$infix}-auto {
+        flex: 0 0 auto;
+        width: auto;
+      }
+
+      @for $i from 1 through $columns {
+        .col#{$infix}-#{$i} {
+          @include make-col($i, $columns);
+        }
+      }
+
+      // @each $modifier in (pull, push) {
+      //   @for $i from 0 through $columns {
+      //     .#{$modifier}#{$infix}-#{$i} {
+      //       @include make-col-modifier($modifier, $i, $columns);
+      //     }
+
+      //   }
+      // }
+    }
+  }
+}
+
+@if $enable-grid-classes {
+  .container {
+    @include make-container;
+    @include make-container-max-widths;
+  }
+}
+
+// Fluid container
+//
+// Utilizes the mixin meant for fixed width containers, but without
+// any defined width for fluid, full width layouts.
+
+@if $enable-grid-classes {
+  .container-fluid {
+    @include make-container;
+  }
+}
+
+// Row
+//
+// Rows contain and clear the floats of your columns.
+
+@if $enable-grid-classes {
+  .row {
+    @include make-row;
+  }
+
+  // Remove the negative margin from default .row, then the horizontal
+  // padding from all immediate children columns (to prevent runaway
+  // style inheritance).
+  .row--no-gutters {
+    margin-right: 0;
+    margin-left: 0;
+
+    > .col,
+    > [class*='col-'] {
+      padding-right: 0;
+      padding-left: 0;
+    }
+  }
+
+  .row--tight-gutters {
+    margin-right: (15px / 2 * -1);
+    margin-left: (15px / 2 * -1);
+
+    > .col,
+    > [class*='col-'] {
+      padding-right: (15px / 2);
+      padding-left: (15px / 2);
+    }
+  }
+}
+
+// Columns
+//
+// Common styles for small and large grid columns
+
+@if $enable-grid-classes {
+  @include make-grid-columns;
+}

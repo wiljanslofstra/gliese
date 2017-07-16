@@ -1,7 +1,0 @@
-# robotstxt.org/
-
-User-agent: Twitterbot
-Disallow:
-
-User-Agent: *
-Disallow: /secret-stuff

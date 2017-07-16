@@ -1,0 +1,212 @@
+// Colors
+$color-primary: #7950f2;
+$color-secondary: #495057;
+
+$gradient-primary: linear-gradient(
+  to bottom,
+  $color-primary,
+  darken($color-primary, 5%)
+);
+$gradient-secondary: linear-gradient(
+  to bottom,
+  $color-secondary,
+  darken($color-secondary, 5%)
+);
+
+$gradient-primary-light: linear-gradient(
+  to bottom,
+  lighten($color-primary, 5%),
+  $color-primary
+);
+$gradient-secondary-light: linear-gradient(
+  to bottom,
+  lighten($color-secondary, 5%),
+  $color-secondary
+);
+
+$gradient-primary-dark: linear-gradient(
+  to bottom,
+  darken($color-primary, 10%),
+  $color-primary
+);
+$gradient-secondary-dark: linear-gradient(
+  to bottom,
+  darken($color-secondary, 10%),
+  $color-secondary
+);
+
+$background: #fff;
+$color-text: #555;
+
+$color-positive: #51cf66;
+$color-negative: #fa5252;
+
+$color-link: $color-primary;
+
+$link-color: $color-link;
+$link-hover-color: darken($color-link, 15%);
+$link-hover-decoration: none;
+
+//
+// Forms
+//
+$form-group-margin-bottom: 1rem;
+
+$input-bg: #fff;
+$input-border-width: 1px;
+$input-border: #ced4da;
+$input-border-focus: $color-primary;
+$input-height-base: 2.5rem;
+$input-vertical-padding: .55rem;
+$input-horizontal-padding: .75rem;
+$input-border-radius: 0;
+$input-bg-disabled: #eceeef;
+
+// Checkbox/radio variables
+$c-checkbox-bg: $input-bg;
+$c-checkbox-inner-bg: #555;
+$c-checkbox-border: $input-border;
+$c-checkbox-border-size: $input-border-width;
+$c-checkbox-focus-border: $input-border-focus;
+$c-checkbox-border-radius: $input-border-radius;
+$c-checkbox-inner-border-radius: $input-border-radius;
+$c-checkbox-size: 20px;
+$c-checkbox-space: 10px;
+$c-checkbox-inner-size: 12px;
+$c-checkbox-animation: false;
+
+// Radio variables, overwrite checkbox style
+$c-radio-border-radius: $c-checkbox-size / 2;
+$c-radio-inner-border-radius: $c-checkbox-inner-size / 2;
+
+$c-select-bg: $input-bg;
+$c-select-border-width: $input-border-width;
+$c-select-border: $input-border;
+$c-select-border-focus: $input-border-focus;
+$c-select-border-radius: $input-border-radius;
+$c-select-height: $input-height-base;
+$c-select-horizontal-padding: 10px;
+$c-select-arrow-width: 30px;
+
+$inline-label-top-padding: .5em;
+
+//
+// Buttons
+//
+$btn-height: 2.5rem;
+$btn-padding: 0 1rem;
+$btn-font-weight: normal;
+$btn-border-radius: 3px;
+
+$btn-lg-height: 3rem;
+$btn-lg-padding: 0 1.2rem;
+
+$btn-sm-height: 2rem;
+$btn-sm-padding: 0 .8rem;
+
+$button-primary: (
+  color: #fff,
+  color-hover: #fff,
+  color-active: #fff,
+  background: $color-primary,
+  background-hover: lighten($color-primary, 10%),
+  background-active: darken($color-primary, 10%),
+  border: 0,
+  border-hover: 0,
+  border-active: 0,
+  // shadow: 0 0 2px 5px rgba(20, 20, 20, .3),
+  // gradient: $gradient-primary,
+  // gradient-hover: $gradient-primary-light,
+  // gradient-active: $gradient-primary-dark,
+  // font-family: Comic Sans MS
+);
+
+$button-secondary: (
+  color: #fff,
+  color-hover: #fff,
+  color-active: #fff,
+  background: $color-secondary,
+  background-hover: lighten($color-secondary, 10%),
+  background-active: darken($color-secondary, 10%),
+  border: 0,
+  border-hover: 0,
+  border-active: 0,
+  // shadow: 0 0 2px 5px rgba(20, 20, 20, .3),
+  // gradient: $gradient-secondary,
+  // gradient-hover: $gradient-secondary-light,
+  // gradient-active: $gradient-secondary-dark,
+  // font-family: Comic Sans MS
+);
+
+$hr-border: #ced4da;
+
+// Typography
+$font-family-sans-serif: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
+$font-family-serif: Georgia, Times New Roman, Times, serif;
+$font-family-monospace: Menlo, Monaco, Consolas, Courier New, monospace;
+$font-family-base: $font-family-sans-serif;
+
+$font-size-base: 1rem;
+$font-size-large: 1.25rem;
+$font-size-small: .875rem;
+
+$headings-font-family: $font-family-sans-serif;
+$headings-font-weight: 500;
+$headings-line-height: 1.1;
+$headings-color: inherit;
+
+$font-size-h1: 2.441rem;
+$font-size-h2: 1.953rem;
+$font-size-h3: 1.563rem;
+$font-size-h4: 1.25rem;
+
+$resp-font-size-breakpoint: 600px;
+$resp-font-size-ratio: 0.875;
+
+$line-height-base: 1.4;
+$line-height-computed: floor(($font-size-base * $line-height-base));
+$line-height: em($font-size-base * $line-height-base);
+
+$navigation-bg: #f4f4f4;
+$navigation-bg-desktop: #f4f4f4;
+$navigation-link-color: #717171;
+$navigation-link-active-color: $color-primary;
+$navigation-link-padding: .5rem 1rem;
+$navigation-link-active-color: $color-text;
+$navigation-item-padding: 1px solid #dfdfdf;
+$navigation-item-desktop-spacing: 1.5rem;
+$navigation-item-desktop-line-height: 22px;
+$navigation-other-padding: .5rem 1rem;
+
+$navigation-dropdown-bg: #ddd;
+$navigation-dropdown-item-border: 1px solid #dfdfdf;
+$navigation-dropdown-color: #717171;
+$navigation-dropdown-item-padding: .5rem 1rem;
+$navigation-dropdown-offset: 100%;
+$navigation-dropdown-min-width: 250px;
+$navigation-dropdown-hit-enabled: false;
+$navigation-dropdown-hit-width: $navigation-dropdown-min-width;
+$navigation-dropdown-hit-height: 20px;
+$navigation-dropdown-hit-top: -20px;
+$navigation-dropdown-hit-left: 0;
+
+$em-base: $font-size-base;
+$prefix-for-webkit: true;
+$prefix-for-mozilla: true;
+$prefix-for-microsoft: true;
+$prefix-for-opera: true;
+$prefix-for-spec: true;
+
+$default-box-sizing: border-box;
+$default-cursor: default;
+$default-disabled-color: rgba(0, 0, 0, .6);
+$default-font-family: $font-family-base;
+$default-input-background: transparent;
+$default-line-height: $line-height-base;
+$default-monospace-font-family: $font-family-monospace;
+$default-nav-list-style: none;
+$default-selection-background-color: $color-primary;
+$default-small-font-size: 75%;
+$default-text-rendering: optimizeLegibility;
+$default-textarea-resize: vertical;
+$default-vertical-align: top;

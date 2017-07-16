@@ -45,19 +45,19 @@
         document.documentElement.className = document.documentElement.className.replace('no-js', 'js');
 
         var BASE = '<?= BASE_URL; ?>';
-        var WEBPACK_PATH = '<?= ASSET_BUILD_PATH; ?>/';
+        var WEBPACK_PATH = '<?= ASSET_BUILD_PATH; ?>/javascript/';
     </script>
 
-    <link rel="stylesheet" href="<?= ASSET_BUILD_PATH; ?>/main.css">
+    <link rel="stylesheet" href="<?= ASSET_BUILD_PATH; ?>/css/main.css">
 
     <!--[if gte IE 9]>
-        <link rel="stylesheet" type="text/css" href="<?= ASSET_BUILD_PATH; ?>/ie9.css" />
+        <link rel="stylesheet" type="text/css" href="<?= ASSET_BUILD_PATH; ?>/css/ie9.css">
     <![endif]-->
 </head>
 
 <body>
     <?php
-        $sprite = file_get_contents(__DIR__ . '/../assets/images/icons/symbol/svg/sprite.symbol.svg');
+        $sprite = file_get_contents(__DIR__ . '/../assets/dist/icons/symbol/svg/sprite.symbol.svg');
         echo $sprite;
     ?>
 

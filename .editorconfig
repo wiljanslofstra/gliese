@@ -10,5 +10,5 @@ insert_final_newline = true
 
 # PHP PSR-2 Coding Standards
 # http://www.php-fig.org/psr/psr-2/
-[*.{php,ini,yml,yaml}]
+[*.{php,ini}]
 indent_size = 4

@@ -1,0 +1,54 @@
+.form-control {
+  display: block;
+  border: $input-border-width solid $input-border;
+  background-color: $input-bg;
+  background-image: none; // Reset unusual Firefox-on-Android default style
+  width: 100%;
+  height: $input-height-base;
+  padding: $input-vertical-padding $input-horizontal-padding;
+  line-height: $line-height-base;
+  color: $input-color;
+  font-size: $font-size-base;
+  font-family: $font-family-base;
+
+  @if ($input-border-radius and $input-border-radius != 0) {
+    border-radius: $input-border-radius;
+  }
+
+  &:focus {
+    outline: none;
+    border-color: $input-border-focus;
+  }
+
+  // Unstyle the caret on `<select>`s in IE10+.
+  &::-ms-expand {
+    border: 0;
+    background-color: transparent;
+  }
+
+  // Disabled and read-only inputs
+  &[disabled],
+  &[readonly] {
+    opacity: 1; // iOS fix for unreadable disabled content
+    background-color: $input-bg-disabled;
+  }
+
+  &[disabled] {
+    cursor: $cursor-disabled;
+  }
+}
+
+textarea.form-control {
+  height: auto;
+  resize: vertical;
+}
+
+.form-group {
+  margin-bottom: $form-group-margin-bottom;
+}
+
+.parsley-errors-list,
+.form-error {
+  color: $color-negative;
+  padding-top: 5px;
+}

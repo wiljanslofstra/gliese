@@ -1,0 +1,86 @@
+// Hide input element
+input[type='radio'],
+input[type='checkbox'] {
+  position: absolute;
+  opacity: 0;
+}
+
+// Style the label
+input[type='radio'] + label,
+input[type='checkbox'] + label {
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+  padding-left: $c-checkbox-size + $c-checkbox-space;
+
+  &:before,
+  &:after {
+    display: block;
+    position: absolute;
+    top: .7em;
+    content: '';
+  }
+
+  // Outer circle
+  &:before {
+    left: 0;
+    margin-top: ($c-checkbox-size / 2) * -1;
+    border: $c-checkbox-border-size solid $c-checkbox-border;
+    border-radius: $c-checkbox-border-radius;
+    background: $c-checkbox-bg;
+    width: $c-checkbox-size;
+    height: $c-checkbox-size;
+  }
+
+  // Inner circle
+  &:after {
+    left: ($c-checkbox-size - $c-checkbox-inner-size) / 2;
+    visibility: hidden;
+    opacity: 0; // Hide until checked
+    z-index: 2;
+    margin-top: ($c-checkbox-inner-size / 2) * -1;
+    border-radius: $c-checkbox-inner-border-radius;
+    background: $c-checkbox-inner-bg;
+    width: $c-checkbox-inner-size;
+    height: $c-checkbox-inner-size;
+
+    @if $c-checkbox-animation {
+      transform: scale(.8);
+      transition: opacity .2s ease-out, visibility .2s ease-out, transform .2s ease-out;
+    }
+  }
+}
+
+// Change radio outer circle
+input[type='radio'] + label:before {
+  border-radius: $c-radio-border-radius;
+}
+
+// Change radio inner circle
+input[type='radio'] + label:after {
+  border-radius: $c-radio-inner-border-radius;
+}
+
+// Show inner circle
+input[type='radio']:checked + label:after,
+input[type='checkbox']:checked + label:after {
+  visibility: visible;
+  opacity: 1;
+
+  @if $c-checkbox-animation {
+    transform: scale(1);
+  }
+}
+
+// Focus outline
+input[type='radio']:focus + label:before,
+input[type='checkbox']:focus + label:before {
+  border-color: $c-checkbox-focus-border;
+}
+
+// Disabled
+input[type='radio']:disabled + label,
+input[type='checkbox']:disabled + label {
+  opacity: .5;
+  cursor: default;
+}
