@@ -38,7 +38,7 @@ const formValidation = {
       return;
     }
 
-    scriptLoader(`${BASE}/assets/build/formValidation.js`, () => {
+    scriptLoader(`${BASE}/dist/javascript/formValidation.js`, () => {
       parsleyLoaded = true;
       cb.call(this);
     });

@@ -12,12 +12,13 @@ module.exports = {
     src: 'assets/src/javascript',
     dest: 'assets/dist/javascript',
     dest_definitions: 'assets/dist/javascript/definitions',
+    ext: '**/*.js',
   },
 
   images: {
     src: 'assets/src/images',
     dest: 'assets/dist/images',
-    ext: '*.{png,jpg,svg,gif,ico,webp}',
+    ext: '**/*.{png,jpg,svg,gif,ico,webp}',
   },
 
   icons: [

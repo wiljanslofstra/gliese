@@ -1,12 +1,16 @@
+/* eslint-disable import/no-extraneous-dependencies */
+
 const gulp = require('gulp');
 const path = require('path');
 
 // Setup paths
-process.env.PWD = process.env.PWD || path.resolve(process.cwd(), '../');
-global.PATHS = require('./config/paths.js');
+const PWD = process.env.PWD || path.resolve(process.cwd(), '../');
+const PATHS = require('./config/paths.js');
+
+process.env.PWD = PWD;
+global.PATHS = PATHS;
 global.PRODUCTION = (process.env.NODE_ENV === 'production');
 
-// Require all tasks
 require('./tasks/clean');
 require('./tasks/styles');
 require('./tasks/scripts');
@@ -16,14 +20,20 @@ require('./tasks/icons');
 require('./tasks/modernizr');
 require('./tasks/sw-precache');
 
-// Build workflow
-const build = gulp.series('clean', gulp.parallel('styles', 'scripts', 'static', 'images'));
+const build = gulp.series('clean', gulp.parallel('styles', 'scripts', 'static', 'images', 'icons'));
 
-// Watch tasks
-gulp.task('watch', gulp.series([
-  'scripts', () => {
-    gulp.watch(path.resolve(process.env.PWD, global.PATHS.js.src), 'scripts');
-  },
-]));
+const watchJSPath = path.resolve(PWD, PATHS.js.src, PATHS.js.ext);
+const watchSassPath = path.resolve(PWD, PATHS.sass.src, PATHS.sass.ext);
+const watchImgPath = path.resolve(PWD, PATHS.images.src, PATHS.images.ext);
+
+const watchFn = function watch() {
+  gulp.watch(watchJSPath, gulp.series('scripts'));
+  gulp.watch(watchSassPath, gulp.series('styles'));
+  gulp.watch(watchImgPath, gulp.series('images'));
+};
+
+const watch = gulp.series(build, watchFn);
+
+gulp.task('watch', watch);
 
 gulp.task('default', build);

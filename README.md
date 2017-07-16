@@ -4,6 +4,8 @@ Front-end boilerplate using:
 - [Webpack 2](http://webpack.github.io/) with Babel
 - [ESLint](http://eslint.org/) with [Airbnb's ESLint configuration](https://github.com/airbnb/javascript)
 - Custom Modernizr and Lodash builds
+- SW-Precache
+- OneSignal push notifications support
 
 ## Get started
 - ```npm install``` or ```yarn install```
@@ -13,10 +15,10 @@ Front-end boilerplate using:
 
 ## Commands
 ```bash
-# Development. Watches Sass and JS for changes and outputs in /assets/build
+# Development. Watches Sass and JS for changes and outputs in /assets/dist
 yarn start
 
-# Production. Watches Sass and JS for changes and outputs in /assets/build. Production will
+# Production. Watches Sass and JS for changes and outputs in /assets/dist. Production will
 # uglify, dedupe and generate sourcemaps for Javascript and minify CSS.
 yarn run production
 

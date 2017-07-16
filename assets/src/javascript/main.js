@@ -71,7 +71,7 @@ function loadScript(src, done) {
 }
 
 if (loadPolyfills) {
-  loadScript(`${BASE}/assets/build/polyfills.js`, app);
+  loadScript(`${BASE}/assets/dist/javascript/polyfills.js`, app);
 } else {
   app();
 }
