@@ -35,7 +35,7 @@ function styles() {
     .pipe(rev())
     .pipe(gulp.dest(dest))
     .pipe(rev.manifest({
-      merge: true,
+      path: global.PATHS.manifest.css,
     }))
     .pipe(gulp.dest(abs(global.PATHS.manifest.dest)));
 }

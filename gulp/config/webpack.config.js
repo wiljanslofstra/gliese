@@ -37,7 +37,7 @@ module.exports = () => {
     devtool: (global.PRODUCTION) ? 'source-map' : 'cheap-module-eval-source-map',
     output: {
       path: buildPath,
-      filename: '[name].js',
+      filename: '[name]-[hash].js',
     },
     resolve: {
       alias: {

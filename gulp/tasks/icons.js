@@ -104,11 +104,11 @@ function icons(cb) {
   });
 }
 
-function moveFiles() {
+function moveIconFiles() {
   return gulp.src(abs('assets/src/icons/**/*'))
     .pipe(gulp.dest(abs('assets/dist/icons')));
 }
 
-gulp.task('icons', gulp.series(icons, moveFiles));
+gulp.task('icons', gulp.series(icons, moveIconFiles));
 
 module.exports = icons;

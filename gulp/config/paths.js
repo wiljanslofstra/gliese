@@ -5,6 +5,8 @@ module.exports = {
   manifest: {
     dest: 'assets/dist',
     base: 'assets/dist',
+    css: 'css-manifest.json',
+    js: 'js-manifest.json',
   },
 
   sass: {

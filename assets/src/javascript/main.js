@@ -2,7 +2,6 @@ __webpack_public_path__ = window.WEBPACK_PATH; // eslint-disable-line
 
 /* eslint-disable */
 import 'modernizr';
-console.log('test');
 
 // global.Tether = require('tether');
 // require('bootstrap');
