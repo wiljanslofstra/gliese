@@ -1,12 +1,12 @@
 /* eslint-disable import/no-extraneous-dependencies */
 
 const gulp = require('gulp');
-const path = require('path');
 const del = require('del');
+const abs = require('../utils/abs');
 
 function clean(cb) {
   del([
-    path.resolve(process.env.PWD, global.PATHS.dest),
+    abs(global.PATHS.dest),
   ], {
     force: true,
   }).then(() => {

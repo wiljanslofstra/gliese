@@ -1,11 +1,11 @@
 /* eslint-disable import/no-extraneous-dependencies */
 
 const gulp = require('gulp');
-const path = require('path');
+const abs = require('../utils/abs');
 
 function fonts() {
-  return gulp.src(path.resolve(process.env.PWD, 'assets/src/fonts/**/*.{ttf,woff,woff2,eot,svg}'))
-    .pipe(gulp.dest(path.resolve(process.env.PWD, 'assets/dist/fonts')));
+  return gulp.src(abs('assets/src/fonts/**/*.{ttf,woff,woff2,eot,svg}'))
+    .pipe(gulp.dest(abs('assets/dist/fonts')));
 }
 
 gulp.task('static', gulp.parallel(fonts));

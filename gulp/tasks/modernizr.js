@@ -1,7 +1,7 @@
 const gulp = require('gulp');
-const path = require('path');
 const modernizr = require('modernizr');
 const fs = require('fs');
+const abs = require('../utils/abs');
 
 function modernizrFn(cb) {
   modernizr.build({
@@ -21,7 +21,7 @@ function modernizrFn(cb) {
       'test/requestanimationframe',
     ],
   }, (result) => {
-    fs.writeFile(path.resolve(process.env.PWD, global.PATHS.modernizr.dest), result);
+    fs.writeFile(abs(global.PATHS.modernizr.dest), result);
     cb();
   });
 }

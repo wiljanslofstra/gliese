@@ -2,6 +2,11 @@ module.exports = {
   dest: 'assets/dist',
   src: 'assets/src',
 
+  manifest: {
+    dest: 'assets/dist',
+    base: 'assets/dist',
+  },
+
   sass: {
     src: 'assets/src/sass',
     dest: 'assets/dist/css',

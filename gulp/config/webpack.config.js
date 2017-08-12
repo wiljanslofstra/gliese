@@ -1,10 +1,10 @@
 /* eslint-disable import/no-extraneous-dependencies */
 
 const webpack = require('webpack');
-const path = require('path');
+const abs = require('../utils/abs');
 
 // Paths
-const buildPath = path.resolve(process.env.PWD, 'assets/dist/javascript');
+const buildPath = abs(global.PATHS.js.dest);
 
 const uglify = new webpack.optimize.UglifyJsPlugin({
   minimize: true,
@@ -27,7 +27,7 @@ module.exports = () => {
   }
 
   return {
-    context: path.resolve(process.env.PWD, global.PATHS.js.src),
+    context: abs(global.PATHS.js.src),
     cache: true,
     entry: {
       bundle: './main.js',
@@ -41,10 +41,10 @@ module.exports = () => {
     },
     resolve: {
       alias: {
-        modernizr: path.resolve(process.env.PWD, global.PATHS.js.src, 'vendor/modernizr.custom.js'),
-        lodash: path.resolve(process.env.PWD, global.PATHS.js.src, 'vendor/lodash.custom.js'),
-        jquery: path.resolve(process.env.PWD, 'node_modules/jquery/dist/jquery.js'),
-        'jquery-ui/ui/widget': path.resolve(process.env.PWD, 'node_modules/blueimp-file-upload/js/vendor/jquery.ui.widget.js'),
+        modernizr: abs(global.PATHS.js.src, 'vendor/modernizr.custom.js'),
+        lodash: abs(global.PATHS.js.src, 'vendor/lodash.custom.js'),
+        jquery: abs('node_modules/jquery/dist/jquery.js'),
+        'jquery-ui/ui/widget': abs('node_modules/blueimp-file-upload/js/vendor/jquery.ui.widget.js'),
       },
     },
     module: {

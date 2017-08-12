@@ -2,18 +2,19 @@
 
 const gulp = require('gulp');
 const sass = require('gulp-sass');
-const path = require('path');
 const gulpif = require('gulp-if');
 const sourcemaps = require('gulp-sourcemaps');
 const postcss = require('gulp-postcss');
 const autoprefixer = require('autoprefixer');
 const cssnano = require('cssnano');
 const sassLint = require('gulp-sass-lint');
+const rev = require('gulp-rev');
+const abs = require('../utils/abs');
 
 const errors = require('../utils/errors.js');
 
-const src = path.resolve(process.env.PWD, global.PATHS.sass.src, global.PATHS.sass.ext);
-const dest = path.resolve(process.env.PWD, global.PATHS.sass.dest);
+const src = abs(global.PATHS.sass.src, global.PATHS.sass.ext);
+const dest = abs(global.PATHS.sass.dest);
 
 const plugins = [
   autoprefixer(),
@@ -31,7 +32,12 @@ function styles() {
     .pipe(sass().on('error', errors))
     .pipe(postcss(plugins))
     .pipe(gulpif(!global.PRODUCTION, sourcemaps.write()))
-    .pipe(gulp.dest(dest));
+    .pipe(rev())
+    .pipe(gulp.dest(dest))
+    .pipe(rev.manifest({
+      merge: true,
+    }))
+    .pipe(gulp.dest(abs(global.PATHS.manifest.dest)));
 }
 
 gulp.task('styles', styles);

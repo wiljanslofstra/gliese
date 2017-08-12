@@ -1,11 +1,11 @@
 /* eslint-disable import/no-extraneous-dependencies */
 
 const gulp = require('gulp');
-const path = require('path');
 const imagemin = require('gulp-imagemin');
+const abs = require('../utils/abs');
 
-const src = path.resolve(process.env.PWD, global.PATHS.images.src, global.PATHS.images.ext);
-const dest = path.resolve(process.env.PWD, global.PATHS.images.dest);
+const src = abs(global.PATHS.images.src, global.PATHS.images.ext);
+const dest = abs(global.PATHS.images.dest);
 
 function images() {
   return gulp.src(src)

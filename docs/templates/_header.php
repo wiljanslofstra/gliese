@@ -20,7 +20,7 @@
     <link rel="manifest" href="<?= BASE_URL; ?>/manifest.json">
 
     <link rel="stylesheet" href="/docs/styleguide.css">
-    <link rel="stylesheet" href="<?= ASSET_BUILD_PATH; ?>/css/main.css">
+    <link rel="stylesheet" href="<?= ASSET_BUILD_PATH; ?>/css/<?= getRevedFile('main.css'); ?>">
 </head>
 
 <body>

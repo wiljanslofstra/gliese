@@ -3,6 +3,9 @@
 const gulp = require('gulp');
 const webpack = require('webpack');
 const webpackConfig = require('../config/webpack.config.js');
+const rev = require('gulp-rev');
+const del = require('del');
+const abs = require('../utils/abs');
 
 const compiler = webpack(webpackConfig());
 
@@ -29,6 +32,11 @@ function scripts(cb) {
   });
 }
 
-gulp.task('scripts', scripts);
+function scriptsRev(cb) {
+  console.log('test');
+  cb();
+}
+
+gulp.task('scripts', gulp.series(scripts, scriptsRev));
 
 module.exports = scripts;

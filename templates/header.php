@@ -7,9 +7,6 @@
     $meta_img = ASSET_PATH . '/icons/apple-touch-icon.png';
     $meta_url = '/';
     $meta_twitter = '@twitter';
-
-    $headers = getallheaders();
-    define('BROTLI_SUPPORT', (strpos($headers['Accept-Encoding'], ', br') !== false));
 ?>
 <!DOCTYPE html>
 <!--[if lte IE 9]><html class="no-js ie9 " lang="nl"> <![endif]-->
@@ -48,10 +45,10 @@
         var WEBPACK_PATH = '<?= ASSET_BUILD_PATH; ?>/javascript/';
     </script>
 
-    <link rel="stylesheet" href="<?= ASSET_BUILD_PATH; ?>/css/main.css">
+    <link rel="stylesheet" href="<?= ASSET_BUILD_PATH; ?>/css/<?= getRevedFile('main.css'); ?>">
 
     <!--[if gte IE 9]>
-        <link rel="stylesheet" type="text/css" href="<?= ASSET_BUILD_PATH; ?>/css/ie9.css">
+        <link rel="stylesheet" type="text/css" href="<?= ASSET_BUILD_PATH; ?>/css/<?= getRevedFile('ie9.css'); ?>">
     <![endif]-->
 </head>
 

@@ -1,15 +1,15 @@
 /* eslint-disable import/no-extraneous-dependencies */
 
 const gulp = require('gulp');
-const path = require('path');
 const swPrecache = require('sw-precache');
+const abs = require('../utils/abs');
 
 function swPrecacheFn(cb) {
-  swPrecache.write(path.resolve(process.env.PWD, 'service-worker.js'), {
+  swPrecache.write(abs('service-worker.js'), {
     staticFileGlobs: [
-      path.resolve(process.env.PWD, 'assets/dist/**/*.{js,css}'),
-      path.resolve(process.env.PWD, 'assets/dist/fonts/**/*.{woff2}'),
-      path.resolve(process.env.PWD, 'assets/dist/images/**/*.{jpg,png,gif,svg}'),
+      abs('assets/dist/**/*.{js,css}'),
+      abs('assets/dist/fonts/**/*.{woff2}'),
+      abs('assets/dist/images/**/*.{jpg,png,gif,svg}'),
     ],
   }, (err) => {
     if (err) {

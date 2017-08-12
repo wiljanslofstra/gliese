@@ -5,6 +5,7 @@ const fs = require('fs');
 const path = require('path');
 const mkdirp = require('mkdirp');
 const SVGSpriter = require('svg-sprite');
+const abs = require('../utils/abs');
 
 function getFilesInFolder(folderPath) {
   return new Promise((resolve, reject) => {
@@ -56,10 +57,10 @@ function compileFiles(spriter, folderPath, files) {
 
 function icons(cb) {
   global.PATHS.icons.forEach((obj) => {
-    const folderPath = path.resolve(process.env.PWD, obj.src);
+    const folderPath = abs(obj.src);
 
     const spriter = new SVGSpriter({
-      dest: path.resolve(process.env.PWD, obj.dest),
+      dest: abs(obj.dest),
       mode: {
         symbol: {
           inline: true,
@@ -104,8 +105,8 @@ function icons(cb) {
 }
 
 function moveFiles() {
-  return gulp.src(path.resolve(process.env.PWD, 'assets/src/icons/**/*'))
-    .pipe(gulp.dest(path.resolve(process.env.PWD, 'assets/dist/icons')));
+  return gulp.src(abs('assets/src/icons/**/*'))
+    .pipe(gulp.dest(abs('assets/dist/icons')));
 }
 
 gulp.task('icons', gulp.series(icons, moveFiles));

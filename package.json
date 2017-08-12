@@ -63,6 +63,8 @@
     "es6-promise": "^4.1.0",
     "form-serialize": "^0.7.1",
     "google-maps": "^3.2.1",
+    "gulp-rev": "^8.0.0",
+    "gulp-rev-loader": "^2.0.0",
     "imagesloaded": "4.1.2",
     "jquery": "^3.2.1",
     "jump.js": "^1.0.2",
