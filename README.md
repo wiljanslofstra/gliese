@@ -15,12 +15,17 @@ Front-end boilerplate using:
 
 ## Commands
 ```bash
-# Development. Watches Sass and JS for changes and outputs in /assets/dist
+# Development
 yarn start
 
-# Production. Watches Sass and JS for changes and outputs in /assets/dist. Production will
-# uglify, dedupe and generate sourcemaps for Javascript and minify CSS.
+# Development with watch mode
+yarn start-watch
+
+# Production
 yarn run production
+
+# Production with watch mode
+yarn run production-watch
 
 # Generate a custom Modernizr build, the options can be set in bin/modernizr.js
 yarn run build:modernizr
