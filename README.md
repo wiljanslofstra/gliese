@@ -39,3 +39,15 @@ yarn run analyse:eslint
 # Generate SVG spritesheet from SVG icons
 yarn run build:icons
 ```
+
+## Module dependencies
+
+To prevent the package.json (and your node_modules folder) from turning into a
+enormous list of dependencies I've a list for what you need to use each module.
+
+- filter: ```yarn add react react-dom qs form-serialize jump.js```
+- maps: ```yarn add google-maps```
+- autocomplete: ```yarn add awesomplete normalize-for-search```
+- jumpToElement: ```yarn add jump.js```
+- uploadField: ```yarn add blueimp-file-upload```
+- datepicker: ```yarn add bootstrap-datepicker```
