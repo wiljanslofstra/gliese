@@ -45,6 +45,11 @@ function compileFiles(spriter, folderPath, files) {
 
     files.forEach((file) => {
       const filePath = path.resolve(folderPath, file);
+
+      if (path.extname(filePath) !== '.svg') {
+        return;
+      }
+
       const added = addToSprite(spriter, filePath, file);
       promises.push(added);
     });
