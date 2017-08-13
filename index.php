@@ -50,15 +50,10 @@
             </a>
         </div>
 
-        <pre class="demo-block__code u-p2 u-text-left"><code>// Install dependencies
-npm install
-
-// Change BASE_PATH in ./system/config.php
-
-// Change your project data in ./package.json
-
-// Start
-npm start</code></pre>
+        <pre class="demo-block__code u-p2 u-text-left"><code>1. npm install / yarn install
+2. Change BASE_PATH and BASE_URL in ./system/config.php
+3. Change information in ./package.json
+4. npm run start-watch</code></pre>
     </main>
 </div>
 

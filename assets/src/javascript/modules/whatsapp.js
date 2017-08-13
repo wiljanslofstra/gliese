@@ -1,3 +1,4 @@
+import helper from '../helpers/dom';
 
 export default {
 
@@ -18,10 +19,10 @@ export default {
    * @return {Void}
    */
   recheck() {
-    const supported = this.checkWhatsappSupport();
+    const isMobile = this.isMobile();
 
-    if (!supported) {
-      this.hideWhatsappIcons();
+    if (!isMobile) {
+      this.changeWhatsappUrls();
     }
   },
 
@@ -29,7 +30,7 @@ export default {
    * Check if a device is capable of running WhatsApp
    * @return {Boolean} Device could support WhatsApp
    */
-  checkWhatsappSupport() {
+  isMobile() {
     return navigator.userAgent.match(/Android|iPhone|iPad|iPod|Opera Mini|IEMobile/i);
   },
 
@@ -37,18 +38,16 @@ export default {
    * Hide all WhatsApp icons or links on the page
    * @return {[type]} [description]
    */
-  hideWhatsappIcons() {
+  changeWhatsappUrls() {
     // Get all WhatsApp links
-    let whatsappLinks = document.querySelectorAll(this.linkPattern);
+    const whatsappLinks = helper.find(this.linkPattern);
 
-    // Transform into a array instead of a NodeList
-    whatsappLinks = Array.prototype.slice.call(whatsappLinks);
-
-    // Iterate over all links and hide all
+    // Iterate over all links and change them
     whatsappLinks.forEach((link) => {
-      const linkInst = link;
-      linkInst.style.display = 'none';
-      linkInst.setAttribute('aria-hidden', true);
+      const url = link.getAttribute('href');
+
+      link.setAttribute('href', url.replace('whatsapp://send', 'https://web.whatsapp.com/send'));
+      link.setAttribute('target', '_blank');
     });
   },
 };

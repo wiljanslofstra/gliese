@@ -15,7 +15,7 @@ const loadPolyfills = (
 );
 
 import accessibility from './modules/accessibility';
-import disableWhatsapp from './modules/disableWhatsapp';
+import whatsapp from './modules/whatsapp';
 import parsleyFormValidation from './modules/parsleyFormValidation';
 import tracking from './modules/tracking';
 import embedWrap from './modules/embedWrap';
@@ -43,7 +43,7 @@ const app = () => {
   navigation.initialize();
   generalSlider.initialize();
   embedWrap();
-  disableWhatsapp.initialize();
+  whatsapp.initialize();
   // datepicker.initialize();
   // map.initialize();
   // videoElement.initialize();
