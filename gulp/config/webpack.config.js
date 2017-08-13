@@ -32,7 +32,6 @@ module.exports = () => {
     entry: {
       bundle: './main.js',
       polyfills: './polyfills.js',
-      formValidation: './formValidation.js',
     },
     devtool: (global.PRODUCTION) ? 'source-map' : 'cheap-module-eval-source-map',
     output: {

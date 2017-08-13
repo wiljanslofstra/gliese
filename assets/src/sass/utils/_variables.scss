@@ -47,9 +47,9 @@ $link-color: $color-link;
 $link-hover-color: darken($color-link, 15%);
 $link-hover-decoration: none;
 
-//
+$abbr-border-color: $color-text;
+
 // Forms
-//
 $form-group-margin-bottom: 1rem;
 
 $input-bg: #fff;
@@ -61,6 +61,7 @@ $input-vertical-padding: .55rem;
 $input-horizontal-padding: .75rem;
 $input-border-radius: 0;
 $input-bg-disabled: #eceeef;
+$input-color: $color-text;
 
 // Checkbox/radio variables
 $c-checkbox-bg: $input-bg;
@@ -90,9 +91,7 @@ $c-select-arrow-width: 30px;
 
 $inline-label-top-padding: .5em;
 
-//
 // Buttons
-//
 $btn-height: 2.5rem;
 $btn-padding: 0 1rem;
 $btn-font-weight: normal;
@@ -167,6 +166,29 @@ $line-height-base: 1.4;
 $line-height-computed: floor(($font-size-base * $line-height-base));
 $line-height: em($font-size-base * $line-height-base);
 
+// Grid
+$enable-grid-classes: true;
+
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px
+);
+
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1140px
+);
+
+// Grid columns
+$grid-columns: 12;
+$grid-gutter-width: 30px;
+
+// Navigation
 $navigation-bg: #f4f4f4;
 $navigation-bg-desktop: #f4f4f4;
 $navigation-link-color: #717171;

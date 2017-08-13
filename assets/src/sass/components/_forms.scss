@@ -34,7 +34,7 @@
   }
 
   &[disabled] {
-    cursor: $cursor-disabled;
+    cursor: not-allowed;
   }
 }
 

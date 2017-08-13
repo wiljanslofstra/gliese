@@ -1,4 +1,6 @@
+/* eslint-disable */
 import jump from 'jump.js';
+/* eslint-enable */
 
 // Listen for clicks on this trigger class name
 const JUMP_TRIGGER_CLASS = '.js-jump';

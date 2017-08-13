@@ -1,6 +1,8 @@
+/* eslint-disable */
 import Awesomplete from 'awesomplete';
 import { template } from 'lodash';
 import normalizeForSearch from 'normalize-for-search';
+/* eslint-enable */
 
 const $autocomplete = $('.js-autocomplete');
 

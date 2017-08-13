@@ -1,6 +1,3 @@
-import $ from 'jquery';
-import scriptLoader from '../helpers/scriptLoader';
-
 let $form = $('.js-form');
 let parsleyLoaded = false;
 
@@ -38,7 +35,8 @@ const formValidation = {
       return;
     }
 
-    scriptLoader(`${BASE}/dist/javascript/formValidation.js`, () => {
+    require.ensure([], (require) => {
+      require('../formValidation');
       parsleyLoaded = true;
       cb.call(this);
     });
@@ -50,14 +48,22 @@ const formValidation = {
    */
   createFormValidation() {
     $form.each((i, form) => {
-      // Initialize parsley
-      const validator = new window.Parsley.Factory(form, { // eslint-disable-line
+      $(form).parsley({
         classHandler(el) {
           // Add classes to the form-group
           return el.$element.closest('.form-group');
         },
       });
     });
+  },
+
+  /**
+   * Get the name of a form or fallback to page path
+   * @param {object} e Event object from Parsley callbacks
+   * @return {string} Name of the form (or location)
+   */
+  getFormName(e) {
+    return e.$element.data('name') || `Form on: ${window.location.pathname}`;
   },
 
   /**
@@ -71,12 +77,12 @@ const formValidation = {
 
     // Listen for form success events
     window.Parsley.on('form:success', (e) => {
-      this.gaEvent('Submit', e.$element.data('name'));
+      this.gaEvent('Submit', this.getFormName(e));
     });
 
     // Listen for form error events
     window.Parsley.on('form:error', (e) => {
-      this.gaEvent('Error', e.$element.data('name'));
+      this.gaEvent('Error', this.getFormName(e));
     });
   },
 

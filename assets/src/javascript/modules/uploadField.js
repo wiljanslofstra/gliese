@@ -72,26 +72,30 @@ const fileUpload = {
       this.renderFiles();
     });
 
-    $fileuploadInput.fileupload({
+    const fileUploadInst = $fileuploadInput.fileupload({
       dataType: 'json',
       acceptFileTypes: /(\.|\/)(jpg|png|jpeg|gif)$/i,
       maxFileSize: 5000000,
       messages: FILE_UPLOAD_MESSAGES,
-    })
-    .on('fileuploaddone', (e, data) => {
+    });
+
+    fileUploadInst.on('fileuploaddone', (e, data) => {
       if (typeof data.result.uploads !== 'undefined' && data.result.uploads.length) {
         files = files.concat(data.result.uploads);
       }
 
       this.renderFiles();
-    })
-    .on('fileuploadadd', () => {
+    });
+
+    fileUploadInst.on('fileuploadadd', () => {
       this.showError('');
-    })
-    .on('fileuploadfail', () => {
+    });
+
+    fileUploadInst.on('fileuploadfail', () => {
       this.showError(FILE_UPLOAD_MESSAGES.uploadError);
-    })
-    .on('fileuploadprocessalways', (e, data) => {
+    });
+
+    fileUploadInst.on('fileuploadprocessalways', (e, data) => {
       const index = data.index;
       const file = data.files[index];
 

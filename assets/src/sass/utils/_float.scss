@@ -1,5 +1,5 @@
 @each $breakpoint in map-keys($grid-breakpoints) {
-  @include media-breakpoint-up($breakpoint) {
+  @media (min-width: #{$breakpoint}) {
     .u-#{$breakpoint}-float-left {
       float: left;
     }

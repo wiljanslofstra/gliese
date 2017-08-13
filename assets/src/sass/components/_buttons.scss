@@ -32,7 +32,7 @@
   &[disabled] {
     opacity: .65;
     box-shadow: none;
-    cursor: $cursor-disabled;
+    cursor: not-allowed;
   }
 }
 
