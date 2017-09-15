@@ -1,3 +1,5 @@
+/* global POLYFILLS_PATH */
+
 __webpack_public_path__ = window.WEBPACK_PATH; // eslint-disable-line
 
 /* eslint-disable */
@@ -72,7 +74,7 @@ function loadScript(src, done) {
 }
 
 if (loadPolyfills) {
-  loadScript(`${BASE}/assets/dist/javascript/polyfills.js`, app);
+  loadScript(POLYFILLS_PATH, app);
 } else {
   app();
 }

@@ -1,7 +1,11 @@
 /* !
- * <Project name>!
+ * <Project name>
  */
 
+@import 'utils/mixins/grid';
+@import 'utils/mixins/buttons';
+@import 'utils/mixins/burger';
+@import 'utils/mixins/triangle';
 @import 'utils/mixins';
 @import 'utils/easings';
 @import 'utils/variables';

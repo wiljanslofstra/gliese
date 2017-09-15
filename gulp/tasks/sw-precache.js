@@ -7,9 +7,9 @@ const abs = require('../utils/abs');
 function swPrecacheFn(cb) {
   swPrecache.write(abs('service-worker.js'), {
     staticFileGlobs: [
-      abs('assets/dist/**/*.{js,css}'),
-      abs('assets/dist/fonts/**/*.{woff2}'),
-      abs('assets/dist/images/**/*.{jpg,png,gif,svg}'),
+      'assets/dist/**/*.{js,css}',
+      'assets/dist/fonts/**/*.{woff2}',
+      'assets/dist/images/**/*.{jpg,png,gif,svg}',
     ],
   }, (err) => {
     if (err) {

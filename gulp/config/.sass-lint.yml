@@ -32,6 +32,7 @@ rules:
     - max-depth: 3
   no-color-literals: 0
   no-css-comments: 0
+  no-duplicate-properties: 1
   no-trailing-whitespace: 1
   no-trailing-zero: 1
   no-ids: 2
