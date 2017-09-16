@@ -45,6 +45,10 @@
                 Docs<?= getIcon('chevron-right'); ?>
             </a>
 
+            <a class="btn btn--primary btn--icon btn--icon-after u-ml1 u-mr1" href="dev/tools" role="button">
+                Tools<?= getIcon('chevron-right'); ?>
+            </a>
+
             <a class="btn btn--primary btn--icon btn--icon-after u-ml1 u-mr1" href="https://github.com/wiljanslofstra/Gliese" target="_blank" role="button">
                 Repository<?= getIcon('chevron-right'); ?>
             </a>

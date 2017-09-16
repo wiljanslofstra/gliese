@@ -93,10 +93,6 @@
         <a class="st-sidebar__link" href="/dev/docs/components/push-notifications.php">
             Push notifications
         </a>
-
-        <a class="st-sidebar__link" href="/docs/tools/form-generator.php">
-            Form generator
-        </a>
     </div>
 
     <div class="st-content">
