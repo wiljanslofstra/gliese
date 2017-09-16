@@ -1,11 +1,10 @@
 # Gliese
 Front-end boilerplate using:
 - [Sass](http://sass-lang.com/)
-- [Webpack 2](http://webpack.github.io/) with Babel
+- [Webpack 3](http://webpack.github.io/) with Babel
 - [ESLint](http://eslint.org/) with [Airbnb's ESLint configuration](https://github.com/airbnb/javascript)
 - Custom Modernizr and Lodash builds
 - SW-Precache
-- OneSignal push notifications support
 
 ## Get started
 - ```npm install``` or ```yarn install```
