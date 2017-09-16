@@ -1,6 +1,7 @@
 /* eslint-disable import/no-extraneous-dependencies */
 
 const webpack = require('webpack');
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 const abs = require('../utils/abs');
 
 // Paths
@@ -26,6 +27,13 @@ module.exports = () => {
     allPlugins.push(uglify);
   }
 
+  if (!global.PRODUCTION) {
+    allPlugins.push(new BundleAnalyzerPlugin({
+      analyzerMode: 'static',
+      openAnalyzer: false,
+    }));
+  }
+
   return {
     context: abs(global.PATHS.js.src),
     cache: true,
@@ -42,7 +50,7 @@ module.exports = () => {
       alias: {
         modernizr: abs(global.PATHS.js.src, 'vendor/modernizr.custom.js'),
         lodash: abs(global.PATHS.js.src, 'vendor/lodash.custom.js'),
-        jquery: abs('node_modules/jquery/dist/jquery.js'),
+        jquery: abs('node_modules/jquery/dist/jquery.slim.js'),
         'jquery-ui/ui/widget': abs('node_modules/blueimp-file-upload/js/vendor/jquery.ui.widget.js'),
       },
     },

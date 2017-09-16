@@ -1,51 +1,41 @@
-import 'autotrack/lib/plugins/event-tracker';
-import 'autotrack/lib/plugins/outbound-link-tracker';
-// import 'autotrack/lib/plugins/impression-tracker';
-// import 'autotrack/lib/plugins/media-query-tracker';
-
-const phoneNumbers = document.querySelectorAll('a[href^="tel:"]');
-const emailLinks = document.querySelectorAll('a[href^="mailto:"]');
-
-const phoneNumbersArr = Array.prototype.slice.call(phoneNumbers);
-const emailLinksArr = Array.prototype.slice.call(emailLinks);
+const urlTelPattern = 'a[href^="tel:"]';
+const urlMailPattern = 'a[href^="mailto:"]';
 
 const tracking = {
   /**
-   * Initialize custom tracking besides autotrack loaded above
+   * Initialize custom tracking
    * @return {void}
    */
   initialize() {
-    // Track phone numbers
-    phoneNumbersArr.forEach((phoneNumber) => {
-      this.trackElement(phoneNumber, 'Phone');
+    $(document).on('click', urlTelPattern, ({ currentTarget }) => {
+      this.shootEvent('Phone', 'click', currentTarget.href);
     });
 
-    // Track e-mail links
-    emailLinksArr.forEach((emailLink) => {
-      this.trackElement(emailLink, 'E-mail');
+    $(document).on('click', urlMailPattern, ({ currentTarget }) => {
+      this.shootEvent('E-mail', 'click', currentTarget.href);
     });
-  },
 
-  /**
-   * Listen on elements for clicks
-   * @param  {node} el            Element to listen for clicks
-   * @param  {string} eventName   Name of the event to shoot in Analytics
-   * @return {void}
-   */
-  trackElement(el, eventName) {
-    el.addEventListener('click', () => {
-      this.shootEvent(eventName);
+    $(document).on('click', 'a', ({ currentTarget }) => {
+      if (
+        currentTarget.href.indexOf(location.host) <= 0 &&
+        currentTarget.href.match(/^http/i)
+      ) {
+        this.shootEvent('Outbound', 'click', currentTarget.href);
+      }
     });
   },
 
   /**
    * Shoot event to Analytics
-   * @param  {string} name - Name of the event to shoot in Analytics
+   * @param  {string} category - Category of the event
+   * @param  {string} action - Action of the event (default: 'click')
+   * @param  {string} label - Label of the event (default: '')
+   * @param  {string} value - Value of the event (default: '')
    * @return {void}
    */
-  shootEvent(name) {
+  shootEvent(category, action = 'click', label = '', value = '') {
     if (typeof ga !== 'undefined') {
-      ga('send', 'event', name, 'click');
+      ga('send', 'event', name, action, label, value);
     }
   },
 };
