@@ -1,5 +1,3 @@
-import helper from '../helpers/dom';
-
 export default {
 
   /** Pattern of WhatsApp elements */
@@ -40,7 +38,7 @@ export default {
    */
   changeWhatsappUrls() {
     // Get all WhatsApp links
-    const whatsappLinks = helper.find(this.linkPattern);
+    const whatsappLinks = $(this.linkPattern).toArray();
 
     // Iterate over all links and change them
     whatsappLinks.forEach((link) => {
