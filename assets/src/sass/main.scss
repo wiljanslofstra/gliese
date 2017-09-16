@@ -10,7 +10,8 @@
 @import 'utils/easings';
 @import 'utils/variables';
 
-@import '../../../node_modules/normalize.css/normalize.css';
+@import '../../../node_modules/normalize-scss/sass/normalize';
+@import '../../../node_modules/normalize-scss/sass/normalize/import-now';
 
 @import 'vendor/bootstrap';
 @import 'vendor/slick-carousel';
