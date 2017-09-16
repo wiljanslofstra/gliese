@@ -9,8 +9,7 @@
     $meta_twitter = '@twitter';
 ?>
 <!DOCTYPE html>
-<!--[if lte IE 9]><html class="no-js ie9 " lang="nl"> <![endif]-->
-<!--[if gt IE 9]><!--> <html class="no-js" lang="nl"><!--<![endif]-->
+<html class="no-js" lang="nl">
 <head>
     <meta charset="utf-8">
 
@@ -62,7 +61,7 @@
         Go to content
     </a>
 
-    <!--[if lte IE 8]>
+    <!--[if lte IE 9]>
         <p class="browserupgrade">
             U gebruikt een verouderde browser. <a href="http://browsehappy.com/">Update uw browser</a> voor een betere ervaring.
         </p>
