@@ -13,11 +13,11 @@ function modernizrFn(cb) {
     'feature-detects': [
       'css/flexbox',
       'css/transforms3d',
-      'css/vhunit',
+      // 'css/vhunit',
       'touchevents',
-      'inputtypes',
-      'test/dom/dataset',
-      'test/dom/classList',
+      // 'inputtypes',
+      // 'test/dom/dataset',
+      // 'test/dom/classList',
       'test/requestanimationframe',
     ],
   }, (result) => {
