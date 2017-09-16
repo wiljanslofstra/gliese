@@ -9,8 +9,6 @@ import 'modernizr';
 // require('bootstrap');
 
 const loadPolyfills = (
-  !Modernizr.dataset ||
-  !Modernizr.classlist ||
   !Modernizr.requestanimationframe ||
   !window.Promise ||
   typeof Object.assign !== 'function'

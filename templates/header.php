@@ -63,6 +63,6 @@
 
     <!--[if lte IE 9]>
         <p class="browserupgrade">
-            U gebruikt een verouderde browser. <a href="http://browsehappy.com/">Update uw browser</a> voor een betere ervaring.
+            You're using an outdated browser. <a href="http://browsehappy.com/">Update your browser</a> for a better experience.
         </p>
     <![endif]-->

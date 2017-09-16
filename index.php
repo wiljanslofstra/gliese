@@ -41,7 +41,7 @@
         </h1>
 
         <div class="u-mb2 u-sm-mb3">
-            <a class="btn btn--primary btn--icon btn--icon-after u-ml1 u-mr1" href="docs" role="button">
+            <a class="btn btn--primary btn--icon btn--icon-after u-ml1 u-mr1" href="dev/docs" role="button">
                 Docs<?= getIcon('chevron-right'); ?>
             </a>
 
