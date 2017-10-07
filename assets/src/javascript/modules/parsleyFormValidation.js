@@ -100,8 +100,11 @@ const formValidation = {
       formName = name;
     }
 
-    if (typeof ga !== 'undefined') {
-      ga('send', 'event', 'Form', action, formName);
+    if (typeof gtag !== 'undefined') {
+      gtag('event', action, {
+        event_category: 'Form',
+        event_label: formName,
+      });
     }
   },
 };

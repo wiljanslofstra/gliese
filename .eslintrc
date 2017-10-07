@@ -9,6 +9,7 @@
   "globals": {
     "dataLayer": true,
     "ga": true,
+    "gtag": true,
     "BASE": true,
     "Modernizr": true
   },

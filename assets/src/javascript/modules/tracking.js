@@ -34,8 +34,12 @@ const tracking = {
    * @return {void}
    */
   shootEvent(category, action = 'click', label = '', value = '') {
-    if (typeof ga !== 'undefined') {
-      ga('send', 'event', name, action, label, value);
+    if (typeof gtag !== 'undefined') {
+      gtag('event', action, {
+        event_category: name,
+        event_label: label,
+        event_value: value,
+      });
     }
   },
 };

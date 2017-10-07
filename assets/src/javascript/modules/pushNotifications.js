@@ -47,8 +47,11 @@ export default {
   },
 
   sendEvent(category, val) {
-    if (typeof ga !== 'undefined') {
-      ga('send', 'event', 'OneSignal', category, val);
+    if (typeof gtag !== 'undefined') {
+      gtag('event', category, {
+        event_action: 'OneSignal',
+        event_label: val,
+      });
     }
   },
 
