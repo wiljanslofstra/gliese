@@ -20,6 +20,7 @@ const DEFAULT_OPTIONS = {
   scaleControl: false,
   draggable: false,
   streetViewControl: false,
+  fullscreenControl: false,
 };
 
 const map = {
