@@ -5,33 +5,33 @@ $color-secondary: #495057;
 $gradient-primary: linear-gradient(
   to bottom,
   $color-primary,
-  darken($color-primary, 5%)
+  shade($color-primary, 5%)
 );
 $gradient-secondary: linear-gradient(
   to bottom,
   $color-secondary,
-  darken($color-secondary, 5%)
+  shade($color-secondary, 5%)
 );
 
 $gradient-primary-light: linear-gradient(
   to bottom,
-  lighten($color-primary, 5%),
+  tint($color-primary, 5%),
   $color-primary
 );
 $gradient-secondary-light: linear-gradient(
   to bottom,
-  lighten($color-secondary, 5%),
+  tint($color-secondary, 5%),
   $color-secondary
 );
 
 $gradient-primary-dark: linear-gradient(
   to bottom,
-  darken($color-primary, 10%),
+  shade($color-primary, 10%),
   $color-primary
 );
 $gradient-secondary-dark: linear-gradient(
   to bottom,
-  darken($color-secondary, 10%),
+  shade($color-secondary, 10%),
   $color-secondary
 );
 
@@ -44,7 +44,7 @@ $color-negative: #fa5252;
 $color-link: $color-primary;
 
 $link-color: $color-link;
-$link-hover-color: darken($color-link, 15%);
+$link-hover-color: shade($color-link, 15%);
 $link-hover-decoration: none;
 
 $abbr-border-color: $color-text;
@@ -108,8 +108,8 @@ $button-primary: (
   color-hover: #fff,
   color-active: #fff,
   background: $color-primary,
-  background-hover: lighten($color-primary, 10%),
-  background-active: darken($color-primary, 10%),
+  background-hover: tint($color-primary, 10%),
+  background-active: shade($color-primary, 10%),
   border: 0,
   border-hover: 0,
   border-active: 0,
@@ -125,8 +125,8 @@ $button-secondary: (
   color-hover: #fff,
   color-active: #fff,
   background: $color-secondary,
-  background-hover: lighten($color-secondary, 10%),
-  background-active: darken($color-secondary, 10%),
+  background-hover: tint($color-secondary, 10%),
+  background-active: shade($color-secondary, 10%),
   border: 0,
   border-hover: 0,
   border-active: 0,
