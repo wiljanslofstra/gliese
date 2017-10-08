@@ -42,6 +42,10 @@
 
         var BASE = '<?= BASE_URL; ?>';
         var WEBPACK_PATH = '<?= ASSET_BUILD_PATH; ?>/javascript/';
+
+        function gtag() {
+            console.log('gtag', arguments);
+        }
     </script>
 
     <link rel="stylesheet" href="<?= ASSET_BUILD_PATH; ?>/css/<?= getRevedFile('main.css'); ?>">

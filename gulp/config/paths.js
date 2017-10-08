@@ -9,6 +9,14 @@ module.exports = {
     js: 'js-manifest.json',
   },
 
+  browserSync: {
+    enabled: true,
+    proxy: false, // e.g. localhost:3000 or project.localhost
+    open: false,
+    notify: false,
+    port: 1234,
+  },
+
   sass: {
     src: 'assets/src/sass',
     dest: 'assets/dist/css',
@@ -20,6 +28,11 @@ module.exports = {
     dest: 'assets/dist/javascript',
     dest_definitions: 'assets/dist/javascript/definitions',
     ext: '**/*.js',
+  },
+
+  html: {
+    src: '',
+    ext: '**/*.{html,php,twig}',
   },
 
   images: {

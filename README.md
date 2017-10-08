@@ -39,6 +39,12 @@ yarn run analyse:eslint
 yarn run build:icons
 ```
 
+## BrowserSync
+
+BrowserSync is built-in, but not enabled by default. To enable it, go to ```gulp/config/paths.js```, set ```browserSync.enabled``` to ```true``` and add a proxy URL.
+
+You can also use any of the other BrowserSync modes, the ```browserSync``` object is directly passed to BrowserSync. For all options checkout [the BrowserSync docs](https://www.browsersync.io/docs/options).
+
 ## Module dependencies
 
 To prevent the package.json (and your node_modules folder) from turning into a
