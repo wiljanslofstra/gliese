@@ -41,13 +41,11 @@ module.exports = {
     ext: '**/*.{png,jpg,svg,gif,ico,webp}',
   },
 
-  icons: [
-    {
-      src: 'assets/src/icons/src',
-      dest: 'assets/src/icons',
-      prefix: '.icon-%s',
-    },
-  ],
+  icons: {
+    src: 'assets/src/icons/src',
+    dest: 'assets/dist/icons',
+    ext: '**/*.svg',
+  },
 
   modernizr: {
     dest: 'assets/src/javascript/vendor/modernizr.custom.js',

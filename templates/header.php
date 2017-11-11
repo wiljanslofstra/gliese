@@ -57,7 +57,7 @@
 
 <body>
     <?php
-        $sprite = file_get_contents(__DIR__ . '/../assets/dist/icons/symbol/svg/sprite.symbol.svg');
+        $sprite = file_get_contents(__DIR__ . '/../assets/dist/icons/sprite.svg');
         echo $sprite;
     ?>
 

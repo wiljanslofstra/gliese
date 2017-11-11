@@ -29,6 +29,7 @@ const watchJSPath = path.resolve(PWD, PATHS.js.src, PATHS.js.ext);
 const watchSassPath = path.resolve(PWD, PATHS.sass.src, PATHS.sass.ext);
 const watchImgPath = path.resolve(PWD, PATHS.images.src, PATHS.images.ext);
 const watchHTMLPath = path.resolve(PWD, PATHS.html.src, PATHS.html.ext);
+const watchIconsPath = path.resolve(PWD, PATHS.icons.src, PATHS.icons.ext);
 
 const reload = (cb) => {
   if (browserSyncEnabled) {
@@ -47,6 +48,7 @@ const watchFn = () => {
   gulp.watch(watchJSPath, gulp.series('scripts', reload));
   gulp.watch(watchSassPath, gulp.series('styles', reload));
   gulp.watch(watchImgPath, gulp.series('images'));
+  gulp.watch(watchIconsPath, gulp.series('icons'));
   gulp.watch(watchHTMLPath).on('change', browserSync.reload);
 };
 
