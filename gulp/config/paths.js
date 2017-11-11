@@ -50,4 +50,10 @@ module.exports = {
   modernizr: {
     dest: 'assets/src/javascript/vendor/modernizr.custom.js',
   },
+
+  fonts: {
+    src: 'assets/src/fonts',
+    dest: 'assets/dist/fonts',
+    ext: '**/*.{ttf,woff,woff2,eot,svg}'
+  },
 };
