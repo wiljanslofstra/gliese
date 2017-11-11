@@ -21,7 +21,7 @@ const tracking = {
 
     $(document).on('click', 'a', ({ currentTarget }) => {
       if (
-        currentTarget.href.indexOf(location.host) <= 0 &&
+        currentTarget.href.indexOf(window.location.host) <= 0 &&
         currentTarget.href.match(/^http/i)
       ) {
         this.shootEvent('Outbound', 'click', currentTarget.href);
@@ -42,7 +42,7 @@ const tracking = {
   shootEvent(category, action = 'click', label = '', value = '') {
     if (typeof gtag !== 'undefined') {
       gtag('event', action, {
-        event_category: name,
+        event_category: category,
         event_label: label,
         value,
       });

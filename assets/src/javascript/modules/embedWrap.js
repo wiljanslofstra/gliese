@@ -31,7 +31,7 @@ function getRatio(el) {
     const width = parseInt(el.getAttribute('width'), 10);
     const height = parseInt(el.getAttribute('height'), 10);
 
-    if (!isNaN(width) || !isNaN(height)) {
+    if (!Number.isNaN(width) || !Number.isNaN(height)) {
       ratio = height / width;
     }
   }
