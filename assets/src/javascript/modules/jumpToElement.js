@@ -84,6 +84,6 @@ export default {
       return 0;
     }
 
-    return targetEl.clientHeight;
+    return targetEl.clientHeight * -1;
   },
 };
