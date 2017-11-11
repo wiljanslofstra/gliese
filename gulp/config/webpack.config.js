@@ -58,7 +58,7 @@ module.exports = () => {
       rules: [
         {
           test: /\.js?$/,
-          exclude: /node_modules\/(?!(autotrack|dom-utils))/,
+          exclude: /node_modules(?!(\/|\\)(autotrack|domutils))/,
           loader: 'babel-loader',
         }, {
           test: /\.js?$/,
