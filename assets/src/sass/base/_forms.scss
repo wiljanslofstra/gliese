@@ -10,3 +10,10 @@ input[type='file'] {
 textarea {
   resize: vertical;
 }
+
+input,
+textarea,
+select,
+button {
+  font-family: $font-family-base;
+}
