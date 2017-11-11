@@ -63,6 +63,7 @@
     "modernizr": "^3.5.0",
     "normalize-scss": "^7.0.0",
     "parsleyjs": "2.8.0",
+    "popper.js": "^1.12.7",
     "slick-carousel": "1.8.1",
     "whatwg-fetch": "^2.0.3"
   },
@@ -84,6 +85,7 @@
     "eslint-plugin-import": "2.8.0",
     "eslint-plugin-jsx-a11y": "6.0.2",
     "eslint-plugin-react": "7.4.0",
+    "exports-loader": "^0.6.4",
     "gulp": "github:gulpjs/gulp#4.0",
     "gulp-changed": "3.1.1",
     "gulp-cheerio": "^0.6.2",

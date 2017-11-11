@@ -4,9 +4,7 @@ __webpack_public_path__ = window.WEBPACK_PATH; // eslint-disable-line
 
 /* eslint-disable */
 import 'modernizr';
-
-// global.Tether = require('tether');
-// require('bootstrap');
+import './bootstrap';
 
 const loadPolyfills = (
   !Modernizr.requestanimationframe ||
