@@ -1,23 +1,25 @@
-<?php include('../templates/_header.php'); ?>
+<?php include(__DIR__ . '/../../templates/header.php'); ?>
 
-<div class="st-explanation">
-    <h1>Upload field</h1>
+<div class="u-p2 u-md-p3">
+    <div class="st-explanation">
+        <h1>Upload field</h1>
 
-    <a href="/docs/pages/upload-script.zip">Download .PHP</a>
-</div>
-
-<div class="upload-field js-fileupload">
-    <ul class="upload-field__files u-mb1 js-fileupload-list" hidden>
-    </ul>
-
-    <div class="upload-field__errors u-mb1 js-fileupload-errors"></div>
-
-    <div class="upload-field__button btn btn--primary">
-        Add files&hellip;
-        <input class="upload-field__input js-fileupload-input" id="upload" type="file" name="upload[]" data-url="<?= BASE_URL; ?>/upload/" multiple>
+        <a href="/docs/pages/upload-script.zip">Download .PHP</a>
     </div>
 
-    <input type="hidden" class="js-fileupload-data" name="files" id="files" value="[]">
+    <div class="upload-field js-fileupload">
+        <ul class="upload-field__files u-mb1 js-fileupload-list" hidden>
+        </ul>
+
+        <div class="upload-field__errors u-mb1 js-fileupload-errors"></div>
+
+        <div class="upload-field__button btn btn--primary">
+            Add files&hellip;
+            <input class="upload-field__input js-fileupload-input" id="upload" type="file" name="upload[]" data-url="<?= BASE_URL; ?>/upload/" multiple>
+        </div>
+
+        <input type="hidden" class="js-fileupload-data" name="files" id="files" value="[]">
+    </div>
 </div>
 
 <script type="text/javascript">
@@ -44,4 +46,4 @@
     </li>
 </script>
 
-<?php include('../templates/_footer.php'); ?>
+<?php include(__DIR__ . '/../../templates/footer.php'); ?>

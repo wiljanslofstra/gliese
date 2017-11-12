@@ -1,5 +1,6 @@
-<?php include('../templates/_header.php'); ?>
+<?php include(__DIR__ . '/../../templates/header.php'); ?>
 
+<div class="u-p2 u-md-p3">
     <div class="st-explanation">
         <h1>CMS content</h1>
         <p>
@@ -124,7 +125,7 @@
         </table>
 
         <iframe width="560" height="315" src="http://www.youtube.com/embed/SJN79rUvjw0" frameborder="0" allowfullscreen></iframe>
-
     </div>
+</div>
 
-<?php include('../templates/_footer.php'); ?>
+<?php include(__DIR__ . '/../../templates/footer.php'); ?>

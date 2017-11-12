@@ -26,29 +26,9 @@
     }
 
     .demo-block__heading {
-        font-size: 3rem;
+        font-size: 2.25rem;
         font-weight: 300;
         letter-spacing: .025em;
-    }
-
-    .btn--primary {
-        background-color: #fff;
-        color: #888;
-        border: 2px solid #ddd;
-        line-height: calc(2.5rem - 4px);
-        border-radius: 5rem;
-    }
-
-    .btn--primary:hover,
-    .btn--primary:focus {
-        background-color: #ddd;
-        border: 2px solid #ddd;
-        color: #555;
-    }
-
-    .demo-block .btn {
-        margin-left: .33rem;
-        margin-right: .33rem;
     }
 
     @media (min-height: 480px) {
@@ -65,25 +45,33 @@
 </style>
 
 <div class="container">
-    <main id="main" class="demo-block u-text-center u-capped-md" tabindex="-1">
+    <main id="main" class="demo-block u-capped-md" tabindex="-1">
         <div class="u-p2 u-md-p3">
             <h1 class="demo-block__heading u-mb2 u-sm-mb3">
                 Gliese
             </h1>
 
-            <div>
-                <a class="btn btn--primary btn--icon btn--icon-after" href="dev/docs" role="button">
-                    Docs<?= getIcon('chevron-right'); ?>
-                </a>
-
-                <a class="btn btn--primary btn--icon btn--icon-after" href="dev/tools" role="button">
-                    Tools<?= getIcon('chevron-right'); ?>
-                </a>
-
-                <a class="btn btn--primary btn--icon btn--icon-after" href="https://github.com/wiljanslofstra/Gliese" target="_blank" role="button">
-                    Repository<?= getIcon('chevron-right'); ?>
-                </a>
-            </div>
+            <ul class="list">
+                <li><a href="dev/docs/snippets.php">Snippets</a></li>
+                <li><a href="dev/docs/base-styles.php">Base styles</a></li>
+                <li>
+                    Components
+                    <ul>
+                        <li><a href="dev/docs/autocomplete.php">Autocomplete</a></li>
+                        <li><a href="dev/docs/cart.php">Cart</a></li>
+                        <li><a href="dev/docs/cms-content.php">CMS content</a></li>
+                        <li><a href="dev/docs/icons.php">Icons</a></li>
+                        <li><a href="dev/docs/push-notifications.php">Push notifications</a></li>
+                        <li><a href="dev/docs/upload-field.php">Upload field</a></li>
+                    </ul>
+                </li>
+                <li>
+                    Tools
+                    <ul>
+                        <li><a href="dev/tools/form-generator.php">Form generator</a></li>
+                    </ul>
+                </li>
+            </ul>
         </div>
 
         <pre class="demo-block__code u-p2 u-text-left"><code>1. npm install / yarn install

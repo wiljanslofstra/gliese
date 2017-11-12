@@ -1,4 +1,4 @@
-<?php include('../../templates/_header.php'); ?>
+<?php include(__DIR__ . '/../../../templates/header.php'); ?>
 
 <?php
     require('./filter-api.php');
@@ -74,4 +74,4 @@
     </div>
 </div>
 
-<?php include('../../templates/_footer.php'); ?>
+<?php include(__DIR__ . '/../../../../templates/footer.php'); ?>
