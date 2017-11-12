@@ -11,6 +11,8 @@ const videosArray = Array.prototype.slice.call(videos);
 // Concatenate all embed arrays together
 const embedsArray = iframesArray.concat(videosArray);
 
+const ACCEPTED_ORIGINS = ['youtube', 'youtu.be', 'vimeo'];
+
 // Wrap the elements in a div with this class
 const WRAP_CLASS = 'embed-wrap';
 
@@ -21,8 +23,8 @@ const HUNDRED = 100;
 
 /**
  * Get the ratio from a embed (only if the width and height are set) or fallback to 16/9
- * @param  {Node} el Embed to calculate the ratio for
- * @return {Void}
+ * @param  {node} el Embed to calculate the ratio for
+ * @return {void}
  */
 function getRatio(el) {
   let ratio = FALLBACK_RATIO;
@@ -41,8 +43,8 @@ function getRatio(el) {
 
 /**
  * Create a wrapper element around the embed
- * @param  {Node} el Element to wrap
- * @return {Void}
+ * @param  {node} el Element to wrap
+ * @return {void}
  */
 function makeWrappedEmbed(el) {
   const wrapper = document.createElement('div');
@@ -58,6 +60,30 @@ function makeWrappedEmbed(el) {
   wrapElement(el, wrapper);
 }
 
+/**
+ * Check if the given element should be wrapped (to make the embed responsive)
+ * @param {DOMElement} el DOM node
+ * @return {boolean}
+ */
+function shouldWrap(el) {
+  if (el.tagName === 'VIDEO') {
+    return true;
+  }
+
+  if (el.tagName === 'IFRAME') {
+    const source = el.getAttribute('src');
+
+    // Check if the iframe with this source should be wrapped. We don't wrap every
+    // iframe because some third-party use them... (like HotJar). And they create huge
+    // whitespaces
+    return ACCEPTED_ORIGINS.reduce((acc, origin) => (
+      (source.indexOf(origin) >= 0) ? true : acc
+    ), false);
+  }
+
+  return false;
+}
+
 export default () => {
   // Check if embeds are found in the DOM
   if (!embedsArray.length) {
@@ -68,7 +94,7 @@ export default () => {
   embedsArray.forEach((embedEl) => {
     const parent = embedEl.parentNode;
 
-    if (parent.className.indexOf(WRAP_CLASS) < 0) {
+    if (parent.className.indexOf(WRAP_CLASS) < 0 && shouldWrap(embedEl)) {
       makeWrappedEmbed(embedEl);
     }
   });
