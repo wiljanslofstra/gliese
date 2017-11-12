@@ -1,8 +1,7 @@
 <?php include(__DIR__ . '/../../../system/config.php'); ?>
 <?php include(__DIR__ . '/../../../system/common_functions.php'); ?>
 <!DOCTYPE html>
-<!--[if lte IE 9]><html class="no-js ie9 " lang="nl"> <![endif]-->
-<!--[if gt IE 9]><!--> <html class="no-js" lang="nl"><!--<![endif]-->
+<html class="no-js" lang="de">
 <head>
     <meta charset="utf-8">
 

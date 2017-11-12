@@ -26,7 +26,7 @@ const formValidation = {
 
   /**
    * Asynchronously load Parsley, if it's already loaded it will callback immediately
-   * @param  {function} cb - Callback for when Parsley is loaded
+   * @param {function} cb - Callback for when Parsley is loaded
    * @return {void}
    */
   loadParsley(cb) {
