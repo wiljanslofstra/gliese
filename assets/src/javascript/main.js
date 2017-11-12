@@ -25,7 +25,6 @@ import generalSlider from './modules/generalSlider';
 // import filter from './modules/filter/filter';
 // import pushNotifications from './modules/pushNotifications';
 // import cart from './modules/cart';
-// import passwordStrength from './modules/passwordStrength';
 // import map from './modules/maps/map';
 // import addressAutofill from './modules/addressAutofill';
 // import jumpToElement from './modules/jumpToElement';
@@ -49,7 +48,6 @@ const app = () => {
   // filter.initialize();
   // pushNotifications.initialize();
   // cart.initialize();
-  // passwordStrength();
   // addressAutofill();
   // jumpToElement.initialize();
   // togglePasswordVisibility();
