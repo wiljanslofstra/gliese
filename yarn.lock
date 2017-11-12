@@ -19,10 +19,6 @@
     normalize-path "^2.0.1"
     through2 "^2.0.3"
 
-a11y-toggle@^2.1.0:
-  version "2.1.0"
-  resolved "https://registry.yarnpkg.com/a11y-toggle/-/a11y-toggle-2.1.0.tgz#568af9384b3d5ce5e0c7d3f295402301cf5a86c6"
-
 abbrev@1:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/abbrev/-/abbrev-1.1.0.tgz#d0554c2256636e2f56e7c2e5ad183f859428d81f"
