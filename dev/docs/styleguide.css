@@ -52,6 +52,13 @@
   margin-top: -15px;
 }
 
+pre {
+  background-color: #f7f7f7;
+  overflow: auto;
+  padding: 15px;
+  border-radius: 5px;
+}
+
 @media (min-width: 768px) {
   .st-generator-row > input[type="text"],
   .st-generator-row > select {

@@ -1,7 +1,7 @@
 <?php include(__DIR__ . '/../../../system/config.php'); ?>
 <?php include(__DIR__ . '/../../../system/common_functions.php'); ?>
 <!DOCTYPE html>
-<html class="no-js" lang="de">
+<html class="no-js" lang="nl">
 <head>
     <meta charset="utf-8">
 
@@ -33,28 +33,8 @@
             Base styles
         </a>
 
-        <a class="st-sidebar__link" href="/dev/docs/components/buttons.php">
-            Buttons
-        </a>
-
-        <a class="st-sidebar__link" href="/dev/docs/components/forms.php">
-            Forms
-        </a>
-
-        <a class="st-sidebar__link" href="/dev/docs/components/custom-components.php">
-            Custom components
-        </a>
-
-        <a class="st-sidebar__link" href="/dev/docs/components/map.php">
-            Map
-        </a>
-
         <a class="st-sidebar__link" href="/dev/docs/components/autocomplete.php">
             Autocomplete
-        </a>
-
-        <a class="st-sidebar__link" href="/dev/docs/components/slider.php">
-            Slider
         </a>
 
         <a class="st-sidebar__link" href="/dev/docs/components/filter">
@@ -73,20 +53,8 @@
             Cart
         </a>
 
-        <a class="st-sidebar__link" href="/dev/docs/components/video.php">
-            Video
-        </a>
-
-        <a class="st-sidebar__link" href="/dev/docs/components/accordion.php">
-            Accordion
-        </a>
-
         <a class="st-sidebar__link" href="/dev/docs/components/upload-field.php">
             Upload field
-        </a>
-
-        <a class="st-sidebar__link" href="/dev/docs/components/password-strength.php">
-            Password strength
         </a>
 
         <a class="st-sidebar__link" href="/dev/docs/components/push-notifications.php">

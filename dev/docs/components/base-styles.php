@@ -1,5 +1,7 @@
 <?php include('../templates/_header.php'); ?>
 
+<link rel="stylesheet" href="<?= ASSET_BUILD_PATH; ?>/css/<?= getRevedFile('bootstrap-datepicker.css'); ?>">
+
 <div class="st-explanation">
     <h1>Base styles</h1>
     <p>
@@ -9,6 +11,140 @@
     </p>
 </div>
 
+<h2 class="st-heading u-mb2">Button element</h2>
+<div class="u-mb2">
+    <button class="btn">.btn</button>
+    <button class="btn btn--primary">.btn .btn--primary</button>
+    <button class="btn btn--secondary">.btn .btn--secondary</button>
+</div>
+
+<div class="u-mb3">
+    <button class="btn btn--lg">.btn .btn--lg</button>
+    <button class="btn btn--primary btn--lg">.btn .btn--primary .btn--lg</button>
+    <button class="btn btn--secondary btn--lg">.btn .btn--secondary .btn--lg</button>
+</div>
+
+<h2 class="st-heading u-mb2">A element</h2>
+<div class="u-mb2">
+    <a href="#" class="btn">.btn</a>
+    <a href="#" class="btn btn--primary">.btn .btn--primary</a>
+    <a href="#" class="btn btn--secondary">.btn .btn--secondary</a>
+</div>
+
+<div class="u-mb2">
+    <a href="#" class="btn btn--lg">.btn .btn--lg</a>
+    <a href="#" class="btn btn--primary btn--lg">.btn .btn--primary .btn--lg</a>
+    <a href="#" class="btn btn--secondary btn--lg">.btn .btn--secondary .btn--lg</a>
+</div>
+
+<h2 class="st-heading u-mb2">Form</h2>
+
+<form class="js-form u-mb3">
+    <div class="form-group">
+        <label for="text_field">Text Field:</label><br />
+        <input class="form-control" type="text" id="text_field" />
+    </div>
+
+    <div class="form-group">
+        <label for="text_field">Text Field (with Parsley.js error):</label><br />
+        <input class="form-control" type="text" id="text_field" />
+        <ul class="parsley-errors-list">
+            <li>This field is required</li>
+        </ul>
+    </div>
+
+    <div class="form-group">
+        <label for="text_field">Text Field (with .form-error):</label><br />
+        <input class="form-control" type="text" id="text_field" />
+        <div class="form-error">
+            This field is required
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="text_field">Password Field:</label><br />
+        <input class="form-control js-password-input" type="password" id="password_field" />
+        <a href="#password_field" class="js-password-toggle">Show password</a>
+    </div>
+
+    <div class="form-group">
+        <label for="text_field_disabled">Disabled Text Field:</label><br />
+        <input class="form-control" type="text" id="text_field_disabled" disabled value="I'm disabled" />
+    </div>
+
+    <div class="form-group">
+        <label for="text_field_readonly">Readonly Text Field:</label><br />
+        <input class="form-control" type="text" id="text_field_readonly" readonly value="I'm readonly" />
+    </div>
+
+    <div class="form-group">
+        <label for="text_area">Text Area:</label><br />
+        <textarea class="form-control" id="text_area"></textarea>
+    </div>
+
+    <div class="form-group">
+        <label for="text_area_disabled">Disabled Text Area:</label><br />
+        <textarea class="form-control" id="text_area_disabled" disabled>I'm disabled</textarea>
+    </div>
+
+    <div class="form-group">
+        <label for="text_area">Readonly Text Area:</label><br />
+        <textarea class="form-control" id="text_area" readonly>I'm readonly</textarea>
+    </div>
+
+    <div class="form-group">
+        <label for="select_element">Select Element:</label><br />
+        <div class="custom-select">
+            <select id="select_element">
+                <optgroup label="Option Group 1">
+                    <option value="1">Option 1</option>
+                    <option value="2">Option 2</option>
+                </optgroup>
+                <optgroup label="Option Group 2">
+                    <option value="1">Option 1</option>
+                    <option value="2">Option 2</option>
+                    <option value="3" disabled>Disabled Option</option>
+                </optgroup>
+            </select>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="select_element_disabled">Disabled Select Element:</label><br/>
+        <div class="custom-select">
+            <select id="select_element_disabled" disabled>
+                <option value="1">Unselectable Option</option>
+                <option value="2">This option should not even be seen</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="form-group">
+        Radio Buttons:<br />
+        <input type="radio" name="radios" id="radio_1" value="radio_1" /><label for="radio_1">Radio 1</label><br/>
+        <input type="radio" name="radios" id="radio_2" value="radio_2" /><label for="radio_2">Radio 2</label><br/>
+        <input type="radio" name="radios" id="radio_3" value="radio_3" disabled /><label for="radio_3">Radio 3 (disabled)</label><br/>
+    </div>
+
+    <div class="form-group">
+        Checkboxes:<br />
+        <input type="checkbox" class="checkbox" name="checkboxes" id="check_1" value="check_1" /><label for="check_1">Checkbox 1</label><br/>
+        <input type="checkbox" class="checkbox" name="checkboxes" id="check_2" value="check_2" /><label for="check_2">Checkbox 2</label><br/>
+        <input type="checkbox" class="checkbox" name="checkboxes" id="check_3" value="check_3" disabled /><label for="check_3">Checkbox 3 (disabled)</label><br/>
+    </div>
+
+    <div class="form-group">
+        <label for="file">File Input:</label><br />
+        <input type="file" class="form-control file" id="file" />
+    </div>
+
+    <div class="form-group">
+        <label for="date">Date (with datepicker):</label><br />
+        <input class="form-control js-datepicker" type="text" id="text-date" required />
+    </div>
+
+    <button class="btn btn--primary" type="submit">Submit</button>
+</form>
 
 <h2 class="st-heading u-mb2">Headings</h2>
 
@@ -62,38 +198,22 @@
         <img src="http://placehold.it/350x150" alt="A placeholder figure image." />
         <figcaption>The figcaption element example</figcaption>
     </figure>
-
 </div>
 
 <h2 class="st-heading u-mb2">Text Elements</h2>
 
 <div class="u-mb3">
-    <p>The <a href="#">a element</a> and <a href="http://example.com" target="_blank">external a element</a> examples</p>
-    <p>The <abbr>abbr element</abbr> and an <abbr title="Abbreviation">abbr</abbr> element with title examples</p>
-    <p>The <acronym title="A Cowboy Ran One New York Marathon">ACRONYM</acronym> element example</p>
-    <p>The <b>b element</b> example</p>
-    <p>The <cite>cite element</cite> example</p>
-    <p>The <code>code element</code> example</p>
-    <p>The <data value="3967381398">data element</data> example</p>
-    <p>The <del>del element</del> example</p>
-    <p>The <dfn>dfn element</dfn> and <dfn title="Title text">dfn element with title</dfn> examples</p>
-    <p>The <em>em element</em> example</p>
-    <p>The <i>i element</i> example</p>
-    <p>The <ins>ins element</ins> example</p>
-    <p>The <kbd>kbd element</kbd> example</p>
-    <p>The <mark>mark element</mark> example</p>
-    <p>The <q>q element</q> example</p>
-    <p>The <q>q element <q>inside</q> a q element</q> example</p>
-    <p>The <s>s element</s> example</p>
-    <p>The <samp>samp element</samp> example</p>
-    <p>The <small>small element</small> example</p>
-    <p>The <span>span element</span> example</p>
-    <p>The <strong>strong element</strong> example</p>
-    <p>The <sub>sub element</sub> example</p>
-    <p>The <sup>sup element</sup> example</p>
-    <p>The <time datetime="2005-05-15 19:00">time element</time> example</p>
-    <p>The <u>u element</u> example</p>
-    <p>The <var>var element</var> example</p>
+    <a href="#">a element</a><br>
+    <abbr title="Abbreviation">abbr</abbr> element with title<br>
+    <cite>cite element</cite><br>
+    <code>code element</code><br>
+    <em>em element</em><br>
+    <mark>mark element</mark><br>
+    <small>small element</small><br>
+    <strong>strong element</strong><br>
+    <sub>sub element</sub><br>
+    <sup>sup element</sup><br>
+    <time datetime="2005-05-15 19:00">time element</time>
 </div>
 
 <h2 class="st-heading u-mb2">Monospace / Preformatted</h2>
