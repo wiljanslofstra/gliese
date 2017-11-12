@@ -29,7 +29,7 @@ import generalSlider from './modules/generalSlider';
 // import addressAutofill from './modules/addressAutofill';
 // import jumpToElement from './modules/jumpToElement';
 // import togglePasswordVisibility from './modules/togglePasswordVisibility';
-// import accordion from './modules/accordion';
+import toggle from './modules/toggle';
 // import uploadField from './modules/uploadField';
 /* eslint-enable */
 
@@ -51,7 +51,7 @@ const app = () => {
   // addressAutofill();
   // jumpToElement.initialize();
   // togglePasswordVisibility();
-  // accordion.initialize();
+  toggle.initialize();
   // uploadField.initialize();
 };
 

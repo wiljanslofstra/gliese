@@ -1,38 +1,37 @@
 .accordion__trigger {
+  background-color: #eee;
+  border: 0;
   border-top: 1px solid #dddedf;
+  padding: .75rem 1.5rem .75rem 0;
+  position: relative;
+  width: 100%;
+  text-align: left;
 
   &:first-child {
     border-top: 0;
   }
 }
 
-.accordion__trigger-link {
-  display: block;
-  padding: .75rem 1.5rem .75rem 0;
-  position: relative;
-
-  &:focus {
-    color: $color-primary;
-  }
-}
-
-.accordion__trigger-link .icon {
+.accordion__trigger .icon {
   position: absolute;
   right: 0;
   top: .875rem;
+  display: block;
 }
 
-.accordion__trigger-link[aria-expanded='true'] .icon {
+.accordion__trigger[aria-expanded='true'] .icon {
   transform: scaleY(-1);
 }
 
 .accordion__body {
-  height: 0;
-  margin-left: 0;
+  display: none;
   overflow: hidden;
-  transition: height .25s $ease-out-quad;
+}
+
+.accordion__body[aria-hidden='false'] {
+  display: block;
 }
 
 .accordion__body-inner {
-  padding: 0 0 1rem;
+  padding: 1rem;
 }

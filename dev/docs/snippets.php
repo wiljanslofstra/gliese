@@ -16,33 +16,29 @@
     </code></pre>
 
     <strong class="d-block">Accordion</strong>
-    <pre><code><?php echo htmlentities('<dl class="accordion js-accordion">
-    <dt role="heading" class="accordion__trigger">
-        <a class="accordion__trigger-link js-accordion-trigger" href="#" id="accordion-trigger-0" aria-expanded="false" aria-controls="accordion-0">
-            This is a question you should ask
-            <?= getIcon(\'arrow-down\'); ?>
-        </a>
-    </dt>
+    <pre><code><?php echo htmlentities('<div class="accordion">
+    <button class="accordion__trigger" type="button" data-toggle-target="accordion-0">
+        This is a question you should ask
+        <?= getIcon(\'chevron-down\'); ?>
+    </button>
 
-    <dd id="accordion-0" role="region" aria-labelledby="accordion-trigger-0" class="accordion__body js-accordion-body">
+    <div id="accordion-0" class="accordion__body js-accordion-body" data-toggle-hash>
         <div class="accordion__body-inner js-accordion-body-inner">
-            <!-- Content -->
+            Text
         </div>
-    </dd>
+    </div>
 
-    <dt role="heading" class="accordion__trigger">
-        <a class="accordion__trigger-link js-accordion-trigger" href="#" id="accordion-trigger-1" aria-expanded="false" aria-controls="accordion-1">
-            This is a question you should ask
-            <?= getIcon(\'arrow-down\'); ?>
-        </a>
-    </dt>
+    <button class="accordion__trigger" type="button" data-toggle-target="accordion-1">
+        This is a question you should ask
+        <?= getIcon(\'chevron-down\'); ?>
+    </button>
 
-    <dd id="accordion-1" role="region" aria-labelledby="accordion-trigger-1" class="accordion__body js-accordion-body">
+    <div id="accordion-1" class="accordion__body js-accordion-body" data-toggle-hash>
         <div class="accordion__body-inner js-accordion-body-inner">
-            <!-- Content -->
+            Text
         </div>
-    </dd>
-</dl>'); ?>
+    </div>
+</div>'); ?>
     </code></pre>
 
     <strong class="d-block">Video</strong>
