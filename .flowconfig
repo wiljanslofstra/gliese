@@ -1,0 +1,13 @@
+[ignore]
+
+[include]
+
+[libs]
+./gulp/flow-typed/modernizr.js
+./gulp/flow-typed/globals.js
+
+[lints]
+
+[options]
+
+[strict]

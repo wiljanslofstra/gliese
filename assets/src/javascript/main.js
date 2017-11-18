@@ -1,4 +1,5 @@
 /* global POLYFILLS_PATH */
+// @flow
 
 __webpack_public_path__ = window.WEBPACK_PATH; // eslint-disable-line
 
@@ -55,16 +56,18 @@ const app = () => {
   // uploadField.initialize();
 };
 
-function loadScript(src, done) {
+function loadScript(src: string, done: () => mixed): void {
   const js = document.createElement('script');
   js.src = src;
   js.onload = done;
 
   js.onerror = () => {
-    done(new Error(`Failed to load script ${src}`));
+    throw new Error(`Failed to load script ${src}`);
   };
 
-  document.head.appendChild(js);
+  if (document.head) {
+    document.head.appendChild(js);
+  }
 }
 
 if (loadPolyfills) {
@@ -73,6 +76,6 @@ if (loadPolyfills) {
   app();
 }
 
-if ('serviceWorker' in navigator) {
+if ('serviceWorker' in navigator && navigator.serviceWorker) {
   navigator.serviceWorker.register(`${BASE}/service-worker.js`);
 }
