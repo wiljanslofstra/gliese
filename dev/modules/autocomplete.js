@@ -1,3 +1,5 @@
+/* npm-add awesomplete normalize-for-search */
+
 /* eslint-disable */
 import Awesomplete from 'awesomplete';
 import { template } from 'lodash';

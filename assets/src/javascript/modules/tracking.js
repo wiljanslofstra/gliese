@@ -1,12 +1,20 @@
+/* eslint-disable class-methods-use-this */
+
+import checkPerformanceAPI from '../helpers/checkPerformanceAPI';
+
 const urlTelPattern = 'a[href^="tel:"]';
 const urlMailPattern = 'a[href^="mailto:"]';
 
-const tracking = {
+export default class Tracking {
+  constructor() {
+    this.createEvents();
+  }
+
   /**
    * Initialize custom tracking
    * @returns {void}
    */
-  initialize() {
+  createEvents() {
     if (typeof gtag === 'undefined') {
       return;
     }
@@ -29,7 +37,7 @@ const tracking = {
     });
 
     this.trackLoadTime();
-  },
+  }
 
   /**
    * Shoot event to Analytics
@@ -47,21 +55,14 @@ const tracking = {
         value,
       });
     }
-  },
+  }
 
   /**
    * Track page load times if the user browser supports the performance API
    * @returns {void}
    */
   trackLoadTime() {
-    const performance = (
-      window.performance ||
-      window.webkitPerformance ||
-      window.msPerformance ||
-      window.mozPerformance
-    );
-
-    if (typeof performance === 'undefined' && typeof performance.timing !== 'undefined') {
+    if (!checkPerformanceAPI()) {
       return;
     }
 
@@ -71,20 +72,23 @@ const tracking = {
       setTimeout(() => {
         const { timing } = performance;
 
-        gtag('event', 'timing_complete', {
-          name: 'load',
-          value: timing.loadEventEnd - timing.fetchStart,
-          event_category: 'Page load',
-        });
-
-        gtag('event', 'timing_complete', {
-          name: 'load',
-          value: timing.domInteractive - timing.fetchStart,
-          event_category: 'DOM interactive',
-        });
+        this.sendTimingEvent(timing.loadEventEnd - timing.fetchStart, 'Page load');
+        this.sendTimingEvent(timing.domInteractive - timing.fetchStart, 'DOM interactive');
       }, 0);
     };
-  },
-};
+  }
 
-export default tracking;
+  /**
+   * Send timing event into gtag
+   * @param {string} val Timing duration in ms
+   * @param {string} label Label the timing event
+   * @return {void}
+   */
+  sendTimingEvent(val, label) {
+    gtag('event', 'timing_complete', {
+      name: 'load',
+      value: val,
+      event_category: label,
+    });
+  }
+}

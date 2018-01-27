@@ -1,3 +1,5 @@
+/* npm-add blueimp-file-upload */
+
 /* global FILE_UPLOAD_MESSAGES */
 
 const $fileupload = $('.js-fileupload');

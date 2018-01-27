@@ -1,12 +1,14 @@
+/* eslint-disable class-methods-use-this */
+
 let $form = $('.js-form');
 let parsleyLoaded = false;
 
-const formValidation = {
+export default class FormValidation {
   /**
    * Initialize form validation for form elements on the page
    * @return {void}
    */
-  initialize() {
+  constructor() {
     if ($form.length) {
       this.loadParsley(() => {
         this.createFormValidation();
@@ -22,7 +24,7 @@ const formValidation = {
         this.createFormValidation();
       });
     });
-  },
+  }
 
   /**
    * Asynchronously load Parsley, if it's already loaded it will callback immediately
@@ -40,7 +42,7 @@ const formValidation = {
       parsleyLoaded = true;
       cb.call(this);
     });
-  },
+  }
 
   /**
    * Create form validation
@@ -55,7 +57,7 @@ const formValidation = {
         },
       });
     });
-  },
+  }
 
   /**
    * Get the name of a form or fallback to page path
@@ -64,7 +66,7 @@ const formValidation = {
    */
   getFormName(e) {
     return e.$element.data('name') || `Form on: ${window.location.pathname}`;
-  },
+  }
 
   /**
    * Track forms for success and errors
@@ -84,7 +86,7 @@ const formValidation = {
     window.Parsley.on('form:error', (e) => {
       this.gaEvent('Error', this.getFormName(e));
     });
-  },
+  }
 
   /**
    * Send event to Analytics
@@ -106,7 +108,5 @@ const formValidation = {
         event_label: formName,
       });
     }
-  },
-};
-
-export default formValidation;
+  }
+}

@@ -25,6 +25,7 @@
     "build:precache": "node ./node_modules/gulp/bin/gulp.js swprecache",
     "build:lodash": "lodash include=\"each,filter,map,debounce,template\" -o assets/src/javascript/vendor/lodash.custom.js",
     "analyse:eslint": "eslint assets/src/javascript/**/*.js",
+    "add-module": "node ./gulp/add-module.js",
     "test": "npm run analyse:eslint"
   },
   "browserslist": [
@@ -65,7 +66,8 @@
     "parsleyjs": "^2.8.0",
     "popper.js": "^1.12.7",
     "slick-carousel": "^1.8.1",
-    "whatwg-fetch": "^2.0.3"
+    "whatwg-fetch": "^2.0.3",
+    "yarn-install": "^0.5.1"
   },
   "devDependencies": {
     "autoprefixer": "^7.2.5",

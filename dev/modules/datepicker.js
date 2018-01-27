@@ -1,3 +1,5 @@
+/* npm-add bootstrap-datepicker */
+
 import $ from 'jquery';
 import nl from '../language/nl';
 

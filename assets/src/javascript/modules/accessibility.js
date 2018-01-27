@@ -1,7 +1,9 @@
-const accessibility = {
-  initialize() {
+/* eslint-disable class-methods-use-this */
+
+export default class Accessibility {
+  constructor() {
     this.accessibleSelect();
-  },
+  }
 
   /**
    * Adds focus states to custom select wrapper
@@ -27,7 +29,5 @@ const accessibility = {
         select.parentNode.classList.add('is-disabled');
       }
     });
-  },
-};
-
-export default accessibility;
+  }
+}

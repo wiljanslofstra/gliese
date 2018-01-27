@@ -1,3 +1,5 @@
+/* npm-add jump.js */
+
 /* eslint-disable */
 import jump from 'jump.js';
 /* eslint-enable */

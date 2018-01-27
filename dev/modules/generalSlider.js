@@ -1,3 +1,5 @@
+/* npm-add slick-carousel */
+
 import 'slick-carousel';
 
 const $sliders = $('.js-slider');
