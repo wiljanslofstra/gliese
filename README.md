@@ -45,14 +45,23 @@ BrowserSync is built-in, but not enabled by default. To enable it, go to ```gulp
 
 You can also use any of the other BrowserSync modes, the ```browserSync``` object is directly passed to BrowserSync. For all options checkout [the BrowserSync docs](https://www.browsersync.io/docs/options).
 
-## Module dependencies
+## Add modules
 
-To prevent the package.json (and your node_modules folder) from turning into a
-enormous list of dependencies I've a list for what you need to use each module.
+In the last year I've built a few JavaScript components that are being used across projects. A lot of them
+however are not required for every project. But they were still available in the code at all times.
 
-- filter: ```yarn add react react-dom qs form-serialize jump.js```
-- maps: ```yarn add google-maps```
-- autocomplete: ```yarn add awesomplete normalize-for-search```
-- jumpToElement: ```yarn add jump.js```
-- uploadField: ```yarn add blueimp-file-upload```
-- datepicker: ```yarn add bootstrap-datepicker```
+To keep things clean, and make it easy to add prebuilt components I've added a CLI command to add
+components on-the-fly. All available components are defined in ```/dev/modules/```. You can install
+them using:
+
+```
+yarn run add-module {MODULE_NAME}
+// or
+npm run add-module {MODULE_NAME}
+```
+
+So to add something like a datepicker:
+
+```
+yarn run add-module datepicker
+```
