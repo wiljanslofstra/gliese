@@ -1,6 +1,6 @@
 /* eslint-disable class-methods-use-this */
 
-import checkPerformanceAPI from '../helpers/checkPerformanceAPI';
+import { getPerformanceSupport, getPerformanceAPI } from '../helpers/checkPerformanceAPI';
 
 const urlTelPattern = 'a[href^="tel:"]';
 const urlMailPattern = 'a[href^="mailto:"]';
@@ -8,6 +8,7 @@ const urlMailPattern = 'a[href^="mailto:"]';
 export default class Tracking {
   constructor() {
     this.createEvents();
+    this.trackLoadTime();
   }
 
   /**
@@ -35,8 +36,6 @@ export default class Tracking {
         this.shootEvent('Outbound', 'click', currentTarget.href);
       }
     });
-
-    this.trackLoadTime();
   }
 
   /**
@@ -49,10 +48,12 @@ export default class Tracking {
    */
   shootEvent(category, action = 'click', label = '', value = '') {
     if (typeof gtag !== 'undefined') {
-      gtag('event', action, {
-        event_category: category,
-        event_label: label,
-        value,
+      requestIdleCallback(() => {
+        gtag('event', action, {
+          event_category: category,
+          event_label: label,
+          value,
+        });
       });
     }
   }
@@ -62,20 +63,19 @@ export default class Tracking {
    * @returns {void}
    */
   trackLoadTime() {
-    if (!checkPerformanceAPI()) {
+    if (!getPerformanceSupport()) {
       return;
     }
 
-    // loadEventEnd is only available after page load
-    window.onload = () => {
-      // We have to wait a tick to be sure that loadEventEnd is set
-      setTimeout(() => {
-        const { timing } = performance;
+    // We have to wait a tick to be sure that loadEventEnd is set
+    window.addEventListener('load', () => {
+      requestIdleCallback(() => {
+        const { timing } = getPerformanceAPI();
 
         this.sendTimingEvent(timing.loadEventEnd - timing.fetchStart, 'Page load');
         this.sendTimingEvent(timing.domInteractive - timing.fetchStart, 'DOM interactive');
-      }, 0);
-    };
+      });
+    });
   }
 
   /**

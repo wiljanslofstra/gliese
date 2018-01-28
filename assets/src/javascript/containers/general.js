@@ -7,11 +7,9 @@ import FormValidation from '../modules/formValidation';
 // insert-import
 
 const general = () => {
-  const app = window.App;
-
-  app.accessibility = new Accessibility(app);
-  app.tracking = new Tracking(app);
-  app.formValidation = new FormValidation();
+  window.App.tracking = new Tracking(window.App);
+  window.App.accessibility = new Accessibility(window.App);
+  window.App.formValidation = new FormValidation();
   // insert-definition
 };
 

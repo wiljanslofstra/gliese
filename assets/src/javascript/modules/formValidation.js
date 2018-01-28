@@ -79,34 +79,12 @@ export default class FormValidation {
 
     // Listen for form success events
     window.Parsley.on('form:success', (e) => {
-      this.gaEvent('Submit', this.getFormName(e));
+      window.App.tracking.shootEvent('Form', 'Submit', this.getFormName(e));
     });
 
     // Listen for form error events
     window.Parsley.on('form:error', (e) => {
-      this.gaEvent('Error', this.getFormName(e));
+      window.App.tracking.shootEvent('Form', 'Error', this.getFormName(e));
     });
-  }
-
-  /**
-   * Send event to Analytics
-   * @param  {string} action - Action of the form that is being performed (e.g. error or success)
-   * @param  {string} name - Name of the form, can be used to easily
-   *                       track which forms are used in Analytics
-   * @return {void}
-   */
-  gaEvent(action, name) {
-    let formName = 'untitled';
-
-    if (typeof name !== 'undefined') {
-      formName = name;
-    }
-
-    if (typeof gtag !== 'undefined') {
-      gtag('event', action, {
-        event_category: 'Form',
-        event_label: formName,
-      });
-    }
   }
 }
