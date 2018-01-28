@@ -2,6 +2,7 @@
 
 import loadScript from './helpers/loadScript';
 import shouldLoadPolyfills from './helpers/shouldLoadPolyfills';
+import './helpers/requestIdleCallback';
 import general from './containers/general';
 
 // Make sure these global variables exist
@@ -23,6 +24,6 @@ if (shouldLoadPolyfills()) {
   ready();
 }
 
-if ('serviceWorker' in navigator) {
+if ('serviceWorker' in navigator && window.isSecureContext !== false) {
   navigator.serviceWorker.register(`${BASE}/service-worker.js`);
 }

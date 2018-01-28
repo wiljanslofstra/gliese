@@ -3,3 +3,5 @@ node_modules/
 npm-debug.log
 assets/dist/
 /.cache
+service-worker.js
+/workbox-sw.*

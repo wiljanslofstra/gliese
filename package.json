@@ -1,6 +1,6 @@
 {
   "name": "gliese",
-  "version": "0.10.0",
+  "version": "0.11.0",
   "author": "Wiljan Slofstra <wiljanslofstra@gmail.com>",
   "description": "Front-end boilerplate with a few pre-build modules for web development",
   "homepage": "https://github.com/wiljanslofstra/Gliese",
@@ -22,7 +22,7 @@
     "production": "cross-env NODE_ENV=production node ./node_modules/gulp/bin/gulp.js",
     "production-watch": "cross-env NODE_ENV=production node ./node_modules/gulp/bin/gulp.js watch",
     "build:modernizr": "node ./node_modules/gulp/bin/gulp.js modernizr",
-    "build:precache": "node ./node_modules/gulp/bin/gulp.js swprecache",
+    "build:serviceworker": "node ./node_modules/gulp/bin/gulp.js service-worker",
     "build:lodash": "lodash include=\"each,filter,map,debounce,template\" -o assets/src/javascript/vendor/lodash.custom.js",
     "analyse:eslint": "eslint assets/src/javascript/**/*.js",
     "add-module": "node ./gulp/add-module.js",
@@ -44,7 +44,7 @@
           "targets": {
             "browsers": [
               "> 2%",
-              "ie >= 9",
+              "ie >= 10",
               "ios >= 8"
             ]
           },
@@ -67,6 +67,7 @@
     "popper.js": "^1.12.9",
     "slick-carousel": "^1.8.1",
     "whatwg-fetch": "^2.0.3",
+    "workbox-build": "^2.1.2",
     "yarn-install": "^0.5.1"
   },
   "devDependencies": {
@@ -101,7 +102,6 @@
     "gulp-sourcemaps": "^2.6.4",
     "gulp-svgstore": "^6.1.1",
     "imports-loader": "^0.7.1",
-    "sw-precache": "^5.2.0",
     "webpack": "^3.10.0",
     "webpack-bundle-analyzer": "^2.9.2"
   }

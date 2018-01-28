@@ -21,7 +21,7 @@ require('./tasks/static');
 require('./tasks/images');
 require('./tasks/icons');
 require('./tasks/modernizr');
-require('./tasks/sw-precache');
+require('./tasks/service-worker');
 
 const build = gulp.series('clean', gulp.parallel('styles', 'scripts', 'static', 'images', 'icons'));
 

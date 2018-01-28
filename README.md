@@ -4,7 +4,7 @@ Front-end boilerplate using:
 - [Webpack 3](http://webpack.github.io/) with Babel
 - [ESLint](http://eslint.org/) with [Airbnb's ESLint configuration](https://github.com/airbnb/javascript)
 - Custom Modernizr and Lodash builds
-- SW-Precache
+- Workbox for Service Worker creation
 
 ## Get started
 - ```npm install``` or ```yarn install```
