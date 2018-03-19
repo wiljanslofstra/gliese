@@ -29,14 +29,11 @@ yarn run analyse:eslint
 
 ## BrowserSync
 
-BrowserSync is built-in, but not enabled by default. To enable it, go to ```gulp/config/paths.js```, set ```browserSync.enabled``` to ```true``` and add a proxy URL.
-
-You can also use any of the other BrowserSync modes, the ```browserSync``` object is directly passed to BrowserSync. For all options checkout [the BrowserSync docs](https://www.browsersync.io/docs/options).
+BrowserSync is built into Laravel Mix. You can change the proxy URL in ```webpack.mix.js```.
 
 ## Add modules
 
-In the last year I've built a few JavaScript components that are being used across projects. A lot of them
-however are not required for every project. But they were still available in the code at all times.
+In the last year I've built a few JavaScript components that are being used across projects. A lot of them are not necessary in every project. But they were still available in the code at all times.
 
 To keep things clean, and make it easy to add prebuilt components I've added a CLI command to add
 components on-the-fly. All available components are defined in ```/dev/modules/```. You can install
@@ -53,3 +50,22 @@ So to add something like a datepicker:
 ```
 yarn run add-module datepicker
 ```
+
+## Google Tag Manager
+
+This boilerplate is best used in combination with Google Tag Manager. A few events are built-in:
+
+### Timing
+
+Two timing events are send by default. 'Page load' will be triggered when the whole page is loaded (including images etc.) and 'DOM interactive' is triggered when the page is usable. Both are collected with the Performance API.
+
+GTM has to handle the event ```timing``` and the variables ```timing_name``` and ```timing_value```.
+
+### General events
+
+All other events are being send to a general events action. For this to work the event ```general_event``` needs to be handled in GTM. This event is accompanied by a few variables:
+
+- ```general_event_category```
+- ```general_event_action```
+- ```general_event_label```
+- ```general_event_value```

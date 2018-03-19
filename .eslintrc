@@ -8,7 +8,6 @@
   },
   "globals": {
     "dataLayer": true,
-    "gtag": true,
     "BASE": true,
     "Modernizr": true
   },

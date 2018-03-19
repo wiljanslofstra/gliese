@@ -40,6 +40,7 @@
     <script type="text/javascript">
         document.documentElement.className = document.documentElement.className.replace('no-js', 'js');
         var BASE = '<?= BASE_URL; ?>';
+        var dataLayer = [];
     </script>
 
     <link rel="stylesheet" href="<?= getRevedFile('/assets/dist/css/main.css'); ?>">
