@@ -16,11 +16,3 @@
 .u-no-decorate-links a {
   text-decoration: none;
 }
-
-.u-primary-links a {
-  color: $color-primary;
-
-  &:hover {
-    color: darken($color-primary, 10%);
-  }
-}

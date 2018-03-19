@@ -5,9 +5,3 @@
 .u-text-no-decoration { text-decoration: none; }
 .u-text-decoration { text-decoration: underline; }
 .u-text-line-through { text-decoration: line-through; }
-
-.hide-text,
-.text-hide,
-.u-hide-text {
-  @include hide-text;
-}

@@ -65,5 +65,9 @@ mix.version();
 
 if (isDevelopment) {
   mix.sourceMaps();
-  mix.browserSync('gliese.localhost');
+  mix.browserSync({
+    proxy: 'gliese.localhost',
+    port: 3000,
+    open: false,
+  });
 }
