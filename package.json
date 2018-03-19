@@ -20,9 +20,9 @@
     "dev": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
     "watch": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --watch --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
     "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
-    "build:serviceworker": "node ./node_modules/gulp/bin/gulp.js service-worker",
+    "build:serviceworker": "node dev/service-worker.js",
     "analyse:eslint": "eslint assets/src/javascript/**/*.js",
-    "add-module": "node ./dev/add-module.js",
+    "add-module": "node dev/add-module.js",
     "test": "npm run analyse:eslint"
   },
   "browserslist": [

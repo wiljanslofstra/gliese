@@ -5,6 +5,10 @@ import shouldLoadPolyfills from './helpers/shouldLoadPolyfills';
 import './helpers/requestIdleCallback';
 import general from './containers/general';
 
+Number.isNaN = Number.isNaN || function isNaNPolyfill(value) {
+  return value !== value; // eslint-disable-line no-self-compare
+};
+
 // Make sure these global variables exist
 ['App', 'POLYFILLS_PATH'].forEach((gl) => {
   if (typeof window[gl] === 'undefined') {
