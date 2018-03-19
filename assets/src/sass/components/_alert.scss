@@ -1,0 +1,23 @@
+.alert {
+  padding: .875rem 1rem;
+  border: 1px solid $color-primary;
+  color: $color-primary;
+  font-weight: 700;
+}
+
+.alert--primary {
+  background-color: $color-primary;
+  color: #fff;
+}
+
+.alert--danger {
+  background-color: $color-danger;
+  border-color: $color-danger;
+  color: #fff;
+}
+
+.alert--success {
+  background-color: $color-success;
+  border-color: $color-success;
+  color: #fff;
+}

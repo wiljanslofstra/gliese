@@ -1,3 +1,6 @@
 .u-color-primary { color: $color-primary; }
 .u-color-secondary { color: $color-secondary; }
 .u-color-text { color: $color-text; }
+
+.u-color-white-links a:not(.btn) { color: #fff; }
+.u-color-primary-links a:not(.btn) { color: $color-primary; }

@@ -2,10 +2,6 @@
  * <Project name>
  */
 
- body {
-   background: url(../images/bg.jpg);
- }
-
 @import 'utils/mixins/grid';
 @import 'utils/mixins/buttons';
 @import 'utils/mixins/burger';
@@ -14,14 +10,11 @@
 @import 'utils/easings';
 @import 'utils/variables';
 
-@import '../../../node_modules/normalize-scss/sass/normalize';
-@import '../../../node_modules/normalize-scss/sass/normalize/import-now';
-
+@import 'vendor/normalize';
 @import 'vendor/bootstrap';
 @import 'vendor/slick-carousel';
 
 @import 'base/general';
-@import 'base/accessibility';
 @import 'base/blockquote';
 @import 'base/forms';
 @import 'base/hr';
@@ -34,7 +27,6 @@
 
 @import 'utils/utilities';
 @import 'utils/arrow';
-@import 'utils/flex';
 @import 'utils/images';
 @import 'utils/forms';
 @import 'utils/width';
@@ -48,8 +40,6 @@
 @import 'utils/align';
 @import 'utils/lists';
 @import 'utils/links';
-@import 'utils/position';
-@import 'utils/spacing';
 
 @import 'layout/grid';
 @import 'layout/layout';
@@ -65,9 +55,9 @@
 @import 'components/footer';
 @import 'components/custom-select';
 @import 'components/custom-checkboxes';
-@import 'components/embed-wrap';
 @import 'components/cms-content';
 @import 'components/browserupgrade';
+@import 'components/alert';
 @import 'components/datepicker'; // Optional
 @import 'components/video'; // Optional
 @import 'components/accordion'; // Optional

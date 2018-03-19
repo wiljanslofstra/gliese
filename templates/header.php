@@ -19,7 +19,6 @@
     <meta name="description" content="<?= $meta_desc; ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="<?= $meta_twitter; ?>">
     <meta name="twitter:creator" content="<?= $meta_sitename; ?>">
@@ -27,7 +26,6 @@
     <meta name="twitter:description" content="<?= $meta_desc; ?>">
     <meta name="twitter:image:src" content="<?= $meta_img; ?>">
 
-    <!-- Open Graph -->
     <meta property="og:url" content="<?= $meta_url; ?>">
     <meta property="og:type" content="website">
     <meta property="og:title" content="<?= $meta_title; ?>">
@@ -41,6 +39,8 @@
         document.documentElement.className = document.documentElement.className.replace('no-js', 'js');
         var BASE = '<?= BASE_URL; ?>';
         var dataLayer = [];
+
+        function trackJavaScriptError(r){var e=window.event||{},a=r.message||e.errorMessage,o=(r.filename||e.errorUrl)+": "+(r.lineno||e.errorLine),n="";void 0!==r.error&&r.error&&"undefined"!==r.error.stack&&(n=r.error.stack),"undefined"!=typeof dataLayer&&dataLayer.push({event:"error_event",error_name:"Error",error_message:o+": "+a,error_stack:n})}window.addEventListener("error",trackJavaScriptError,!1);
     </script>
 
     <link rel="stylesheet" href="<?= getRevedFile('/assets/dist/css/main.css'); ?>">

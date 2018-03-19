@@ -61,6 +61,14 @@ Two timing events are send by default. 'Page load' will be triggered when the wh
 
 GTM has to handle the event ```timing``` and the variables ```timing_name``` and ```timing_value```.
 
+### Errors
+
+Any runtime errors that occur in JS are catched and send into GTM. The event that is triggered is ```error_event```. The data is stored in the following variables:
+
+- ```error_name```
+- ```error_message```
+- ```error_stack```
+
 ### General events
 
 All other events are being send to a general events action. For this to work the event ```general_event``` needs to be handled in GTM. This event is accompanied by a few variables:

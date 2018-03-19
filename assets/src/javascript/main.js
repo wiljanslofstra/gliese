@@ -1,5 +1,6 @@
 /* global POLYFILLS_PATH */
 
+// import 'whatwg-fetch';
 import loadScript from './helpers/loadScript';
 import shouldLoadPolyfills from './helpers/shouldLoadPolyfills';
 import './helpers/requestIdleCallback';

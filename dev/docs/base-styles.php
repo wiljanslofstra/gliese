@@ -2,7 +2,7 @@
 
 <link rel="stylesheet" href="<?= getRevedFile('/css/bootstrap-datepicker.css'); ?>">
 
-<div class="u-p2 u-md-p3">
+<div class="p-2 p-md-3">
     <div class="st-explanation">
         <h1>Base styles</h1>
         <p>
@@ -12,35 +12,35 @@
         </p>
     </div>
 
-    <h2 class="st-heading u-mb2">Button element</h2>
-    <div class="u-mb2">
+    <h2 class="st-heading mb-3">Button element</h2>
+    <div class="mb-3">
         <button class="btn">.btn</button>
         <button class="btn btn--primary">.btn .btn--primary</button>
         <button class="btn btn--secondary">.btn .btn--secondary</button>
     </div>
 
-    <div class="u-mb3">
+    <div class="mb-4">
         <button class="btn btn--lg">.btn .btn--lg</button>
         <button class="btn btn--primary btn--lg">.btn .btn--primary .btn--lg</button>
         <button class="btn btn--secondary btn--lg">.btn .btn--secondary .btn--lg</button>
     </div>
 
-    <h2 class="st-heading u-mb2">A element</h2>
-    <div class="u-mb2">
+    <h2 class="st-heading mb-3">A element</h2>
+    <div class="mb-3">
         <a href="#" class="btn">.btn</a>
         <a href="#" class="btn btn--primary">.btn .btn--primary</a>
         <a href="#" class="btn btn--secondary">.btn .btn--secondary</a>
     </div>
 
-    <div class="u-mb2">
+    <div class="mb-3">
         <a href="#" class="btn btn--lg">.btn .btn--lg</a>
         <a href="#" class="btn btn--primary btn--lg">.btn .btn--primary .btn--lg</a>
         <a href="#" class="btn btn--secondary btn--lg">.btn .btn--secondary .btn--lg</a>
     </div>
 
-    <h2 class="st-heading u-mb2">Form</h2>
+    <h2 class="st-heading mb-3">Form</h2>
 
-    <form class="js-form u-mb3">
+    <form class="js-form mb-4">
         <div class="form-group">
             <label for="text_field">Text Field:</label><br />
             <input class="form-control" type="text" id="text_field" />
@@ -147,18 +147,18 @@
         <button class="btn btn--primary" type="submit">Submit</button>
     </form>
 
-    <h2 class="st-heading u-mb2">Headings</h2>
+    <h2 class="st-heading mb-3">Headings</h2>
 
-    <div class="u-mb3">
+    <div class="mb-4">
         <h1>Heading 1</h1>
         <h2>Heading 2</h2>
         <h3>Heading 3</h3>
         <h4>Heading 4</h4>
     </div>
 
-    <h2 class="st-heading u-mb2">Headings with Text</h2>
+    <h2 class="st-heading mb-3">Headings with Text</h2>
 
-    <div class="u-mb3">
+    <div class="mb-4">
         <h1>Heading 1</h1>
         <p>Lorem ipsum dolor sit amet, adipiscing elit. Nullam dignissim convallis est. Quisque aliquam. Donec faucibus. Nunc iaculis suscipit dui. Nam sit amet sem. Aliquam libero nisi, imperdiet at, tincidunt nec, gravida vehicula, nisl.</p>
         <h2>Heading 2</h2>
@@ -173,9 +173,9 @@
         </a>
     </div>
 
-    <h2 class="st-heading u-mb2">Block Elements</h2>
+    <h2 class="st-heading mb-3">Block Elements</h2>
 
-    <div class="u-mb3">
+    <div class="mb-4">
         <h3>Paragraphs and Images</h3>
 
         <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nullam dignissim convallis est. Quisque aliquam. Donec faucibus. Nunc iaculis suscipit dui. Nam sit amet sem.</p>
@@ -201,9 +201,9 @@
         </figure>
     </div>
 
-    <h2 class="st-heading u-mb2">Text Elements</h2>
+    <h2 class="st-heading mb-3">Text Elements</h2>
 
-    <div class="u-mb3">
+    <div class="mb-4">
         <a href="#">a element</a><br>
         <abbr title="Abbreviation">abbr</abbr> element with title<br>
         <cite>cite element</cite><br>
@@ -217,9 +217,9 @@
         <time datetime="2005-05-15 19:00">time element</time>
     </div>
 
-    <h2 class="st-heading u-mb2">Monospace / Preformatted</h2>
+    <h2 class="st-heading mb-3">Monospace / Preformatted</h2>
 
-    <div class="u-mb3">
+    <div class="mb-4">
         <p>Code block wrapped in "pre" and "code" tags</p>
         <pre><code>// Loop through Divs using Javascript.
     var divs = document.querySelectorAll('div'), i;
@@ -234,9 +234,9 @@
     tincidunt nec, gravida vehicula, nisl.</p></pre>
     </div>
 
-    <h2 class="st-heading u-mb2">List Types</h2>
+    <h2 class="st-heading mb-3">List Types</h2>
 
-    <div class="u-mb3">
+    <div class="mb-4">
         <h3>Ordered List</h3>
         <ol>
             <li>List Item 1</li>
@@ -257,7 +257,7 @@
         </ol>
     </div>
 
-    <div class="u-mb3">
+    <div class="mb-4">
         <h3>Unordered List</h3>
         <ul>
             <li>List Item 1</li>
@@ -278,7 +278,7 @@
         </ul>
     </div>
 
-    <div class="u-mb3">
+    <div class="mb-4">
         <h3>Ordered List (.list)</h3>
         <ol class="list">
             <li>List Item 1</li>
@@ -299,7 +299,7 @@
         </ol>
     </div>
 
-    <div class="u-mb3">
+    <div class="mb-4">
         <h3>Unordered List (.list)</h3>
         <ul class="list">
             <li>List Item 1</li>
@@ -320,7 +320,7 @@
         </ul>
     </div>
 
-    <div class="u-mb3">
+    <div class="mb-4">
         <h3>Definition List</h3>
         <dl>
             <dt>Definition Term 1</dt>
@@ -330,9 +330,9 @@
         </dl>
     </div>
 
-    <h2 class="st-heading u-mb2">Tables</h2>
+    <h2 class="st-heading mb-3">Tables</h2>
 
-    <div>
+    <div class="mb-4">
         <table cellspacing="0" cellpadding="0">
             <caption>This is a table caption</caption>
             <thead>
@@ -361,6 +361,27 @@
             </tfoot>
         </table>
     </div>
+
+    <h2 class="st-heading mb-3">Alert</h2>
+
+    <div class="mb-4">
+        <div class="alert">
+            Default alert
+        </div>
+
+        <div class="alert alert--primary">
+            Primary alert
+        </div>
+
+        <div class="alert alert--danger">
+            Danger alert
+        </div>
+
+        <div class="alert alert--success">
+            Success alert
+        </div>
+    </div>
+
 </div>
 
 <?php include(__DIR__ . '/../../templates/footer.php'); ?>

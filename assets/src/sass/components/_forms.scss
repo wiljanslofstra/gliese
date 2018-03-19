@@ -10,6 +10,7 @@
   color: $input-color;
   font-size: $font-size-base;
   font-family: $font-family-base;
+  appearance: none;
 
   @if ($input-border-radius and $input-border-radius != 0) {
     border-radius: $input-border-radius;

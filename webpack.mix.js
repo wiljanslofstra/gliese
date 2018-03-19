@@ -8,7 +8,6 @@ const isDevelopment = process.env.NODE_ENV === 'development';
 mix
   .js('assets/src/javascript/main.js', 'assets/dist/javascript/')
   .js('assets/src/javascript/polyfills.js', 'assets/dist/javascript/')
-  .js('assets/src/javascript/formValidation.js', 'assets/dist/javascript/')
   .webpackConfig({
     resolve: {
       alias: {
@@ -47,14 +46,7 @@ mix
     },
   });
 
-mix.autoload({
-  jQuery: 'jquery',
-  $: 'jquery',
-  'window.jQuery': 'jquery',
-  Popper: ['popper.js', 'default'],
-  Util: 'exports-loader?Util!bootstrap/js/dist/util',
-  Dropdown: 'exports-loader?Dropdown!bootstrap/js/dist/dropdown',
-});
+mix.extract(['jquery']);
 
 mix
   .sass('assets/src/sass/main.scss', 'assets/dist/css/')
