@@ -8,18 +8,18 @@
   },
   "globals": {
     "dataLayer": true,
-    "ga": true,
     "gtag": true,
     "BASE": true,
     "Modernizr": true
   },
   "rules": {
     "no-magic-numbers": [
-      "error",
+      "warn",
       {
-        "ignore": [0, 1, -1, 10, 1000],
+        "ignore": [0, 1, -1, 10, 100, 1000],
         "ignoreArrayIndexes": true
       }
-    ]
+    ],
+    "import/no-extraneous-dependencies": ["error", { "devDependencies": true }]
   }
 }

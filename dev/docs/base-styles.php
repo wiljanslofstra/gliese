@@ -1,6 +1,6 @@
 <?php include(__DIR__ . '/../../templates/header.php'); ?>
 
-<link rel="stylesheet" href="<?= ASSET_BUILD_PATH; ?>/css/<?= getRevedFile('bootstrap-datepicker.css'); ?>">
+<link rel="stylesheet" href="<?= getRevedFile('/css/bootstrap-datepicker.css'); ?>">
 
 <div class="u-p2 u-md-p3">
     <div class="st-explanation">

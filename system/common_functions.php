@@ -39,17 +39,8 @@ function getRevedFile($src) {
 
     $manifest_folder = '/../assets/dist/';
 
-    $manifests = [
-        'js' => 'js-manifest.json',
-        'css' => 'css-manifest.json'
-    ];
-
-    if (empty($manifests[$extension])) {
-        return $src;
-    }
-
     // Try to fetch the manifest JSON
-    $rev_file = file_get_contents(__DIR__ . $manifest_folder . $manifests[$extension]);
+    $rev_file = file_get_contents(__DIR__ . '/../mix-manifest.json');
 
     // If the file is not found it is false, we return the origin source
     if ($rev_file === false) {
@@ -59,10 +50,10 @@ function getRevedFile($src) {
     // Decode the JSON string to an array
     $rev_file = json_decode($rev_file, true);
 
-    // Try to find our filename in the array
-    if (!empty($rev_file[$filename])) {
-        // Replace origin filename with the revision filename
-        $parts[count($parts) - 1] = $rev_file[$filename];
+    foreach ($rev_file as $rev_filename => $dest_filename) {
+        if (strpos($rev_filename, $filename) !== false) {
+            return $parts[count($parts) - 1] = $dest_filename;
+        }
     }
 
     // Put everything back together

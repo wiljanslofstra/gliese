@@ -2,6 +2,10 @@
  * <Project name>
  */
 
+ body {
+   background: url(../images/bg.jpg);
+ }
+
 @import 'utils/mixins/grid';
 @import 'utils/mixins/buttons';
 @import 'utils/mixins/burger';

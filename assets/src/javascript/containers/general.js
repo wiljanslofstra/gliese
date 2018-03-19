@@ -1,4 +1,4 @@
-import 'modernizr';
+import 'modernizr'; // eslint-disable-line
 import '../bootstrap';
 
 import Accessibility from '../modules/accessibility';

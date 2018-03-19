@@ -39,25 +39,15 @@
 
     <script type="text/javascript">
         document.documentElement.className = document.documentElement.className.replace('no-js', 'js');
-
         var BASE = '<?= BASE_URL; ?>';
-        var WEBPACK_PATH = '<?= ASSET_BUILD_PATH; ?>/javascript/';
-
-        function gtag() {
-            console.log('gtag', arguments);
-        }
     </script>
 
-    <link rel="stylesheet" href="<?= ASSET_BUILD_PATH; ?>/css/<?= getRevedFile('main.css'); ?>">
-
-    <!--[if gte IE 9]>
-        <link rel="stylesheet" type="text/css" href="<?= ASSET_BUILD_PATH; ?>/css/<?= getRevedFile('ie9.css'); ?>">
-    <![endif]-->
+    <link rel="stylesheet" href="<?= getRevedFile('/assets/dist/css/main.css'); ?>">
 </head>
 
 <body>
     <?php
-        $sprite = file_get_contents(__DIR__ . '/../assets/dist/icons/sprite.svg');
+        $sprite = file_get_contents(__DIR__ . '/../assets/dist/icons/symbol-defs.svg');
         echo $sprite;
     ?>
 

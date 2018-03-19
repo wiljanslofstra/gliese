@@ -5,3 +5,5 @@ assets/dist/
 /.cache
 /service-worker.js
 /workbox-sw.*
+/mix-manifest.json
+/yarn-error.log

@@ -28,7 +28,7 @@ function getModuleFile(name) {
   if (typeof name === 'undefined') {
     console.error('No module defined');
     listAvailableModules();
-    return;
+    return null;
   }
 
   const moduleFile = `${modulesFolder}${name}.js`;
@@ -38,7 +38,7 @@ function getModuleFile(name) {
   if (!exists) {
     console.error('This module is not available to add to your project');
     listAvailableModules();
-    return;
+    return null;
   }
 
   return fs.readFileSync(moduleFile);
@@ -69,17 +69,17 @@ function insertModule(name, cb) {
 }
 
 function installDependencies(file, cb) {
-  const match = new RegExp('/*(.+)*/', '');
+  const match = /\/\*\*?\s?npm-add\s(.+)\s?\*\*?\//g;
   const fileStr = file.toString();
 
-  const matches = fileStr.match(match);
+  const matches = match.exec(fileStr);
 
-  if (matches.length) {
-    let line = matches[0].replace('/* npm-add ', '');
-    line = line.replace('*/', '');
-    line = line.trim();
+  if (matches) {
+    const deps = matches[1].trim().split(' ');
 
-    install(line.split(' '));
+    if (deps.length) {
+      install(deps);
+    }
   }
 
   cb();
@@ -87,7 +87,7 @@ function installDependencies(file, cb) {
 
 const file = getModuleFile(mod);
 
-if (typeof file !== 'undefined') {
+if (typeof file !== 'undefined' && file) {
   moveModule(file, mod, () => {
     insertModule(mod, () => {
       installDependencies(file, () => {
